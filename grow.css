@@ -1,0 +1,180 @@
+body{
+    position: relative;
+    width: 90.063rem;
+    height: 171.688rem;
+    overflow-y: scroll;
+    background: #FFFFFF;
+}
+
+.description-header{
+    font-family: 'Roboto', sans-serif;
+    
+    font-style: normal;
+    font-weight: 900;
+    font-size: 1.1rem;
+    line-height: 1.875rem;
+    /* or 143% */
+
+    color: #261E0D;
+}
+.descriptions{
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.0rem;
+    line-height: 1.875rem;
+    /* or 143% */
+    
+    color: #261E0D;
+    
+    
+}
+.west-park{
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 1.75rem;
+    line-height: 2.063rem;
+    color: #3F2E00;
+
+    position: absolute;
+    width: 43rem;
+    height: 2.375rem;
+    left: 8.125rem;
+    top: 23.313rem;         
+}
+.west-park-description{
+    position: absolute;
+    width: 48rem;
+    height: 7.75rem;
+    left: 8.125rem;
+    top: 27.063rem;
+
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 1.125rem;
+    line-height: 1.875rem;
+    /* or 167% */
+
+    color: #53401A;
+}
+#map-of-garden{
+    position: absolute;
+    width: 42.25rem;
+    height: 2.375rem;
+    left: 8.125rem;
+    top: 36.938rem;
+}
+
+#west-park-map{
+    position: absolute;
+    width: 42.25rem;
+    height: 2.375rem;
+    left: 17rem;
+    top: 37rem;
+
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 1.125rem;
+    line-height: 1.875rem;
+    /* or 143% */
+    color: #40804D;
+}
+
+.coordinator-positioning{
+    position: absolute;
+    width: 40rem;
+    height: 2.375rem;
+    left: 8.125rem;
+    top: 41rem;
+}
+.soil-position{
+    position: absolute;
+    width: 43.75rem;   
+    height: 3.125rem;
+    left: 8.188rem;
+    top: 46.688rem;
+}
+.gardener-position{
+    position: absolute;
+    width: 46.875rem;
+    height: 3.188rem;
+    left: 8.125rem;
+    top: 52.688rem;
+}
+.individual-plots-position{
+    position: absolute;
+    width: 45rem;
+    height: 5.75rem;
+    left: 8.313rem;
+    top: 58.313rem;
+}
+.garden-main-pos{
+    position: absolute;
+    width: 43.75rem;
+    height: 5.563rem;
+    left: 8.313rem;
+    top: 67.875rem;
+}
+#light-color{
+    color: #53401A;
+}
+.water-pos{
+    position: absolute;
+    width: 45.625rem;
+    height: 6.813rem;
+    left: 8.188rem;
+    top: 77.188rem;    
+}
+.water-sentence{
+    position: absolute;
+    width: 48.813rem;
+    height: 6.813rem;
+    left: 8.188rem;
+    top: 84.813rem
+}
+.compost-pos{
+    position: absolute;
+    width: 43.75rem;
+    height: 8.563rem;
+    left: 8.125rem;
+    top: 88.875rem;
+}
+.compost-sentence{
+    position: absolute;
+    width: 45rem;
+    height: 8.563rem;
+    left: 8.125rem;
+    top: 96.875rem;
+}
+.hay-pos{
+    position: absolute;
+    width: 45.625rem;
+    height: 7.313rem;
+    left: 8.125rem;
+    top: 102.188rem;
+}
+.tools-pos{
+    position: absolute;
+    width: 43.75rem;
+    height: 3.438rem;
+    left: 8.313rem;
+    top: 113.625rem;    
+}
+.disposal-pos{
+    position: absolute;
+    width: 48.813rem;
+    height: 1.625rem;
+    left: 8.125rem;
+    top: 119.625rem;
+}
+.rocks-pos{
+    position: absolute;
+    width: 45.625rem;
+    height: 3.438rem;
+    left: 8.125rem;
+    top: 123.813rem;
+
+}
