@@ -57,22 +57,69 @@
     </div>
 </div>
 <div class="new-items-container">
-    <div class="new-items title">New Items</div>
-    <div class="new-items-body">
-
+    <div class="indent new-items title">New Items</div>
+    <div class="indent hdr-over-list">
+        Every year Project Grow strives to replace the least popular items with new varieties we have not offered before or think 
+        should be grown more often. This year we are adding:<br/>
+    </div>
+    <div class="indent new-items-body">
+        <div class="new-items-left">
+            <b>Tomatoes</b><br/>
+            - Aunt Ruby's German Green (back!)<br/>
+            - Black Brandywine<br/>
+            - Good Old Fashioned Red<br/>
+            - Chocolate Cherry<br/>
+            - Herman's Yellow<br/>
+            - Chocolate Chapin
+        </div>
+        <div class="new-items-right">
+            <b>Hot Peppers</b><br/>
+            - Czech Black<br/>
+            <b>Sweet Peppers</b><br/>
+            - Golden California Wonder<br/>
+            - Large Red Antigua<br/>
+            <b>Sweet Pea</b><br/>
+            - High Scent Sweet Pea
+        </div>
     </div>
 </div>
 <div class="discont-items-container">
-    <div class="discont-items title">Discontinued Items</div>
+    <div class="indent discont-items title">Discontinued Items</div>
+    <div class="indent hdr-over-list">
+        The following items have been dropped because of poor sales, difficulty finding good seed, or work 
+        required to grow. If you were particularly fond of any of these, let us know,  we may be able to 
+        sell you seed so you can grow your own.
+    </div>
     <div class="discont-items-body">
-
+        <div class="indent discont-items-left">
+            <b>Tomatoes</b><br/>
+            - Cherokee Chocolate (replaced by Black Brandywine)<br/>
+            - Zapotec Pleated<br/>
+            - German Red Strawberry<br/>
+            <b>Hot Peppers</b><br/>
+            - Tasmanian Black (replaced by Czech Black)<br/>
+            <b>Others</b><br/>
+            - Tomatillo Verde tomatillo<br/>
+            - All onions and leeks (popular but germination was poor for us).<br/>
+            - 4 packs of broccoli, cabbage, kale, chard and lettuce.<br/>
+        </div>
+        <div class="discont-items-right">
+            <b>Sweet Peppers</b><br/>
+            - California Wonder<br/>
+            - Doe Hill Golden Bell (replaced by Golden California Wonder)<br/>
+            <b>Basil</b><br/>
+            - Mammoth basil<br/>
+            - Red Rubin basil<br/>
+            <b>Sweet Pea</b><br/>
+            - Royal Family sweet pea (replaced by High Scent sweet pea)
+        </div>
     </div>
 </div>
 <div class="disclaimer-container">
     <div class="indent disclaimer title">Disclaimer</div>
     <div class="indent disclaimer-body">
         To make this work, we ask that our customers follow a few simple requests. 
-        Please read these limitations carefully, and if you cannot meet these requirements, 
+        <b>Please read these limitations carefully</b>, and if you cannot meet these requirements, 
         do not advance order plants, but come to the sale in person to make your purchases!
         <br/><b>1.</b> You must pay for your order by check by Saturday May 2nd. Orders that are received 
         later than May 2nd or are not paid for will not be pulled and saved for you.
@@ -81,14 +128,5 @@
         days and hours will be lost and you will receive no refund.
     </div>
 </div>
-
-<?php get_footer(); ?>
-=======
-<h1>Add your message here</h1>
-
-<form class="message-form" method="post">
-  <input id="message-title" type="text">
-  <button  type="submit">Save!</button>
-</form>
 
 <?php get_footer(); ?>

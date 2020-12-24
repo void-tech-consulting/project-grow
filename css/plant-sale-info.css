@@ -1,5 +1,6 @@
 body {
     font-family: Roboto;
+    color: #3F2E00;
 }
 /*Plant Sale Information*/
 #header-title{
@@ -41,7 +42,7 @@ body {
     margin: 1rem;
     padding: 1rem 3rem;
     border-radius: 40px;
-    border: 0 solid rgba(64,128,77,1);
+    border: 0 solid rgba(64,128,77,1); /*remove shadow*/
     background-color: rgba(64,128,77,1); /*Format allows easy change of opacity*/
     width: fit-content;
     font-size: 18px;
@@ -108,26 +109,48 @@ body {
     align-items: center;
 }
 
-.organic-title {
-    font-size: 24px;
-    color: #3F2E00;
-    padding-bottom: 2rem;
+.organic {
+    padding-bottom: 1rem;
 }
 .organic-paragraph {
     font-size: 18px;
     color: #3F2E00;
 }
+.new-items {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+.hdr-over-list {
+    font-size: 18px;
+    padding-bottom: 1rem;
+}
+.new-items-body {
+    display: flex;
+    font-size: 18px;
+}
+.new-items-left {
+    padding-right: 5rem;
+}
+.discont-items {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+.discont-items-body {
+    display: flex;
+    font-size: 18px;
+}
+.discont-items-right {
+    max-width: 28rem;
+}
 
 
 
-
-
-
-.disclaimer-title {
-    font-size: 24px;
-    color: #3F2E00;
+.disclaimer {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
 }
 .disclaimer-body {
     font-size: 18px;
     color: #3F2E00;
+    padding-bottom: 16rem;
 }
