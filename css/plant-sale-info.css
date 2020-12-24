@@ -120,13 +120,15 @@ body {
     padding-top: 1rem;
     padding-bottom: 1rem;
 }
+.new-items-container {
+    font-size: 18px;
+}
 .hdr-over-list {
     font-size: 18px;
     padding-bottom: 1rem;
 }
 .new-items-body {
     display: flex;
-    font-size: 18px;
 }
 .new-items-left {
     padding-right: 5rem;
@@ -135,12 +137,18 @@ body {
     padding-top: 1rem;
     padding-bottom: 1rem;
 }
-.discont-items-body {
-    display: flex;
+.discont-items-container {
     font-size: 18px;
 }
+.discont-items-body {
+    display: flex;
+}
 .discont-items-right {
-    max-width: 28rem;
+    max-width: 30rem;
+    padding-left: 3rem;
+}
+.tomatoes-section {
+    padding-top: 2rem;
 }
 
 

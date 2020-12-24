@@ -83,15 +83,15 @@
         </div>
     </div>
 </div>
-<div class="discont-items-container">
-    <div class="indent discont-items title">Discontinued Items</div>
-    <div class="indent hdr-over-list">
+<div class="indent discont-items-container">
+    <div class="discont-items title">Discontinued Items</div>
+    <div class="hdr-over-list">
         The following items have been dropped because of poor sales, difficulty finding good seed, or work 
         required to grow. If you were particularly fond of any of these, let us know,  we may be able to 
         sell you seed so you can grow your own.
     </div>
     <div class="discont-items-body">
-        <div class="indent discont-items-left">
+        <div class="discont-items-left">
             <b>Tomatoes</b><br/>
             - Cherokee Chocolate (replaced by Black Brandywine)<br/>
             - Zapotec Pleated<br/>
@@ -114,6 +114,19 @@
             - Royal Family sweet pea (replaced by High Scent sweet pea)
         </div>
     </div>
+    <div class="tomatoes-section">
+            Tomatoes come in a wide range of colors. The most common colors are red-orange and pinkish-red. 
+            There are also yellow, orange, green and purplish black tomatoes. If you are looking for classic 
+            tomato flavor, choose red-orange or pinkish-red tomatoes. Yellow, orange and green tomatoes tend 
+            to have a fruitier and sweeter flavor profile. Bi-color tomatoes have skin and flesh that is a mixture 
+            of two or more colors. Typically the color is a combination of red and yellow. Bi-color tomatoes usually 
+            are very sweet and may have subtle blends of fruit flavors. Black tomatoes tend to be richly flavored with 
+            smoky flavor notes.<br/>
+
+            <br/>Tomatoes are usually separated into groups based on their type (beefsteak, cherry, paste, oxheart, saladette 
+            and patio). If you are not familiar with these types, the following profiles include descriptions and some 
+            recommendations.
+        </div>
 </div>
 <div class="disclaimer-container">
     <div class="indent disclaimer title">Disclaimer</div>
