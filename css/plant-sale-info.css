@@ -13,7 +13,7 @@ body {
     font-size: 2.8rem;
     font-weight: 900;
 }
-/*header img -- placeholder for now*/
+
 .header-img {
     /*Flex box to allow moving the brown center box*/
     display: flex;
@@ -22,7 +22,7 @@ body {
 
     height: 25rem; /*Just for scale, looks like 25rem is a good size*/
     background-size: cover; /*Take up the whole space*/
-    background-image: url("../new-placeholder.jpg");
+    background-image: url("../plant-sale-info-header.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-color: aqua; /*Should never show if image is well sized*/
@@ -54,8 +54,8 @@ body {
     padding-right: 10rem;
 }
 .main-page {
-    padding-top: 1.2rem;
-    padding-bottom: 1.2rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
 }
 .description {
     padding-top: 1rem;
@@ -65,7 +65,7 @@ body {
     background-color: #F8F5EC;
 }
 .sale-container {
-    margin: 3rem 10rem 3rem 10rem;
+    margin: 5rem 10rem 5rem 10rem;
     padding-bottom: 3rem;
     padding-top: 2rem;
     display: flex;
@@ -102,11 +102,14 @@ body {
     align-items: center;
 }
 .section-spacer {
-    padding-top: 1.5rem;
-    padding-bottom: 1.5rem;
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
 }
 .hdr-over-list {
     padding-bottom: 1rem;
+}
+.list-spacing {
+    padding-bottom: .6rem;
 }
 .new-items-left {
     padding-right: 5rem;

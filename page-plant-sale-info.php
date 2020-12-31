@@ -9,7 +9,7 @@
         <button class="plant-catalog-btn"><b>Plant Catalog</b></button>
     </div>
 </div>
-<div class="indent main-page title">Project Grow Plant Sale</div>   
+<div class="indent main-page title"><b>Project Grow Plant Sale</b></div>   
 <div class="indent description">
     Every year, Project Grow holds a plant sale offering hard to find heirloom tomatoes, peppers, and basil. This year, Project Grow is offering transplants of six types (and 75 varieties) of tomatoes, 12 varieties of hot peppers, 11 different sweet peppers, and Genovese and Thai basil.
 </div>
@@ -65,22 +65,22 @@
     </div>
     <div class="flex-container">
         <div class="new-items-left">
-            <b>Tomatoes</b><br/>
-            - Aunt Ruby's German Green (back!)<br/>
-            - Black Brandywine<br/>
-            - Good Old Fashioned Red<br/>
-            - Chocolate Cherry<br/>
-            - Herman's Yellow<br/>
-            - Chocolate Chapin
+            <div class="list-spacing"><b>Tomatoes</b></div>
+            <div class="list-spacing">- Aunt Ruby's German Green (back!)</div>
+            <div class="list-spacing">- Black Brandywine</div>
+            <div class="list-spacing">- Good Old Fashioned Red</div>
+            <div class="list-spacing">- Chocolate Cherry</div>
+            <div class="list-spacing">- Herman's Yellow</div>
+            <div class="list-spacing">- Chocolate Chapin</div>
         </div>
         <div class="new-items-right">
-            <b>Hot Peppers</b><br/>
-            - Czech Black<br/>
-            <b>Sweet Peppers</b><br/>
-            - Golden California Wonder<br/>
-            - Large Red Antigua<br/>
-            <b>Sweet Pea</b><br/>
-            - High Scent Sweet Pea
+            <div class="list-spacing"><b>Hot Peppers</b></div>
+            <div class="list-spacing">- Czech Black</div>
+            <div class="list-spacing"><b>Sweet Peppers</b></div>
+            <div class="list-spacing">- Golden California Wonder</div>
+            <div class="list-spacing">- Large Red Antigua</div>
+            <div class="list-spacing"><b>Sweet Pea</b></div>
+            <div class="list-spacing">- High Scent Sweet Pea</div>
         </div>
     </div>
 </div>
@@ -93,26 +93,26 @@
     </div>
     <div class="flex-container">
         <div class="discont-items-left">
-            <b>Tomatoes</b><br/>
-            - Cherokee Chocolate (replaced by Black Brandywine)<br/>
-            - Zapotec Pleated<br/>
-            - German Red Strawberry<br/>
-            <b>Hot Peppers</b><br/>
-            - Tasmanian Black (replaced by Czech Black)<br/>
-            <b>Others</b><br/>
-            - Tomatillo Verde tomatillo<br/>
-            - All onions and leeks (popular but germination was poor for us).<br/>
-            - 4 packs of broccoli, cabbage, kale, chard and lettuce.<br/>
+            <div class="list-spacing"><b>Tomatoes</b></div>
+            <div class="list-spacing">- Cherokee Chocolate (replaced by Black Brandywine)</div>
+            <div class="list-spacing">- Zapotec Pleated</div>
+            <div class="list-spacing">- German Red Strawberry</div>
+            <div class="list-spacing"><b>Hot Peppers</b></div>
+            <div class="list-spacing">- Tasmanian Black (replaced by Czech Black)</div>
+            <div class="list-spacing"><b>Others</b></div>
+            <div class="list-spacing">- Tomatillo Verde tomatillo</div>
+            <div class="list-spacing">- All onions and leeks (popular but germination was poor for us).</div>
+            <div class="list-spacing">- 4 packs of broccoli, cabbage, kale, chard and lettuce.</div>
         </div>
         <div class="discont-items-right">
-            <b>Sweet Peppers</b><br/>
-            - California Wonder<br/>
-            - Doe Hill Golden Bell (replaced by Golden California Wonder)<br/>
-            <b>Basil</b><br/>
-            - Mammoth basil<br/>
-            - Red Rubin basil<br/>
-            <b>Sweet Pea</b><br/>
-            - Royal Family sweet pea (replaced by High Scent sweet pea)
+            <div class="list-spacing"><b>Sweet Peppers</b></div>
+            <div class="list-spacing">- California Wonder</div>
+            <div class="list-spacing">- Doe Hill Golden Bell (replaced by Golden California Wonder)</div>
+            <div class="list-spacing"><b>Basil</b></div>
+            <div class="list-spacing">- Mammoth basil</div>
+            <div class="list-spacing">- Red Rubin basil</div>
+            <div class="list-spacing"><b>Sweet Pea</b></div>
+            <div class="list-spacing">- Royal Family sweet pea (replaced by High Scent sweet pea)</div>
         </div>
     </div>
     <div class="tomatoes-section">
