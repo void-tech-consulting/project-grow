@@ -4,6 +4,7 @@ body{
     height: 171.688rem;
     overflow-y: scroll;
     background: #FFFFFF;
+    display: flex;
 }
 
 .description-header{
@@ -172,9 +173,136 @@ body{
 }
 .rocks-pos{
     position: absolute;
-    width: 45.625rem;
+    width: 45rem;
     height: 3.438rem;
     left: 8.125rem;
     top: 123.813rem;
 
+}
+.abandoned-pos{
+    position: absolute;
+    width: 44.375rem;
+    height: 5.813rem;
+    left: 8.438rem;
+    top: 129.813rem;
+}
+.communication-pos{
+    position: absolute;
+    width: 43.125rem;
+    height: 4.313rem;
+    left: 8.125rem;
+    top: 139.375rem;
+}
+.clean-up-pos{  
+    position: absolute;
+    width: 43.75rem;
+    height: 8.375rem;
+    left: 8.125rem;
+    top: 146.25rem;
+}
+.rectangle{
+
+    position: absolute;
+    width: 23.063rem;
+    height: 79.938rem;
+    left: 58.813rem;
+    top: 27.063rem;
+
+    background: #F8F5EC;
+    mix-blend-mode: normal;
+    border:1px solid #CEBFA1;
+
+}
+.rectangle-words{
+    position: absolute;
+    width: 20.063rem;
+    height: 76.938rem;
+    left: 60.313rem;
+    top: 27.688rem;
+
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 1.313rem;
+    line-height: 1.563rem;
+    color: #3F2E00;
+
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    width: 21.875rem;
+
+
+}
+#garden-picture{
+    position: absolute;
+    width: 90.438rem;
+    height: 16.25rem;
+    left: -0.375rem;
+    top: 5.063rem;
+    /* Border */
+    border: 1px solid rgba(206, 191, 161, 0.5);
+    box-sizing: border-box;
+}
+#brown-rectangle{
+    position: absolute;
+    width: 30rem;
+    height: 12.5rem;
+    left: 30.063rem;
+    top: 6.938rem;
+
+    background: rgba(93, 68, 0, 0.9);
+}
+#garden-sites{
+
+    position: absolute;
+    width: 28.563rem;
+    height: 3.063rem;
+    left: 30.813rem;
+    top: 9.375rem;
+
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 56.25rem;
+    font-size: 1.875rem;
+    line-height: 2.188rem;
+    text-align: center;
+
+    color: #FFFFFF;
+}
+#green-button{
+    position: absolute;
+    width: 13.125rem;
+    height: 3.438rem;
+    left: 38.438rem;
+    top: 13.438rem;
+
+    background: #40804D;
+    border-radius: 1.875rem;
+}
+#apply{
+    position: absolute;
+    width: 8.188rem;
+    height: 1.473rem;
+    left: 40.875rem;
+    top: 14.419rem;
+
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 56.25rem;
+    font-size: 1.125rem;
+    line-height: 1.313rem;
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+    color: #FFFFFF;
+}
+
+@media screen and (max-width: 700px){
+    div {
+        width: 70%
+       
+     }
+ 
 }
