@@ -43,31 +43,31 @@
     <div class="important-dates-section">
         <div class="timeline-container">
             <div class="timeline-item timeline-item-medium">
-                <img class="important-dates-icons" src="images/timeline_pic_1.png" alt="" style="margin-top: 6.4rem;">
+                <img class="important-dates-icons" src="images/rental-info/timeline_pic_1.png" alt="" style="margin-top: 6.4rem;">
                 <span class="important-dates-date">Jan 1, 2020</span>
                 <br>
                 <span class="important-dates-description plain-text">Plot application opens.</span>
             </div>
             <div class="timeline-item timeline-item-medium">
-                <img src="images/timeline_pic_2.png" alt="" style="margin-top: 5.5rem;">
+                <img src="images/rental-info/timeline_pic_2.png" alt="" style="margin-top: 5.5rem;">
                 <span class="important-dates-date">Feb 1, 2020</span>
                 <br>
                 <span class="important-dates-description plain-text">Deadline for returning gardeners to renew their plot from previous season.</span>
             </div>
             <div class="timeline-item timeline-item-large">
-            <img src="images/timeline_pic_3.png" alt="" style="margin-top: 5.6rem;">
+            <img src="images/rental-info/timeline_pic_3.png" alt="" style="margin-top: 5.6rem;">
                 <span class="important-dates-date">Feb 15, 2020</span>
                 <br>
                 <span class="important-dates-description plain-text">New applicants are assigned to open plots in order applications were received and according to preferences listed on application form.</span>
             </div>
             <div class="timeline-item timeline-item-medium">
-                <img src="images/timeline_pic_4.png" alt="" style="margin-top: 2.9rem;">
+                <img src="images/rental-info/timeline_pic_4.png" alt="" style="margin-top: 2.9rem;">
                 <span class="important-dates-date">Opening Day</span>
                 <br>
                 <span class="important-dates-description plain-text">Dry year:late April <br><br> Wet year:mid-May</span>
             </div>
             <div class="timeline-item timeline-item-small">
-                <img src="images/timeline_pic_5.png" alt="" style="margin-top: 2.2rem;">
+                <img src="images/rental-info/timeline_pic_5.png" alt="" style="margin-top: 2.2rem;">
                 <span class="important-dates-date">Closing Day</span>
                 <br>
                 <span class="important-dates-description plain-text">Midnight on the 3rd Saturday of October.</span>
