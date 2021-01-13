@@ -1,7 +1,9 @@
-@font-face {
-    font-family: Roboto;
-    src: url(Fonts/Roboto/Roboto-Regular.ttf)
-  }
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+body {
+    font-family: 'Roboto', sans-serif;
+    color: #3F2E00;
+    font-size: 1.8rem;
+}
   
   /* START Reset */
   /* Box sizing rules */
