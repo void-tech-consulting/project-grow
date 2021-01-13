@@ -85,6 +85,18 @@
   margin-right: 2rem;
 }
 
+.event-img-container {
+  width: 35%;
+  display: flex;
+  align-items: center;
+}
+
+.event-img {
+  padding-left: 10rem;
+  max-width: 100%;
+  height: auto;
+}
+
 /*how to get started*/
 .get-started {
   background-color: #f8f5ec;
@@ -149,6 +161,12 @@
   margin-bottom: 5rem;
   padding-top: 3rem;
   padding-bottom: 3rem;
+}
+
+.news-img {
+  padding-left: 3rem;
+  max-width: 100%;
+  height: auto;
 }
 
 .news-text {
