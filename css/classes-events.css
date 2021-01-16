@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+body {
+    font-family: 'Roboto', sans-serif;
+    color: #3F2E00;
+    font-size: 1.8rem;
+}
+/*Plant Sale Information*/
+#header-title{
+    color: white;
+    font-size: 3rem;
+}
+.title {
+    font-size: 2.8rem;
+    font-weight: 900;
+}
+.indent {
+    padding-left: 10rem;
+    padding-right: 10rem;
+}
+.header-img {
+    /*Flex box to allow moving the brown center box*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 25rem; /*Just for scale, looks like 25rem is a good size*/
+    background-size: cover; /*Take up the whole space*/
+    background-image: url("../classes-events-header-img.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: aqua; /*Should never show if image is well sized*/
+    
+}
+.center-header-box {
+    position: absolute;
+    padding: 8rem 13rem;
+    background-color: rgba(93,68,0,.9);    
+}
+
+/*Start CSS for event*/
+.event-container {
+    display: flex;
+    margin: 0 10rem 0 10rem;
+    padding-right: 7rem;
+    border: 2px solid #CEBFA1;
+    background-color: #F8F5EC;
+}
+.event-img {
+    padding: 2rem 3rem 2rem 4rem;
+    width: 95rem;
+}
+
+.right-side-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.event-details {
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem 0 2rem 0;
+}
+
+.event-title {
+    font-size: 2.1rem;
+    padding-bottom: .5rem;
+}
+
+.event-when {
+    text-align: end;
+}
+
+.event-date {
+    padding-bottom: 1rem;
+}
+
+.event-cost-join {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 2rem;
+}
+
+.event-cost {
+    margin-top: 1rem;
+}
+
+.register-event {
+    padding: 1rem 6rem;
+    border-radius: 40px;
+    border: 0 solid rgba(64,128,77,1); /*remove shadow*/
+    background-color: rgba(64,128,77,1); /*Format allows easy change of opacity*/
+    width: fit-content;
+    text-align: center;
+    color: white;
+}
