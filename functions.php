@@ -34,4 +34,24 @@ function home1_image_placement($wp_customize)
 }
 
 add_action('customize_register', 'home1_image_placement');
+
+
+//customizability for Our People page
+function ourpeople_customize($wp_customize)
+{
+  $wp_customize->add_section('ourpeople-content', array(
+    'title' => 'Our People Content'
+  ));
+
+  $wp_customize->add_setting('person-image');
+  $wp_customize->add_control(new WP_Customize_Cropped_Image_Control($wp_customize, 'staffimg-control', array(
+    'label' => 'Staff Image',
+    'section' => 'ourpeople-content',
+    'settings' => 'person-image',
+    'width' => 210,
+    'height' => 234
+  )));
+}
+
+add_action('customize_register', 'ourpeople_customize');
 ?>

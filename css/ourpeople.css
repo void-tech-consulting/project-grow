@@ -1,0 +1,27 @@
+.person-box {
+  margin: 3rem;
+  font-family: Roboto;
+  height: 31rem;
+  width: 21rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  background: #f8f5ec;
+  border: 1px solid rgba(206, 191, 161, 0.5);
+  color: #53401a;
+}
+
+.person-img {
+  width: 100%;
+}
+
+.person-name {
+  font-size: 2rem;
+  text-align: center;
+}
+
+.person-title {
+  font-size: 1.3rem;
+  text-align: center;
+}
