@@ -25,3 +25,73 @@
   font-size: 1.3rem;
   text-align: center;
 }
+
+
+.header-background {
+  background-image: url(../ourpeople_background.png);
+  height: 26rem;
+  padding-top:3rem;
+  margin-bottom: 3rem;
+}
+
+.header-box {
+  width: 48rem;
+  height: 20rem;
+  margin-right: auto;
+  margin-left: auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(93, 68, 0, 0.9);
+}
+
+.our-people-button-header-text {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 3rem;
+  line-height: 3.5rem;
+  color: #FFFFFF;
+
+}
+
+.connect-button {
+  margin-top: 1rem;
+  width: 21.2rem;
+  height: 5.5rem;
+  left: 61.4rem;
+  top: 21.5rem;
+
+  background: #40804D;
+  border-radius: 3rem;
+  
+  /*text*/
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 1.8rem;
+  line-height: 2.1rem;
+  
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FFFFFF;
+}
+
+.connect-button-link {
+  text-decoration: none;
+}
+
+.header-text {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 2.8rem;
+  line-height: 3.3rem;
+  color: #3F2E00;
+  padding-left:13rem;
+}
