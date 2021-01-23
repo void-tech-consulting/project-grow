@@ -51,6 +51,20 @@ function ourpeople_customize($wp_customize)
     'width' => 210,
     'height' => 234
   )));
+
+  $wp_customize->add_setting('person-name');
+  $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'staffname-control', array(
+    'label' => 'Staff Name',
+    'section' => 'ourpeople-content',
+    'settings' => 'person-name'
+  )));
+
+  $wp_customize->add_setting('person-title');
+  $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'stafftitle-control', array(
+    'label' => 'Staff Title',
+    'section' => 'ourpeople-content',
+    'settings' => 'person-title'
+  )));
 }
 
 add_action('customize_register', 'ourpeople_customize');
