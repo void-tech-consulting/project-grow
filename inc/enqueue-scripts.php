@@ -46,5 +46,6 @@ add_action('wp_ajax_nopriv_my_tag_count', 'my_ajax_handler__json');
 function add_styles() {
   wp_enqueue_style( "style", get_stylesheet_uri());
   wp_enqueue_style( "home", get_theme_file_uri('/css/home.css'));
+  wp_enqueue_style( "contact", get_theme_file_uri('/css/contact.css'));
 }
 add_action('wp_enqueue_scripts', 'add_styles');

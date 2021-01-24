@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+.contact-form {
+    font-family: 'Roboto';
+    position: absolute;
+    width: 761px;
+    height: 761px;
+    left: 130px;
+    top: 433px;
+    background: #F8F5EC;
+    mix-blend-mode: normal;
+    border: 1px solid #53401A;
+}
+
+label {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 21px;
+    display: flex;
+    align-items: center;
+
+    color: #53401A;
+}
+
+input[type=text], textarea {
+    background: #E8E0CF;
+    width: 761px;
+}
+
+input[type=submit] {
+    position: absolute;
+    width: 151.84px;
+    height: 48.78px;
+    left: 694.88px;
+    top: 1115.06px;
+
+    background: #40804D;
+    border-radius: 30px;
+}
+
+#first-name {
+    width: 323px;
+    height: 20px;
+}
