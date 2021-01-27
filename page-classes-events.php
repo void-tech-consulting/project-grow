@@ -66,7 +66,10 @@
             <div class = "event-cost">
                 <?php echo get_theme_mod('classes-events-cost')?>
             </div>
-            <button class="register-event">Join</button>
+            <button class="register-event">
+                <!-- Join Link -->
+                <a href = "<?php echo get_permalink(get_theme_mod('classes-events-join-link')) ?>">Join</a>
+            </button>
         </div>
     </div>
 </div>

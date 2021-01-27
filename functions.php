@@ -85,7 +85,7 @@
         'type' => 'textarea'
         )));
 
-        $wp_customize->add_setting('classes-events-date', 
+      $wp_customize->add_setting('classes-events-date', 
         array('default'=> 'Month day, year'));
   
       $wp_customize->add_control( new WP_Customize_Control($wp_customize, 'classes-events-callout-date', array(
@@ -94,7 +94,17 @@
         'settings' => 'classes-events-date',
         'type' => 'textarea'
         )));
+
+      $wp_customize->add_setting('classes-events-join-link');
+  
+      $wp_customize->add_control( new WP_Customize_Control($wp_customize, 'classes-events-callout-join-link', array(
+        'label' => 'Link', 
+        'section' => 'classes-events-section', 
+        'settings' => 'classes-events-join-link',
+        'type' => 'dropdown-pages'
+        )));
   }
+
 
   add_action('customize_register', 'classes_events_customize');
 
