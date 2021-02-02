@@ -1,9 +1,6 @@
 <?php
   get_header();
 ?>
-<style>
-    <?php include 'CSS/main.css'; ?>
-</style>
 <div class="header-img">
     <div class="center-header-box">
         <h1 id="header-title">Classes & Events</h1>
@@ -12,11 +9,10 @@
 <div class="indent main-page title"><b>Classes & Events</b></div>
 
 
-
 <!--Start code for event page-->
 <div class="event-container">
-    <div class="event-img">
-        <img src="<?php echo wp_get_attachment_url(
+    <div>
+        <img id="event-img" src="<?php echo wp_get_attachment_url(
             get_theme_mod('classes-events-img')) ?>">
     </div>
     <div class="right-side-content">
@@ -61,19 +57,17 @@
         </div>
         <div class="event-cost-join">
             <div class="event-cost">
-                Cost:$
-            </div>
-            <div class = "event-cost">
+                Cost: $
                 <?php echo get_theme_mod('classes-events-cost')?>
             </div>
             <button class="register-event">
                 <!-- Join Link -->
-                <a href = "<?php echo get_permalink(get_theme_mod('classes-events-join-link')) ?>">Join</a>
+                <a id="join-event-btn" href = "<?php echo get_permalink(get_theme_mod('classes-events-join-link')) ?>">Join</a>
             </button>
         </div>
     </div>
 </div>
-
+<div class="give-space">.</div>
 <?php
   get_footer();
 ?>

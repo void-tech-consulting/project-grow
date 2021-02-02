@@ -14,8 +14,8 @@ body {
     font-weight: 900;
 }
 .indent {
-    padding-left: 10rem;
-    padding-right: 10rem;
+    padding-left: 5rem;
+    padding-right: 5rem;
 }
 .header-img {
     /*Flex box to allow moving the brown center box*/
@@ -23,7 +23,7 @@ body {
     justify-content: center;
     align-items: center;
 
-    height: 25rem; /*Just for scale, looks like 25rem is a good size*/
+    height: 25rem; /*Just for scale, looks like 20rem is a good size*/
     background-size: cover; /*Take up the whole space*/
     background-image: url("../classes-events-header-img.png");
     background-position: center;
@@ -40,30 +40,31 @@ body {
 /*Start CSS for event*/
 .event-container {
     display: flex;
-    margin: 0 10rem 0 10rem;
+    margin: 0 5rem 0 5rem;
     padding-right: 7rem;
     border: 2px solid #CEBFA1;
     background-color: #F8F5EC;
 }
-.event-img {
-    padding: 2rem 3rem 2rem 4rem;
-    width: 95rem;
+#event-img {
+    padding: 3rem 4rem 3rem 7rem;
+    max-width: none;
 }
 
 .right-side-content {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    width: 100%;
 }
 
 .event-details {
     display: flex;
     justify-content: space-between;
-    padding: 2rem 0 2rem 0;
+    padding: 3rem 0 .5rem 0;
 }
 
 .event-title {
-    font-size: 2.1rem;
+    font-size: 2.8rem;
     padding-bottom: .5rem;
 }
 
@@ -78,19 +79,28 @@ body {
 .event-cost-join {
     display: flex;
     justify-content: space-between;
-    padding-bottom: 2rem;
+    padding-bottom: 3rem;
 }
 
 .event-cost {
+    display: flex;
     margin-top: 1rem;
 }
 
 .register-event {
-    padding: 1rem 6rem;
+    padding: 1rem 5rem;
     border-radius: 40px;
     border: 0 solid rgba(64,128,77,1); /*remove shadow*/
     background-color: rgba(64,128,77,1); /*Format allows easy change of opacity*/
     width: fit-content;
+
+}
+#join-event-btn {
     text-align: center;
     color: white;
+    text-decoration: none;
+    font-weight: 700;
+}
+.give-space {
+    height: 30rem;
 }
