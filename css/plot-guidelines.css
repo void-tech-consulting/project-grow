@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+body {
+    font-family: 'Roboto', sans-serif;
+    color: #3F2E00;
+    font-size: 1.8rem;
+}
+/*Plot Guidelines*/
+#guidelines-header-title{
+    color: white;
+    font-size: 3rem;
+    text-align: center;
+}
+
+#guidelines-header-img {
+    /*Flex box to allow moving the brown center box*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 25rem; /*Just for scale, looks like 25rem is a good size*/
+    background-size: cover; /*Take up the whole space*/
+    background-image: url("../plot-guidelines-header.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: aqua; /*Should never show if image is well sized*/
+    
+}
+.guidelines-center-header-box {
+    /*Flex box to allow moving the button*/
+    display: flex;
+    flex-direction: column;
+
+    position: absolute;
+    padding: 4rem 12rem;
+    background-color: rgba(93,68,0,.9);    
+}
+
+.plant-guidelines-btn {
+    align-self: center;
+    margin: 1rem;
+    padding: 1rem 3rem;
+    border-radius: 40px;
+    border: 0 solid rgba(64,128,77,1); /*remove shadow*/
+    background-color: rgba(64,128,77,1); /*Format allows easy change of opacity*/
+    width: fit-content;
+    text-align: center;
+    color: white;
+}
+
+#project-grow-guidelines {
+    border-top: 1px solid #CEBFA1;
+    border-bottom: 1px solid #CEBFA1;
+    background-color: #F8F5EC;
+}
+#guidelines-little-spacer {
+    padding: .75rem 0;
+}
+
+#guidelines-container {
+    display: flex;
+    padding-top: 3rem;
+}
+#guidelines-row {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding-bottom: 3rem;
+
+}
+.story-box {
+    text-align: center;
+    border: 1px dashed #CEBFA1;
+    background-color: #F8F5EC;
+    padding: 2rem 0;
+    border-radius: 24px;
+    width: 25%;
+}

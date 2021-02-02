@@ -5,19 +5,11 @@ body {
     font-size: 1.8rem;
 }
 /*Plant Sale Information*/
-#header-title{
+#class-header-title{
     color: white;
     font-size: 3rem;
 }
-.title {
-    font-size: 2.8rem;
-    font-weight: 900;
-}
-.indent {
-    padding-left: 5rem;
-    padding-right: 5rem;
-}
-.header-img {
+#class-header-img {
     /*Flex box to allow moving the brown center box*/
     display: flex;
     justify-content: center;
@@ -31,7 +23,7 @@ body {
     background-color: aqua; /*Should never show if image is well sized*/
     
 }
-.center-header-box {
+.class-center-header-box {
     position: absolute;
     padding: 8rem 13rem;
     background-color: rgba(93,68,0,.9);    
@@ -50,7 +42,7 @@ body {
     max-width: none;
 }
 
-.right-side-content {
+.class-right-side-content {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -100,7 +92,4 @@ body {
     color: white;
     text-decoration: none;
     font-weight: 700;
-}
-.give-space {
-    height: 30rem;
 }
