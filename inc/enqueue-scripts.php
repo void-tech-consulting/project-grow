@@ -50,5 +50,6 @@ function add_styles() {
   wp_enqueue_style("home1", get_theme_file_uri('/css/home1.css'));
   wp_enqueue_style("ourpeople", get_theme_file_uri('/css/ourpeople.css'));
   wp_enqueue_style( "plant-sale-info", get_theme_file_uri('/css/plant-sale-info.css'));
+  wp_enqueue_style( "growing-tips", get_theme_file_uri('/css/growing-tips.css'));
 }
 add_action('wp_enqueue_scripts', 'add_styles');
