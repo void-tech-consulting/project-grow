@@ -58,20 +58,50 @@ body {
 
 #guidelines-container {
     display: flex;
-    padding-top: 3rem;
+    flex-wrap: wrap;
+    position: relative;
 }
 #guidelines-row {
     display: flex;
     justify-content: space-between;
     width: 100%;
-    padding-bottom: 3rem;
-
+    padding-top: 3rem;
 }
 .story-box {
     text-align: center;
     border: 1px dashed #CEBFA1;
-    background-color: #F8F5EC;
+    background-color: #E8E0CF;
     padding: 2rem 0;
     border-radius: 24px;
     width: 25%;
+}
+/*Need filler places for js to fill in style*/
+#weed {
+    color: #3F2E00;
+}
+#insect {
+    color: #3F2E00;
+}
+#disease {
+    color: #3F2E00;
+}
+
+#guidelines-expansion {
+    border: 2px solid #40804D;
+    border-radius: 0 16px 16px 16px;
+    background-color: #F8F5EC;
+    margin: 0 10rem;
+    padding: 2rem;
+    position: absolute;
+    top: 14rem;
+    display: none;
+}
+#weed-top-text p {
+    padding-bottom: .75rem;
+}
+#weed-bottom-text {
+    display: flex;
+}
+#weed-fungicides {
+    padding-right: 5rem;
 }
