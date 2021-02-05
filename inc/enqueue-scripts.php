@@ -5,7 +5,7 @@ function add_scripts() {
   if (is_front_page()) {
     // enqueue a front page specific css or js file
   }
-  else if (is_page( 'example' )) {
+  else {
     wp_enqueue_script( 
       "ajax-script", 
       get_theme_file_uri("/js/example.js"), 
@@ -48,5 +48,7 @@ function add_styles() {
   wp_enqueue_style( "home", get_theme_file_uri('/css/home.css'));
   wp_enqueue_style( "contact", get_theme_file_uri('/css/contact.css'));
   wp_enqueue_style( "header", get_theme_file_uri('/css/header.css'));
+  wp_enqueue_style( "footer", get_theme_file_uri('/css/footer.css'));
+  wp_enqueue_style( "example", get_theme_file_uri('/css/example.css'));
 }
 add_action('wp_enqueue_scripts', 'add_styles');

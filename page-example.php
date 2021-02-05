@@ -9,4 +9,14 @@
   <button  type="submit">Save!</button>
 </form>
 
+<button type="button" class="collapsible">Open Collapsible</button>
+<div class="collapse-content">
+  <p>Lorem ipsum...</p>
+</div>
+
+<div class="editable">
+    <h1 class="title"><?php echo get_theme_mod('title')?></h1>
+    <p class="desc"><?php echo get_theme_mod('description')?></p>
+</div>
+
 <?php get_footer(); ?>
