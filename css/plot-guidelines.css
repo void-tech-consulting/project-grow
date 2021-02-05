@@ -72,30 +72,43 @@ body {
     border: 1px dashed #CEBFA1;
     background-color: #E8E0CF;
     padding: 2rem 0;
-    border-radius: 24px;
+    border-radius: 12px;
+    width: 30%;
+}
+.open-story-box {
+    color: white;
+    background-color: #40804D;
+    border-radius: 24px 24px 0 0; 
     width: 25%;
+    padding: 2rem 0;
+    text-align: center;
 }
 /*Need filler places for js to fill in style*/
-#weed {
-    color: #3F2E00;
+/*Need placeholders for js to change/hide display*/
+.hide {
+    display: none;
 }
-#insect {
-    color: #3F2E00;
+.show {
+    display: flex;
 }
-#disease {
-    color: #3F2E00;
+.left {
+    border-radius: 0 16px 16px 16px;
+}
+.middle {
+    border-radius: 16px 16px 16px 16px;
+}
+.right {
+    border-radius: 16px 0 16px 16px;
 }
 
-#guidelines-expansion {
+.guidelines-expansion {
+    cursor: pointer;
     border: 2px solid #40804D;
-    border-radius: 0 16px 16px 16px;
     background-color: #F8F5EC;
     margin: 0 10rem;
     padding: 2rem;
-    position: absolute;
-    top: 14rem;
-    display: none;
 }
+
 #weed-top-text p {
     padding-bottom: .75rem;
 }

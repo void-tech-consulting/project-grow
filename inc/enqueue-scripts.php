@@ -25,10 +25,11 @@ function add_scripts() {
     );
   }
   // Added for guidelines JS
-  else if (is_page( 'plot-guidelines')) {
+  else if (is_page( 'plot-guidelines' )) {
     wp_enqueue_script(
       "guidelines-dropdown",
-      get_theme_file_uri("/js/plot-guidelines.js")
+      get_theme_file_uri("/js/plot-guidelines.js"),
+      true
     );
   }
 }

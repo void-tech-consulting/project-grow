@@ -1,13 +1,15 @@
-function print_guide(box) {
-    var guide = document.getElementById(box); // Hardcode to "weed" to view
-    var toExpand = document.getElementById("guidelines-expansion");
+function print_guide(tab, dropdown) { 
+    // if there exists a div with open class then reset it and remove class
+    if ($(".open").length) {
+        $(".open").addClass("story-box").removeClass("open open-story-box")
+        $(".open-dropdown").addClass("hide").removeClass("open-dropdown show")
+    }
     // Change the style of the button
-    guide.style.color = 'white';
-    guide.style.backgroundColor = '#40804D';
-    guide.style.border = 'none';
-    guide.style.borderRadius = '24px 24px 0 0';
-    guide.style.padding = '2rem 0 4rem 0'   
+    $(tab).addClass("open-story-box").removeClass("story-box")
 
     // Display the expanded box
-    toExpand.style.display = 'flex';
+    $(dropdown).addClass("show")
+
+    $(tab).addClass("open");
+    $(dropdown).addClass("open-dropdown");
 }
