@@ -68,4 +68,27 @@ function ourpeople_customize($wp_customize)
 }
 
 add_action('customize_register', 'ourpeople_customize');
+
+function growingtips_custom($wp_customize)
+{
+  $wp_customize->add_section('growingtips-content', array(
+    'title' => 'Growing Tips Content'
+  ));
+
+  $wp_customize->add_setting('box-text');
+  $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'box-text-control', array(
+    'label' => 'Tips text',
+    'section' => 'growingtips-content',
+    'settings' => 'box-text'
+  )));
+
+  $wp_customize->add_setting('box-link');
+  $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'box-link-control', array(
+    'label' => 'Tips link',
+    'section' => 'growingtips-content',
+    'settings' => 'box-link'
+  )));
+}
+
+add_action('customize_register', 'growingtips_custom');
 ?>

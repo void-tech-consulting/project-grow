@@ -19,34 +19,55 @@ get_header();
 
 <div class="main-description">
     <div style="width:82%;padding-top:3rem;padding-bottom:3rem;margin:auto;">
-        These articles are  written by Project Grow gardeners like yourself.  Many have appeared in older copies of our newsletter or been written and donated to Project Grow. 
+        These articles are written by Project Grow gardeners like yourself. Many have appeared in older copies of our newsletter or been written and donated to Project Grow.
         <br><br>
         If you have suggestions or would like to contribute, please contact us at <span style="font-style: italic;">info@projectgrowgardens.org</span>
-        <br><br>    
+        <br><br>
         We look forward to hearing from you!
         <br><br>
-        <a class="no-style-link" href="https://www.google.com" ><span style="font-weight: bold;font-size: 20px;line-height: 23px;color: #53401A;">Click to learn more tips!</span></a>
+        <a class="no-style-link" href="https://www.google.com"><span style="font-weight: bold;font-size: 20px;line-height: 23px;color: #53401A;">Click to learn more tips!</span></a>
     </div>
 </div>
 
 <span class="header-text">Edibles</span>
 <div class="item-container">
-    <a href="https://www.google.com" class="no-style-link"><div class="item-box">Garlic</div></a>
+    <a href="<?php echo get_theme_mod('box-link') ?>" class="no-style-link">
+        <div class="item-box"><?php echo get_theme_mod('box-text') ?></div>
+    </a>
+    <a href="https://www.google.com" class="no-style-link">
+        <div class="item-box">Garlic</div>
+    </a>
+    <a href="https://www.google.com" class="no-style-link">
+        <div class="item-box">Garlic</div>
+    </a>
+    <a href="https://www.google.com" class="no-style-link">
+        <div class="item-box">Garlic</div>
+    </a>
+    <a href="https://www.google.com" class="no-style-link">
+        <div class="item-box">Garlic</div>
+    </a>
+
 </div>
 
 <span class="header-text"> Ornamentals</span>
 <div class="item-container">
-    <a href="https://www.google.com" class="no-style-link"><div class="item-box">Garlic</div></a>
+    <a href="https://www.google.com" class="no-style-link">
+        <div class="item-box">Garlic</div>
+    </a>
 </div>
 
 <span class="header-text">Organic Gardening</span>
 <div class="item-container">
-    <a href="https://www.google.com" class="no-style-link"><div class="item-box">Garlic</div></a>
+    <a href="https://www.google.com" class="no-style-link">
+        <div class="item-box">Garlic</div>
+    </a>
 </div>
 
 <span class="header-text">Seed Saving and Starting</span>
 <div class="item-container">
-    <a href="https://www.google.com" class="no-style-link"><div class="item-box">Garlic</div></a>
+    <a href="https://www.google.com" class="no-style-link">
+        <div class="item-box">Garlic</div>
+    </a>
 </div>
 
 
