@@ -2,8 +2,8 @@
   require get_template_directory() . '/inc/example-post-type.php';
   require get_template_directory() . '/inc/enqueue-scripts.php';
   require get_template_directory() . '/inc/register-settings.php';
-
-  // add_action('wp_head', 'classes_events_customize');
+  require get_template_directory() . '/inc/customizer.php';
+  require get_template_directory() . '/inc/controller.php';
 
   function classes_events_customize($wp_customize) {
     $wp_customize->add_section('classes-events-section', array(
