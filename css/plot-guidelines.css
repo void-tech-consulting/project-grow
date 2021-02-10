@@ -74,12 +74,13 @@ body {
     padding: 2rem 0;
     border-radius: 12px;
     width: 30%;
+    cursor: pointer;
 }
 .open-story-box {
     color: white;
     background-color: #40804D;
     border-radius: 24px 24px 0 0; 
-    width: 25%;
+    width: 30%;
     padding: 2rem 0;
     text-align: center;
 }
@@ -101,19 +102,27 @@ body {
 }
 
 .guidelines-expansion {
-    cursor: pointer;
     border: 2px solid #40804D;
     background-color: #F8F5EC;
     margin: 0 10rem;
     padding: 2rem;
+    width: 100%;
 }
 
-#weed-top-text p {
+.guideline p {
     padding-bottom: .75rem;
 }
-#weed-bottom-text {
+.guideline a {
+    color: #40804D;
+}
+#weed-examples {
     display: flex;
 }
 #weed-fungicides {
     padding-right: 5rem;
+}
+
+#guidelines-note-to-all {
+    padding-top: 3rem;
+    padding-bottom: 6rem;
 }
