@@ -57,21 +57,17 @@ function example_repeatable_customizer($wp_customize) {
           $wp_customize,
           $example_repeater,
           array(
-              'label' 		=> esc_html__('Example Q & A Repeater'),
+              'label' 		=> esc_html__('Growing Tips Edibles Repeater'),
               'description'   => '',
               'section'       => $example_section,
-              'live_title_id' => 'question',
+              'live_title_id' => 'topic',
               'title_format'  => esc_html__('[live_title]'), // [live_title]
               'max_item'      => 10, // Maximum item can add
               'limited_msg' 	=> wp_kses_post( __( 'Max items added' ) ),
               'fields'    => array(
-                  'question'  => array(
-                      'title' => esc_html__('Question'),
+                  'topic'  => array(
+                      'title' => esc_html__('Topic'),
                       'type'  =>'text',
-                  ),
-                  'answer'  => array(
-                      'title' => esc_html__('Answer'),
-                      'type'  =>'editor',
                   ),
                   'link'  => array(
                       'title' => esc_html__('Link'),
