@@ -40,7 +40,7 @@ get_header();
     <?php
       require 'inc/section_vars.php';   
       // get_example_data is in /inc/template_functions.php
-      $data  = get_example_data($example_repeater);
+      $data  = get_growing_tips_data($growing_tips_edibles);
       if(!empty( $data ) ) { 
         ?>
         <?php
@@ -63,30 +63,102 @@ get_header();
       <?php
           }
       ?>
-<?php } ?>
+    <?php } ?>
 
 
 </div>
 
 <span class="header-text"> Ornamentals</span>
 <div class="item-container">
-    <a href="https://www.google.com" class="no-style-link">
-        <div class="item-box">Garlic</div>
-    </a>
+    <?php
+      require 'inc/section_vars.php';   
+      // get_example_data is in /inc/template_functions.php
+      $data  = get_growing_tips_data($growing_tips_ornamentals);
+      if(!empty( $data ) ) { 
+        ?>
+        <?php
+          foreach ( $data as $k => $f ) {  
+            // Make sure to use a semicolon; when using php on multiple lines
+            $topicId = 'topic'.$k;
+            $answerContent = "<div id=\"".$topicId."\" class=\"answer-text\">";
+            ?>
+
+            <?php echo $answerContent ?>
+              <a class ="no-style-link" href="<?php echo $f['link']; ?>">
+                <div class="item-box">
+                    <div class="questionbox" <?php echo "data-topic-id=\"".$k."\"" ?>> 
+                        <span class="question-text"><?php echo $f['topic']?> </span>
+                    </div>
+                </div>
+              </a>
+              
+            </div>
+      <?php
+          }
+      ?>
+    <?php } ?>
 </div>
 
 <span class="header-text">Organic Gardening</span>
 <div class="item-container">
-    <a href="https://www.google.com" class="no-style-link">
-        <div class="item-box">Garlic</div>
-    </a>
+<?php
+      require 'inc/section_vars.php';   
+      // get_example_data is in /inc/template_functions.php
+      $data  = get_growing_tips_data($growing_tips_organic_gardening);
+      if(!empty( $data ) ) { 
+        ?>
+        <?php
+          foreach ( $data as $k => $f ) {  
+            // Make sure to use a semicolon; when using php on multiple lines
+            $topicId = 'topic'.$k;
+            $answerContent = "<div id=\"".$topicId."\" class=\"answer-text\">";
+            ?>
+
+            <?php echo $answerContent ?>
+              <a class ="no-style-link" href="<?php echo $f['link']; ?>">
+                <div class="item-box">
+                    <div class="questionbox" <?php echo "data-topic-id=\"".$k."\"" ?>> 
+                        <span class="question-text"><?php echo $f['topic']?> </span>
+                    </div>
+                </div>
+              </a>
+              
+            </div>
+      <?php
+          }
+      ?>
+    <?php } ?>
 </div>
 
 <span class="header-text">Seed Saving and Starting</span>
 <div class="item-container">
-    <a href="https://www.google.com" class="no-style-link">
-        <div class="item-box">Garlic</div>
-    </a>
+<?php
+      require 'inc/section_vars.php';   
+      // get_example_data is in /inc/template_functions.php
+      $data  = get_growing_tips_data($growing_tips_seed_saving_starting);
+      if(!empty( $data ) ) { 
+        ?>
+        <?php
+          foreach ( $data as $k => $f ) {  
+            // Make sure to use a semicolon; when using php on multiple lines
+            $topicId = 'topic'.$k;
+            $answerContent = "<div id=\"".$topicId."\" class=\"answer-text\">";
+            ?>
+
+            <?php echo $answerContent ?>
+              <a class ="no-style-link" href="<?php echo $f['link']; ?>">
+                <div class="item-box">
+                    <div class="questionbox" <?php echo "data-topic-id=\"".$k."\"" ?>> 
+                        <span class="question-text"><?php echo $f['topic']?> </span>
+                    </div>
+                </div>
+              </a>
+              
+            </div>
+      <?php
+          }
+      ?>
+    <?php } ?>
 </div>
 
 

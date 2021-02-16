@@ -127,17 +127,16 @@ if ( ! function_exists( 'template_data' ) ) {
 	}
 }
 
-if ( ! function_exists( 'get_example_data' ) ) {
+if ( ! function_exists( 'get_growing_tips_data' ) ) {
 	/**
 	 * Get Example Data
 	 *
 	 * @since 1.1.4
 	 * @return array
 	 */
-	function get_example_data($section) {
+	function get_growing_tips_data($section) {
 		return template_data($section, array(
-						'question' => '',
-            'answer' => '',
+			'topic' => '',
             'link' => ''
 		));
 	}
