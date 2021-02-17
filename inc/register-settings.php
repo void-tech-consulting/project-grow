@@ -186,3 +186,52 @@ function growing_tips_customizer($wp_customize)
   );
 }
 add_action('customize_register', 'growing_tips_customizer');
+
+function our_people_customizer($wp_customize)
+{
+  require 'section_vars.php';
+  require_once 'controller.php';
+
+  $wp_customize->add_section($our_people_section, array(
+    'title' => 'Our People',
+  ));
+
+  $wp_customize->add_setting(
+    $our_people_members,
+    array(
+      'sanitize_callback' => 'onepress_sanitize_repeatable_data_field',
+      'transport' => 'refresh',
+    )
+  );
+
+  $wp_customize->add_control(
+    new Onepress_Customize_Repeatable_Control(
+      $wp_customize,
+      $our_people_members,
+      array(
+        'label'     => esc_html__('Our People'),
+        'description'   => '',
+        'section'       => $our_people_section,
+        'live_title_id' => 'member_name',
+        'title_format'  => esc_html__('[live_title]'), // [live_title]
+        'max_item'      => 50, // Maximum item can add
+        'limited_msg'   => wp_kses_post(__('Max items added')),
+        'fields'    => array(
+          'member_image' => array(
+            'title' => esc_html__('Member Image'),
+            'type'  => 'media',
+          ),
+          'member_name'  => array(
+            'title' => esc_html__('Member Name'),
+            'type'  => 'text',
+          ),
+          'member_title'  => array(
+            'title' => esc_html__('Member Title'),
+            'type'  => 'text',
+          ),
+        ),
+      )
+    )
+  );
+}
+add_action('customize_register', 'our_people_customizer');
