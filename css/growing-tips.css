@@ -1,35 +1,26 @@
-.person-box {
-  margin: 3rem;
-  font-family: Roboto;
-  height: 31rem;
-  width: 21rem;
+
+
+.item-container {
+  width: 86%;
+  margin: auto;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: flex-start;
-  align-items: stretch;
-  background: #f8f5ec;
-  border: 1px solid rgba(206, 191, 161, 0.5);
-  color: #53401a;
+  flex-wrap: wrap;
+  
+  padding-bottom: 4rem;
+  
+}
+.item-container>* {
+  flex: 0 0 31%;
+  margin: 1%;
 }
 
-.person-img {
-  width: 100%;
-}
-
-.person-name {
-  font-size: 2rem;
-  text-align: center;
-}
-
-.person-title {
-  font-size: 1.3rem;
-  text-align: center;
-}
 
 .item-box {
   font-family: Roboto;
   height: 7.1rem;
-  width: 36.2rem;
+  width: 100%;
 
   background: #e8e0cf;
   border: 1px dashed #cebfa1;
@@ -47,21 +38,12 @@
   align-items: center;
   justify-content: center;
   margin-top: 2.4rem;
+  
+  /*
   margin-right: 2.4rem;
   margin-left: 2.4rem;
-}
-
-.item-container {
-  width: 86%;
-
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  flex-wrap: wrap;
-  align-items: stretch;
-  margin: auto;
-
-  padding-bottom: 4rem;
+  */
+  
 }
 
 .header-background {
