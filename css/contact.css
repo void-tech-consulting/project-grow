@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap');
+body {
+    font-family: 'Roboto', sans-serif;
+    color: #3F2E00;
+    font-size: 1.8rem;
+    font-weight: 400;
+}
+#header-title{
+    color: white;
+    font-size: 3rem;
+    text-align: center;
+}
+
+#contact-form-heading {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    font-weight: 900;
+}
+
+.contact-content {
+    margin-left: 10rem;
+}
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+.col-100 {
+    flex: 100%;
+}
+.col-60 {
+    flex: 60%;
+}
+.col-50 {
+    flex: 50%;
+    padding-right: 3rem;
+}
+.col-45 {
+    flex: 45%;
+}
+.col-40 {
+    flex: 40%;
+    padding-left: 6rem;
+}
+
+.contact-form {
+    background: #F8F5EC;
+    mix-blend-mode: normal;
+    border: 1px solid #53401A;
+    width: 100%;
+    padding-left: 3rem;
+    padding-right: 3rem;
+}
+
+label {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 21px;
+    display: block;
+    align-items: center;
+    padding-top: 3rem;
+    padding-bottom: 1rem;
+    color: #53401A;
+}
+
+#first-name {
+    margin-right: 2rem;
+}
+
+.contact-title {
+    font-weight: 500;
+    color: #53401A
+}
+
+input[type=text], textarea {
+    background: #E8E0CF;
+    width: 100%;
+    resize: vertical;
+    border: none;
+}
+
+#first-name input[type=text] {
+    width: 80%;
+}
+
+.button-right {
+    display: flex;
+    justify-content: flex-end;
+}
+
+#contact-submit-btn {
+    background: #40804D;
+    border: none;
+    border-radius: 30px;
+    color: #FFFFFF;
+    font-weight: 700;
+
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
+}
+
+.header-img {
+    /*Flex box to allow moving the brown center box*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 25rem; /*Just for scale, looks like 25rem is a good size*/
+    background-size: cover; /*Take up the whole space*/
+    background-image: url("../images/contact-header-img.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.center-header-box {
+    /*Flex box to allow moving the button*/
+    display: flex;
+    flex-direction: column;
+
+    position: absolute;
+    padding: 4rem 10rem;
+    background-color: rgba(93,68,0,.9);    
+}
+
+.plant-catalog-btn {
+    align-self: center;
+    margin: 1rem;
+    padding: 1rem 3rem;
+    border-radius: 40px;
+    border: 0 solid rgba(64,128,77,1); /*remove shadow*/
+    background-color: rgba(64,128,77,1); /*Format allows easy change of opacity*/
+    width: fit-content;
+    text-align: center;
+    color: white;
+}
