@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+body {
+    font-family: 'Roboto', sans-serif;
+    color: #3F2E00;
+    font-size: 1.8rem;
+}
+/*Plant Sale Information*/
+#header-title{
+    color: white;
+    font-size: 3rem;
+}
+.title {
+    font-size: 2.8rem;
+    font-weight: 900;
+}
+
+.header-img {
+    /*Flex box to allow moving the brown center box*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 25rem; /*Just for scale, looks like 25rem is a good size*/
+    background-size: cover; /*Take up the whole space*/
+    background-image: url("../plant-sale-info-header.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: aqua; /*Should never show if image is well sized*/
+    
+}
+.center-header-box {
+    /*Flex box to allow moving the button*/
+    display: flex;
+    flex-direction: column;
+
+    position: absolute;
+    padding: 4rem 10rem;
+    background-color: rgba(93,68,0,.9);    
+}
+
+.plant-catalog-btn {
+    align-self: center;
+    margin: 1rem;
+    padding: 1rem 3rem;
+    border-radius: 40px;
+    border: 0 solid rgba(64,128,77,1); /*remove shadow*/
+    background-color: rgba(64,128,77,1); /*Format allows easy change of opacity*/
+    width: fit-content;
+    text-align: center;
+    color: white;
+}
+.indent {
+    padding-left: 10rem;
+    padding-right: 10rem;
+}
+.main-page {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+.description {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    border-top: 1px solid #CEBFA1;
+    border-bottom: 1px solid #CEBFA1;
+    background-color: #F8F5EC;
+}
+.sale-container {
+    margin: 5rem 10rem 5rem 10rem;
+    padding-bottom: 3rem;
+    padding-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #CEBFA1;
+    background-color: #F8F5EC;
+}
+.sale-headers {
+    font-size: 2.1rem;
+}
+.sale-table-format {
+    width: 33%;
+    text-align: center;
+}
+.sale-flex-format {
+    display: flex;
+    justify-content: space-between;
+}
+.dates {
+    display: flex;
+    justify-content: space-around;
+    border-right: 2px solid #3F2E00;
+    width: 33%;
+}
+.sizes {
+    border-left: 2px solid #3F2E00;
+}
+.prices {
+    text-align: center;
+}
+.sale-date {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.section-spacer {
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+}
+.hdr-over-list {
+    padding-bottom: 1rem;
+}
+.list-spacing {
+    padding-bottom: .6rem;
+}
+.new-items-left {
+    padding-right: 5rem;
+}
+.flex-container {
+    display: flex;
+}
+.discont-items-right {
+    max-width: 32rem;
+    padding-left: 3rem;
+}
+.tomatoes-section {
+    padding-top: 2rem;
+}
+/*This just gives some space after the end of the content*/
+.disclaimer-body {
+    padding-bottom: 16rem;
+}
