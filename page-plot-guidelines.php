@@ -273,20 +273,14 @@
         </p>
       </div>
     </div>
-    <div class="indent" id="guidelines-row">
-      <div id="maintenance" onclick="print_guide(maintenance, maintenanceGuide)" class="story-box">
-        <p>
-          <b>Plot Maintenance</b></br>
-          <i>Rules to tending to your plot</i>
-        </p>
-      </div>
+    <div class="indent" id="guidelines-row-last">
       <div id="water" onclick="print_guide(water, waterGuide)" class="story-box">
         <p>
           <b>Water</b></br>
           <i>Equipment and protocols</i>
         </p>
       </div>
-      <div id="closing" onclick="print_guide(closing, closingGuide)" class="story-box">
+      <div id="closing" onclick="print_guide(closing, closingGuide)" class="custom-story-box">
         <p>
           <b>Closing Your Plot</b></br>
           <i>How to clean out your plot</i>
@@ -294,19 +288,6 @@
       </div>
     </div>
     <!--Once again, put dropdowns here-->
-    <div id="maintenanceGuide" class="guidelines-expansion hide left">
-      <div class="guideline">
-        <p>
-          This section is new
-        </p>
-        <p>
-          <b>Recommended:</b> 
-        </p>
-        <p>
-          <b>Prohibited:</b>
-        </p>
-      </div>
-    </div>
     <div id="waterGuide" class="guidelines-expansion hide middle">
       <div class="guideline">
         <p>Water costs are included in plot fees</p>
@@ -320,7 +301,7 @@
         </p>
       </div>
     </div>
-    <div id="closingGuide" class="guidelines-expansion hide right">
+    <div id="closingGuide" class="guidelines-expansion hide middle">
       <div class="guideline">
         <p>
           Gardeners must clean up plots (including perennial plots) at the end of each season. 
