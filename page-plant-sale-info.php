@@ -16,8 +16,8 @@
             <button class="plant-catalog-btn"><b>Plant Catalog</b></button>
         </div>
     </div>
-    <div class="indent main-page title"><b>Project Grow Plant Sale</b></div>   
-    <div class="indent description">
+    <div class="psi-indent psi-main-page psi-title"><b>Project Grow Plant Sale</b></div>   
+    <div class="psi-indent description">
         Every year, Project Grow holds a plant sale offering hard to find heirloom tomatoes, peppers, and basil. This year, Project Grow is offering transplants of six types (and 75 varieties) of tomatoes, 12 varieties of hot peppers, 11 different sweet peppers, and Genovese and Thai basil.
     </div>
     <div class="sale-container">
@@ -30,31 +30,22 @@
             <div class="psi-dates">
                 <div class="psi-sale-date">
                     <br/>
-                    <div><i>Friday</i></div>
+                    <div><i><?php echo get_theme_mod('plant-sale-day-of-week')?></i></div>
                     <br/>
-                    <div><b>May 8th</b></div>
+                    <div><b><?php echo get_theme_mod('plant-sale-date')?></b></div>
                     <br/>
-                    <div>4pm - 8pm</div>
-                </div>
-                <div class="psi-sale-date">
-                    <br/>
-                    <div><i>Saturday</i></div>
-                    <br/>
-                    <div><b>May 9th</b></div>
-                    <br/>
-                    <div>10am - 1pm</div>
+                    <div><?php echo get_theme_mod('plant-sale-time')?></div>
                 </div>
             </div>
             <div class="psi-prices">
                 <br/>
-                <div><b>$3.00</b></div>
-                <div><i>per plant</i></div>
+                <div><b><?php echo get_theme_mod('plant-sale-cost')?></b></div>
             </div>
-            <div class="sale-table-format psi-sizes"><br/><b>3 1/2 inch plot</b></div>
+            <div class="sale-table-format psi-sizes"><br/><b><?php echo get_theme_mod('plant-sale-size')?></b></div>
         </div>
     </div>
-    <div class="indent organic-container">
-        <div class="section-spacer title">Organic</div>
+    <div class="psi-indent organic-container">
+        <div class="section-spacer psi-title">Organic</div>
         <div class="organic-paragraph">
             The plants are grown in USDA Organic Sunshine Mix. However, they are fertilized with Fertrell 3-2-3 Garden Food. 
             Fertrell is a natural fertilizer made of blood meal, feather meal and other natural products, but is not USDA organic 
@@ -64,16 +55,16 @@
 
         </div>
     </div>
-    <div class="indent new-items-container">
-        <div class="section-spacer title">New Items</div>
+    <div class="psi-indent new-items-container">
+        <div class="section-spacer psi-title">New Items</div>
         <div class="hdr-over-list">
             Every year Project Grow strives to replace the least popular items with new varieties we have not offered before or think 
             should be grown more often. This year we are adding:<br/>
         </div>
-        <div class="flex-container">
+        <div class="psi-flex-container">
             <div class="new-items-left">
-                <div class="list-spacing"><b>Tomatoes</b></div>
-                <div class="list-spacing">- Aunt Ruby's German Green (back!)</div>
+                <div class="list-spacing"><b><?php echo get_theme_mod('psi-new-category')?></b></div>
+                <div class="list-spacing">- <?php echo get_theme_mod('psi-new-plant')?></div>
                 <div class="list-spacing">- Black Brandywine</div>
                 <div class="list-spacing">- Good Old Fashioned Red</div>
                 <div class="list-spacing">- Chocolate Cherry</div>
@@ -91,19 +82,19 @@
             </div>
         </div>
     </div>
-    <div class="indent discont-items-container">
-        <div class="section-spacer title">Discontinued Items</div>
+    <div class="psi-indent discont-items-container">
+        <div class="section-spacer psi-title">Discontinued Items</div>
         <div class="hdr-over-list">
             The following items have been dropped because of poor sales, difficulty finding good seed, or work 
             required to grow. If you were particularly fond of any of these, let us know,  we may be able to 
             sell you seed so you can grow your own.
         </div>
-        <div class="flex-container">
+        <div class="psi-flex-container">
             <div class="discont-items-left">
-                <div class="list-spacing"><b>Tomatoes</b></div>
+                <div class="list-spacing"><b><?php echo get_theme_mod('psi-discont-category')?></b></div>
                 <div class="list-spacing">- Cherokee Chocolate (replaced by Black Brandywine)</div>
                 <div class="list-spacing">- Zapotec Pleated</div>
-                <div class="list-spacing">- German Red Strawberry</div>
+                <div class="list-spacing">- <?php echo get_theme_mod('psi-discont-plant')?></div>
                 <div class="list-spacing"><b>Hot Peppers</b></div>
                 <div class="list-spacing">- Tasmanian Black (replaced by Czech Black)</div>
                 <div class="list-spacing"><b>Others</b></div>
@@ -136,8 +127,8 @@
                 recommendations.
             </div>
     </div>
-    <div class="indent disclaimer-container">
-        <div class="section-spacer title">Disclaimer</div>
+    <div class="psi-indent disclaimer-container">
+        <div class="section-spacer psi-title">Disclaimer</div>
         <div class="disclaimer-body">
             To make this work, we ask that our customers follow a few simple requests. 
             <b>Please read these limitations carefully</b>, and if you cannot meet these requirements, 
