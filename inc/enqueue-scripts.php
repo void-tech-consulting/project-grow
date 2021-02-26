@@ -47,9 +47,15 @@ add_action('wp_ajax_nopriv_my_tag_count', 'my_ajax_handler__json');
 function add_styles() {
   wp_enqueue_style( "style", get_stylesheet_uri());
   wp_enqueue_style( "home", get_theme_file_uri('/css/home.css'));
+  wp_enqueue_style( "contact", get_theme_file_uri('/css/contact.css'));
+  wp_enqueue_style( "header", get_theme_file_uri('/css/header.css'));
+  wp_enqueue_style( "footer", get_theme_file_uri('/css/footer.css'));
+  wp_enqueue_style( "example", get_theme_file_uri('/css/example.css'));
   wp_enqueue_style("home1", get_theme_file_uri('/css/home1.css'));
   wp_enqueue_style("ourpeople", get_theme_file_uri('/css/ourpeople.css'));
   wp_enqueue_style( "plant-sale-info", get_theme_file_uri('/css/plant-sale-info.css'));
   wp_enqueue_style( "growing-tips", get_theme_file_uri('/css/growing-tips.css'));
+  wp_enqueue_style( "rental-information", get_theme_file_uri('/css/rental-info.css'));
+  wp_enqueue_style( "individual-plots", get_theme_file_uri('/css/indv-plots.css'));
 }
 add_action('wp_enqueue_scripts', 'add_styles');
