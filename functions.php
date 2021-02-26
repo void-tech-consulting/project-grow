@@ -1,119 +1,73 @@
 <?php
-    require get_template_directory() . '/inc/example-post-type.php';
-    require get_template_directory() . '/inc/enqueue-scripts.php';
-    require get_template_directory() . '/inc/register-settings.php';
-    require get_template_directory() . '/inc/customizer.php';
-    require get_template_directory() . '/inc/template_functions.php';
-    
-
-  // function classes_events_customize($wp_customize) {
-  //   /*Added img just so I could style around it
-  //     Absolutely feel free to change variable names
-  //     I just needed the image to appear on the site*/
-  //   $wp_customize->add_section('classes-events-section', array(
-  //     'title' => 'Classes & Events'
-  //   ));
-
-
-  //   $wp_customize->add_setting('classes-events-img');
-
-  //   $wp_customize->add_control( new WP_Customize_Cropped_Image_control(
-  //     $wp_customize, 'classes-events-img-control', array(
-  //     'label' => 'Image',
-  //     'section' => 'classes-events-section',
-  //     'settings' => 'classes-events-img',
-  //     'width' => 750,
-  //     'height' => 750
-  //   )));
-
-
-  //   $wp_customize->add_setting('classes-events-headline', 
-  //   array('default'=> 'Example Headline Text'));
-
-  //   $wp_customize->add_control( new WP_Customize_Control($wp_customize, 'classes-events-callout-headline', array(
-  //     'label' => 'Headline', 
-  //     'section' => 'classes-events-section', 
-  //     'settings' => 'classes-events-headline'
-  //     )));
-
-  //   $wp_customize->add_setting('classes-events-paragraph', 
-  //   array('default'=> 'Example Paragraph Text'));
-
-  //   $wp_customize->add_control( new WP_Customize_Control($wp_customize, 'classes-events-callout-paragraph', array(
-  //     'label' => 'Text', 
-  //     'section' => 'classes-events-section', 
-  //     'settings' => 'classes-events-paragraph',
-  //     'type' => 'textarea'
-  //     )));
-
-  //     $wp_customize->add_setting('classes-events-location', 
-  //     array('default'=> 'Example Location Text'));
-  
-  //     $wp_customize->add_control( new WP_Customize_Control($wp_customize, 'classes-events-callout-location', array(
-  //       'label' => 'Text', 
-  //       'section' => 'classes-events-section', 
-  //       'settings' => 'classes-events-location',
-  //       'type' => 'textarea'
-  //       )));
-
-  //     $wp_customize->add_setting('classes-events-event-type', 
-  //       array('default'=> 'Example Event Type Text'));
-  
-  //     $wp_customize->add_control( new WP_Customize_Control($wp_customize, 'classes-events-callout-event-type', array(
-  //       'label' => 'Text', 
-  //       'section' => 'classes-events-section', 
-  //       'settings' => 'classes-events-event-type',
-  //       'type' => 'textarea'
-  //       )));
-
-  //     $wp_customize->add_setting('classes-events-cost', 
-  //       array('default'=> 'Example Cost Text'));
-  
-  //     $wp_customize->add_control( new WP_Customize_Control($wp_customize, 'classes-events-callout-cost', array(
-  //       'label' => 'Text', 
-  //       'section' => 'classes-events-section', 
-  //       'settings' => 'classes-events-cost',
-  //       'type' => 'textarea'
-  //       )));
-
-  //     $wp_customize->add_setting('classes-events-time', 
-  //       array('default'=> '00:00 - 00:00'));
-  
-  //     $wp_customize->add_control( new WP_Customize_Control($wp_customize, 'classes-events-callout-time', array(
-  //       'label' => 'Text', 
-  //       'section' => 'classes-events-section', 
-  //       'settings' => 'classes-events-time',
-  //       'type' => 'textarea'
-  //       )));
-
-  //     $wp_customize->add_setting('classes-events-date',  $example_repeater,
-  //       array('default'=> 'Month day, year'));
-      
-      
-  
-  //    $wp_customize->add_control( new WP_Customize_Control($wp_customize, 'classes-events-callout-date', array(
-  //      'label' => 'Text',
-  //      'section' => 'classes-events-section',
-  //      'settings' => 'classes-events-date',
-  //      'type' => 'textarea'
-  //      )));
-
-  //     $wp_customize->add_setting('classes-events-join-link');
-  
-  //     $wp_customize->add_control( new WP_Customize_Control($wp_customize, 'classes-events-callout-join-link', array(
-  //       'label' => 'Link', 
-  //       'section' => 'classes-events-section', 
-  //       'settings' => 'classes-events-join-link',
-  //       'type' => 'dropdown-pages'
-  //       )));
-  // }
-
-
-  // add_action('customize_register', 'classes_events_customize');
-
-  // add callout section for section 1
-
-  
-
+  require get_template_directory() . '/inc/example-post-type.php';
+  require get_template_directory() . '/inc/enqueue-scripts.php';
+  require get_template_directory() . '/inc/register-settings.php';
+  require get_template_directory() . '/inc/customizer.php';
+  require get_template_directory() . '/inc/template_functions.php';
 ?>
 
+<?php
+//adding images for home1
+function home1_image_placement($wp_customize)
+{
+  $wp_customize->add_section('home1-images', array(
+    'title' => 'Home Page Images'
+  ));
+
+  //upcoming events image
+  $wp_customize->add_setting('home1-upevents-image');
+  $wp_customize->add_control(new WP_Customize_Cropped_Image_Control($wp_customize, 'home1-upevents-control', array(
+    'label' => 'Upcoming Events Image',
+    'section' => 'home1-images',
+    'settings' => 'home1-upevents-image',
+    'width' => 610,
+    'height' => 407
+  )));
+
+  //latest news image
+  $wp_customize->add_setting('home1-news-image');
+  $wp_customize->add_control(new WP_Customize_Cropped_Image_Control($wp_customize, 'home1-newsimg-control', array(
+    'label' => 'Latest News Image',
+    'section' => 'home1-images',
+    'settings' => 'home1-news-image',
+    'width' => 431,
+    'height' => 613
+  )));
+}
+
+add_action('customize_register', 'home1_image_placement');
+
+
+//customizability for Our People page
+function ourpeople_customize($wp_customize)
+{
+  $wp_customize->add_section('ourpeople-content', array(
+    'title' => 'Our People Content'
+  ));
+
+  $wp_customize->add_setting('person-image');
+  $wp_customize->add_control(new WP_Customize_Cropped_Image_Control($wp_customize, 'staffimg-control', array(
+    'label' => 'Staff Image',
+    'section' => 'ourpeople-content',
+    'settings' => 'person-image',
+    'width' => 210,
+    'height' => 234
+  )));
+
+  $wp_customize->add_setting('person-name');
+  $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'staffname-control', array(
+    'label' => 'Staff Name',
+    'section' => 'ourpeople-content',
+    'settings' => 'person-name'
+  )));
+
+  $wp_customize->add_setting('person-title');
+  $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'stafftitle-control', array(
+    'label' => 'Staff Title',
+    'section' => 'ourpeople-content',
+    'settings' => 'person-title'
+  )));
+}
+
+add_action('customize_register', 'ourpeople_customize');
+?>

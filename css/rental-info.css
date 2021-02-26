@@ -1,0 +1,308 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+body {
+    font-family: 'Roboto', sans-serif;
+    color: #3F2E00;
+    font-size: 1.8rem;
+}
+  
+  /* START Reset */
+  /* Box sizing rules */
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+  
+  /* Remove default padding */
+  ul[class],
+  ol[class] {
+    padding: 0;
+  }
+  
+  /* Remove default margin */
+  body,
+  h1,
+  h2,
+  h3,
+  h4,
+  p,
+  ul[class],
+  ol[class],
+  li,
+  figure,
+  figcaption,
+  blockquote,
+  dl,
+  dd {
+    margin: 0;
+  }
+  
+  /* Set core body defaults */
+  body {
+    min-height: 100vh;
+    scroll-behavior: smooth;
+    text-rendering: optimizeSpeed;
+    line-height: 1.5;
+  }
+  /* Remove list styles on ul, ol elements with a class attribute */
+  ul[class],
+  ol[class] {
+    list-style: none;
+  }
+  /* A elements that don't have a class get default styles */
+  a:not([class]) {
+    text-decoration-skip-ink: auto;
+  }
+  /* Make images easier to work with */
+  img {
+    max-width: 100%;
+    display: block;
+  }
+  /* Inherit fonts for inputs and buttons */
+  input,
+  button,
+  textarea,
+  select {
+    font: inherit;
+  }
+  
+  html {
+    font-size: 62.5%;
+  }
+  /* END Reset */
+  /* 
+    Put styles here 
+  */
+  
+  .rental-information-subsection {
+    width: 85%;
+    margin: auto;
+    padding-top: 1.7rem;
+  }
+  
+  .rental-information-subheader {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 2.8rem;
+    line-height: 3.3rem;
+  
+    color: #3F2E00;
+  }
+
+  .plain-text {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 1.8rem;
+    line-height: 2.1rem;
+    color: #53401A;
+  }
+
+  .bolded {
+    font-weight: bold;
+  }
+  
+  .rental-info-page-header-background {
+    background-image: url(../images/rental-info/rental-info-background.png);
+    height: 26rem;
+    padding-top:3rem;
+  }
+  
+  .rental-info-header-box {
+    width: 48rem;
+    height: 20rem;
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  
+    background: rgba(93, 68, 0, 0.9);
+  }
+  
+  .rental-info-header-text {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 3rem;
+    line-height: 3.5rem;
+    color: #FFFFFF;
+  
+  }
+  
+  .garden-sites-button {
+    margin-top: 1rem;
+    width: 21.2rem;
+    height: 5.5rem;
+    left: 61.4rem;
+    top: 21.5rem;
+  
+    background: #40804D;
+    border-radius: 3rem;
+    
+    /*text*/
+    /* repetitive stuff
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 1.8rem;
+    line-height: 2.1rem;
+    */
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #FFFFFF;
+  }
+  
+  .garden-sites-button-link {
+    text-decoration: none;
+  }
+  
+
+  .important-dates-section {
+    background: #F8F5EC;
+    border: 0.1rem dashed #CEBFA1;
+    box-sizing: border-box;
+  
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+    margin-top: 2.3rem;
+    /**margin-bottom: 1.7rem;**/
+    
+  }
+  
+  .important-dates-header {
+    padding-top: 3.2rem;
+    margin: auto;
+    width: 85%;
+  }
+  
+  .timeline-container {
+    height: 35.9rem;
+    display: flex;
+    justify-content: space-around;
+    width: 80%;
+    margin: auto;
+  
+    font-family: Roboto;
+    color: #53401A;
+  
+  }
+  
+  
+  .timeline-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: right;
+    z-index: 1;
+  }
+  
+  .timeline-item-small {
+    width: 16.5rem;
+  }
+  
+  .timeline-item-medium {
+    width: 22.3rem;
+  }
+  
+  .timeline-item-large {
+    width: 31.2rem
+  }
+
+  .green-block {
+    position: absolute;
+    width: 2.565rem;
+    height: 117.979rem;
+    margin-bottom: 7rem;
+    background: #94CEA7;
+    transform: matrix(0.01, -1, 1, 0.01, 0, 0);
+  }
+   
+  .important-dates-date {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 2.1rem;
+    line-height: 2.5rem;
+    text-align: center;
+    padding-top: 5.452rem;
+  }
+  
+  .important-dates-description {
+    font-weight: 40;
+    text-align: center;
+    padding-top: 1.8rem;
+  }
+  
+  .important-dates-icons {
+    width: 8rem;
+    height: 6.9rem;
+  }
+  
+  .plot-types-container, .open-closing-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding-top: 2.3rem;
+  }
+  
+  .plot-types-item, .open-closing-types-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  
+    background: #F8F5EC;
+    border: 0.1rem dashed #CEBFA1;
+    box-sizing: border-box;
+    height: 27.2rem;
+    width: 28rem;
+  }
+  
+  .plot-types-item-header {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 2.1rem;
+    line-height: 2.5rem;
+    text-align: center;
+  
+    color: #53401A;
+    height: 4.327rem;
+    padding: 3.045rem;
+  }
+  
+  
+
+  .plot-type-info {
+    padding-left: 1.4rem;
+    padding-right: 1.4rem;
+  }
+  
+  .open-closing-container {
+  margin-bottom: 2.6rem;
+  }
+  
+  .open-closing-types-item {
+   width: 56.3rem; 
+   height: 21.7rem;
+  }
+  
+  .open-closing-plain-text {
+    margin-top: 2.3rem;
+    padding-left: 4.5rem;
+    padding-right: 4.5rem;
+  }
+  
+  .details-li {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 1.8rem;
+    line-height: 2.4rem;
+  }

@@ -1,9 +1,7 @@
 <?php
   get_header();
 ?>
-<style>
-    <?php include 'CSS/main.css'; ?>
-</style>
+
 <div class="header-img">
     <div class="center-header-box">
         <h1 id="header-title">Classes & Events</h1>
@@ -13,7 +11,7 @@
 
 
 
-</div class = "repeatable-boxes-class">
+<div class = "repeatable-boxes-class">
     <div>
         <div class = "third-try">
             <?php
@@ -35,7 +33,7 @@
                     ?>
                 <!--Start code for event page-->
         <div class="event-container">
-            <div class="event-img">
+            <div id="event-img">
                 <?php echo $media?>
             
             </div>

@@ -74,14 +74,4 @@ register_nav_menu("primary", "Top Navbar");
     );
   }
   add_action( 'customize_register', 'example_repeatable_customizer' );
-
-
-
-
-
-
-
-
-
-
 ?>

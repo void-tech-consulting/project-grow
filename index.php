@@ -3,6 +3,7 @@
   require get_template_directory() . '/inc/section_vars.php';
 ?>
 <h1>The Front Page</h1>
+<a href="rental-information.php">Hellooooo</a>
 
 <?php if (get_theme_mod($home_top_img)) { ?>
   <img 

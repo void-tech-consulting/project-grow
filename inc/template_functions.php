@@ -101,6 +101,45 @@ function onepress_sanitize_repeatable_data_field( $input, $setting ) {
 
 	return $data;
 }
+if ( ! function_exists( 'get_media_url' ) ) {
+	function get_media_url( $media = array(), $size = 'full' ) {
+		$media = wp_parse_args(
+			$media,
+			array(
+				'url' => '',
+				'id' => '',
+			)
+		);
+		$url = '';
+		if ( $media['id'] != '' ) {
+			if ( strpos( get_post_mime_type( $media['id'] ), 'image' ) !== false ) {
+				$image = wp_get_attachment_image_src( $media['id'], $size );
+				if ( $image ) {
+					$url = $image[0];
+				}
+			} else {
+				$url = wp_get_attachment_url( $media['id'] );
+			}
+		}
+		if ( $url == '' && $media['url'] != '' ) {
+			$id = attachment_url_to_postid( $media['url'] );
+			if ( $id ) {
+				if ( strpos( get_post_mime_type( $id ), 'image' ) !== false ) {
+					$image = wp_get_attachment_image_src( $id, $size );
+					if ( $image ) {
+						$url = $image[0];
+					}
+				} else {
+					$url = wp_get_attachment_url( $id );
+				}
+			} else {
+				$url = $media['url'];
+			}
+		}
+		return $url;
+	}
+}
+
 
 if ( ! function_exists( 'template_data' ) ) {
 	/**
