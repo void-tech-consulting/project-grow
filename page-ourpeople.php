@@ -16,11 +16,38 @@ get_header();
 </div>
 <span class="header-text">Who Makes Project Grow, Grow?</span>
 
-<div class="person-box">
-    <img src="<?php echo wp_get_attachment_url(get_theme_mod('person-image')) ?>" alt="" class="person-img">
-    <div class="person-name"><?php echo get_theme_mod('person-name')  ?></div>
-    <div class="person-title"><?php echo get_theme_mod('person-title') ?></div>
+<div class="person-repeater">
+    <?php
+    require 'inc/section_vars.php';
+    // get_example_data is in /inc/template_functions.php
+    $data  = get_our_people_data($our_people_members);
+    if (!empty($data)) {
+    ?>
+        <?php
+        foreach ($data as $k => $f) {
+            $media = '';
+            if ($f['member_image']) {
+                // get_media_url function is in template_functions.php
+                $media = '<img class="person-img" src="' . esc_url(get_media_url($f['member_image'])) . '">';
+            }
+        ?>
+            <div class="person-box-container">
+                <div class="person-box">
+                    <?php echo $media ?>
+                    <div class="person-name"><?php echo $f['member_name']  ?></div>
+                    <div class="person-title"><?php echo $f['member_title'] ?></div>
+                </div>
+            </div>
+
+
+        <?php
+        }
+        ?>
+    <?php } else {
+    } ?>
 </div>
+
+
 
 
 <?php get_footer(); ?>

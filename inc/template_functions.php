@@ -1,5 +1,4 @@
 <?php
-
 function onepress_sanitize_repeatable_data_field( $input, $setting ) {
   $control = $setting->manager->get_control( $setting->id );
 
@@ -127,13 +126,80 @@ if ( ! function_exists( 'template_data' ) ) {
 	}
 }
 
+if (!function_exists('get_media_url')) {
+	function get_media_url($media = array(), $size = 'full')
+	{
+		$media = wp_parse_args(
+			$media,
+			array(
+				'url' => '',
+				'id' => '',
+			)
+		);
+		$url = '';
+		if ($media['id'] != '') {
+			if (strpos(get_post_mime_type($media['id']), 'image') !== false) {
+				$image = wp_get_attachment_image_src($media['id'], $size);
+				if ($image) {
+					$url = $image[0];
+				}
+			} else {
+				$url = wp_get_attachment_url($media['id']);
+			}
+		}
+		if ($url == '' && $media['url'] != '') {
+			$id = attachment_url_to_postid($media['url']);
+			if ($id) {
+				if (strpos(get_post_mime_type($id), 'image') !== false) {
+					$image = wp_get_attachment_image_src($id, $size);
+					if ($image) {
+						$url = $image[0];
+					}
+				} else {
+					$url = wp_get_attachment_url($id);
+				}
+			} else {
+				$url = $media['url'];
+			}
+		}
+		return $url;
+	}
+}
+
+  
+if (!function_exists('get_growing_tips_data')) {
+	function get_growing_tips_data($section)
+	{
+		return template_data($section, array(
+			'topic' => '',
+			'link' => ''
+		));
+	}
+}
+
+if (!function_exists('get_our_people_data')) {
+	/**
+	 * Get Our People Data
+	 *
+	 * @since 1.1.4
+	 * @return array
+	 */
+	function get_our_people_data($section)
+	{
+		return template_data($section, array(
+			'member_name' => '',
+			'member_title' => ''
+		));
+	}
+}
+
 if ( ! function_exists( 'get_example_data' ) ) {
 	/**
 	 * Get Example Data
 	 *
 	 * @since 1.1.4
 	 * @return array
-	 */
+	 */  
 	function get_example_data($section) {
 		return template_data($section, array(
 						'question' => '',

@@ -54,6 +54,7 @@ function add_styles() {
   wp_enqueue_style("home1", get_theme_file_uri('/css/home1.css'));
   wp_enqueue_style("ourpeople", get_theme_file_uri('/css/ourpeople.css'));
   wp_enqueue_style( "plant-sale-info", get_theme_file_uri('/css/plant-sale-info.css'));
+  wp_enqueue_style( "growing-tips", get_theme_file_uri('/css/growing-tips.css'));
   wp_enqueue_style( "rental-information", get_theme_file_uri('/css/rental-info.css'));
   wp_enqueue_style( "individual-plots", get_theme_file_uri('/css/indv-plots.css'));
 }
