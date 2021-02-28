@@ -54,7 +54,35 @@ body {
     padding-left: 10rem;
     padding-right: 10rem;
 }
-.wwd-main-page {
+.wwd-new-section {
     padding-top: 2rem;
     padding-bottom: 2rem;
+}
+.wwd-description {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    border-top: 1px solid #CEBFA1;
+    border-bottom: 1px solid #CEBFA1;
+    background-color: #F8F5EC;
+}
+.wwd-pg-space {
+    padding: .75rem 0;
+}
+#wwd-super-title {
+    font-size: 4rem;
+    font-weight: 900;
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+}
+#wwd-flex-container {
+    display: flex;
+}
+#wwd-left-side-container {
+    max-width: 46%;
+}
+#wwd-right-side-container {
+    max-width: 46%;
+}
+.wwd-right-align {
+    text-align: end;
 }
