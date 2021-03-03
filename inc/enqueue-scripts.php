@@ -57,5 +57,6 @@ function add_styles() {
   wp_enqueue_style( "growing-tips", get_theme_file_uri('/css/growing-tips.css'));
   wp_enqueue_style( "rental-information", get_theme_file_uri('/css/rental-info.css'));
   wp_enqueue_style( "individual-plots", get_theme_file_uri('/css/indv-plots.css'));
+  wp_enqueue_style( "master-composter", get_theme_file_uri('/css/master-composter.css'));
 }
 add_action('wp_enqueue_scripts', 'add_styles');
