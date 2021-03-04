@@ -21,23 +21,39 @@ get_header();
   <div style="width:82%;padding-top:3rem;padding-bottom:3rem;margin:auto;">
     The Compost Education Center (CEC) of Project Grow is charged with managing two composting-related activities, that of producing compost, and using this process for educational purposes - learning how to compost. This mission is based on the appreciation that composting is essential to community gardening.
     <br><br>
-    What is composting?  Composting is the managed process of speeding up the way nature recycle, by creating the ideal conditions for the rapid decomposition of organic materials by effective decomposers.   For more information, read the composting guides and related literature in the Handout section below.
+    What is composting? Composting is the managed process of speeding up the way nature recycle, by creating the ideal conditions for the rapid decomposition of organic materials by effective decomposers. For more information, read the composting guides and related literature in the Handout section below.
     <br><br>
-    Our main task at CEC is to encourage all community garden sites to adopt a standard, manageable composting system. 
+    Our main task at CEC is to encourage all community garden sites to adopt a standard, manageable composting system.
     <br><br>
   </div>
 </div>
 
 <span class="master-composter-header-text">Handouts and Guidelines</span>
 <div class="master-composter-item-container">
-  
+  <?php
+  require 'inc/section_vars.php';
+  $data = get_mastcomp_data($master_composter_hg);
+  if (!empty($data)) {
+    foreach ($data as $k => $f) {
+  ?>
 
+      <a href="<?php echo $f['hgpage_link'] ?>">
+        <div class="hgpage_title">
+          <?php echo $f['hgpage_title'] ?>
+        </div>
+        <div class="hgpage_description">
+          <?php echo $f['hgpage_description'] ?>
+        </div>
+      </a>
 
+  <?php
+    }
+  }
+  ?>
 </div>
 
 <span class="master-composter-header-text"> CEC Reports, Presentations and Special Projects</span>
 <div class="master-composter-item-container">
-
 
 </div>
 
@@ -48,8 +64,8 @@ get_header();
 
 <span class="master-composter-header-text">Contacts</span>
 <div class="master-composter-item-container">
-  
-  
+
+
 </div>
 
 

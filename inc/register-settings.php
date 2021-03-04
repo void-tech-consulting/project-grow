@@ -238,52 +238,54 @@ add_action('customize_register', 'our_people_customizer');
 
 
 // Example of how to use a repeatable box
-function example_repeatable_customizer($wp_customize) {
-    require 'section_vars.php';  
-    require_once 'controller.php';
-    
-    $wp_customize->add_section($example_section, array(
-      'title' => 'Example Home Repeaters',
-    ));
-    
-    $wp_customize->add_setting(
+function example_repeatable_customizer($wp_customize)
+{
+  require 'section_vars.php';
+  require_once 'controller.php';
+
+  $wp_customize->add_section($example_section, array(
+    'title' => 'Example Home Repeaters',
+  ));
+
+  $wp_customize->add_setting(
+    $example_repeater,
+    array(
+      'sanitize_callback' => 'onepress_sanitize_repeatable_data_field',
+      'transport' => 'refresh',
+    )
+  );
+
+  $wp_customize->add_control(
+    new Onepress_Customize_Repeatable_Control(
+      $wp_customize,
       $example_repeater,
       array(
-          'sanitize_callback' => 'onepress_sanitize_repeatable_data_field',
-          'transport' => 'refresh',
-      ) );
-  
-    $wp_customize->add_control(
-        new Onepress_Customize_Repeatable_Control(
-            $wp_customize,
-            $example_repeater,
-            array(
-                'label' 		=> esc_html__('Example Q & A Repeater'),
-                'description'   => '',
-                'section'       => $example_section,
-                'live_title_id' => 'question',
-                'title_format'  => esc_html__('[live_title]'), // [live_title]
-                'max_item'      => 10, // Maximum item can add
-                'limited_msg' 	=> wp_kses_post( __( 'Max items added' ) ),
-                'fields'    => array(
-                    'question'  => array(
-                        'title' => esc_html__('Question'),
-                        'type'  =>'text',
-                    ),
-                    'answer'  => array(
-                        'title' => esc_html__('Answer'),
-                        'type'  =>'editor',
-                    ),
-                    'link'  => array(
-                        'title' => esc_html__('Link'),
-                        'type'  =>'url',
-                    ),
-                ),
-            )
-        )
-    );
-  }
-  add_action( 'customize_register', 'example_repeatable_customizer' );
+        'label'     => esc_html__('Example Q & A Repeater'),
+        'description'   => '',
+        'section'       => $example_section,
+        'live_title_id' => 'question',
+        'title_format'  => esc_html__('[live_title]'), // [live_title]
+        'max_item'      => 10, // Maximum item can add
+        'limited_msg'   => wp_kses_post(__('Max items added')),
+        'fields'    => array(
+          'question'  => array(
+            'title' => esc_html__('Question'),
+            'type'  => 'text',
+          ),
+          'answer'  => array(
+            'title' => esc_html__('Answer'),
+            'type'  => 'editor',
+          ),
+          'link'  => array(
+            'title' => esc_html__('Link'),
+            'type'  => 'url',
+          ),
+        ),
+      )
+    )
+  );
+}
+add_action('customize_register', 'example_repeatable_customizer');
 
 function master_composter_customizer($wp_customize)
 {
@@ -325,7 +327,7 @@ function master_composter_customizer($wp_customize)
           ),
           'hgpage_link'  => array(
             'title' => esc_html__('Page Link'),
-            'type'  => 'text',
+            'type'  => 'url',
           ),
         ),
       )
@@ -363,7 +365,7 @@ function master_composter_customizer($wp_customize)
           ),
           'rpspage_link'  => array(
             'title' => esc_html__('Page Link'),
-            'type'  => 'text',
+            'type'  => 'url',
           ),
         ),
       )
@@ -397,7 +399,7 @@ function master_composter_customizer($wp_customize)
           ),
           'pa_link'  => array(
             'title' => esc_html__('Partner/Advisor Link'),
-            'type'  => 'text',
+            'type'  => 'url',
           ),
         ),
       )
@@ -435,7 +437,7 @@ function master_composter_customizer($wp_customize)
           ),
           'contact_email'  => array(
             'title' => esc_html__('Contact Link'),
-            'type'  => 'text',
+            'type'  => 'url',
           ),
         ),
       )
@@ -443,3 +445,4 @@ function master_composter_customizer($wp_customize)
   );
 }
 add_action('customize_register', 'master_composter_customizer');
+?>
