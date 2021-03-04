@@ -307,7 +307,7 @@ function master_composter_customizer($wp_customize)
   $wp_customize->add_control(
     new Onepress_Customize_Repeatable_Control(
       $wp_customize,
-      $master_composoter_hg,
+      $master_composter_hg,
       array(
         'label'     => esc_html__('Handouts and Guidelines'),
         'description'   => '',
@@ -345,7 +345,7 @@ function master_composter_customizer($wp_customize)
   $wp_customize->add_control(
     new Onepress_Customize_Repeatable_Control(
       $wp_customize,
-      $master_composoter_rps,
+      $master_composter_rps,
       array(
         'label'     => esc_html__('CEC Reports, Presentations, and Special Projects'),
         'description'   => '',
@@ -383,7 +383,7 @@ function master_composter_customizer($wp_customize)
   $wp_customize->add_control(
     new Onepress_Customize_Repeatable_Control(
       $wp_customize,
-      $master_composoter_pa,
+      $master_composter_pa,
       array(
         'label'     => esc_html__('Community Partners and Advisors'),
         'description'   => '',
@@ -417,7 +417,7 @@ function master_composter_customizer($wp_customize)
   $wp_customize->add_control(
     new Onepress_Customize_Repeatable_Control(
       $wp_customize,
-      $master_composoter_contacts,
+      $master_composter_contacts,
       array(
         'label'     => esc_html__('Contacts'),
         'description'   => '',
