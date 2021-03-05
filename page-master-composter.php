@@ -54,17 +54,83 @@ get_header();
 
 <span class="master-composter-header-text"> CEC Reports, Presentations and Special Projects</span>
 <div class="master-composter-item-container">
+  <?php
+  require 'inc/section_vars.php';
+  $data = get_mastcomp_data($master_composter_rps);
+  if (!empty($data)) {
+    foreach ($data as $k => $f) {
+  ?>
 
+      <a href="<?php echo $f['rpspage_link'] ?>">
+        <div class="rpspage_title">
+          <?php echo $f['rpspage_title'] ?>
+        </div>
+        <div class="rpspage_description">
+          <?php echo $f['rpspage_description'] ?>
+        </div>
+      </a>
+
+  <?php
+    }
+  }
+  ?>
 </div>
 
 <span class="master-composter-header-text">Community Partners and Advisors</span>
 <div class="master-composter-item-container">
-
+  <?php
+  require 'inc/section_vars.php';
+  $data = get_mastcomp_data($master_composter_pa);
+  if (!empty($data)) {
+    foreach ($data as $k => $f) {
+  ?>
+      <a href="<?php echo $f['pa_link'] ?>">
+        <div class="pa_name">
+          <?php echo $f['pa_name'] ?>
+        </div>
+        <div class="pa-learn-more">
+          Learn More
+        </div>
+      </a>
+  <?php
+    }
+  }
+  ?>
 </div>
 
 <span class="master-composter-header-text">Contacts</span>
 <div class="master-composter-item-container">
+  <?php
+  require 'inc/section_vars.php';
+  $data = get_mastcomp_data($master_composter_contacts);
+  if (!empty($data)) {
+    foreach ($data as $k => $f) {
+  ?>
+      <div class="mc-contact-box">
+        <div class="mc-contact-name">
+          <?php echo $f['contact_name'] ?>
+        </div>
+        <div class="mc-contact-title">
+          <?php echo $f['contact_title'] ?> 
+        </div>
+        <div class="mc-contact-email">
+          <?php echo $f['contact_email'] ?>
+        </div>
+      </div>
 
+      <a href="<?php echo $f['hgpage_link'] ?>">
+        <div class="hgpage_title">
+          <?php echo $f['hgpage_title'] ?>
+        </div>
+        <div class="hgpage_description">
+          <?php echo $f['hgpage_description'] ?>
+        </div>
+      </a>
+
+  <?php
+    }
+  }
+  ?>
 
 </div>
 

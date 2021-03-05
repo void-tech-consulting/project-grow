@@ -422,7 +422,7 @@ function master_composter_customizer($wp_customize)
         'label'     => esc_html__('Contacts'),
         'description'   => '',
         'section'       => $master_composter_section,
-        'live_title_id' => 'contact_title',
+        'live_title_id' => 'contact_name',
         'title_format'  => esc_html__('[live_title]'), // [live_title]
         'max_item'      => 50, // Maximum item can add
         'limited_msg'   => wp_kses_post(__('Max items added')),
@@ -436,8 +436,8 @@ function master_composter_customizer($wp_customize)
             'type'  => 'text',
           ),
           'contact_email'  => array(
-            'title' => esc_html__('Contact Link'),
-            'type'  => 'url',
+            'title' => esc_html__('Contact Email'),
+            'type'  => 'text',
           ),
         ),
       )
