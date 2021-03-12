@@ -29,6 +29,18 @@ get_header();
 </div>
 
 <span class="master-composter-header-text">Handouts and Guidelines</span>
+<!--
+  <div class="master-composter-large-box">
+    <div class="master-composter-large-box-sidebar"></div>
+    <div class="master-composter-large-box-textbox">
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facere, magnam pariatur! Commodi, laborum sint minima sed nulla accusamus autem nam libero, dolor iure reprehenderit modi? Vel minima enim excepturi sequi?
+    </div>
+  </div>
+-->
+
+
+
+
 <div class="master-composter-item-container">
   <?php
   require 'inc/section_vars.php';
@@ -36,16 +48,19 @@ get_header();
   if (!empty($data)) {
     foreach ($data as $k => $f) {
   ?>
-
-      <a href="<?php echo $f['hgpage_link'] ?>">
-        <div class="hgpage_title">
-          <?php echo $f['hgpage_title'] ?>
-        </div>
-        <div class="hgpage_description">
-          <?php echo $f['hgpage_description'] ?>
-        </div>
-      </a>
-
+    <div class="master-composter-large-box">
+      <div class="master-composter-large-box-sidebar"></div>
+      <div class="master-composter-large-box-textbox">
+        <a href="<?php echo $f['hgpage_link'] ?>" class="master-composter-no-style-link">
+          <div class="hgpage_title">
+            <?php echo $f['hgpage_title'] ?>
+          </div>
+          <div class="hgpage_description">
+            <?php echo $f['hgpage_description'] ?>
+          </div>
+        </a>
+      </div>
+    </div>
   <?php
     }
   }
@@ -60,15 +75,19 @@ get_header();
   if (!empty($data)) {
     foreach ($data as $k => $f) {
   ?>
-
-      <a href="<?php echo $f['rpspage_link'] ?>">
-        <div class="rpspage_title">
-          <?php echo $f['rpspage_title'] ?>
+      <div class="master-composter-large-box">
+        <div class="master-composter-large-box-sidebar"></div>
+        <div class="master-composter-large-box-textbox">
+          <a href="<?php echo $f['rpspage_link'] ?>" class="master-composter-no-style-link">
+            <div class="rpspage_title">
+              <?php echo $f['rpspage_title'] ?>
+            </div>
+            <div class="rpspage_description">
+              <?php echo $f['rpspage_description'] ?>
+            </div>
+          </a>
         </div>
-        <div class="rpspage_description">
-          <?php echo $f['rpspage_description'] ?>
-        </div>
-      </a>
+      </div>
 
   <?php
     }

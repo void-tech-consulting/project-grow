@@ -133,3 +133,62 @@
     margin-bottom: 5.5rem;
   }
   
+  .master-composter-large-box {
+    display: flex;
+    flex-direction: row;
+    padding-right: 3.8rem;
+    width: 23.4rem;
+  }
+  
+
+  .master-composter-large-box-sidebar {
+    width: 3.2rem;
+    height: 26.7rem;
+    background: #CEBFA1;
+    /*transform: rotate(-90deg) translate(-11.7rem, 11.7rem);*/
+    
+  }
+
+  .master-composter-large-box-textbox{
+    width: 20.2rem;
+    height: 26.544rem;
+    background: #E8E0CF;
+  }
+
+  .master-composter-large-box-container {
+    display: flex;
+    flex-direction: row;
+  }
+
+.hgpage_title, .rpspage_title {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 21px;
+  text-align: center;
+
+  color: #53401A;
+  padding-top: 5.694rem;
+}
+.hgpage_description, .rpspage_description{
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 21px;
+  text-align: center;
+
+  color: #53401A;
+  padding-top: 1rem;
+  
+}
+
+.rpspage_title {
+  padding-top: 1.462rem;
+}
+
+.rpspage_description {
+  padding-top: 1.362rem;
+}

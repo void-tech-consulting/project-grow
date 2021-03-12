@@ -360,7 +360,7 @@ function master_composter_customizer($wp_customize)
             'type'  => 'text',
           ),
           'rpspage_description'  => array(
-            'title' => esc_html__('Page Title'),
+            'title' => esc_html__('Page Description'),
             'type'  => 'text',
           ),
           'rpspage_link'  => array(
