@@ -97,20 +97,31 @@ get_header();
 
 <span class="master-composter-header-text">Community Partners and Advisors</span>
 <div class="master-composter-item-container">
+  <!--
+    <div class="master-composter-small-box">
+      <div class="master-composter-small-box-description">
+        testingggg
+      </div>
+      <div class="master-composter-small-box-link" >
+        <div><a class="master-composter-no-style-link" style="color:white" href="https:google.com">Learn More</a></div>
+      </div>
+    </div>
+    -->
   <?php
   require 'inc/section_vars.php';
   $data = get_mastcomp_data($master_composter_pa);
   if (!empty($data)) {
     foreach ($data as $k => $f) {
   ?>
-      <a href="<?php echo $f['pa_link'] ?>">
-        <div class="pa_name">
+
+      <div class="master-composter-small-box">
+        <div class="master-composter-small-box-description">
           <?php echo $f['pa_name'] ?>
         </div>
-        <div class="pa-learn-more">
-          Learn More
+        <div class="master-composter-small-box-link" >
+          <div><a class="master-composter-no-style-link" style="color:white" href="<?php echo $f['pa_link'] ?>">Learn More</a></div>
         </div>
-      </a>
+      </div>
   <?php
     }
   }
@@ -119,12 +130,36 @@ get_header();
 
 <span class="master-composter-header-text">Contacts</span>
 <div class="master-composter-item-container">
+  <!--
+    <div class="master-composter-contact-box">
+      <span class="master-composter-contact-box-name"><span> JOOOOOOOOOo</span></span>
+      <div class="master-composter-contact-box-description">
+        <span class="master-composter-contact-box-title"><span>dude</span></span>
+        <span class="master-composter-contact-box-email"><span>dude@gmail.com</span></span>
+      </div>
+      <div class="master-composter-contact-box-link" >
+        <div><a class="master-composter-no-style-link" style="color:white" href="mailto:aaa@umich.edu">Email</a></div>
+      </div>
+    </div>
+  -->
+
   <?php
   require 'inc/section_vars.php';
   $data = get_mastcomp_data($master_composter_contacts);
   if (!empty($data)) {
     foreach ($data as $k => $f) {
   ?>
+    <div class="master-composter-contact-box">
+      <span class="master-composter-contact-box-name"><span> <?php echo $f['contact_name'] ?></span></span>
+      <div class="master-composter-contact-box-description">
+        <span class="master-composter-contact-box-title"><span><?php echo $f['contact_title'] ?> </span></span>
+        <span class="master-composter-contact-box-email"><span><?php echo $f['contact_email'] ?></span></span>
+      </div>
+      <div class="master-composter-contact-box-link" >
+        <div><a class="master-composter-no-style-link" style="color:white" href="mailto:<?php echo $f['contact_email'] ?>">Email</a></div>
+      </div>
+    </div>
+      <!--
       <div class="mc-contact-box">
         <div class="mc-contact-name">
           <?php echo $f['contact_name'] ?>
@@ -145,6 +180,7 @@ get_header();
           <?php echo $f['hgpage_description'] ?>
         </div>
       </a>
+    -->
 
   <?php
     }

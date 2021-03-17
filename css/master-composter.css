@@ -12,7 +12,7 @@
     
   }
   .master-composter-item-container>* {
-    flex: 0 0 31%;
+    flex: 0 0 23%;
     margin: 1%;
   }
   
@@ -136,8 +136,9 @@
   .master-composter-large-box {
     display: flex;
     flex-direction: row;
-    padding-right: 3.8rem;
     width: 23.4rem;
+    align-items: center;
+    justify-content: center;
   }
   
 
@@ -155,10 +156,139 @@
     background: #E8E0CF;
   }
 
-  .master-composter-large-box-container {
+
+  .master-composter-small-box {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    width: 23.4rem;
+    align-items: center;
+    justify-content: center;
   }
+
+  .master-composter-small-box-description {
+    width: 23.4rem;
+    height: 10rem;
+    background: #F8F5EC;
+    border: 1px dashed #CEBFA1;
+    box-sizing: border-box;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 21px;
+    line-height: 25px;
+    text-align: center;
+
+    color: #53401A;
+    padding-top: 2.2rem;
+          
+  }
+
+  .master-composter-small-box-link {
+    width:23.4rem;
+    height: 4.5rem;
+
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 23px;
+
+    /* identical to box height */
+    text-align: center;
+
+    color: #FFFFFF;
+    background: #40804D;
+    display: flex;
+    justify-content: center;  
+    align-items: center;
+
+  }
+
+  .master-composter-contact-box {
+    display: flex;
+    flex-direction: column;
+    width: 23.4rem;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .master-composter-contact-box-name {
+    height: 4.7rem;
+    background: #F8F5EC;
+    border: 1px dashed #CEBFA1;
+    box-sizing: border-box;
+
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 21px;
+    line-height: 25px;
+    text-align: center;
+
+    color: #53401A;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width:23.4rem;
+  }
+
+  .master-composter-contact-box-description {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #F8F5EC;
+    border: 1px dashed #CEBFA1;
+    box-sizing: border-box;
+    width:23.4rem;
+    height: 9rem;
+  }
+
+  .master-composter-contact-box-title {
+    padding-top: 1.3rem;
+    font-family: Roboto;
+    font-style: italic;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 21px;
+    text-align: center;
+
+    color: #53401A;
+  }
+
+  .master-composter-contact-box-email {
+    padding-top: 1.5rem;
+    
+    font-family: Roboto;
+
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 21px;
+    text-align: center;
+
+    color: #53401A;
+  }
+
+  .master-composter-contact-box-link {
+    width:23.4rem;
+    height: 4.5rem;
+
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 23px;
+
+    /* identical to box height */
+    text-align: center;
+
+    color: #FFFFFF;
+    background: #40804D;
+    display: flex;
+    justify-content: center;  
+    align-items: center;
+  }
+
 
 .hgpage_title, .rpspage_title {
   font-family: Roboto;
