@@ -156,7 +156,7 @@ get_header();
         <span class="master-composter-contact-box-email"><span><?php echo $f['contact_email'] ?></span></span>
       </div>
       <div class="master-composter-contact-box-link" >
-        <div><a class="master-composter-no-style-link" style="color:white" href="mailto:<?php echo $f['contact_email'] ?>">Email</a></div>
+        <div><a class="master-composter-no-style-link" style="color:white" href="mailto:<?php echo $f['contact_email'] ?>">Email <?php echo strtok($f['contact_name'],' ') ?></a></div>
       </div>
     </div>
       <!--
