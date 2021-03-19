@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+body {
+    font-family: 'Roboto', sans-serif;
+    color: #3F2E00;
+    font-size: 1.8rem;
+    width: unset;
+}
+/* gs for Garden Sites to make elements unique */
+#gs-header-img {
+    /*Flex box to allow moving the brown center box*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 25rem; /*Just for scale, looks like 20rem is a good size*/
+    background-size: cover; /*Take up the whole space*/
+    background-image: url("../images/garden-sites-banner.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: aqua; /*Should never show if image is well sized*/
+    
+}
+#gs-center-header-box {
+    /*Flex box to allow moving the button*/
+    display: flex;
+    flex-direction: column;
+
+    position: absolute;
+    padding: 4rem 10rem;
+    background-color: rgba(93,68,0,.9);    
+}
+#gs-header-title {
+    color: white;
+    font-size: 3rem;
+    text-align: center;
+}
+#gs-content-wrapper {
+    display: flex;
+}
+#gs-sites-wrapper {
+    width: 66%;
+}
+.gs-site {
+    background-color: #F8F5EC;
+}
+#gs-map {
+    width: 34%;
+    height: 480px; /* Consider adding JS to make height proportional to width, on screen change */
+}

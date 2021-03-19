@@ -58,5 +58,6 @@ function add_styles() {
   wp_enqueue_style( "rental-information", get_theme_file_uri('/css/rental-info.css'));
   wp_enqueue_style( "individual-plots", get_theme_file_uri('/css/indv-plots.css'));
   wp_enqueue_style( "what-we-do", get_theme_file_uri('/css/what-we-do.css'));
+  wp_enqueue_style( "garden-sites", get_theme_file_uri('/css/garden-sites.css'));
 }
 add_action('wp_enqueue_scripts', 'add_styles');
