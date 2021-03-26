@@ -57,6 +57,10 @@
         </div>
     </div>
 </div>
-
-
+<div class="contact-form-text">
+    <?php 
+    $shortcode = get_theme_mod('contact-form-shortcode');
+    echo do_shortcode($shortcode);
+    ?>
+</div>
 <?php get_footer(); ?>

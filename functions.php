@@ -70,4 +70,19 @@ function ourpeople_customize($wp_customize)
 }
 
 add_action('customize_register', 'ourpeople_customize');
+
+
+function contact_form_customize($wp_customize) {
+    $wp_customize->add_section('contact-form', array(
+        'title' => 'Contact Form'
+    ));
+
+    $wp_customize->add_setting('contact-form-shortcode');
+    $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'shortcode-control', array(
+        'label' => 'Contact Form Shortcode',
+        'section' => 'contact-form',
+        'settings' => 'contact-form-shortcode'
+    )));
+}
+add_action('customize_register', 'contact_form_customize');
 ?>
