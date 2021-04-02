@@ -4,21 +4,21 @@ register_nav_menu("primary", "Top Navbar");
 
 
 
-  function example_repeatable_customizer($wp_customize) {
-    require 'section_vars.php';  
+function example_repeatable_customizer($wp_customize) {
+    require 'section_vars.php';
     require_once 'controller.php';
-    
+
     $wp_customize->add_section($example_section, array(
-      'title' => 'Classes & Events Repeater',
+        'title' => 'Classes & Events Repeater',
     ));
-    
+
     $wp_customize->add_setting(
-      $example_repeater,
-      array(
-          'sanitize_callback' => 'onepress_sanitize_repeatable_data_field',
-          'transport' => 'refresh',
-      ) );
-  
+        $example_repeater,
+        array(
+            'sanitize_callback' => 'onepress_sanitize_repeatable_data_field',
+            'transport' => 'refresh',
+        ) );
+
     $wp_customize->add_control(
         new Onepress_Customize_Repeatable_Control(
             $wp_customize,
@@ -29,7 +29,7 @@ register_nav_menu("primary", "Top Navbar");
                 'section'       => $example_section,
                 'live_title_id' => 'question',
                 'title_format'  => esc_html__('[live_title]'), // [live_title]
-                'max_item'      => 10, // Maximum item can add
+                'max_item'      => 20, // Maximum item can add
                 'limited_msg' 	=> wp_kses_post( __( 'Max items added' ) ),
                 'fields'    => array(
                     'Image'  => array(
@@ -72,16 +72,57 @@ register_nav_menu("primary", "Top Navbar");
             )
         )
     );
-  }
-  add_action( 'customize_register', 'example_repeatable_customizer' );
+}
+add_action( 'customize_register', 'example_repeatable_customizer' );
 
 
+function garden_sites_repeater($wp_customize) {
+    require 'section_vars.php';
+    require_once 'controller.php';
 
+    $wp_customize->add_section('garden-sites-section', array(
+        'title' => 'Garden Sites Repeater',
+    ));
 
+    $wp_customize->add_setting('garden-sites-repeater',
+        array(
+            'sanitize_callback' => 'onepress_sanitize_repeatable_data_field',
+            'transport' => 'refresh',
+        ) );
 
-
-
-
-
-
+    $wp_customize->add_control(
+        new Onepress_Customize_Repeatable_Control(
+            $wp_customize,
+            'garden-sites-repeater',
+            array(
+                'label' 		=> esc_html__('Garden Sites Repeater'),
+                'description'   => '',
+                'section'       => 'garden-sites-section',
+                'live_title_id' => 'Site_Number',
+                'title_format'  => esc_html__('[live_title]'), // [live_title]
+                'max_item'      => 100, // Maximum item can add
+                'limited_msg' 	=> wp_kses_post( __( 'Max sites added' ) ),
+                'fields'    => array(
+                    'Site_Number'  => array(
+                        'title' => esc_html__('Site Number'),
+                        'type'  =>'text',
+                    ),
+                    'Site_Name'  => array(
+                        'title' => esc_html__('Site Name'),
+                        'type'  =>'text',
+                    ),
+                    'Plot_Capacity'  => array(
+                        'title' => esc_html__('Plot Capacity'),
+                        'type'  =>'text',
+                    ),
+                    'Location'  => array(
+                        'title' => esc_html__('Location'),
+                        'type'  =>'text',
+                    ),
+                ),
+            )
+        )
+    );
+}
+add_action( 'customize_register', 'garden_sites_repeater' );
 ?>

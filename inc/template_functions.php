@@ -186,4 +186,21 @@ if ( ! function_exists( 'get_example_data' ) ) {
 		));
 	}
 }
+
+if(!function_exists('get_gs_data')) {
+	/**
+	 * Get Garden Sites Data
+	 *
+	 * @since 1.1.4
+	 * @return array
+	 */
+	function get_gs_data($section) {
+		return template_data($section, array(
+			'Site_Number' => '',
+        	'Site_Name' => '',
+			'Plot_Capacity' => '',
+		    'Location' => ''
+		));
+	}
+}
 ?>
