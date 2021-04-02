@@ -17,4 +17,5 @@
   $master_composter_rps = 'master_composter_reports_presentations_specialprojects';
   $master_composter_pa = 'master_composter_partners_advisors';
   $master_composter_contacts = 'master_composter_contacts';
+  $apply_for_plot_form = 'apply_for_plot_form';
 ?>

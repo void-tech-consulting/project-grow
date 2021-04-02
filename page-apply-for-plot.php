@@ -37,4 +37,14 @@ get_header();
     <div class="apply-payment-method">
         <!-- payment method handling here -->
     </div>
+    <p>testing below</p>
+    <div class="apply_for_plot_form-text">
+        <?php 
+        # [forminator_form id="105"]
+        $shortcode = get_theme_mod('apply_for_plot_form-shortcode');
+        echo do_shortcode($shortcode);
+        ?>
+    </div>
+
+
 </div>
