@@ -14,6 +14,12 @@ get_header();
     <div class="apply-header">
         Gardener Application Form
     </div>
+    <p>
+        <br>
+        <b>Terms of Sale:</b> This is an application, not a registration. Unless you are a returning gardener applying for the same plot you gardened last year, this application does not guarantee you a garden plot. We typically begin assigning plots to new gardeners after March 15th on a first come first serve basis and by availability at your preferred site/s.
+        <br><br>
+        <b>If we are unable to confirm you for a plot, your application fee will be refunded.</b>
+    </p>
     <div class="apply-form-info">
         <div class="apply-application">
             <!-- php application form thing here -->

@@ -3,6 +3,8 @@
   height: 26rem;
   padding-top: 3rem;
   margin-bottom: 3rem;
+  display: flex;
+  align-items: center;
 }
 
 .header-box {
