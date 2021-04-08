@@ -34,8 +34,17 @@ body {
     font-size: 3rem;
     text-align: center;
 }
-#gs-content-wrapper {
-    display: flex;
+.gs-apply-plot{
+    align-self: center;
+    margin: 1rem;
+    padding: 1rem 3rem;
+    border-radius: 40px;
+    border: 0 solid rgba(64,128,77,1); /*remove shadow*/
+    background-color: rgba(64,128,77,1); /*Format allows easy change of opacity*/
+    width: fit-content;
+    text-align: center;
+    text-decoration: none;
+    color: white;
 }
 #gs-sites-wrapper {
     width: 66%;
@@ -48,10 +57,33 @@ body {
     border: 2px solid #CEBFA1;
     padding: 1rem .5rem 1rem 2rem;
     text-align: center;
+    min-height: 15rem;
 }
 #gs-map {
     width: 34%;
     height: 480px; /* Consider adding JS to make height proportional to width, on screen change */
+}
+#gs-search-bar{
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 0;
+    background-color: #CEBFA1;
+    white-space: nowrap;
+    text-align: center;
+    font-weight: 900;
+    font-size: 2.6rem;
+}
+#gs-site-title{
+    padding-left: 11rem;
+}
+#gs-plot-title{
+    padding-left: 8rem;
+}
+#gs-location-title{
+    padding-left: 10rem;
+}
+.gs-align-center{
+    align-content: center;
 }
 .gs-site-number{
     width: 6%;
@@ -77,6 +109,16 @@ body {
 }
 .gs-sort-params{
     width: 25%;
+}
+.gs-param{
+    padding-bottom: .5rem;
+    text-align: left;
+}
+.gs-sort-params img{
+    max-width: unset;
+}
+.gs-param-txt{
+    padding-left: .5rem;
 }
 .gs-flex{
     display: flex;
