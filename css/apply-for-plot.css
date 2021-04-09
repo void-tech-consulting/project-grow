@@ -24,6 +24,8 @@
 .apply-body {
   width: 85%;
   margin: auto;
+  color: #53401a;
+  font-size: 1.8rem;
 }
 
 .apply-header {
@@ -33,4 +35,66 @@
   font-size: 2.8rem;
   line-height: 3.3rem;
   color: #3f2e00;
+}
+
+.apply-flex {
+  padding-top: 5rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.apply-form {
+  width: 71%;
+}
+
+.apply-info {
+  width: 27%;
+}
+
+.apply-info-row {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 2rem;
+}
+
+.apply-info-col {
+  width: 48%;
+  height: 100%;
+  border: 1px solid #cebfa1;
+  background-color: #f8f5ec;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.apply-col-head {
+  font-weight: 700;
+  text-align: center;
+  font-size: 2.1rem;
+}
+
+.apply-col-body {
+  width: 90%;
+}
+
+.apply-info-row-1 {
+  height: 15rem;
+}
+
+.apply-info-row-2 {
+  height: 50rem;
+}
+
+.apply-info-single {
+  border: 1px solid #cebfa1;
+  background-color: #f8f5ec;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 25rem;
+}
+
+.apply-single-head {
+  font-weight: 500;
 }
