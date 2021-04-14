@@ -55,16 +55,17 @@
   display: flex;
   justify-content: space-between;
   padding-bottom: 2rem;
+  height:auto;
 }
 
 .apply-info-col {
   width: 48%;
-  height: 100%;
   border: 1px solid #cebfa1;
   background-color: #f8f5ec;
   display: flex;
   flex-direction: column;
   align-items: center;
+  height:auto;
 }
 
 .apply-col-head {
@@ -78,11 +79,13 @@
 }
 
 .apply-info-row-1 {
-  height: 15rem;
+  min-height: 15rem;
+  height:auto;
 }
 
 .apply-info-row-2 {
-  height: 50rem;
+  min-height: 50rem;
+  height:auto;
 }
 
 .apply-info-single {
