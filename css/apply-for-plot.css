@@ -71,6 +71,7 @@
   font-weight: 700;
   text-align: center;
   font-size: 2.1rem;
+  padding-top: 3rem;
 }
 
 .apply-col-body {
@@ -78,11 +79,11 @@
 }
 
 .apply-info-row-1 {
-  height: 15rem;
+  height: 20rem;
 }
 
 .apply-info-row-2 {
-  height: 50rem;
+  height: 63rem;
 }
 
 .apply-info-single {
@@ -103,10 +104,10 @@
   margin-bottom: 9rem;
 }
 
-.apply-view-button .forminator-field p{
+.apply-view-button .forminator-field p {
   margin-left: 6.3rem;
   margin-top: 2.7rem;
-  background: #40804D;
+  background: #40804d;
   border-radius: 22.6914px;
   width: 17.3rem;
   height: 4.538rem;
@@ -114,12 +115,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  
 }
 
 .apply-view-button .forminator-field p a {
   text-decoration: none;
-  color: #FFFFFF;
+  color: #ffffff;
   font-family: Roboto;
   font-style: normal;
   font-weight: bold;
@@ -131,21 +131,35 @@
   background-color: #E8E0CF !important;
 } */
 
-.apply-for-plot-inputs .forminator-field  .select2 .selection .select2-selection .select2-selection__rendered, .select2-dropdown .select2-results ul li, .select2-dropdown .forminator-dropdown--default {
-  background: #E8E0CF;
-  background-color: #E8E0CF; 
+.apply-for-plot-inputs
+  .forminator-field
+  .select2
+  .selection
+  .select2-selection
+  .select2-selection__rendered,
+.select2-dropdown .select2-results ul li,
+.select2-dropdown .forminator-dropdown--default {
+  background: #e8e0cf;
+  background-color: #e8e0cf;
 }
-.apply-for-plot-inputs .forminator-field  .select2 .selection .select2-selection {
-  background-color: #E8E0CF !important; 
+.apply-for-plot-inputs
+  .forminator-field
+  .select2
+  .selection
+  .select2-selection {
+  background-color: #e8e0cf !important;
 }
 
-
-.select2-container .select2-dropdown .select2-results .select2-results__options .select2-results__option {
-  background-color: #E8E0CF !important; 
+.select2-container
+  .select2-dropdown
+  .select2-results
+  .select2-results__options
+  .select2-results__option {
+  background-color: #e8e0cf !important;
   color: #3f2e00 !important;
 }
 
 .select2-container .select2-dropdown {
-  background-color: #E8E0CF !important; 
+  background-color: #e8e0cf !important;
   color: #3f2e00 !important;
 }
