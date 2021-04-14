@@ -98,3 +98,54 @@
 .apply-single-head {
   font-weight: 500;
 }
+
+.apply-form {
+  margin-bottom: 9rem;
+}
+
+.apply-view-button .forminator-field p{
+  margin-left: 6.3rem;
+  margin-top: 2.7rem;
+  background: #40804D;
+  border-radius: 22.6914px;
+  width: 17.3rem;
+  height: 4.538rem;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+}
+
+.apply-view-button .forminator-field p a {
+  text-decoration: none;
+  color: #FFFFFF;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 35px;
+}
+
+/* .forminator-ui.forminator-custom-form-115.forminator-design--default .forminator-select2 + .select2-container--default .select2-selection--single, .et-db #et-boc .et_pb_module .forminator-ui.forminator-custom-form-115.forminator-design--default .forminator-select2 + .select2-container--default .select2-selection--single {
+  background-color: #E8E0CF !important;
+} */
+
+.apply-for-plot-inputs .forminator-field  .select2 .selection .select2-selection .select2-selection__rendered, .select2-dropdown .select2-results ul li, .select2-dropdown .forminator-dropdown--default {
+  background: #E8E0CF;
+  background-color: #E8E0CF; 
+}
+.apply-for-plot-inputs .forminator-field  .select2 .selection .select2-selection {
+  background-color: #E8E0CF !important; 
+}
+
+
+.select2-container .select2-dropdown .select2-results .select2-results__options .select2-results__option {
+  background-color: #E8E0CF !important; 
+  color: #3f2e00 !important;
+}
+
+.select2-container .select2-dropdown {
+  background-color: #E8E0CF !important; 
+  color: #3f2e00 !important;
+}

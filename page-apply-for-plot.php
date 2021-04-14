@@ -37,7 +37,6 @@ get_header();
     <div class="apply-payment-method">
         <!-- payment method handling here -->
     </div>
-    <p>testing below</p>
     <div class="apply-flex">
         <div class="apply-form">
             <?php 
