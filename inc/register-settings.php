@@ -238,56 +238,213 @@ add_action('customize_register', 'our_people_customizer');
 
 
 // Example of how to use a repeatable box
-function example_repeatable_customizer($wp_customize) {
-  require 'section_vars.php';  
+function example_repeatable_customizer($wp_customize)
+{
+  require 'section_vars.php';
   require_once 'controller.php';
-  
+
   $wp_customize->add_section($example_section, array(
     'title' => 'Example Home Repeaters',
   ));
-  
+
   $wp_customize->add_setting(
     $example_repeater,
     array(
-        'sanitize_callback' => 'onepress_sanitize_repeatable_data_field',
-        'transport' => 'refresh',
-    ) );
+      'sanitize_callback' => 'onepress_sanitize_repeatable_data_field',
+      'transport' => 'refresh',
+    )
+  );
 
   $wp_customize->add_control(
-      new Onepress_Customize_Repeatable_Control(
-          $wp_customize,
-          $example_repeater,
-          array(
-              'label' 		=> esc_html__('Example Q & A Repeater'),
-              'description'   => '',
-              'section'       => $example_section,
-              'live_title_id' => 'question',
-              'title_format'  => esc_html__('[live_title]'), // [live_title]
-              'max_item'      => 10, // Maximum item can add
-              'limited_msg' 	=> wp_kses_post( __( 'Max items added' ) ),
-              'fields'    => array(
-                  'title'  => array(
-                    'title' => esc_html__('Title'),
-                    'type'  =>'text',
-                  ),
-                  'question'  => array(
-                      'title' => esc_html__('Question'),
-                      'type'  =>'text',
-                  ),
-                  'answer'  => array(
-                      'title' => esc_html__('Answer'),
-                      'type'  =>'editor',
-                  ),
-                  'link'  => array(
-                      'title' => esc_html__('Link'),
-                      'type'  =>'url',
-                  ),
-              ),
-          )
+    new Onepress_Customize_Repeatable_Control(
+      $wp_customize,
+      $example_repeater,
+      array(
+        'label'     => esc_html__('Example Q & A Repeater'),
+        'description'   => '',
+        'section'       => $example_section,
+        'live_title_id' => 'question',
+        'title_format'  => esc_html__('[live_title]'), // [live_title]
+        'max_item'      => 10, // Maximum item can add
+        'limited_msg'   => wp_kses_post(__('Max items added')),
+        'fields'    => array(
+          'question'  => array(
+            'title' => esc_html__('Question'),
+            'type'  => 'text',
+          ),
+          'answer'  => array(
+            'title' => esc_html__('Answer'),
+            'type'  => 'editor',
+          ),
+          'link'  => array(
+            'title' => esc_html__('Link'),
+            'type'  => 'url',
+          ),
+        ),
       )
+    )
   );
 }
-add_action( 'customize_register', 'example_repeatable_customizer' );
+add_action('customize_register', 'example_repeatable_customizer');
+
+function master_composter_customizer($wp_customize)
+{
+  require 'section_vars.php';
+  require_once 'controller.php';
+
+  $wp_customize->add_section($master_composter_section, array(
+    'title' => 'Master Composter Program',
+  ));
+
+  $wp_customize->add_setting(
+    $master_composter_hg,
+    array(
+      'sanitize_callback' => 'onepress_sanitize_repeatable_data_field',
+      'transport' => 'refresh',
+    )
+  );
+
+  $wp_customize->add_control(
+    new Onepress_Customize_Repeatable_Control(
+      $wp_customize,
+      $master_composter_hg,
+      array(
+        'label'     => esc_html__('Handouts and Guidelines'),
+        'description'   => '',
+        'section'       => $master_composter_section,
+        'live_title_id' => 'hgpage_title',
+        'title_format'  => esc_html__('[live_title]'), // [live_title]
+        'max_item'      => 50, // Maximum item can add
+        'limited_msg'   => wp_kses_post(__('Max items added')),
+        'fields'    => array(
+          'hgpage_title'  => array(
+            'title' => esc_html__('Page Title'),
+            'type'  => 'text',
+          ),
+          'hgpage_description'  => array(
+            'title' => esc_html__('Page Title'),
+            'type'  => 'text',
+          ),
+          'hgpage_link'  => array(
+            'title' => esc_html__('Page Link'),
+            'type'  => 'url',
+          ),
+        ),
+      )
+    )
+  );
+
+  $wp_customize->add_setting(
+    $master_composter_rps,
+    array(
+      'sanitize_callback' => 'onepress_sanitize_repeatable_data_field',
+      'transport' => 'refresh',
+    )
+  );
+
+  $wp_customize->add_control(
+    new Onepress_Customize_Repeatable_Control(
+      $wp_customize,
+      $master_composter_rps,
+      array(
+        'label'     => esc_html__('CEC Reports, Presentations, and Special Projects'),
+        'description'   => '',
+        'section'       => $master_composter_section,
+        'live_title_id' => 'rpspage_title',
+        'title_format'  => esc_html__('[live_title]'), // [live_title]
+        'max_item'      => 50, // Maximum item can add
+        'limited_msg'   => wp_kses_post(__('Max items added')),
+        'fields'    => array(
+          'rpspage_title'  => array(
+            'title' => esc_html__('Page Title'),
+            'type'  => 'text',
+          ),
+          'rpspage_description'  => array(
+            'title' => esc_html__('Page Description'),
+            'type'  => 'text',
+          ),
+          'rpspage_link'  => array(
+            'title' => esc_html__('Page Link'),
+            'type'  => 'url',
+          ),
+        ),
+      )
+    )
+  );
+
+  $wp_customize->add_setting(
+    $master_composter_pa,
+    array(
+      'sanitize_callback' => 'onepress_sanitize_repeatable_data_field',
+      'transport' => 'refresh',
+    )
+  );
+
+  $wp_customize->add_control(
+    new Onepress_Customize_Repeatable_Control(
+      $wp_customize,
+      $master_composter_pa,
+      array(
+        'label'     => esc_html__('Community Partners and Advisors'),
+        'description'   => '',
+        'section'       => $master_composter_section,
+        'live_title_id' => 'papage_title',
+        'title_format'  => esc_html__('[live_title]'), // [live_title]
+        'max_item'      => 50, // Maximum item can add
+        'limited_msg'   => wp_kses_post(__('Max items added')),
+        'fields'    => array(
+          'pa_name'  => array(
+            'title' => esc_html__('Partner/Advisor Name'),
+            'type'  => 'text',
+          ),
+          'pa_link'  => array(
+            'title' => esc_html__('Partner/Advisor Link'),
+            'type'  => 'url',
+          ),
+        ),
+      )
+    )
+  );
+
+  $wp_customize->add_setting(
+    $master_composter_contacts,
+    array(
+      'sanitize_callback' => 'onepress_sanitize_repeatable_data_field',
+      'transport' => 'refresh',
+    )
+  );
+
+  $wp_customize->add_control(
+    new Onepress_Customize_Repeatable_Control(
+      $wp_customize,
+      $master_composter_contacts,
+      array(
+        'label'     => esc_html__('Contacts'),
+        'description'   => '',
+        'section'       => $master_composter_section,
+        'live_title_id' => 'contact_name',
+        'title_format'  => esc_html__('[live_title]'), // [live_title]
+        'max_item'      => 50, // Maximum item can add
+        'limited_msg'   => wp_kses_post(__('Max items added')),
+        'fields'    => array(
+          'contact_name'  => array(
+            'title' => esc_html__('Contact Name'),
+            'type'  => 'text',
+          ),
+          'contact_title'  => array(
+            'title' => esc_html__('Contact Title'),
+            'type'  => 'text',
+          ),
+          'contact_email'  => array(
+            'title' => esc_html__('Contact Email'),
+            'type'  => 'text',
+          ),
+        ),
+      )
+    )
+  );
+}
+add_action('customize_register', 'master_composter_customizer');
 
 
 function classes_events_customize($wp_customize) {

@@ -1,0 +1,168 @@
+.header-background {
+  background-image: url(../growing-tips-top-background.png); /* TODO: CHANGE THIS */
+  height: 26rem;
+  padding-top: 3rem;
+  margin-bottom: 3rem;
+  display: flex;
+  align-items: center;
+}
+
+.header-box {
+  width: 48rem;
+  height: 20rem;
+  margin-right: auto;
+  margin-left: auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(93, 68, 0, 0.9);
+}
+
+.apply-body {
+  width: 85%;
+  margin: auto;
+  color: #53401a;
+  font-size: 1.8rem;
+}
+
+.apply-header {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 2.8rem;
+  line-height: 3.3rem;
+  color: #3f2e00;
+}
+
+.apply-flex {
+  padding-top: 5rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.apply-form {
+  width: 71%;
+}
+
+.apply-info {
+  width: 27%;
+}
+
+.apply-info-row {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 2rem;
+  height:auto;
+}
+
+.apply-info-col {
+  width: 48%;
+  border: 1px solid #cebfa1;
+  background-color: #f8f5ec;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height:auto;
+}
+
+.apply-col-head {
+  font-weight: 700;
+  text-align: center;
+  font-size: 2.1rem;
+  padding-top: 3rem;
+}
+
+.apply-col-body {
+  width: 90%;
+}
+
+.apply-info-row-1 {
+  min-height: 15rem;
+  height:auto;
+}
+
+.apply-info-row-2 {
+  min-height: 50rem;
+  height:auto;
+}
+
+.apply-info-single {
+  border: 1px solid #cebfa1;
+  background-color: #f8f5ec;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 25rem;
+}
+
+.apply-single-head {
+  font-weight: 500;
+}
+
+.apply-form {
+  margin-bottom: 9rem;
+}
+
+.apply-view-button .forminator-field p {
+  margin-left: 6.3rem;
+  margin-top: 2.7rem;
+  background: #40804d;
+  border-radius: 22.6914px;
+  width: 17.3rem;
+  height: 4.538rem;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.apply-view-button .forminator-field p a {
+  text-decoration: none;
+  color: #ffffff;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 35px;
+}
+
+/* .forminator-ui.forminator-custom-form-115.forminator-design--default .forminator-select2 + .select2-container--default .select2-selection--single, .et-db #et-boc .et_pb_module .forminator-ui.forminator-custom-form-115.forminator-design--default .forminator-select2 + .select2-container--default .select2-selection--single {
+  background-color: #E8E0CF !important;
+} */
+
+.apply-for-plot-inputs
+  .forminator-field
+  .select2
+  .selection
+  .select2-selection
+  .select2-selection__rendered,
+.select2-dropdown .select2-results ul li,
+.select2-dropdown .forminator-dropdown--default {
+  background: #e8e0cf;
+  background-color: #e8e0cf;
+}
+.apply-for-plot-inputs
+  .forminator-field
+  .select2
+  .selection
+  .select2-selection {
+  background-color: #e8e0cf !important;
+}
+
+.select2-container
+  .select2-dropdown
+  .select2-results
+  .select2-results__options
+  .select2-results__option {
+  background-color: #e8e0cf !important;
+  color: #3f2e00 !important;
+}
+
+.select2-container .select2-dropdown {
+  background-color: #e8e0cf !important;
+  color: #3f2e00 !important;
+}

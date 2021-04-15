@@ -1,97 +1,98 @@
 <?php
-function onepress_sanitize_repeatable_data_field( $input, $setting ) {
-  $control = $setting->manager->get_control( $setting->id );
+function onepress_sanitize_repeatable_data_field($input, $setting)
+{
+	$control = $setting->manager->get_control($setting->id);
 
 	$fields = $control->fields;
-	if ( is_string( $input ) ) {
-    $input = json_decode( wp_unslash( $input ), true );
+	if (is_string($input)) {
+		$input = json_decode(wp_unslash($input), true);
 	}
-	$data = wp_parse_args( $input, array() );
+	$data = wp_parse_args($input, array());
 
-	if ( ! is_array( $data ) ) {
-    return false;
+	if (!is_array($data)) {
+		return false;
 	}
-	if ( ! isset( $data['_items'] ) ) {
-    return false;
+	if (!isset($data['_items'])) {
+		return false;
 	}
 	$data = $data['_items'];
 
-	foreach ( $data as $i => $item_data ) {
-    foreach ( $item_data as $id => $value ) {
-      
-      if ( isset( $fields[ $id ] ) ) {
-        switch ( strtolower( $fields[ $id ]['type'] ) ) {
-          case 'text':
-						$data[ $i ][ $id ] = sanitize_text_field( $value );
+	foreach ($data as $i => $item_data) {
+		foreach ($item_data as $id => $value) {
+
+			if (isset($fields[$id])) {
+				switch (strtolower($fields[$id]['type'])) {
+					case 'text':
+						$data[$i][$id] = sanitize_text_field($value);
 						break;
 					case 'url':
-						$data[ $i ][ $id ] = esc_url( $value );
+						$data[$i][$id] = esc_url($value);
 						break;
 					case 'textarea':
 					case 'editor':
-						$data[ $i ][ $id ] = wp_kses_post( $value );
+						$data[$i][$id] = wp_kses_post($value);
 						break;
 					case 'color':
-						$data[ $i ][ $id ] = sanitize_hex_color_no_hash( $value );
+						$data[$i][$id] = sanitize_hex_color_no_hash($value);
 						break;
-					// case 'coloralpha':
-					// 	$data[ $i ][ $id ] = onepress_sanitize_color_alpha( $value );
-					// 	break;
-					// case 'checkbox':
-					// 	$data[ $i ][ $id ] = onepress_sanitize_checkbox( $value );
-					// 	break;
-					// case 'select':
-					// 	$data[ $i ][ $id ] = '';
-					// 	if ( is_array( $fields[ $id ]['options'] ) && ! empty( $fields[ $id ]['options'] ) ) {
-            // 		// if is multiple choices
-					// 		if ( is_array( $value ) ) {
-            // 			foreach ( $value as $k => $v ) {
-              // 				if ( isset( $fields[ $id ]['options'][ $v ] ) ) {
-                // 					$value [ $k ] = $v;
-					// 				}
-					// 			}
-					// 			$data[ $i ][ $id ] = $value;
-					// 		} else { // is single choice
-					// 			if ( isset( $fields[ $id ]['options'][ $value ] ) ) {
-            // 				$data[ $i ][ $id ] = $value;
-					// 			}
-					// 		}
-					// 	}
+						// case 'coloralpha':
+						// 	$data[ $i ][ $id ] = onepress_sanitize_color_alpha( $value );
+						// 	break;
+						// case 'checkbox':
+						// 	$data[ $i ][ $id ] = onepress_sanitize_checkbox( $value );
+						// 	break;
+						// case 'select':
+						// 	$data[ $i ][ $id ] = '';
+						// 	if ( is_array( $fields[ $id ]['options'] ) && ! empty( $fields[ $id ]['options'] ) ) {
+						// 		// if is multiple choices
+						// 		if ( is_array( $value ) ) {
+						// 			foreach ( $value as $k => $v ) {
+						// 				if ( isset( $fields[ $id ]['options'][ $v ] ) ) {
+						// 					$value [ $k ] = $v;
+						// 				}
+						// 			}
+						// 			$data[ $i ][ $id ] = $value;
+						// 		} else { // is single choice
+						// 			if ( isset( $fields[ $id ]['options'][ $value ] ) ) {
+						// 				$data[ $i ][ $id ] = $value;
+						// 			}
+						// 		}
+						// 	}
 
-					// 	break;
+						// 	break;
 					case 'radio':
-						$data[ $i ][ $id ] = sanitize_text_field( $value );
+						$data[$i][$id] = sanitize_text_field($value);
 						break;
 					case 'media':
 						$value = wp_parse_args(
-              $value,
+							$value,
 							array(
-                'url' => '',
+								'url' => '',
 								'id' => false,
 							)
 						);
-						$value['id'] = absint( $value['id'] );
-						$data[ $i ][ $id ]['url'] = sanitize_text_field( $value['url'] );
+						$value['id'] = absint($value['id']);
+						$data[$i][$id]['url'] = sanitize_text_field($value['url']);
 
-						if ( $url = wp_get_attachment_url( $value['id'] ) ) {
-              $data[ $i ][ $id ]['id']   = $value['id'];
-							$data[ $i ][ $id ]['url']  = $url;
+						if ($url = wp_get_attachment_url($value['id'])) {
+							$data[$i][$id]['id']   = $value['id'];
+							$data[$i][$id]['url']  = $url;
 						} else {
-              $data[ $i ][ $id ]['id'] = '';
+							$data[$i][$id]['id'] = '';
 						}
 
 						break;
 					default:
-						$data[ $i ][ $id ] = wp_kses_post( $value );
+						$data[$i][$id] = wp_kses_post($value);
 				}
 			} else {
-        $data[ $i ][ $id ] = wp_kses_post( $value );
+				$data[$i][$id] = wp_kses_post($value);
 			}
 
-			if ( is_array( $data ) && is_array( $fields ) && count( $data[ $i ] ) != count( $fields ) ) {
-        foreach ( $fields as $k => $f ) {
-          if ( ! isset( $data[ $i ][ $k ] ) ) {
-            $data[ $i ][ $k ] = '';
+			if (is_array($data) && is_array($fields) && count($data[$i]) != count($fields)) {
+				foreach ($fields as $k => $f) {
+					if (!isset($data[$i][$k])) {
+						$data[$i][$k] = '';
 					}
 				}
 			}
@@ -101,22 +102,23 @@ function onepress_sanitize_repeatable_data_field( $input, $setting ) {
 	return $data;
 }
 
-if ( ! function_exists( 'template_data' ) ) {
+if (!function_exists('template_data')) {
 	/**
 	 * Get's the data in the theme_mod and adds default values if necessary
 	 *
 	 * @since 1.1.4
 	 * @return array
 	 */
-	function template_data($section, $default_fields) {
+	function template_data($section, $default_fields)
+	{
 
-		$array = get_theme_mod( $section );
-		if ( is_string( $array ) ) {
-			$array = json_decode( $array, true );
+		$array = get_theme_mod($section);
+		if (is_string($array)) {
+			$array = json_decode($array, true);
 		}
-		if ( ! empty( $array ) && is_array( $array ) ) {
-			foreach ( $array as $k => $v ) {
-				$array[ $k ] = wp_parse_args(
+		if (!empty($array) && is_array($array)) {
+			foreach ($array as $k => $v) {
+				$array[$k] = wp_parse_args(
 					$v,
 					$default_fields
 				);
@@ -240,6 +242,36 @@ if (!function_exists('get_our_people_data')) {
 	}
 }
 
+if (!function_exists('get_mastcomp_data')) {
+	function get_mastcomp_data($section)
+	{
+		if ($section ==  'master_composter_handouts_guidelines') {
+			return template_data($section, array(
+				'hgpage_title' => '',
+				'hgpage_description' => '',
+				'hgpage_link' => ''
+			));
+		} elseif ($section == 'master_composter_reports_presentations_specialprojects') {
+			return template_data($section, array(
+				'rpspage_title' => '',
+				'rpspage_description' => '',
+				'rpspage_link' => ''
+			));
+		} elseif ($section == 'master_composter_partners_advisors') {
+			return template_data($section, array(
+				'pa_name' => '',
+				'pa_link' => ''
+			));
+		} elseif ($section == 'master_composter_contacts') {
+			return template_data($section, array(
+				'contact_name' => '',
+				'contact_title' => '',
+				'contact_email' => ''
+			));
+		}
+	}
+}
+
 if ( ! function_exists( 'get_discont_items_data' ) ) {
 	/**
 	 * Get Discontinued Data
@@ -247,11 +279,23 @@ if ( ! function_exists( 'get_discont_items_data' ) ) {
 	 * @since 1.1.4
 	 * @return array
 	 */
-	function get_discont_items_data($section) {
+  function get_discont_items_data($section) {
 		return template_data($section, array(
 			'ps-discont-item-name' => '',
 			'ps-discont-item-cateogry' => '',
 		));
 	}
 }
-?>
+
+if (!function_exists('get_example_data')) {
+	function get_example_data($section)
+	{
+		return template_data($section, array(
+			'question' => '',
+			'answer' => '',
+			'link' => ''
+    ));
+  }
+}
+
+	

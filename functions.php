@@ -93,4 +93,17 @@ function growingtips_custom($wp_customize)
 }
 
 add_action('customize_register', 'growingtips_custom');
+
+function apply_for_plot_form_customize($wp_customize) {
+  $wp_customize->add_section('apply_for_plot_form', array(
+      'title' => 'Apply for Plot Form'
+  ));
+  $wp_customize->add_setting('apply_for_plot_form-shortcode');
+  $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'shortcode-control', array(
+      'label' => 'Apply for Plot Shortcode',
+      'section' => 'apply_for_plot_form',
+      'settings' => 'apply_for_plot_form-shortcode'
+  )));
+}
+add_action('customize_register', 'apply_for_plot_form_customize');
 ?>
