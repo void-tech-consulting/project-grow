@@ -126,6 +126,39 @@ if ( ! function_exists( 'template_data' ) ) {
 	}
 }
 
+if ( ! function_exists( 'get_example_data' ) ) {
+	/**
+	 * Get Example Data
+	 *
+	 * @since 1.1.4
+	 * @return array
+	 */
+	function get_example_data($section) {
+		return template_data($section, array(
+			'title' => '',
+			'question' => '',
+            'answer' => '',
+            'link' => ''
+		));
+	}
+}
+
+if ( ! function_exists( 'get_plant_sale_data' ) ) {
+	/**
+	 * Get Example Data
+	 *
+	 * @since 1.1.4
+	 * @return array
+	 */
+	function get_plant_sale_data($section) {
+		return template_data($section, array(
+			'plant-sale-day-of-week' => '',
+			'plant-sale-date' => '',
+            'plant-sale-time' => '',
+		));
+	}
+}
+
 if (!function_exists('get_media_url')) {
 	function get_media_url($media = array(), $size = 'full')
 	{
@@ -166,13 +199,27 @@ if (!function_exists('get_media_url')) {
 	}
 }
 
-  
 if (!function_exists('get_growing_tips_data')) {
 	function get_growing_tips_data($section)
 	{
 		return template_data($section, array(
 			'topic' => '',
 			'link' => ''
+		));
+	}
+}
+
+if ( ! function_exists( 'get_new_items_data' ) ) {
+	/**
+	 * Get New items Data
+	 *
+	 * @since 1.1.4
+	 * @return array
+	 */
+	function get_new_items_data($section) {
+		return template_data($section, array(
+			'ps-new-item-name' => '',
+			'ps-new-item-category' => '',
 		));
 	}
 }
@@ -193,18 +240,17 @@ if (!function_exists('get_our_people_data')) {
 	}
 }
 
-if ( ! function_exists( 'get_example_data' ) ) {
+if ( ! function_exists( 'get_discont_items_data' ) ) {
 	/**
-	 * Get Example Data
+	 * Get Discontinued Data
 	 *
 	 * @since 1.1.4
 	 * @return array
-	 */  
-	function get_example_data($section) {
+	 */
+	function get_discont_items_data($section) {
 		return template_data($section, array(
-						'question' => '',
-            'answer' => '',
-            'link' => ''
+			'ps-discont-item-name' => '',
+			'ps-discont-item-cateogry' => '',
 		));
 	}
 }

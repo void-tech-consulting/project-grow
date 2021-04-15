@@ -24,6 +24,14 @@ function add_scripts()
       )
     );
   }
+  // Added for guidelines JS
+  else if (is_page( 'plot-guidelines' )) {
+    wp_enqueue_script(
+      "guidelines-dropdown",
+      get_theme_file_uri("/js/plot-guidelines.js"),
+      true
+    );
+  }
 }
 add_action('wp_enqueue_scripts', 'add_scripts');
 
@@ -54,6 +62,8 @@ function add_styles() {
   wp_enqueue_style("home1", get_theme_file_uri('/css/home1.css'));
   wp_enqueue_style("ourpeople", get_theme_file_uri('/css/ourpeople.css'));
   wp_enqueue_style( "plant-sale-info", get_theme_file_uri('/css/plant-sale-info.css'));
+  wp_enqueue_style( "classes-events", get_theme_file_uri('/css/classes-events.css'));
+  wp_enqueue_style( "plot-guidelines", get_theme_file_uri('/css/plot-guidelines.css'));
   wp_enqueue_style( "growing-tips", get_theme_file_uri('/css/growing-tips.css'));
   wp_enqueue_style( "rental-information", get_theme_file_uri('/css/rental-info.css'));
   wp_enqueue_style( "individual-plots", get_theme_file_uri('/css/indv-plots.css'));
