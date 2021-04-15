@@ -24,6 +24,14 @@ function add_scripts()
       )
     );
   }
+  // Added for guidelines JS
+  else if (is_page( 'plot-guidelines' )) {
+    wp_enqueue_script(
+      "guidelines-dropdown",
+      get_theme_file_uri("/js/plot-guidelines.js"),
+      true
+    );
+  }
 }
 add_action('wp_enqueue_scripts', 'add_scripts');
 
@@ -60,6 +68,7 @@ function add_styles()
   //wp_enqueue_style( "individual-plots", get_theme_file_uri('/css/indv-plots.css'));
   wp_enqueue_style("master-composter", get_theme_file_uri('/css/master-composter.css'));
   wp_enqueue_style("apply-for-plot", get_theme_file_uri('/css/apply-for-plot.css'));
-
+  wp_enqueue_style( "classes-events", get_theme_file_uri('/css/classes-events.css'));
+  wp_enqueue_style( "plot-guidelines", get_theme_file_uri('/css/plot-guidelines.css'));
 }
 add_action('wp_enqueue_scripts', 'add_styles');
