@@ -1,0 +1,47 @@
+.footer{
+    padding-top: 2.5rem;
+    width: 100%;
+    box-sizing: border-box;  
+    height: 15rem; 
+    text-align: center;
+    z-index: 3;
+    background-color: #5D4400;
+    color: #FFFFFF;
+}
+.flex{  
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+}
+.footer-flex{
+    width: 92%;
+    max-width: 1440px;
+}
+.footer-links {
+    width: 90%;
+    display: flex;  
+    justify-content: space-around;
+    height: 8rem;
+    text-align: left;
+}
+.home-underline {
+    text-decoration-line: underline;
+}
+.footer-main-link {
+    font-weight: 700;
+}
+.footer-sub-links {
+    font-size: 14px;
+    font-weight: 400;
+}
+.donate-btn {
+    margin-left: 2rem;
+    margin-bottom: 5.5rem;
+    padding-top: 1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    height: 4.5rem;
+    width: 11rem;
+    background-color: #40804D;
+    border-radius: 23.5px;
+}

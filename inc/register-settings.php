@@ -1,7 +1,8 @@
 <?php
 
-register_nav_menu( "primary", "Top Navbar" );
-function home_customizer($wp_customize) {
+register_nav_menu("primary", "Top Navbar");
+function home_customizer($wp_customize)
+{
   require 'section_vars.php';
   $wp_customize->add_section($home_section, array(
     'title' => 'Videos and News',
@@ -18,24 +19,222 @@ function home_customizer($wp_customize) {
   ));
 
   $wp_customize->add_setting($home_top_img);
-  $wp_customize->add_control( new WP_Customize_Image_Control( 
-      $wp_customize, 
-      $home_top_img, 
-      array(
-          'label' => 'Top Image',
-          'section' => $home_section
-      )
+  $wp_customize->add_control(new WP_Customize_Image_Control(
+    $wp_customize,
+    $home_top_img,
+    array(
+      'label' => 'Top Image',
+      'section' => $home_section
+    )
   ));
   // Top Desc
   $wp_customize->add_setting($home_top_desc);
   $wp_customize->add_control($home_top_desc, array(
-      'label' => 'Top Description',
-      'section' => $home_section,
-      'type' => 'textarea'
+    'label' => 'Top Description',
+    'section' => $home_section,
+    'type' => 'textarea'
   ));
 }
-add_action( 'customize_register', 'home_customizer' );
+add_action('customize_register', 'home_customizer');
 
+// Example of how to use a repeatable box
+function growing_tips_customizer($wp_customize)
+{
+  require 'section_vars.php';
+  require_once 'controller.php';
+
+  $wp_customize->add_section($growing_tips_section, array(
+    'title' => 'Growing Tips',
+  ));
+
+  $wp_customize->add_setting(
+    $growing_tips_edibles,
+    array(
+      'sanitize_callback' => 'onepress_sanitize_repeatable_data_field',
+      'transport' => 'refresh',
+    )
+  );
+
+  $wp_customize->add_setting(
+    $growing_tips_ornamentals,
+    array(
+      'sanitize_callback' => 'onepress_sanitize_repeatable_data_field',
+      'transport' => 'refresh',
+    )
+  );
+
+  $wp_customize->add_setting(
+    $growing_tips_organic_gardening,
+    array(
+      'sanitize_callback' => 'onepress_sanitize_repeatable_data_field',
+      'transport' => 'refresh',
+    )
+  );
+
+  $wp_customize->add_setting(
+    $growing_tips_seed_saving_starting,
+    array(
+      'sanitize_callback' => 'onepress_sanitize_repeatable_data_field',
+      'transport' => 'refresh',
+    )
+  );
+
+
+
+  $wp_customize->add_control(
+    new Onepress_Customize_Repeatable_Control(
+      $wp_customize,
+      $growing_tips_edibles,
+      array(
+        'label'     => esc_html__('Growing Tips Edibles'),
+        'description'   => '',
+        'section'       => $growing_tips_section,
+        'live_title_id' => 'topic',
+        'title_format'  => esc_html__('[live_title]'), // [live_title]
+        'max_item'      => 10, // Maximum item can add
+        'limited_msg'   => wp_kses_post(__('Max items added')),
+        'fields'    => array(
+          'topic'  => array(
+            'title' => esc_html__('Topic'),
+            'type'  => 'text',
+          ),
+          'link'  => array(
+            'title' => esc_html__('Link'),
+            'type'  => 'url',
+          ),
+        ),
+      )
+    )
+  );
+
+  $wp_customize->add_control(
+    new Onepress_Customize_Repeatable_Control(
+      $wp_customize,
+      $growing_tips_ornamentals,
+      array(
+        'label'     => esc_html__('Growing Tips Ornamentals'),
+        'description'   => '',
+        'section'       => $growing_tips_section,
+        'live_title_id' => 'topic',
+        'title_format'  => esc_html__('[live_title]'), // [live_title]
+        'max_item'      => 10, // Maximum item can add
+        'limited_msg'   => wp_kses_post(__('Max items added')),
+        'fields'    => array(
+          'topic'  => array(
+            'title' => esc_html__('Topic'),
+            'type'  => 'text',
+          ),
+          'link'  => array(
+            'title' => esc_html__('Link'),
+            'type'  => 'url',
+          ),
+        ),
+      )
+    )
+  );
+
+  $wp_customize->add_control(
+    new Onepress_Customize_Repeatable_Control(
+      $wp_customize,
+      $growing_tips_organic_gardening,
+      array(
+        'label'     => esc_html__('Growing Tips Ornamentals'),
+        'description'   => '',
+        'section'       => $growing_tips_section,
+        'live_title_id' => 'topic',
+        'title_format'  => esc_html__('[live_title]'), // [live_title]
+        'max_item'      => 10, // Maximum item can add
+        'limited_msg'   => wp_kses_post(__('Max items added')),
+        'fields'    => array(
+          'topic'  => array(
+            'title' => esc_html__('Topic'),
+            'type'  => 'text',
+          ),
+          'link'  => array(
+            'title' => esc_html__('Link'),
+            'type'  => 'url',
+          ),
+        ),
+      )
+    )
+  );
+
+  $wp_customize->add_control(
+    new Onepress_Customize_Repeatable_Control(
+      $wp_customize,
+      $growing_tips_seed_saving_starting,
+      array(
+        'label'     => esc_html__('Growing Tips Ornamentals'),
+        'description'   => '',
+        'section'       => $growing_tips_section,
+        'live_title_id' => 'topic',
+        'title_format'  => esc_html__('[live_title]'), // [live_title]
+        'max_item'      => 10, // Maximum item can add
+        'limited_msg'   => wp_kses_post(__('Max items added')),
+        'fields'    => array(
+          'topic'  => array(
+            'title' => esc_html__('Topic'),
+            'type'  => 'text',
+          ),
+          'link'  => array(
+            'title' => esc_html__('Link'),
+            'type'  => 'url',
+          ),
+        ),
+      )
+    )
+  );
+}
+add_action('customize_register', 'growing_tips_customizer');
+
+function our_people_customizer($wp_customize)
+{
+  require 'section_vars.php';
+  require_once 'controller.php';
+
+  $wp_customize->add_section($our_people_section, array(
+    'title' => 'Our People',
+  ));
+
+  $wp_customize->add_setting(
+    $our_people_members,
+    array(
+      'sanitize_callback' => 'onepress_sanitize_repeatable_data_field',
+      'transport' => 'refresh',
+    )
+  );
+
+  $wp_customize->add_control(
+    new Onepress_Customize_Repeatable_Control(
+      $wp_customize,
+      $our_people_members,
+      array(
+        'label'     => esc_html__('Our People'),
+        'description'   => '',
+        'section'       => $our_people_section,
+        'live_title_id' => 'member_name',
+        'title_format'  => esc_html__('[live_title]'), // [live_title]
+        'max_item'      => 50, // Maximum item can add
+        'limited_msg'   => wp_kses_post(__('Max items added')),
+        'fields'    => array(
+          'member_image' => array(
+            'title' => esc_html__('Member Image'),
+            'type'  => 'media',
+          ),
+          'member_name'  => array(
+            'title' => esc_html__('Member Name'),
+            'type'  => 'text',
+          ),
+          'member_title'  => array(
+            'title' => esc_html__('Member Title'),
+            'type'  => 'text',
+          ),
+        ),
+      )
+    )
+  );
+}
+add_action('customize_register', 'our_people_customizer');
 
 
 // Example of how to use a repeatable box
@@ -191,7 +390,6 @@ function classes_events_customize($wp_customize) {
     'type' => 'dropdown-pages'
   )));
 }
-
 add_action('customize_register', 'classes_events_customize');
 
 
@@ -330,45 +528,4 @@ function repeat_plant_sale($wp_customize) {
   );
 }
 add_action('customize_register', 'repeat_plant_sale');
-
-  // // New item category
-  // $wp_customize->add_setting('psi-new-category',
-  // array('default' => 'Peppers'));
-  // $wp_customize->add_control( new WP_Customize_Control($wp_customize, 'psi-callout-new-category', array(
-  //   'label' => 'New Item (Cateogry)',
-  //   'section' => 'plant-sale-section',
-  //   'settings' => 'psi-new-category',
-  //   'type' => 'text'
-  // )));
-
-  // // New item plant
-  // $wp_customize->add_setting('psi-new-plant',
-  // array('default' => 'Czech Black'));
-  // $wp_customize->add_control( new WP_Customize_Control($wp_customize, 'psi-callout-new-plant', array(
-  //   'label' => 'New Item (Plant)',
-  //   'section' => 'plant-sale-section',
-  //   'settings' => 'psi-new-plant',
-  //   'type' => 'text'
-  // )));
-
-  //   // Discontinued item category
-  //   $wp_customize->add_setting('psi-discont-category',
-  //   array('default' => 'Tomatoes'));
-  //   $wp_customize->add_control( new WP_Customize_Control($wp_customize, 'psi-callout-discont-category', array(
-  //     'label' => 'Discontinued Item (Cateogry)',
-  //     'section' => 'plant-sale-section',
-  //     'settings' => 'psi-discont-category',
-  //     'type' => 'text'
-  //   )));
-  
-  //   // Discontinued item plant
-  //   $wp_customize->add_setting('psi-discont-plant',
-  //   array('default' => 'German Red Strawberry'));
-  //   $wp_customize->add_control( new WP_Customize_Control($wp_customize, 'psi-callout-discont-plant', array(
-  //     'label' => 'Discontinued Item (Plant)',
-  //     'section' => 'plant-sale-section',
-  //     'settings' => 'psi-discont-plant',
-  //     'type' => 'text'
-  //   )));
-
 ?>
