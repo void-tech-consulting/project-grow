@@ -16,27 +16,39 @@
             <button class="plant-catalog-btn"><b>Plant Catalog</b></button>
         </div>
     </div>
-    <div class="psi-indent psi-main-page psi-title"><b>Project Grow Plant Sale</b></div>   
-    <div class="psi-indent description">
-        Every year, Project Grow holds a plant sale offering hard to find heirloom tomatoes, peppers, and basil. This year, Project Grow is offering transplants of six types (and 75 varieties) of tomatoes, 12 varieties of hot peppers, 11 different sweet peppers, and Genovese and Thai basil.
+    <div class="psi-indent psi-main-page psi-title"><b>Project Grow Plant Sale</b></div>
+    <div class="psi-indent psi-description">
+        <?php echo get_theme_mod('plant-sale-banner')?>
     </div>
-    <div class="sale-container">
+    <div class="psi-sale-container">
         <div class="sale-headers sale-flex-format">
             <div class="sale-table-format"><b>Sale Date</b></div>
             <div><b>Price</b></div>
             <div class="sale-table-format"><b>Size</b></div>
         </div>
         <div class="sale-flex-format">
-            <div class="psi-dates">
-                <div class="psi-sale-date">
-                    <br/>
-                    <div><i><?php echo get_theme_mod('plant-sale-day-of-week')?></i></div>
-                    <br/>
-                    <div><b><?php echo get_theme_mod('plant-sale-date')?></b></div>
-                    <br/>
-                    <div><?php echo get_theme_mod('plant-sale-time')?></div>
+            <?php $data = get_plant_sale_data('plant-sale-date-repeater');
+            if(!empty($data)) {
+                ?>
+                <div class="psi-dates">
+                <?php
+                    foreach($data as $k => $f) {
+                        ?>
+                        <div class="psi-sale-date">
+                            <br/>
+                            <div><i><?php echo $f['plant-sale-day-of-week']?></i></div>
+                            <br/>
+                            <div><b><?php echo $f['plant-sale-date']?></b></div>
+                            <br/>
+                            <div><?php echo $f['plant-sale-time']?></div>
+                        </div>
+                    <?php
+                    }
+                    ?>
                 </div>
-            </div>
+            <?php
+            }
+            ?>
             <div class="psi-prices">
                 <br/>
                 <div><b><?php echo get_theme_mod('plant-sale-cost')?></b></div>
@@ -45,7 +57,7 @@
         </div>
     </div>
     <div class="psi-indent organic-container">
-        <div class="section-spacer psi-title">Organic</div>
+        <div class="psi-section-spacer psi-title">Organic</div>
         <div class="organic-paragraph">
             The plants are grown in USDA Organic Sunshine Mix. However, they are fertilized with Fertrell 3-2-3 Garden Food. 
             Fertrell is a natural fertilizer made of blood meal, feather meal and other natural products, but is not USDA organic 
@@ -56,64 +68,97 @@
         </div>
     </div>
     <div class="psi-indent new-items-container">
-        <div class="section-spacer psi-title">New Items</div>
+        <div class="psi-section-spacer psi-title">New Items</div>
         <div class="hdr-over-list">
             Every year Project Grow strives to replace the least popular items with new varieties we have not offered before or think 
             should be grown more often. This year we are adding:<br/>
         </div>
-        <div class="psi-flex-container">
-            <div class="new-items-left">
-                <div class="list-spacing"><b><?php echo get_theme_mod('psi-new-category')?></b></div>
-                <div class="list-spacing">- <?php echo get_theme_mod('psi-new-plant')?></div>
-                <div class="list-spacing">- Black Brandywine</div>
-                <div class="list-spacing">- Good Old Fashioned Red</div>
-                <div class="list-spacing">- Chocolate Cherry</div>
-                <div class="list-spacing">- Herman's Yellow</div>
-                <div class="list-spacing">- Chocolate Chapin</div>
+
+        <?php $data = get_new_items_data('plant-sale-new-items-repeater');
+        if(!empty($data)) {
+            ?>
+            <div class="psi-flex-container">
+                <?php
+                $flag = False;
+                for($x = 0; $x <= count($data); $x++) {
+                    if($data[$x]['ps-new-item-category']) {
+                        ?>
+                        <div class="psi-whole-category"> <!-- Not closed -->
+                            <div class="list-spacing psi-category"><b><?php echo $data[$x]['ps-new-item-name'];?></b></div>
+                    <?php
+                    }
+                    else {
+                        while(!$data[$x]['ps-new-item-category']) {
+                    ?>
+                            <div class="list-spacing">- <?php echo $data[$x]['ps-new-item-name'];?></div>
+                    <?php
+                            $x++;
+                            //Exit condition
+                            if($x >= count($data)) {
+                                $flag = True;
+                                break;
+                            }
+                        }
+                        // Revert previous increment -- went too far and entered next category
+                        if(!$flag) $x--;
+                        ?>
+                        </div>
+                    <?php
+                    }
+                }
+                ?>
             </div>
-            <div class="new-items-right">
-                <div class="list-spacing"><b>Hot Peppers</b></div>
-                <div class="list-spacing">- Czech Black</div>
-                <div class="list-spacing"><b>Sweet Peppers</b></div>
-                <div class="list-spacing">- Golden California Wonder</div>
-                <div class="list-spacing">- Large Red Antigua</div>
-                <div class="list-spacing"><b>Sweet Pea</b></div>
-                <div class="list-spacing">- High Scent Sweet Pea</div>
-            </div>
-        </div>
+        <?php
+        }
+        ?>
     </div>
     <div class="psi-indent discont-items-container">
-        <div class="section-spacer psi-title">Discontinued Items</div>
+        <div class="psi-section-spacer psi-title">Discontinued Items</div>
         <div class="hdr-over-list">
             The following items have been dropped because of poor sales, difficulty finding good seed, or work 
             required to grow. If you were particularly fond of any of these, let us know,  we may be able to 
             sell you seed so you can grow your own.
         </div>
-        <div class="psi-flex-container">
-            <div class="discont-items-left">
-                <div class="list-spacing"><b><?php echo get_theme_mod('psi-discont-category')?></b></div>
-                <div class="list-spacing">- Cherokee Chocolate (replaced by Black Brandywine)</div>
-                <div class="list-spacing">- Zapotec Pleated</div>
-                <div class="list-spacing">- <?php echo get_theme_mod('psi-discont-plant')?></div>
-                <div class="list-spacing"><b>Hot Peppers</b></div>
-                <div class="list-spacing">- Tasmanian Black (replaced by Czech Black)</div>
-                <div class="list-spacing"><b>Others</b></div>
-                <div class="list-spacing">- Tomatillo Verde tomatillo</div>
-                <div class="list-spacing">- All onions and leeks (popular but germination was poor for us).</div>
-                <div class="list-spacing">- 4 packs of broccoli, cabbage, kale, chard and lettuce.</div>
+
+        <?php $data = get_discont_items_data('plant-sale-discont-items-repeater');
+        if(!empty($data)) {
+            ?>
+            <div class="psi-flex-container">
+                <?php
+                $flag = False;
+                for($x = 0; $x <= count($data); $x++) {
+                    if($data[$x]['ps-discont-item-category']) {
+                        ?>
+                        <div class="psi-whole-category"> <!-- Not closed -->
+                            <div class="list-spacing psi-category"><b><?php echo $data[$x]['ps-discont-item-name'];?></b></div>
+                    <?php
+                    }
+                    else {
+                        while(!$data[$x]['ps-discont-item-category']) {
+                    ?>
+                            <div class="list-spacing">- <?php echo $data[$x]['ps-discont-item-name'];?></div>
+                    <?php
+                            $x++;
+                            //Exit condition
+                            if($x >= count($data)) {
+                                $flag = True;
+                                break;
+                            }
+                        }
+                        // Revert previous increment -- went too far and entered next category
+                        if(!$flag) $x--;
+                        ?>
+                        </div> <!-- This closes "psi-whole-category" -->
+                    <?php
+                    }
+                }
+                ?>
             </div>
-            <div class="discont-items-right">
-                <div class="list-spacing"><b>Sweet Peppers</b></div>
-                <div class="list-spacing">- California Wonder</div>
-                <div class="list-spacing">- Doe Hill Golden Bell (replaced by Golden California Wonder)</div>
-                <div class="list-spacing"><b>Basil</b></div>
-                <div class="list-spacing">- Mammoth basil</div>
-                <div class="list-spacing">- Red Rubin basil</div>
-                <div class="list-spacing"><b>Sweet Pea</b></div>
-                <div class="list-spacing">- Royal Family sweet pea (replaced by High Scent sweet pea)</div>
-            </div>
+        <?php
+        }
+        ?>
         </div>
-        <div class="tomatoes-section">
+        <div class="psi-indent psi-tomatoes-section">
                 Tomatoes come in a wide range of colors. The most common colors are red-orange and pinkish-red. 
                 There are also yellow, orange, green and purplish black tomatoes. If you are looking for classic 
                 tomato flavor, choose red-orange or pinkish-red tomatoes. Yellow, orange and green tomatoes tend 
@@ -128,7 +173,7 @@
             </div>
     </div>
     <div class="psi-indent disclaimer-container">
-        <div class="section-spacer psi-title">Disclaimer</div>
+        <div class="psi-section-spacer psi-title">Disclaimer</div>
         <div class="disclaimer-body">
             To make this work, we ask that our customers follow a few simple requests. 
             <b>Please read these limitations carefully</b>, and if you cannot meet these requirements, 

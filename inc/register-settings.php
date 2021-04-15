@@ -195,52 +195,59 @@ function classes_events_customize($wp_customize) {
 add_action('customize_register', 'classes_events_customize');
 
 
-function custom_plant_sale($wp_customize) {
+
+function repeat_plant_sale($wp_customize) {
+  require 'section_vars.php';
+  require_once 'controller.php';
   $wp_customize->add_section('plant-sale-section', array(
-    'title' => 'Plant Sale Info'
+    'title' => 'Annual Plant Sale',
   ));
 
-  // Header at top of page
-  $wp_customize->add_setting('psi-header', 
-  array('default' => 'Explain the sale here!'));
-  $wp_customize->add_control( new WP_Customize_Control($wp_customize, 'psi-header-callout', array(
+  // Customize header at top -not in repeater
+  $wp_customize->add_setting('plant-sale-banner', array(
+    'default' => 'Annual Sale details here'
+  ));
+  $wp_customize->add_control( new WP_Customize_Control($wp_customize, 'plant-sale-header-callout', array(
     'label' => 'Sale Description',
     'section' => 'plant-sale-section',
-    'settings' => 'psi-header',
+    'settings' => 'plant-sale-banner',
     'type' => 'textarea'
   )));
 
-  // Day of week
-  $wp_customize->add_setting('plant-sale-day-of-week', 
-  array('default' => 'Monday'));
-  $wp_customize->add_control( new WP_Customize_Control($wp_customize, 'plant-sale-callout-day-of-week', array(
-    'label' => 'Day of Week',
-    'section' => 'plant-sale-section',
-    'settings' => 'plant-sale-day-of-week',
-    'type' => 'text'
-  )));
-
-  // Date
-  $wp_customize->add_setting('plant-sale-date',
-  array('default' => 'January 1st'));
-  $wp_customize->add_control( new WP_Customize_Control($wp_customize, 'plant-sale-callout-date', array(
-    'label' => 'Date',
-    'section' => 'plant-sale-section',
-    'settings' => 'plant-sale-date',
-    'type' => 'text'
-  )));
-
-  // Time
-  $wp_customize->add_setting('plant-sale-time',
-  array('default' => '11AM - 4PM'));
-  $wp_customize->add_control( new WP_Customize_Control($wp_customize, 'plant-sale-callout-time', array(
-    'label' => 'Time',
-    'section' => 'plant-sale-section',
-    'settings' => 'plant-sale-time',
-    'type' => 'text'
-  )));
-
-  //Cost
+  $wp_customize->add_setting('plant-sale-date-repeater', array(
+    'sanitize_callback' => 'onepress_sanitize_repeatable_data_field',
+    'transport' => 'refresh',
+  ));
+  $wp_customize->add_control(
+      new Onepress_Customize_Repeatable_Control(
+          $wp_customize,
+          'plant-sale-date-repeater',
+          array(
+              'label' 		=> esc_html__('Plant Sale Date'),
+              'description'   => 'Add these for each day of the sale',
+              'section'       => 'plant-sale-section',
+              'live_title_id' => 'plant-sale-date',
+              'title_format'  => esc_html__('[live_title]'), // [live_title]
+              'max_item'      => 7, // Maximum item can add
+              'limited_msg' 	=> wp_kses_post( __( 'Max items added' ) ),
+              'fields'    => array(
+                  'plant-sale-day-of-week' => array(
+                    'title' => esc_html__('Day of Week'),
+                    'type'  =>'text',
+                  ),
+                  'plant-sale-date'  => array(
+                      'title' => esc_html__('Date'),
+                      'type'  =>'text',
+                  ),
+                  'plant-sale-time'  => array(
+                      'title' => esc_html__('Time'),
+                      'type'  =>'text',
+                  ),
+              ),
+          )
+      )
+  );
+  // Cost - not repeatable
   $wp_customize->add_setting('plant-sale-cost',
   array('default' => '$3.00 per plant'));
   $wp_customize->add_control( new WP_Customize_Control($wp_customize, 'plant-sale-callout-cost', array(
@@ -250,7 +257,7 @@ function custom_plant_sale($wp_customize) {
     'type' => 'text'
   )));
 
-  // Size
+  // Size - not repeatable
   $wp_customize->add_setting('plant-sale-size',
   array('default' => '3 1/2 inch plot'));
   $wp_customize->add_control( new WP_Customize_Control($wp_customize, 'plant-sale-callout-size', array(
@@ -260,48 +267,108 @@ function custom_plant_sale($wp_customize) {
     'type' => 'text'
   )));
 
-  // New item category
-  $wp_customize->add_setting('psi-new-category',
-  array('default' => 'Peppers'));
-  $wp_customize->add_control( new WP_Customize_Control($wp_customize, 'psi-callout-new-category', array(
-    'label' => 'New Item (Cateogry)',
-    'section' => 'plant-sale-section',
-    'settings' => 'psi-new-category',
-    'type' => 'text'
-  )));
+  // New items - repeatable
+  $wp_customize->add_setting('plant-sale-new-items-repeater', array(
+    'sanitize_callback' => 'onepress_sanitize_repeatable_data_field',
+    'transport' => 'refresh',
+  ));
+  $wp_customize->add_control(
+      new Onepress_Customize_Repeatable_Control(
+          $wp_customize,
+          'plant-sale-new-items-repeater',
+          array(
+              'label' 		=> esc_html__('New Items'),
+              'description'   => '',
+              'section'       => 'plant-sale-section',
+              'live_title_id' => 'ps-new-item-name',
+              'title_format'  => esc_html__('[live_title]'), // [live_title]
+              'max_item'      => 50, // Maximum item can add
+              'limited_msg' 	=> wp_kses_post( __( 'Max items added' ) ),
+              'fields'    => array(
+                  'ps-new-item-name' => array(
+                    'title' => esc_html__('Item Name'),
+                    'type'  =>'text',
+                  ),
+                  'ps-new-item-category'  => array(
+                      'title' => esc_html__('Category Title'),
+                      'type'  =>'checkbox',
+                  ),
+              ),
+          )
+      )
+  );
 
-  // New item plant
-  $wp_customize->add_setting('psi-new-plant',
-  array('default' => 'Czech Black'));
-  $wp_customize->add_control( new WP_Customize_Control($wp_customize, 'psi-callout-new-plant', array(
-    'label' => 'New Item (Plant)',
-    'section' => 'plant-sale-section',
-    'settings' => 'psi-new-plant',
-    'type' => 'text'
-  )));
-
-    // Discontinued item category
-    $wp_customize->add_setting('psi-discont-category',
-    array('default' => 'Tomatoes'));
-    $wp_customize->add_control( new WP_Customize_Control($wp_customize, 'psi-callout-discont-category', array(
-      'label' => 'Discontinued Item (Cateogry)',
-      'section' => 'plant-sale-section',
-      'settings' => 'psi-discont-category',
-      'type' => 'text'
-    )));
-  
-    // Discontinued item plant
-    $wp_customize->add_setting('psi-discont-plant',
-    array('default' => 'German Red Strawberry'));
-    $wp_customize->add_control( new WP_Customize_Control($wp_customize, 'psi-callout-discont-plant', array(
-      'label' => 'Discontinued Item (Plant)',
-      'section' => 'plant-sale-section',
-      'settings' => 'psi-discont-plant',
-      'type' => 'text'
-    )));
+  // Discont items - repeatable
+  $wp_customize->add_setting('plant-sale-discont-items-repeater', array(
+    'sanitize_callback' => 'onepress_sanitize_repeatable_data_field',
+    'transport' => 'refresh',
+  ));
+  $wp_customize->add_control(
+      new Onepress_Customize_Repeatable_Control(
+          $wp_customize,
+          'plant-sale-discont-items-repeater',
+          array(
+              'label' 		=> esc_html__('Discontinued Items'),
+              'description'   => '',
+              'section'       => 'plant-sale-section',
+              'live_title_id' => 'ps-discont-item-name',
+              'title_format'  => esc_html__('[live_title]'), // [live_title]
+              'max_item'      => 50, // Maximum item can add
+              'limited_msg' 	=> wp_kses_post( __( 'Max items added' ) ),
+              'fields'    => array(
+                  'ps-discont-item-name' => array(
+                    'title' => esc_html__('Item Name'),
+                    'type'  =>'text',
+                  ),
+                  'ps-discont-item-category'  => array(
+                      'title' => esc_html__('Category Title'),
+                      'type'  =>'checkbox',
+                  ),
+              ),
+          )
+      )
+  );
 }
+add_action('customize_register', 'repeat_plant_sale');
 
-add_action('customize_register', 'custom_plant_sale');
+  // // New item category
+  // $wp_customize->add_setting('psi-new-category',
+  // array('default' => 'Peppers'));
+  // $wp_customize->add_control( new WP_Customize_Control($wp_customize, 'psi-callout-new-category', array(
+  //   'label' => 'New Item (Cateogry)',
+  //   'section' => 'plant-sale-section',
+  //   'settings' => 'psi-new-category',
+  //   'type' => 'text'
+  // )));
 
+  // // New item plant
+  // $wp_customize->add_setting('psi-new-plant',
+  // array('default' => 'Czech Black'));
+  // $wp_customize->add_control( new WP_Customize_Control($wp_customize, 'psi-callout-new-plant', array(
+  //   'label' => 'New Item (Plant)',
+  //   'section' => 'plant-sale-section',
+  //   'settings' => 'psi-new-plant',
+  //   'type' => 'text'
+  // )));
+
+  //   // Discontinued item category
+  //   $wp_customize->add_setting('psi-discont-category',
+  //   array('default' => 'Tomatoes'));
+  //   $wp_customize->add_control( new WP_Customize_Control($wp_customize, 'psi-callout-discont-category', array(
+  //     'label' => 'Discontinued Item (Cateogry)',
+  //     'section' => 'plant-sale-section',
+  //     'settings' => 'psi-discont-category',
+  //     'type' => 'text'
+  //   )));
+  
+  //   // Discontinued item plant
+  //   $wp_customize->add_setting('psi-discont-plant',
+  //   array('default' => 'German Red Strawberry'));
+  //   $wp_customize->add_control( new WP_Customize_Control($wp_customize, 'psi-callout-discont-plant', array(
+  //     'label' => 'Discontinued Item (Plant)',
+  //     'section' => 'plant-sale-section',
+  //     'settings' => 'psi-discont-plant',
+  //     'type' => 'text'
+  //   )));
 
 ?>

@@ -17,7 +17,7 @@ body {
 
     height: 25rem; /*Just for scale, looks like 20rem is a good size*/
     background-size: cover; /*Take up the whole space*/
-    background-image: url("../classes-events-header-img.png");
+    background-image: url("../images/classes-events-header-img.png");
     background-position: center;
     background-repeat: no-repeat;
     background-color: aqua; /*Should never show if image is well sized*/
@@ -26,7 +26,7 @@ body {
 .class-center-header-box {
     position: absolute;
     padding: 8rem 13rem;
-    background-color: rgba(93,68,0,.9);    
+    background-color: rgba(93,68,0,.9);
 }
 
 /*Start CSS for event*/

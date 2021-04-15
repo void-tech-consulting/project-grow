@@ -143,4 +143,50 @@ if ( ! function_exists( 'get_example_data' ) ) {
 		));
 	}
 }
+
+if ( ! function_exists( 'get_plant_sale_data' ) ) {
+	/**
+	 * Get Example Data
+	 *
+	 * @since 1.1.4
+	 * @return array
+	 */
+	function get_plant_sale_data($section) {
+		return template_data($section, array(
+			'plant-sale-day-of-week' => '',
+			'plant-sale-date' => '',
+            'plant-sale-time' => '',
+		));
+	}
+}
+
+if ( ! function_exists( 'get_new_items_data' ) ) {
+	/**
+	 * Get Example Data
+	 *
+	 * @since 1.1.4
+	 * @return array
+	 */
+	function get_new_items_data($section) {
+		return template_data($section, array(
+			'ps-new-item-name' => '',
+			'ps-new-item-category' => '',
+		));
+	}
+}
+
+if ( ! function_exists( 'get_discont_items_data' ) ) {
+	/**
+	 * Get Example Data
+	 *
+	 * @since 1.1.4
+	 * @return array
+	 */
+	function get_discont_items_data($section) {
+		return template_data($section, array(
+			'ps-discont-item-name' => '',
+			'ps-discont-item-cateogry' => '',
+		));
+	}
+}
 ?>

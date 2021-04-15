@@ -44,7 +44,7 @@ body {
 
     position: absolute;
     padding: 4rem 10rem;
-    background-color: rgba(93,68,0,.9);    
+    background-color: rgba(93,68,0,.9);
 }
 
 .plant-catalog-btn {
@@ -58,14 +58,14 @@ body {
     text-align: center;
     color: white;
 }
-.description {
+.psi-description {
     padding-top: 1rem;
     padding-bottom: 1rem;
     border-top: 1px solid #CEBFA1;
     border-bottom: 1px solid #CEBFA1;
     background-color: #F8F5EC;
 }
-.sale-container {
+.psi-sale-container {
     margin: 5rem 10rem 5rem 10rem;
     padding-bottom: 3rem;
     padding-top: 2rem;
@@ -85,14 +85,17 @@ body {
     display: flex;
     justify-content: space-between;
 }
+.psi-sale-date{
+    text-align: center;
+}
 .psi-dates {
     display: flex;
     justify-content: space-around;
-    border-right: 2px solid #3F2E00;
+    border-right: 2px solid #5D4400;
     width: 33%;
 }
 .psi-sizes {
-    border-left: 2px solid #3F2E00;
+    border-left: 2px solid #5D4400;
 }
 .psi-prices {
     text-align: center;
@@ -102,7 +105,7 @@ body {
     flex-direction: column;
     align-items: center;
 }
-.section-spacer {
+.psi-section-spacer {
     padding-top: 2.5rem;
     padding-bottom: 2.5rem;
 }
@@ -112,18 +115,20 @@ body {
 .list-spacing {
     padding-bottom: .6rem;
 }
-.new-items-left {
-    padding-right: 5rem;
-}
+
 .psi-flex-container {
     display: flex;
+    flex-wrap: wrap;
 }
-.discont-items-right {
-    max-width: 32rem;
-    padding-left: 3rem;
+.psi-whole-category {
+    width: 50%;
+    padding: 0 2.5rem;
 }
-.tomatoes-section {
+.psi-category {
     padding-top: 2rem;
+}
+.psi-tomatoes-section {
+    padding-top: 5rem;
 }
 /*This just gives some space after the end of the content*/
 .disclaimer-body {
