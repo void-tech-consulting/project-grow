@@ -68,8 +68,29 @@ function ourpeople_customize($wp_customize)
     'settings' => 'person-title'
   )));
 }
-
 add_action('customize_register', 'ourpeople_customize');
+
+function apply_for_plot_customize($wp_customize)
+{
+  $wp_customize->add_section('apply_for_plot_section', array(
+    'title' => 'Apply For Plot'
+  ));
+
+  $wp_customize->add_setting('full-plot-fee');
+  $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'full-plot-control', array(
+    'label' => 'Full Plot Fee',
+    'section' => 'apply_for_plot_section',
+    'settings' => 'full-plot-fee'
+  )));
+
+  $wp_customize->add_setting('half-plot-fee');
+  $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'half-plot-control', array(
+    'label' => 'Half Plot Fee',
+    'section' => 'apply_for_plot_section',
+    'settings' => 'half-plot-fee'
+  )));
+}
+add_action('customize_register', 'apply_for_plot_customize');
 
 function growingtips_custom($wp_customize)
 {

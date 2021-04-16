@@ -54,7 +54,7 @@ get_header();
                     <br>
                     <div class="apply-col-body">
                         <b>750</b> sq ft <br>
-                        <b>130</b> annual fee 
+                        <b><?php echo get_theme_mod('full-plot-fee') ?></b> annual fee 
                         <br>
                     </div>
                 </div>
@@ -65,7 +65,7 @@ get_header();
                     <br>
                     <div class="apply-col-body">
                         <b>375</b> sq ft <br>
-                        <b>80</b> annual fee 
+                        <b><?php echo get_theme_mod('half-plot-fee') ?></b> annual fee 
                         <br>
                     </div>
                     
