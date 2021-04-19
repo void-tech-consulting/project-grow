@@ -62,13 +62,15 @@ function add_styles()
   wp_enqueue_style("example", get_theme_file_uri('/css/example.css'));
   wp_enqueue_style("home1", get_theme_file_uri('/css/home1.css'));
   wp_enqueue_style("ourpeople", get_theme_file_uri('/css/ourpeople.css'));
-  wp_enqueue_style("plant-sale-info", get_theme_file_uri('/css/plant-sale-info.css'));
+  wp_enqueue_style( "plant-sale-info", get_theme_file_uri('/css/plant-sale-info.css'));
+  wp_enqueue_style( "classes-events", get_theme_file_uri('/css/classes-events.css'));
+  wp_enqueue_style( "rental-information", get_theme_file_uri('/css/rental-info.css'));
+  wp_enqueue_style( "what-we-do", get_theme_file_uri('/css/what-we-do.css'));
+  wp_enqueue_style( "garden-sites", get_theme_file_uri('/css/garden-sites.css'));
   wp_enqueue_style("growing-tips", get_theme_file_uri('/css/growing-tips.css'));
-  wp_enqueue_style("rental-information", get_theme_file_uri('/css/rental-info.css'));
   //wp_enqueue_style( "individual-plots", get_theme_file_uri('/css/indv-plots.css'));
   wp_enqueue_style("master-composter", get_theme_file_uri('/css/master-composter.css'));
   wp_enqueue_style("apply-for-plot", get_theme_file_uri('/css/apply-for-plot.css'));
-  wp_enqueue_style( "classes-events", get_theme_file_uri('/css/classes-events.css'));
   wp_enqueue_style( "plot-guidelines", get_theme_file_uri('/css/plot-guidelines.css'));
 }
 add_action('wp_enqueue_scripts', 'add_styles');
