@@ -10,7 +10,6 @@
 <div class="indent main-page title"><b>Classes & Events</b></div>
 
 
-
 <div class = "repeatable-boxes-class">
     <div>
         <div class = "third-try">
@@ -18,7 +17,7 @@
             require 'inc/section_vars.php';   
 
             // get_example_data is in /inc/template_functions.php
-            $data  = get_example_data($example_repeater);
+            $data  = get_class_event_data($example_repeater);
             if(!empty( $data ) ) { 
                 ?>
                 <section class="example">
@@ -101,8 +100,6 @@
 
     </div>
 </div>
-
-
 
 <?php
   get_footer();

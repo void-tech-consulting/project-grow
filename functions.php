@@ -71,53 +71,39 @@ function ourpeople_customize($wp_customize)
 
 add_action('customize_register', 'ourpeople_customize');
 
+function growingtips_custom($wp_customize)
+{
+  $wp_customize->add_section('growingtips-content', array(
+    'title' => 'Growing Tips Content'
+  ));
 
-// Customize the Garden Sites page
-// function garden_sites_customize($wp_customize) {
-//   $wp_customize->add_section('garden-sites-content', array(
-//       'title' => 'Garden Sites Content'
-//   ));
+  $wp_customize->add_setting('box-text');
+  $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'box-text-control', array(
+    'label' => 'Tips text',
+    'section' => 'growingtips-content',
+    'settings' => 'box-text'
+  )));
 
-//   // Number of sites
-//   $wp_customize->add_setting('garden-sites-number');
-//   $wp_customize->add_control( new WP_Customize_Control($wp_customize, 'gs-number', array(
-//       'label' => 'Site Number',
-//       'section' => 'garden-sites-content',
-//       'settings' => 'garden-sites-number'
-//   )));
+  $wp_customize->add_setting('box-link');
+  $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'box-link-control', array(
+    'label' => 'Tips link',
+    'section' => 'growingtips-content',
+    'settings' => 'box-link'
+  )));
+}
 
-//   // Site name
-//   $wp_customize->add_setting('garden-sites-name');
-//   $wp_customize->add_control( new WP_Customize_Control($wp_customize, 'gs-name', array(
-//       'label' => 'Site Name',
-//       'section' => 'garden-sites-content',
-//       'settings' => 'garden-sites-name'
-//   )));
+add_action('customize_register', 'growingtips_custom');
 
-//   // Plot Capacity
-//   $wp_customize->add_setting('garden-sites-capacity');
-//   $wp_customize->add_control( new WP_Customize_Control($wp_customize, 'gs-capacity', array(
-//       'label' => 'Plot Capacity',
-//       'section' => 'garden-sites-content',
-//       'settings' => 'garden-sites-capacity'
-//   )));
-
-//   // Location
-//   $wp_customize->add_setting('garden-sites-location');
-//   $wp_customize->add_control( new WP_Customize_Control($wp_customize, 'gs-location', array(
-//       'label' => 'Location',
-//       'section' => 'garden-sites-content',
-//       'settings' => 'garden-sites-location'
-//   )));
-
-//   // Site Notes
-//   // $wp_customize->add_setting('garden-sites-notes');
-//   // $wp_customize->add_control( new WP_Customize_Control($wp_customize, 'gs-notes', array(
-//   //     'label' => 'Site Notes',
-//   //     'section' => 'garden-sites-content',
-//   //     'settings' => 'garden-sites-notes'
-//   // )));
-// }
-// add_action('customize_register', 'garden_sites_customize');
-
+function apply_for_plot_form_customize($wp_customize) {
+  $wp_customize->add_section('apply_for_plot_form', array(
+      'title' => 'Apply for Plot Form'
+  ));
+  $wp_customize->add_setting('apply_for_plot_form-shortcode');
+  $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'shortcode-control', array(
+      'label' => 'Apply for Plot Shortcode',
+      'section' => 'apply_for_plot_form',
+      'settings' => 'apply_for_plot_form-shortcode'
+  )));
+}
+add_action('customize_register', 'apply_for_plot_form_customize');
 ?>
