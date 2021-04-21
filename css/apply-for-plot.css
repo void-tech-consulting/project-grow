@@ -130,39 +130,38 @@
   line-height: 35px;
 }
 
-/* .forminator-ui.forminator-custom-form-115.forminator-design--default .forminator-select2 + .select2-container--default .select2-selection--single, .et-db #et-boc .et_pb_module .forminator-ui.forminator-custom-form-115.forminator-design--default .forminator-select2 + .select2-container--default .select2-selection--single {
-  background-color: #E8E0CF !important;
-} */
-
-.apply-for-plot-inputs
-  .forminator-field
-  .select2
-  .selection
-  .select2-selection
-  .select2-selection__rendered,
-.select2-dropdown .select2-results ul li,
-.select2-dropdown .forminator-dropdown--default {
-  background: #e8e0cf;
-  background-color: #e8e0cf;
-}
-.apply-for-plot-inputs
-  .forminator-field
-  .select2
-  .selection
-  .select2-selection {
-  background-color: #e8e0cf !important;
+/* dropdown border */
+.apply-for-plot-inputs .forminator-field .select2 .selection .select2-selection--single {
+  border-color: #E8E0CF !important;
 }
 
-.select2-container
-  .select2-dropdown
-  .select2-results
-  .select2-results__options
-  .select2-results__option {
-  background-color: #e8e0cf !important;
-  color: #3f2e00 !important;
+/* Checkbox box */
+.apply-agreement-checkbox .forminator-field .forminator-checkbox {
+  height: 6.4rem;
+  padding-top: 0rem;
+  padding-bottom: 0rem;
+  background: #E8E0CF;
+  color: #40804D;
+  display: flex;
+  align-items: center;
+  padding-left: 3rem;
 }
 
-.select2-container .select2-dropdown {
-  background-color: #e8e0cf !important;
-  color: #3f2e00 !important;
+/* Checkbox agree text */
+.apply-agreement-checkbox .forminator-field .forminator-checkbox span{
+  font-style: normal;
+  font-weight: bold;
+  font-size: 21px;
+  line-height: 25px;
+  color: #40804D;
+}
+
+/* Checkbox agreement  spacing */
+.apply-agreement-checkbox .forminator-field .forminator-label {
+  padding: 0;
+}
+
+/* Radio button spacing */
+.apply-radio-buttons label.forminator-radio {
+  padding-top: 0rem;
 }
