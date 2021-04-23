@@ -3,6 +3,7 @@ body {
     font-family: 'Roboto', sans-serif;
     color: #3F2E00;
     font-size: 1.8rem;
+    width: unset;
 }
 
 
@@ -74,8 +75,8 @@ body {
     border: 1px solid #CEBFA1;
     background-color: #F8F5EC;
 }
-.sale-headers {
-    font-size: 2.1rem;
+.psi-table-title {
+    font-size: 2.5rem;
 }
 .sale-table-format {
     width: 33%;
@@ -85,20 +86,16 @@ body {
     display: flex;
     justify-content: space-between;
 }
-.psi-sale-date{
+.psi-center-align{
     text-align: center;
 }
 .psi-dates {
     display: flex;
     justify-content: space-around;
     border-right: 2px solid #5D4400;
-    width: 33%;
 }
 .psi-sizes {
     border-left: 2px solid #5D4400;
-}
-.psi-prices {
-    text-align: center;
 }
 .sale-date {
     display: flex;
@@ -116,7 +113,7 @@ body {
     padding-bottom: .6rem;
 }
 
-.psi-flex-container {
+.psi-new-discont-flex {
     display: flex;
     flex-wrap: wrap;
 }
@@ -133,4 +130,43 @@ body {
 /*This just gives some space after the end of the content*/
 .disclaimer-body {
     padding-bottom: 16rem;
+}
+
+@media screen and (max-width: 800px) {
+    .sale-flex-format {
+        flex-direction: column;
+    }
+    .sale-table-format {
+        width: unset;
+    }
+    .psi-table-title {
+        padding-top: 5rem;
+    }
+    .psi-dates {
+        border: none;
+    }
+    .psi-sizes {
+        border: none;
+    }
+    .psi-sale-container {
+        padding-bottom: 5rem;
+    }
+}
+@media screen and (max-width: 600px) {
+    .psi-indent {
+        padding-left: 5rem;
+        padding-right: 5rem;
+    }
+    .psi-sale-container {
+        margin: 5rem;
+    }
+}
+@media screen and (max-width:450px) {
+    .psi-new-discont-flex {
+        display: unset;
+    }
+    .psi-whole-category {
+        width: unset;
+        padding: 0;
+    }
 }

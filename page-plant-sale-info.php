@@ -21,39 +21,42 @@
         <?php echo get_theme_mod('plant-sale-banner')?>
     </div>
     <div class="psi-sale-container">
-        <div class="sale-headers sale-flex-format">
-            <div class="sale-table-format"><b>Sale Date</b></div>
-            <div><b>Price</b></div>
-            <div class="sale-table-format"><b>Size</b></div>
-        </div>
         <div class="sale-flex-format">
             <?php $data = get_plant_sale_data('plant-sale-date-repeater');
             if(!empty($data)) {
                 ?>
-                <div class="psi-dates">
-                <?php
-                    foreach($data as $k => $f) {
-                        ?>
-                        <div class="psi-sale-date">
-                            <br/>
-                            <div><i><?php echo $f['plant-sale-day-of-week']?></i></div>
-                            <br/>
-                            <div><b><?php echo $f['plant-sale-date']?></b></div>
-                            <br/>
-                            <div><?php echo $f['plant-sale-time']?></div>
+                <div class="sale-table-format">
+                    <div class="psi-table-title"><b>Sale Date</b></div>
+                        <div class="psi-dates">
+                        <?php
+                            foreach($data as $k => $f) {
+                                ?>
+                                <div class="psi-sale-date">
+                                    <br/>
+                                    <div><i><?php echo $f['plant-sale-day-of-week']?></i></div>
+                                    <br/>
+                                    <div><b><?php echo $f['plant-sale-date']?></b></div>
+                                    <br/>
+                                    <div><?php echo $f['plant-sale-time']?></div>
+                                </div>
+                            <?php
+                            }
+                            ?>
                         </div>
-                    <?php
-                    }
-                    ?>
                 </div>
             <?php
             }
             ?>
-            <div class="psi-prices">
+            <div class="psi-center-align">
+                <div class="psi-table-title"><b>Price</b></div>
                 <br/>
                 <div><b><?php echo get_theme_mod('plant-sale-cost')?></b></div>
             </div>
-            <div class="sale-table-format psi-sizes"><br/><b><?php echo get_theme_mod('plant-sale-size')?></b></div>
+            <div class="sale-table-format psi-sizes">
+                <div class="psi-table-title"><b>Size</b></div>
+                <br/>
+                <b><?php echo get_theme_mod('plant-sale-size')?></b>
+            </div>
         </div>
     </div>
     <div class="psi-indent organic-container">
@@ -77,7 +80,7 @@
         <?php $data = get_new_items_data('plant-sale-new-items-repeater');
         if(!empty($data)) {
             ?>
-            <div class="psi-flex-container">
+            <div class="psi-new-discont-flex">
                 <?php
                 $flag = False;
                 for($x = 0; $x <= count($data); $x++) {
@@ -123,7 +126,7 @@
         <?php $data = get_discont_items_data('plant-sale-discont-items-repeater');
         if(!empty($data)) {
             ?>
-            <div class="psi-flex-container">
+            <div class="psi-new-discont-flex">
                 <?php
                 $flag = False;
                 for($x = 0; $x <= count($data); $x++) {
