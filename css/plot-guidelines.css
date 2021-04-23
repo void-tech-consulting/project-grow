@@ -32,9 +32,12 @@ body {
 
     position: absolute;
     padding: 4rem 12rem;
-    background-color: rgba(93,68,0,.9);    
+    background-color: rgba(93,68,0,.9);
 }
-
+.guidelines-indent {
+    padding-left: 10rem;
+    padding-right: 10rem;
+}
 .plant-guidelines-btn {
     align-self: center;
     margin: 1rem;
@@ -73,7 +76,7 @@ body {
     width: 100%;
     padding-top: 3rem;
 }
-.story-box {
+.guidelines-story-box {
     text-align: center;
     border: 1px dashed #CEBFA1;
     background-color: #E8E0CF;
@@ -102,19 +105,19 @@ body {
     text-align: center;
 }
 /*Need placeholders for js to change/hide display*/
-.hide {
+.guidelines-hide {
     display: none;
 }
-.show {
+.guidelines-show {
     display: flex;
 }
-.left {
+.guidelines-left {
     border-radius: 0 16px 16px 16px;
 }
-.middle {
+.guidelines-middle {
     border-radius: 16px 16px 16px 16px;
 }
-.right {
+.guidelines-right {
     border-radius: 16px 0 16px 16px;
 }
 
@@ -142,4 +145,20 @@ body {
 #guidelines-note-to-all {
     padding-top: 3rem;
     padding-bottom: 6rem;
+}
+
+@media screen and (max-width: 700px) {
+    .open-story-box {
+        width: unset;
+    }
+    .guidelines-story-box {
+        width: unset;
+    }
+    #guidelines-row {
+        display: unset;
+    }
+    .guidelines-indent {
+        padding-left: 5rem;
+        padding-right: 5rem;
+    }
 }

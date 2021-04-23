@@ -17,15 +17,15 @@
           <button class="plant-guidelines-btn"><b>New? Get Started</b></button>
       </div>
   </div>
-  <div class="indent main-page title"><b>Plot Usage/Guidelines</b></div>   
+  <div class="guidelines-indent main-page title"><b>Plot Usage/Guidelines</b></div> 
 
-  <div class="indent" id="project-grow-guidelines">
+  <div class="guidelines-indent" id="project-grow-guidelines">
     <p>
       Project Grow is committed to teaching, promoting, and practicing environmental 
       stewardship. To this end, everyone gardening with Project Grow Gardeners must use 
       organic practices as accepted by major organic certification agencies (e.g. Organic 
       Crop Improvement Association). Any gardener who does not strictly adhere to these 
-      practices will have their plot revoked and will forfeit their right to garden with 
+      practices will have their plot revoked and will forfeit their guidelines-right to garden with 
       Project Grow in the future.
     </p>
     <p id="guidelines-little-spacer">
@@ -37,20 +37,20 @@
   </div>
 
   <div id="guidelines-container">
-    <div class="indent" id="guidelines-row">
-      <div id="weed" onclick="print_guide(weed, weedGuide)" class="story-box">
+    <div class="guidelines-indent" id="guidelines-row">
+      <div id="weed" onclick="print_guide(weed, weedGuide)" class="guidelines-story-box">
         <p>
           <b>Weed Control</b></br>
           <i>Fungicides / Herbicides</i>
         </p>
       </div>
-      <div id="insect" onclick="print_guide(insect, insectGuide)" class="story-box">
+      <div id="insect" onclick="print_guide(insect, insectGuide)" class="guidelines-story-box">
         <p>
           <b>Insect Control</b></br>
           <i>Insecticides / Pesticides</i>
         </p>
       </div>
-      <div id="disease" onclick="print_guide(disease, diseaseGuide)" class="story-box">
+      <div id="disease" onclick="print_guide(disease, diseaseGuide)" class="guidelines-story-box">
         <p>
           <b>Disease Control</b></br>
           <i>Maintaining a healthy garden</i>
@@ -58,7 +58,7 @@
       </div>
     </div>
     <!--All three expansion boxes go here-->
-    <div id="weedGuide" class="guidelines-expansion hide left">
+    <div id="weedGuide" class="guidelines-expansion guidelines-hide guidelines-left">
       <div class="guideline">
         <p>
           Controlling weeds not only helps your plants flourish, but it 
@@ -105,7 +105,7 @@
       </div>
     </div>
 
-    <div id="insectGuide" class="guidelines-expansion hide middle">
+    <div id="insectGuide" class="guidelines-expansion guidelines-hide guidelines-middle">
       <div class="guideline">
         <p>
           Controlling insects is important to your own garden health, 
@@ -125,7 +125,7 @@
       </div>
     </div>
 
-    <div id="diseaseGuide" class="guidelines-expansion hide right">
+    <div id="diseaseGuide" class="guidelines-expansion guidelines-hide guidelines-right">
       <div class="guideline">
         <p>
           Most problems can be controlled by maintaining a clean garden and a healthy soil
@@ -136,21 +136,21 @@
       </div>
     </div>
 
-    <div class="indent" id="guidelines-row">
-      <div id="fertilizer" onclick="print_guide(fertilizer, fertilizerGuide)" class="story-box">
+    <div class="guidelines-indent" id="guidelines-row">
+      <div id="fertilizer" onclick="print_guide(fertilizer, fertilizerGuide)" class="guidelines-story-box">
         <p>
           <b>Fertilizer and Soil Amendments</b></br>
           <i>Improving the health of your soil</i>
         </p>
       </div>
-      <div id="compost" onclick="print_guide(compost, compostGuide)" class="story-box">
+      <div id="compost" onclick="print_guide(compost, compostGuide)" class="guidelines-story-box">
         <p>
           <b>Composting</b></br>
           <!--Should this word be reuse-->
           <i>Garden refuse and protocol</i>
         </p>
       </div>
-      <div id="forbidden" onclick="print_guide(forbidden, forbiddenGuide)" class="story-box">
+      <div id="forbidden" onclick="print_guide(forbidden, forbiddenGuide)" class="guidelines-story-box">
         <p>
           <b>Forbidden Plants</b></br>
           <i>Prohibited to grow</i>
@@ -158,7 +158,7 @@
       </div>
     </div>
     <!--All of the dropdowns go here-->
-    <div id="fertilizerGuide" class="guidelines-expansion hide left">
+    <div id="fertilizerGuide" class="guidelines-expansion guidelines-hide guidelines-left">
       <div class="guideline">
         <p>
           Soil health is important not only for your plants this season, 
@@ -178,7 +178,7 @@
       </div>
     </div>
 
-    <div id="compostGuide" class="guidelines-expansion hide middle">
+    <div id="compostGuide" class="guidelines-expansion guidelines-hide guidelines-middle">
       <div class="guideline">
         <p>
           Project Grow strongly encourages composting organic material from plots, 
@@ -195,7 +195,7 @@
       </div>
     </div>
 
-    <div id="forbiddenGuide" class="guidelines-expansion hide right">
+    <div id="forbiddenGuide" class="guidelines-expansion guidelines-hide guidelines-right">
       <div class="guideline">
         <p>
           In the spirit of community gardens, please ensure that your plot is 
@@ -214,20 +214,20 @@
       </div>
     </div>
 
-    <div class="indent" id="guidelines-row">
-      <div id="coords" onclick="print_guide(coords, coordsGuide)" class="story-box">
+    <div class="guidelines-indent" id="guidelines-row">
+      <div id="coords" onclick="print_guide(coords, coordsGuide)" class="guidelines-story-box">
         <p>
           <b>Site Coordinators</b></br>
           <i>What we do</i>
         </p>
       </div>
-      <div id="parties" onclick="print_guide(parties, partiesGuide)" class="story-box">
+      <div id="parties" onclick="print_guide(parties, partiesGuide)" class="guidelines-story-box">
         <p>
           <b>Work Parties</b></br>
           <i>Maintaining communal areas</i>
         </p>
       </div>
-      <div id="tools" onclick="print_guide(tools, toolsGuide)" class="story-box">
+      <div id="tools" onclick="print_guide(tools, toolsGuide)" class="guidelines-story-box">
         <p>
           <b>Tools and Equipment</b></br>
           <i>Proper use and protocol</i>
@@ -235,7 +235,7 @@
       </div>
     </div>
     <!--All dropdowns here-->
-    <div id="coordsGuide" class="guidelines-expansion hide left">
+    <div id="coordsGuide" class="guidelines-expansion guidelines-hide guidelines-left">
       <div class="guideline">
         <p>
           Site Coordinators are responsible for answering gardening questions 
@@ -247,7 +247,7 @@
         </p>
       </div>
     </div>
-    <div id="partiesGuide" class="guidelines-expansion hide middle">
+    <div id="partiesGuide" class="guidelines-expansion guidelines-hide guidelines-middle">
       <div class="guideline">
         <p>
           Project Grow Community Gardens participants are encouraged 
@@ -260,7 +260,7 @@
         </p>
       </div>
     </div>
-    <div id="toolsGuide" class="guidelines-expansion hide right">
+    <div id="toolsGuide" class="guidelines-expansion guidelines-hide guidelines-right">
       <div class="guideline">
         <p>
         Many sites supply a few gardening tools marked with a red 
@@ -273,8 +273,8 @@
         </p>
       </div>
     </div>
-    <div class="indent" id="guidelines-row-last">
-      <div id="water" onclick="print_guide(water, waterGuide)" class="story-box">
+    <div class="guidelines-indent" id="guidelines-row-last">
+      <div id="water" onclick="print_guide(water, waterGuide)" class="guidelines-story-box">
         <p>
           <b>Water</b></br>
           <i>Equipment and protocols</i>
@@ -288,7 +288,7 @@
       </div>
     </div>
     <!--Once again, put dropdowns here-->
-    <div id="waterGuide" class="guidelines-expansion hide middle">
+    <div id="waterGuide" class="guidelines-expansion guidelines-hide guidelines-middle">
       <div class="guideline">
         <p>Water costs are included in plot fees</p>
         <p>
@@ -301,7 +301,7 @@
         </p>
       </div>
     </div>
-    <div id="closingGuide" class="guidelines-expansion hide middle">
+    <div id="closingGuide" class="guidelines-expansion guidelines-hide guidelines-middle">
       <div class="guideline">
         <p>
           Gardeners must clean up plots (including perennial plots) at the end of each season. 
@@ -315,7 +315,7 @@
       </div>
     </div>
   </div>
-  <div id="guidelines-note-to-all" class="indent">
+  <div id="guidelines-note-to-all" class="guidelines-indent">
     <p>
       <b>PLEASE REMEMBER -</b> We are guests on all properties where garden sites are located. 
       Our members and gardeners represent Project Grow. Please be a good tenant and respectful of landowners and neighbors.
