@@ -66,12 +66,12 @@
             </div>
         </div>
         <div id="wwd-img-1971">
-            <img src=<?php echo get_template_directory_uri();?>/images/wwd-1971.png alt="1971 picture">
+            <img src=<?php echo get_template_directory_uri();?>/images/what-we-do/wwd-1971.png alt="1971 picture">
         </div>
     </div>
     <div class="wwd-flex wwd-reverse">
         <div id="wwd-img-1972">
-            <img src=<?php echo get_template_directory_uri();?>/images/wwd-1972-combo.png alt="1972 pic">
+            <img src=<?php echo get_template_directory_uri();?>/images/what-we-do/wwd-1972-combo.png alt="1972 pic">
         </div>
         <div class="wwd-container">
             <div class="wwd-content wwd-right wwd-pg-space">
@@ -98,12 +98,12 @@
             </div>
         </div>
         <div id="wwd-img-mid1970s">
-            <img src=<?php echo get_template_directory_uri();?>/images/wwd-mid1970s.png alt="mid 1970s picture">
+            <img src=<?php echo get_template_directory_uri();?>/images/what-we-do/wwd-mid1970s.png alt="mid 1970s picture">
         </div>
     </div>
     <div class="wwd-flex wwd-reverse">
         <div id="wwd-img-1980">
-            <img src=<?php echo get_template_directory_uri();?>/images/wwd-1980s-2000s.png alt="1980s-2000s pic">
+            <img src=<?php echo get_template_directory_uri();?>/images/what-we-do/wwd-1980s-2000s.png alt="1980s-2000s pic">
         </div>
         <div class="wwd-container wwd-right">
             <div class="wwd-content">
@@ -125,12 +125,12 @@
             </div>
         </div>
         <div id="wwd-img-2010s">
-            <img src=<?php echo get_template_directory_uri();?>/images/wwd-2010s.png alt="2010s picture">
+            <img src=<?php echo get_template_directory_uri();?>/images/what-we-do/wwd-2010s.png alt="2010s picture">
         </div>
     </div>
     <div class="wwd-flex wwd-reverse">
         <div id="wwd-img-present">
-            <img src=<?php echo get_template_directory_uri();?>/images/wwd-present.png alt="present picture">
+            <img src=<?php echo get_template_directory_uri();?>/images/what-we-do/wwd-present.png alt="present picture">
         </div>
         <div class="wwd-container wwd-right">
             <div class="wwd-content">
