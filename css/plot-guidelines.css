@@ -19,7 +19,7 @@ body {
 
     height: 25rem; /*Just for scale, looks like 25rem is a good size*/
     background-size: cover; /*Take up the whole space*/
-    background-image: url("../plot-guidelines-header.png");
+    background-image: url("../images/plot-guidelines-header.png");
     background-position: center;
     background-repeat: no-repeat;
     background-color: aqua; /*Should never show if image is well sized*/
@@ -59,10 +59,13 @@ body {
     padding: .75rem 0;
 }
 
-#guidelines-container {
+#guidelines-container-normal {
     display: flex;
     flex-wrap: wrap;
     position: relative;
+}
+#guidelines-container-mobile {
+    display: none;
 }
 #guidelines-row {
     display: flex;
@@ -150,9 +153,11 @@ body {
 @media screen and (max-width: 700px) {
     .open-story-box {
         width: unset;
+        margin-top: 2rem;
     }
     .guidelines-story-box {
         width: unset;
+        margin-top: 2rem;
     }
     #guidelines-row {
         display: unset;
@@ -160,5 +165,19 @@ body {
     .guidelines-indent {
         padding-left: 5rem;
         padding-right: 5rem;
+    }
+    #guidelines-container-normal {
+        display: none;
+    }
+    #guidelines-container-mobile {
+        display: block;
+        position: relative;
+        width: 100%;
+    }
+    .guidelines-expansion {
+        margin: unset;
+    }
+    .guidelines-border-mobile {
+        border-radius: 0 0 16px 16px;
     }
 }
