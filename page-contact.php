@@ -5,7 +5,6 @@
 <div class="header-img">
     <div class="center-header-box">
         <h1 id="header-title">Contact Us</h1>
-        <button class="plant-catalog-btn"><b>Plant Catalog</b></button>
     </div>
 </div>
 
