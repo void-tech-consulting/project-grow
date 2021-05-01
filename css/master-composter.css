@@ -325,6 +325,8 @@
   padding-top: 1.362rem;
 }
 
+
+/* 3 cols */
 @media only screen and (max-width: 1182px) {
   .master-composter-item-container>* {
     flex: 0 0 31%;
@@ -332,6 +334,7 @@
   }
 }
 
+/* 2 cols */
 @media only screen and (max-width: 869px) {
   .master-composter-item-container>* {
     flex: 0 0 48%;
@@ -355,9 +358,13 @@
   .master-composter-main-description {
     line-height: 2.1rem;
   }
+
+  .master-composter-header-background {
+    background-image: url(../images/header-images/master-composter-mobile.png);
+  }
 }
 
-
+/* 1 col */
 @media only screen and (max-width: 566px) {
   .master-composter-item-container>* {
     flex: 0 0 100%;
