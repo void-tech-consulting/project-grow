@@ -9,7 +9,13 @@
         <a class="gs-apply-plot" href="https://google.com"><b>Apply For A Plot</b></a>
     </div>
 </div>
-<div>Sorting and searching elements here</div>
+<div>
+    <label for="plots">Sort Plots</label>
+    <select name="plots" id="gs-sort-input">
+        <option value="alpha">Alphabetical</option>
+        <option value="saab">Other</option>
+    </select>
+</div>
 
 <div class="gs-flex gs-wrap">
     <table class="gs-table" >
@@ -20,7 +26,9 @@
             <th id="gs-location">Location</th>
             <th id="gs-extra"></th>
         </tr>
-        <?php
+        <tbody class="gs-table-body">
+
+            <?php
         require 'inc/section_vars.php';
         $data = get_gs_data('garden-sites-repeater');
         if (!empty($data)) {
@@ -83,6 +91,7 @@
         <?php
         } else {
         } ?>
+        </tbody>
     </table>
     <div class="gs-right-wrap">
         <div id="gs-search-bar">

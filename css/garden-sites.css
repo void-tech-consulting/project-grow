@@ -105,6 +105,9 @@ body {
     padding-bottom: .5rem;
     text-align: left;
 }
+.gs-sort-params {
+    padding-left: 2rem;
+}
 .gs-sort-params img{
     max-width: unset;
 }
