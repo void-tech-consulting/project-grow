@@ -12,8 +12,6 @@
     <div id="psi-header-img">
         <div class="psi-center-header-box">
             <h1 id="psi-header-title">Plant Sale Information</h1>
-            <!--Make button actually link to other page eventually-->
-            <button class="plant-catalog-btn"><b>Plant Catalog</b></button>
         </div>
     </div>
     <div class="psi-indent psi-main-page psi-title"><b>Project Grow Plant Sale</b></div>
