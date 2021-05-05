@@ -20,83 +20,57 @@ get_header();
         <br><br>
         <b>If we are unable to confirm you for a plot, your application fee will be refunded.</b>
     </p>
-    <div class="apply-form-info">
-        <div class="apply-application">
-            <!-- php application form thing here -->
-        </div>
-        <!-- <div class="apply-info">
-             info about plots here
-        </div> -->
-    </div>
-    <div class="apply-agreement">
-        <!-- gardening agreement here -->
-    </div>
-    <div class="apply-payment-info">
-        <!-- info about transaction here -->
-    </div>
-    <div class="apply-payment-method">
-        <!-- payment method handling here -->
-    </div>
-    <div class="apply-flex">
-        <div class="apply-form">
-            <?php 
-            # [forminator_form id="105"]
-            $shortcode = get_theme_mod('apply_for_plot_form-shortcode');
-            echo do_shortcode($shortcode);
-            ?>
-        </div>
-        <div class="apply-info">
-            <div class="apply-info-row apply-info-row-1">
-                <div class="apply-info-col">
-                    <div class="apply-col-head">
-                        Full Plots
-                    </div> 
+
+    <div class="apply-info">
+        <div class="apply-info-row">
+            <div class="apply-info-col">
+                <div class="apply-col-head">
+                    Full Plots
+                </div> 
+                <br>
+                <div class="apply-col-body">
+                    <b>750</b> sq ft <br>
+                    <b><?php echo get_theme_mod('full-plot-fee') ?></b> annual fee 
                     <br>
-                    <div class="apply-col-body">
-                        <b>750</b> sq ft <br>
-                        <b><?php echo get_theme_mod('full-plot-fee') ?></b> annual fee 
-                        <br>
-                    </div>
-                </div>
-                <div class="apply-info-col">
-                    <div class="apply-col-head">
-                        Half Plots
-                    </div>
-                    <br>
-                    <div class="apply-col-body">
-                        <b>375</b> sq ft <br>
-                        <b><?php echo get_theme_mod('half-plot-fee') ?></b> annual fee 
-                        <br>
-                    </div>
-                    
                 </div>
             </div>
-            <div class="apply-info-row apply-info-row-2">
-                <div class="apply-info-col apply-info-col-1">
-                    <div class="apply-col-head">
-                        Discovery Gardens
-                    </div>
-                    <br>
-                    <div class="apply-col-body">
-                        <b>18</b> & <b>24</b> sq ft. raised bed gardens <br><br>
-                        Designed for older gardeners, children, and those with limited mobility <br><br>
-                        <b>$50</b> annual rental fee for a single bed <br><b>$80</b> for two beds
-                    </div>
-                    
+            <div class="apply-info-col">
+                <div class="apply-col-head">
+                    Half Plots
                 </div>
-                <div class="apply-info-col apply-info-col-2">
-                    <div class="apply-col-head">
-                        Reduced Fee Plots
-                    </div>
+                <br>
+                <div class="apply-col-body">
+                    <b>375</b> sq ft <br>
+                    <b><?php echo get_theme_mod('half-plot-fee') ?></b> annual fee 
                     <br>
-                    <div class="apply-col-body">
-                        Standard plots available for a subsidized annual fee depending on need and our ability to afford subsidies. <br><br>
-                        Those interested must submit the <b>regular plot application</b> as well as the <b>low-income scholarship application.</b><br>
-                    </div>
-                    
                 </div>
+                
             </div>
-            <div class="apply-info-single">
+            <div class="apply-info-col">
+                <div class="apply-col-head">
+                    Discovery Gardens
+                </div>
+                <br>
+                <div class="apply-col-body">
+                    <b>18</b> & <b>24</b> sq ft. raised bed gardens <br><br>
+                    Designed for older gardeners, children, and those with limited mobility <br><br>
+                    <b>$50</b> annual rental fee for a single bed <br><b>$80</b> for two beds
+                </div>
+                
+            </div>
+            <div class="apply-info-col">
+                <div class="apply-col-head">
+                    Reduced Fee Plots
+                </div>
+                <br>
+                <div class="apply-col-body">
+                    Standard plots available for a subsidized annual fee depending on need and our ability to afford subsidies. <br><br>
+                    Those interested must submit the <b>regular plot application</b> as well as the <b>low-income scholarship application.</b><br>
+                </div>
+                
+            </div>
+
+            <div class="apply-info-col">
                 <div class="apply-col-body">
                     <div class="apply-single-head">
                         Mailing Address
@@ -113,6 +87,16 @@ get_header();
                 </div>
 
             </div>
+        </div>
+    </div>
+    
+    <div class="apply-flex">
+        <div class="apply-form">
+            <?php 
+            # [forminator_form id="105"]
+            $shortcode = get_theme_mod('apply_for_plot_form-shortcode');
+            echo do_shortcode($shortcode);
+            ?>
         </div>
     </div>
 
