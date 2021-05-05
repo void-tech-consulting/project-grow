@@ -1,7 +1,7 @@
 jQuery(document).ready(function($) {
-  $('.gs-search-input').on('input', () => {
-    var searchString = $('.gs-search-input').val()
-    if (searchString.length > 3) {
+  $('#gs-search-input').on('input', () => {
+    var searchString = $('#gs-search-input').val()
+    if (searchString.length > 2) {
       document.querySelectorAll('.gs-site-name').forEach((e) => {
 
         var x = new RegExp(searchString, 'i');
@@ -15,12 +15,11 @@ jQuery(document).ready(function($) {
       })
     }
   });
-  $('#gs-sort-input').change(() => {
+  $('#gs-sort-select').change(() => {
     var toSort = document.querySelectorAll('.gs-site');
     toSort = Array.prototype.slice.call(toSort, 0);
 
     toSort.sort(function(a, b) {
-      debugger
         var aord = getSiteName(a.children);
         var bord = getSiteName(b.children);
         // two elements never have the same ID hence this is sufficient:

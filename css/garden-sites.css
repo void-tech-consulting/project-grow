@@ -20,6 +20,32 @@ body {
     background-color: aqua; /*Should never show if image is well sized*/
     
 }
+
+#gs-sort-box {
+    width: 22rem;
+    margin-left: 3rem;
+    height: 7rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#gs-sort-box label {
+    font-weight: 500;
+    color: #53401A;
+}
+
+#gs-sort-select {
+    height: 3.5rem;
+    padding: 0 .5rem 0 .5rem;
+    color: #ffffff;
+    border: none;
+    font-weight: 500;
+    background-color: #40804d;
+    outline: none;
+    border-radius: 20px;
+}
+
 #gs-center-header-box {
     /*Flex box to allow moving the button*/
     display: flex;
@@ -52,15 +78,26 @@ body {
 .gs-wrap {
     background-color: #CEBFA1;
 }
-.gs-table {
+.gs-flex-grow {
     flex-grow: 1;
+}
+.gs-wrap-sort {
+    width: 100%;
+    background-color: white;
+}
+.gs-plot-size-box {
+    height: 7rem;
+    background-color: white;
+}
+.gs-table {
+    width: 100%;
     border-spacing:0;
     border-collapse: collapse;
 }
 .gs-table th {
     background-color: #CEBFA1;
     font-weight: 900;
-    font-size: 2.6rem;
+    font-size: 2.1rem;
     height: 4rem;
 }
 #gs-extra {
@@ -75,10 +112,6 @@ body {
     padding: 1rem .5rem 1rem 2rem;
     text-align: center;
     height: 10rem;
-}
-#gs-search-bar {
-    background-color: #CEBFA1;
-    height: 4rem;
 }
 #gs-map {
     width: 100%;
@@ -136,9 +169,33 @@ body {
 #garden-sites-plotcap{
     display: inline-block;
     margin-left: 7rem;
-
+    
 }
 #one-img{
     display: flex;
     margin-left: 4rem;
+}
+
+.gs-table thead tr {
+    height: 4.3rem;
+}
+
+#gs-search-bar {
+    background-color: #CEBFA1;
+    height: 4.3rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+#gs-search-input {
+    width: 50%;
+    border-radius: 30px;
+    font-size: 1.4rem;
+    background-color: white;
+    background-image: url('https://cdn2.iconfinder.com/data/icons/ios-7-icons/50/search-24.png');
+    background-position: 1rem .5rem;
+    background-repeat: no-repeat;
+    padding: .6rem 2rem .4rem 4rem;
+    outline: none;
 }
