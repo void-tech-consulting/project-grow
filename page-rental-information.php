@@ -7,7 +7,7 @@
 
 <div class="rental-info-page-header-background">
       <div class="rental-info-header-box">
-        <span class="rental-info-header-text">Rental information</span>
+        <span class="rental-info-header-text">Rental Information</span>
         <a href="https://www.google.com" class="garden-sites-button-link">
           <div class="plain-text garden-sites-button">
               Garden Sites

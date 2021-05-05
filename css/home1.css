@@ -1,7 +1,7 @@
 /*banner*/
 .banner {
   background: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-    url(../homeBanner.png);
+    url(../images/home/home-banner.png);
   background-repeat: no-repeat;
   height: 63.7rem;
   background-size: 100% 100%;

@@ -43,7 +43,7 @@ get_header();
 
 <div class="get-started">
     <div class="process-step">
-        <img src="./plant.jpg" alt="step image not found" class="step-img">
+        <img src=<?php echo get_template_directory_uri();?>/images/home/plant.jpg alt="step image not found" class="step-img">
         <div class="step-text">
             Choose the type of plot you're interested in
         </div>
@@ -54,14 +54,14 @@ get_header();
         <div class="get-started-header">
             How to Get Started
         </div>
-        <img src="./location.jpg" alt="step image not found">
+        <img src=<?php echo get_template_directory_uri();?>/images/home/location.jpg alt="step image not found">
         <div class="step-text">
             Check out which site will be home to your garden
         </div>
         <a href="" class="step-link">View Garden Sites</a>
     </div>
     <div class="process-step">
-        <img src="./apply.jpg" alt="step image not found" class="step-img">
+        <img src=<?php echo get_template_directory_uri();?>/images/home/apply.jpg alt="step image not found" class="step-img">
         <div class="step-text">
             Apply for the plot!
         </div>
