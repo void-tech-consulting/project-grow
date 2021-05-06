@@ -24,7 +24,6 @@ body {
 #gs-sort-box {
     width: 22rem;
     margin-left: 3rem;
-    height: 7rem;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -34,9 +33,14 @@ body {
     font-weight: 500;
     color: #53401A;
 }
+#gs-sort-box option {
+    font-size: 1.4rem;
+    width: 75%;
+}
 
 #gs-sort-select {
     height: 3.5rem;
+    width: 14rem;
     padding: 0 .5rem 0 .5rem;
     color: #ffffff;
     border: none;
@@ -83,11 +87,27 @@ body {
 }
 .gs-wrap-sort {
     width: 100%;
+    align-items: center;
+    justify-content: space-around;
+    display: flex;
     background-color: white;
+    height: 9rem;
+}
+.gs-plot-size-wrap {
+    height: 9rem;
+    font-size: 1.6rem;
+    background-color: #f8f5ec;
+    border-left: 1px solid #CEBFA1;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 }
 .gs-plot-size-box {
-    height: 7rem;
-    background-color: white;
+    text-align: center;
+    color: #3F2E00;
+}
+.gs-bold {
+    font-weight: 600;
 }
 .gs-table {
     width: 100%;
@@ -152,6 +172,7 @@ body {
 }
 .gs-flex img {
     height: auto;
+    margin: 0 auto;
 }
 .garden-sites-column-names{
     display: flex;

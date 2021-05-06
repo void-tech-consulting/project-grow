@@ -6,7 +6,13 @@
     <div id="gs-center-header-box">
         <h1 id="gs-header-title">Garden Sites</h1>
         <!--Make button actually link to other page eventually-->
-        <a class="gs-apply-plot" href="https://google.com"><b>Apply For A Plot</b></a>
+        <?php
+            $slug = "apply-for-plot";
+            $page_object = get_page_by_path( $slug );
+            $page_id = $page_object->ID;
+            $permalink = get_permalink( $page_id );
+        ?>
+        <a class="gs-apply-plot" href="<?php echo $permalink ?>"><b>Apply For A Plot</b></a>
     </div>
 </div>
 
@@ -16,9 +22,30 @@
             <div id="gs-sort-box">
                 <label for="plots">Sort by</label>
                 <select name="plots" id="gs-sort-select">
+                    <option value="number">Number</option>
                     <option value="alpha">Alphabetical</option>
-                    <option value="saab">Other</option>
+                    <option value="soil-type">Soil Type</option>
+                    <option value="accessibility">Accessibility</option>
+                    <option value="special-conditions">Special Conditions</option>
                 </select>
+            </div>
+            <div class="gs-extra-info-box">
+                <div>
+                    <img src=<?php echo get_template_directory_uri();?>/images/garden-sites/soil-type.png alt="soil type icon">
+                </div>
+                <div>Soil Type</div>
+            </div>
+            <div class="gs-extra-info-box">
+                <div>
+                    <img src=<?php echo get_template_directory_uri();?>/images/garden-sites/accessibility.png alt="soil type icon">
+                </div>
+                <div>Accessibility</div>
+            </div>
+            <div class="gs-extra-info-box">
+                <div>
+                    <img src=<?php echo get_template_directory_uri();?>/images/garden-sites/special-conditions.png alt="soil type icon">
+                </div>
+                <div>Special Conditions</div>
             </div>
         </div>
         <table class="gs-table" >
@@ -57,7 +84,7 @@
                         <td class="gs-sort-params">
                             <?php if ($f['Soil_Checkbox']) {
                                 ?>
-                            <div class="gs-param gs-flex">
+                            <div class="gs-param gs-flex gs-soil-type">
                                 <div>
                                     <img src=<?php echo get_template_directory_uri();?>/images/garden-sites/soil-type.png alt="soil type icon">
                                 </div>
@@ -68,7 +95,7 @@
                             <?php } ?>
                             <?php if ($f['Access_Checkbox']) {
                                 ?>
-                            <div class="gs-param gs-flex">
+                            <div class="gs-param gs-flex gs-accessibility">
                                 <div>
                                     <img src=<?php echo get_template_directory_uri();?>/images/garden-sites/accessibility.png alt="accessibility icon">
                                 </div>
@@ -79,7 +106,7 @@
                             <?php } ?>
                             <?php if ($f['Special_Checkbox']) {
                                 ?>
-                            <div class="gs-param gs-flex">
+                            <div class="gs-param gs-flex gs-special-conditions">
                                 <div>
                                     <img src=<?php echo get_template_directory_uri();?>/images/garden-sites/special-conditions.png alt="extra info icon">
                                 </div>
@@ -100,8 +127,28 @@
         </table>
     </div>
     <div class="gs-right-wrap">
-        <div class="gs-plot-size-box">
-
+        <div class="gs-plot-size-wrap">
+            <div class="gs-plot-size-box">
+                <div class="gs-bold">
+                    Full Size Plot
+                </div>
+                <div>750 sqft</div>
+                <div>130$ annual fee</div>
+            </div>
+            <div class="gs-plot-size-box">
+                <div class="gs-bold">
+                    Full Size Plot
+                </div>
+                <div>750 sqft</div>
+                <div>130$ annual fee</div>
+            </div>
+            <div class="gs-plot-size-box">
+                <div class="gs-bold">
+                    Full Size Plot
+                </div>
+                <div>750 sqft</div>
+                <div>130$ annual fee</div>
+            </div>
         </div>
         <div id="gs-search-bar">
             <input type="text" id="gs-search-input" placeholder="Search..">
