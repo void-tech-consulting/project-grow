@@ -77,7 +77,7 @@ function add_styles()
   wp_enqueue_style( "what-we-do", get_theme_file_uri('/css/what-we-do.css'));
   wp_enqueue_style( "garden-sites", get_theme_file_uri('/css/garden-sites.css'));
   wp_enqueue_style("growing-tips", get_theme_file_uri('/css/growing-tips.css'));
-  //wp_enqueue_style( "individual-plots", get_theme_file_uri('/css/indv-plots.css'));
+  wp_enqueue_style( "individual-plots", get_theme_file_uri('/css/indv-plots.css'));
   wp_enqueue_style("master-composter", get_theme_file_uri('/css/master-composter.css'));
   wp_enqueue_style("apply-for-plot", get_theme_file_uri('/css/apply-for-plot.css'));
   wp_enqueue_style( "plot-guidelines", get_theme_file_uri('/css/plot-guidelines.css'));
