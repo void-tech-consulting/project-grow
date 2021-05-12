@@ -24,7 +24,7 @@ get_header();
         <div class="upcoming">Upcoming Events</div>
         <a href="" class="small-link">See More Events</a>
         <br>
-        <div class="event-title">Seed Share</div>
+        <div class="home-event-title">Seed Share</div>
         Location: Downtown Home & Garden <br>
         Date: 3/21/20 <br>
         Time: 10:00AM - 11:30AM <br><br>
@@ -42,31 +42,34 @@ get_header();
 </div> <!-- end events section -->
 
 <div class="get-started">
-    <div class="process-step">
-        <img src="./plant.jpg" alt="step image not found" class="step-img">
-        <div class="step-text">
-            Choose the type of plot you're interested in
-        </div>
-        <a href="" class="step-link">Check Rental Info</a>
+    <div class="get-started-header">
+        How to Get Started
     </div>
 
-    <div class="process-step">
-        <div class="get-started-header">
-            How to Get Started
+    <div class="get-started-steps">
+        <div class="process-step">
+            <img src="./plant.jpg" alt="step image not found" class="step-img">
+            <div class="step-text">
+                Choose the type of plot you're interested in
+            </div>
+            <a href="" class="step-link">Check Rental Info</a>
         </div>
-        <img src="./location.jpg" alt="step image not found">
-        <div class="step-text">
-            Check out which site will be home to your garden
-        </div>
-        <a href="" class="step-link">View Garden Sites</a>
-    </div>
-    <div class="process-step">
-        <img src="./apply.jpg" alt="step image not found" class="step-img">
-        <div class="step-text">
-            Apply for the plot!
-        </div>
-        <a href="" class="step-link">Apply</a>
 
+        <div class="process-step">
+            <img src="./location.jpg" alt="step image not found">
+            <div class="step-text">
+                Check out which site will be home to your garden
+            </div>
+            <a href="" class="step-link">View Garden Sites</a>
+        </div>
+        <div class="process-step">
+            <img src="./apply.jpg" alt="step image not found" class="step-img">
+            <div class="step-text">
+                Apply for the plot!
+            </div>
+            <a href="" class="step-link">Apply</a>
+
+        </div>
     </div>
 </div> <!-- end get-started section -->
 
