@@ -2,24 +2,12 @@
   get_header(); 
   
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <link rel="stylesheet" href="grow.css">
-    <meta charset="UTF-8">
-    <meta content="initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=0,width=device-width" name="viewport">
-    <title> individual-garden-sites </title>
-</head>
-<body>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
-    </style>
-    <section class="indv-plots-header">
-        <div id="gs-center-header-box">
-            <h1 id="gs-header-title">Garden Sites</h1>
-            <button class="gs-apply-plot" href="https://google.com">Apply For A Plot</button>
-        </div>
-    </section>
+<section class="indv-plots-header">
+    <div id="gs-center-header-box">
+        <h1 id="gs-header-title">Garden Sites</h1>
+        <button class="gs-apply-plot" href="https://google.com">Apply For A Plot</button>
+    </div>
+</section>
     <main class="flex indv-plots">
         <section>
             <?php
@@ -43,6 +31,7 @@
             <?php
                 $loop = new WP_Query( array(
                     'post_type' => 'Plot',
+                    'post_status' => 'publish',
                     'posts_per_page' => -1
                 ));
             ?>
@@ -51,8 +40,6 @@
             <?php endwhile; wp_reset_query();?> 
         </nav>
     </main>
-</body>
-</html>
 
 <?php get_footer(); ?>
 

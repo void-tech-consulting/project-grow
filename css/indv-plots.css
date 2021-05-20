@@ -31,5 +31,9 @@
     background-color: #F8F5EC;
     padding: 2rem;
     margin: 2rem;
+    margin-top: 0;
 }
 
+.indv-plots-nav h2 {
+    margin-bottom: 1rem;
+}
