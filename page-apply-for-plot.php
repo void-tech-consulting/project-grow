@@ -83,7 +83,7 @@ get_header();
                     <div class="apply-single-head">
                         Want to Volunteer?
                     </div>
-                    Email: info@projectgrowgardens.org
+                    Email: <div class="apply-plot-email">info@projectgrowgardens.org</div>
                 </div>
 
             </div>

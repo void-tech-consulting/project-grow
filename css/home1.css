@@ -126,6 +126,12 @@
   text-align: center;
 }
 
+.process-step-divider {
+  background-color: #cebfa1;
+  width: 2px;
+  height: 25rem;
+}
+
 .step-text {
   padding-top: 2rem;
   padding-bottom: 2rem;
@@ -291,6 +297,9 @@ input[type="submit"] {
     padding-bottom: 3rem;
     align-items: center;
     text-align: none;
+  }
+  .process-step-divider {
+    display: none;
   }
   .step-text {
     padding-top: 0.5rem;

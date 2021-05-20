@@ -55,6 +55,8 @@ get_header();
             <a href="" class="step-link">Check Rental Info</a>
         </div>
 
+        <div class="process-step-divider"></div>
+
         <div class="process-step">
             <img src="./location.jpg" alt="step image not found">
             <div class="step-text">
@@ -62,6 +64,9 @@ get_header();
             </div>
             <a href="" class="step-link">View Garden Sites</a>
         </div>
+
+        <div class="process-step-divider"></div>
+
         <div class="process-step">
             <img src="./apply.jpg" alt="step image not found" class="step-img">
             <div class="step-text">
