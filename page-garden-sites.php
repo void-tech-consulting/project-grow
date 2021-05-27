@@ -6,89 +6,156 @@
     <div id="gs-center-header-box">
         <h1 id="gs-header-title">Garden Sites</h1>
         <!--Make button actually link to other page eventually-->
-        <a class="gs-apply-plot" href="https://google.com"><b>Apply For A Plot</b></a>
-    </div>
-</div>
-<div>Sorting and searching elements here</div>
-<div id="gs-search-bar">
-    <!-- The way I got Col names to line up with elements is pretty ugly (does not scale down well)
-         If you know of a better way to do it, please do. One solution is to use JS and on screen
-         resize and load, get coords of element, and set x-coord of Col name to that x coord, but that seems equally unnecessary-->
-    <div class="gs-flex gs-align-center">
-        <div id="gs-site-title">Site Names</div>
-        <div id="gs-plot-title">Plot Capacity</div>
-        <div id="gs-location-title">Location</div>
-    </div>
-    <!-- Search bar -->
-</div>
-<div class="gs-flex">
-    <div id="gs-sites-wrapper">
         <?php
-        require 'inc/section_vars.php';
-        $data = get_gs_data('garden-sites-repeater');
-        if (!empty($data)) {
-            foreach ($data as $k => $f) {
-                ?>
-                <div class="gs-site">
-                    <div class="gs-site-number">
-                        <div class="gs-circle">
-                            <?php echo $f['Site_Number'];?>
-                        </div>
-                    </div>
-                    <div class="gs-site-name">
-                        <?php echo $f['Site_Name'];?>
-                    </div>
-                    <div class="gs-plot-cap">
-                        <?php echo $f['Plot_Capacity'];?>
-                    </div>
-                    <div class="gs-location">
-                        <?php echo $f['Location'];?>
-                    </div>
-                    <div class="gs-sort-params">
-                        <div class="gs-param gs-flex">
-                        <?php if ($f['Soil_Checkbox']) {
-                            ?>
-                            <div>
-                                <img src=<?php echo get_template_directory_uri();?>/images/garden-sites/soil-type.png alt="soil type icon">
-                            </div>
-                            <div class="gs-param-txt">
-                                <?php echo $f['Soil_Conditions'];?>
-                            </div>
-                        <?php } ?>
-                        </div>
-                        <div class="gs-param gs-flex">
-                        <?php if ($f['Access_Checkbox']) {
-                            ?>
-                            <div>
-                                <img src=<?php echo get_template_directory_uri();?>/images/garden-sites/accessibility.png alt="accessibility icon">
-                            </div>
-                            <div class="gs-param-txt">
-                                <?php echo $f['Accessibility'];?>
-                            </div>
-                        <?php } ?>
-                        </div>
-                        <div class="gs-param gs-flex">
-                        <?php if ($f['Special_Checkbox']) {
-                            ?>
-                            <div>
-                                <img src=<?php echo get_template_directory_uri();?>/images/garden-sites/special-conditions.png alt="extra info icon">
-                            </div>
-                            <div class="gs-param-txt">
-                                <?php echo $f['Special_Conditions'];?>
-                            </div>
-                        <?php } ?>
-                        </div>
-                    </div>
+            $slug = "apply-for-plot";
+            $page_object = get_page_by_path( $slug );
+            $page_id = $page_object->ID;
+            $permalink = get_permalink( $page_id );
+        ?>
+        <a class="gs-apply-plot" href="<?php echo $permalink ?>"><b>Apply For A Plot</b></a>
+    </div>
+</div>
+
+<div class="gs-flex gs-wrap">
+    <div class="gs-flex-grow">
+        <div class="gs-wrap-sort">
+            <div id="gs-sort-box">
+                <label for="plots">Sort by</label>
+                <select name="plots" id="gs-sort-select">
+                    <option value="number">Number</option>
+                    <option value="alpha">Alphabetical</option>
+                    <option value="soil-type">Soil Type</option>
+                    <option value="accessibility">Accessibility</option>
+                    <option value="special-conditions">Special Conditions</option>
+                </select>
+            </div>
+            <div class="gs-extra-info-box">
+                <div>
+                    <img src=<?php echo get_template_directory_uri();?>/images/garden-sites/soil-type.png alt="soil type icon">
                 </div>
+                <div>Soil Type</div>
+            </div>
+            <div class="gs-extra-info-box">
+                <div>
+                    <img src=<?php echo get_template_directory_uri();?>/images/garden-sites/accessibility.png alt="soil type icon">
+                </div>
+                <div>Accessibility</div>
+            </div>
+            <div class="gs-extra-info-box">
+                <div>
+                    <img src=<?php echo get_template_directory_uri();?>/images/garden-sites/special-conditions.png alt="soil type icon">
+                </div>
+                <div>Special Conditions</div>
+            </div>
+        </div>
+        <table class="gs-table" >
+            <thead>
+                <tr class="gs-align-center">
+                    <th></th>
+                    <th id="gs-site-names">Site Names</th>
+                    <th id="gs-plot-cap">Plot Capacity</th>
+                    <th id="gs-location">Location</th>
+                    <th id="gs-extra"></th>
+                </tr>
+            </thead>
+            <tbody class="gs-table-body">
+
+                <?php
+            require 'inc/section_vars.php';
+            $data = get_gs_data('garden-sites-repeater');
+            if (!empty($data)) {
+                foreach ($data as $k => $f) {
+                    ?>
+                    <tr class="gs-site">
+                        <td class="gs-site-number">
+                            <div class="gs-circle">
+                                <?php echo $f['Site_Number'];?>
+                            </div>
+                        </td>
+                        <td class="gs-site-name">
+                            <?php echo $f['Site_Name'];?>
+                        </td>
+                        <td class="gs-plot-cap">
+                            <?php echo $f['Plot_Capacity'];?>
+                        </td>
+                        <td class="gs-location">
+                            <?php echo $f['Location'];?>
+                        </td>
+                        <td class="gs-sort-params">
+                            <?php if ($f['Soil_Checkbox']) {
+                                ?>
+                            <div class="gs-param gs-flex gs-soil-type">
+                                <div>
+                                    <img src=<?php echo get_template_directory_uri();?>/images/garden-sites/soil-type.png alt="soil type icon">
+                                </div>
+                                <div class="gs-param-txt">
+                                    <?php echo $f['Soil_Conditions'];?>
+                                </div>
+                            </div>
+                            <?php } ?>
+                            <?php if ($f['Access_Checkbox']) {
+                                ?>
+                            <div class="gs-param gs-flex gs-accessibility">
+                                <div>
+                                    <img src=<?php echo get_template_directory_uri();?>/images/garden-sites/accessibility.png alt="accessibility icon">
+                                </div>
+                                <div class="gs-param-txt">
+                                    <?php echo $f['Accessibility'];?>
+                                </div>
+                            </div>
+                            <?php } ?>
+                            <?php if ($f['Special_Checkbox']) {
+                                ?>
+                            <div class="gs-param gs-flex gs-special-conditions">
+                                <div>
+                                    <img src=<?php echo get_template_directory_uri();?>/images/garden-sites/special-conditions.png alt="extra info icon">
+                                </div>
+                                <div class="gs-param-txt">
+                                    <?php echo $f['Special_Conditions'];?>
+                                </div>
+                            </div>
+                            <?php } ?>
+                        </td>
+                    </tr>
+                    <?php
+                }
+                ?>
             <?php
-            }
-            ?>
-        <?php
-        } else {
-        } ?>
+            } else {
+            } ?>
+            </tbody>
+        </table>
     </div>
-    <iframe id="gs-map" src="https://www.google.com/maps/d/embed?mid=1MFBILGI_78hQQAgdrjuolrgBU0-GM4JX"></iframe>
-</div>
-<?php
+    <div class="gs-right-wrap">
+        <div class="gs-plot-size-wrap">
+            <div class="gs-plot-size-box">
+                <div class="gs-bold">
+                    Full Size Plot
+                </div>
+                <div>750 sqft</div>
+                <div>130$ annual fee</div>
+            </div>
+            <div class="gs-plot-size-box">
+                <div class="gs-bold">
+                    Full Size Plot
+                </div>
+                <div>750 sqft</div>
+                <div>130$ annual fee</div>
+            </div>
+            <div class="gs-plot-size-box">
+                <div class="gs-bold">
+                    Full Size Plot
+                </div>
+                <div>750 sqft</div>
+                <div>130$ annual fee</div>
+            </div>
+        </div>
+        <div id="gs-search-bar">
+            <input type="text" id="gs-search-input" placeholder="Search..">
+        </div>
+        <iframe id="gs-map" src="https://www.google.com/maps/d/embed?mid=1MFBILGI_78hQQAgdrjuolrgBU0-GM4JX"></iframe>
+        </div>
+    </div>
+    <?php
   get_footer();
-?>
+  ?>
