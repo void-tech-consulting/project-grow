@@ -17,7 +17,7 @@
             require 'inc/section_vars.php';   
 
             // get_example_data is in /inc/template_functions.php
-            $data  = get_class_event_data($example_repeater);
+            $data  = get_class_event_data($classes_events_setting);
             if(!empty( $data ) ) { 
                 ?>
                 <section class="example">

@@ -1,11 +1,11 @@
-body{
+/* body{
     position: relative;
     width: 90.063rem;
     height: 171.688rem;
     overflow-y: scroll;
     background: #FFFFFF;
     display: flex;
-}
+} */
 
 .description-header{
     font-family: 'Roboto', sans-serif;
