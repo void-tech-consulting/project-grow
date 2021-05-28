@@ -85,4 +85,18 @@ function contact_form_customize($wp_customize) {
     )));
 }
 add_action('customize_register', 'contact_form_customize');
+
+function donate_form_customize($wp_customize) {
+    $wp_customize->add_section('donate-form', array(
+        'title' => 'Donate Form'
+    ));
+
+    $wp_customize->add_setting('donate-form-shortcode');
+    $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'shortcode-control', array(
+        'label' => 'Donate Form Shortcode',
+        'section' => 'donate-form',
+        'settings' => 'donate-form-shortcode'
+    )));
+}
+add_action('customize_register', 'donate_form_customize');
 ?>

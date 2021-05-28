@@ -5,14 +5,12 @@
 <div class="header-img">
     <div class="center-header-box">
         <h1 id="header-title">Contact Us</h1>
-        <button class="plant-catalog-btn"><b>Plant Catalog</b></button>
     </div>
 </div>
 
 <div class="contact-content">
-    <h2 id="contact-form-heading">Contact Form</h2>
-    <div class="row">
-        <div class="col-60">
+    <div class="content-row">
+        <!-- <div class="col-60">
             <form class="contact-form" method="post">
                 <div class="row">
                     <div class="col-50">
@@ -44,6 +42,13 @@
                     </div>
                 </div>
             </form>
+        </div> -->
+        <div class="col-60">
+            <h2 id="contact-form-heading">Contact Form</h2>
+            <?php 
+            $shortcode = get_theme_mod('contact-form-shortcode');
+            echo do_shortcode($shortcode);
+            ?>
         </div>
         <div class="col-40">
             <p class="contact-title">Mailing Address</p>
@@ -57,10 +62,5 @@
         </div>
     </div>
 </div>
-<div class="contact-form-text">
-    <?php 
-    $shortcode = get_theme_mod('contact-form-shortcode');
-    echo do_shortcode($shortcode);
-    ?>
-</div>
+
 <?php get_footer(); ?>

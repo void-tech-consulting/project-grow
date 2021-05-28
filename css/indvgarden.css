@@ -1,12 +1,3 @@
-body{
-    position: relative;
-    width: 90.063rem;
-    height: 171.688rem;
-    overflow-y: scroll;
-    background: #FFFFFF;
-    display: flex;
-}
-
 .description-header{
     font-family: 'Roboto', sans-serif;
     
@@ -25,10 +16,7 @@ body{
     font-size: 1.0rem;
     line-height: 1.875rem;
     /* or 143% */
-    
     color: #261E0D;
-    
-    
 }
 .west-park{
     font-family: 'Roboto', sans-serif;
@@ -38,18 +26,18 @@ body{
     line-height: 2.063rem;
     color: #3F2E00;
 
-    position: absolute;
+    /* position: absolute;
     width: 43rem;
     height: 2.375rem;
     left: 8.125rem;
-    top: 23.313rem;         
+    top: 23.313rem;          */
 }
 .west-park-description{
-    position: absolute;
+    /* position: absolute;
     width: 48rem;
     height: 7.75rem;
     left: 8.125rem;
-    top: 27.063rem;
+    top: 27.063rem; */
 
     font-family: 'Roboto', sans-serif;
     font-style: normal;
@@ -60,20 +48,20 @@ body{
 
     color: #53401A;
 }
-#map-of-garden{
+/* #map-of-garden{
     position: absolute;
     width: 42.25rem;
     height: 2.375rem;
     left: 8.125rem;
     top: 36.938rem;
-}
+} */
 
 #west-park-map{
-    position: absolute;
+    /* position: absolute;
     width: 42.25rem;
     height: 2.375rem;
     left: 17rem;
-    top: 37rem;
+    top: 37rem; */
 
     font-family: 'Roboto', sans-serif;
     font-style: normal;
@@ -84,14 +72,14 @@ body{
     color: #40804D;
 }
 
-.coordinator-positioning{
+/* .coordinator-positioning{
     position: absolute;
     width: 40rem;
     height: 2.375rem;
     left: 8.125rem;
     top: 41rem;
-}
-.soil-position{
+} */
+/* .soil-position{
     position: absolute;
     width: 43.75rem;   
     height: 3.125rem;
@@ -118,11 +106,11 @@ body{
     height: 5.563rem;
     left: 8.313rem;
     top: 67.875rem;
-}
+} */
 #light-color{
     color: #53401A;
 }
-.water-pos{
+/* .water-pos{
     position: absolute;
     width: 45.625rem;
     height: 6.813rem;
@@ -199,14 +187,14 @@ body{
     height: 8.375rem;
     left: 8.125rem;
     top: 146.25rem;
-}
+} */
 .rectangle{
 
-    position: absolute;
+    /* position: absolute;
     width: 23.063rem;
     height: 79.938rem;
     left: 58.813rem;
-    top: 27.063rem;
+    top: 27.063rem; */
 
     background: #F8F5EC;
     mix-blend-mode: normal;
@@ -214,11 +202,11 @@ body{
 
 }
 .rectangle-words{
-    position: absolute;
+    /* position: absolute;
     width: 20.063rem;
     height: 76.938rem;
     left: 60.313rem;
-    top: 27.688rem;
+    top: 27.688rem; */
 
     font-family: Roboto;
     font-style: normal;
@@ -235,31 +223,31 @@ body{
 
 }
 #garden-picture{
-    position: absolute;
+    /* position: absolute;
     width: 90.438rem;
     height: 16.25rem;
     left: -0.375rem;
-    top: 5.063rem;
+    top: 5.063rem; */
     /* Border */
     border: 1px solid rgba(206, 191, 161, 0.5);
     box-sizing: border-box;
 }
 #brown-rectangle{
-    position: absolute;
+    /* position: absolute;
     width: 30rem;
     height: 12.5rem;
     left: 30.063rem;
-    top: 6.938rem;
+    top: 6.938rem; */
 
     background: rgba(93, 68, 0, 0.9);
 }
 #garden-sites{
 
-    position: absolute;
+    /* position: absolute;
     width: 28.563rem;
     height: 3.063rem;
     left: 30.813rem;
-    top: 9.375rem;
+    top: 9.375rem; */
 
     font-family: Roboto;
     font-style: normal;
@@ -271,21 +259,21 @@ body{
     color: #FFFFFF;
 }
 #green-button{
-    position: absolute;
+    /* position: absolute;
     width: 13.125rem;
     height: 3.438rem;
     left: 38.438rem;
-    top: 13.438rem;
+    top: 13.438rem; */
 
     background: #40804D;
     border-radius: 1.875rem;
 }
 #apply{
-    position: absolute;
+    /* position: absolute;
     width: 8.188rem;
     height: 1.473rem;
     left: 40.875rem;
-    top: 14.419rem;
+    top: 14.419rem; */
 
     font-family: Roboto;
     font-style: normal;
