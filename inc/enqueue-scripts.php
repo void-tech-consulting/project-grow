@@ -68,8 +68,7 @@ function add_styles()
   wp_enqueue_style("contact", get_theme_file_uri('/css/contact.css'));
   wp_enqueue_style("header", get_theme_file_uri('/css/header.css'));
   wp_enqueue_style("footer", get_theme_file_uri('/css/footer.css'));
-  wp_enqueue_style("example", get_theme_file_uri('/css/example.css'));
-  wp_enqueue_style("home1", get_theme_file_uri('/css/home1.css'));
+  wp_enqueue_style("index", get_theme_file_uri('/css/index.css'));
   wp_enqueue_style("ourpeople", get_theme_file_uri('/css/ourpeople.css'));
   wp_enqueue_style( "plant-sale-info", get_theme_file_uri('/css/plant-sale-info.css'));
   wp_enqueue_style( "classes-events", get_theme_file_uri('/css/classes-events.css'));
