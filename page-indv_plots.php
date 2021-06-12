@@ -2,21 +2,75 @@
   get_header(); 
   
 ?>
+<section class="indv-plots-header">
+    <div id="gs-center-header-box">
+        <h1 id="gs-header-title">Garden Sites</h1>
+        <button class="gs-apply-plot" href="https://google.com">Apply For A Plot</button>
+    </div>
+</section>
+    <main class="flex indv-plots">
+        <section>
+            <?php
+                $args = array(
+                    'post_type' => 'Plot',
+                    'post_status' => 'publish',
+                    'posts_per_page' => 1
+                );
+                $loop = new WP_Query($args);
+            ?>
+            <?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
+            <h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+            <div>
+                <?php
+                    the_content();
+                ?>
+            </div>
+            <?php endwhile; wp_reset_query();?>
+        </section>
+        <nav class="indv-plots-nav">
+            <?php
+                $loop = new WP_Query( array(
+                    'post_type' => 'Plot',
+                    'post_status' => 'publish',
+                    'posts_per_page' => -1
+                ));
+            ?>
+            <?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
+            <h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+            <?php endwhile; wp_reset_query();?> 
+        </nav>
+    </main>
 
-<h1>Add your message here</h1>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <link rel="stylesheet" href="grow.css">
-    <meta charset="UTF-8">
-    <meta content="initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=0,width=device-width" name="viewport">
-    <title> individual-garden-sites </title>
-</head>
-<body>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
-    </style>
-    <div class = "west-park"> West Park </div>
+<?php get_footer(); ?>
+
+
+       <!-- TODO: add a href tags later for links -->
+       <!-- <div id = "airport"> Airport </div> 
+       <div id = "discovery-center"> Ann Arbor Center For Independent Living - Discovery Garden</div>
+       <div> Buhr Park </div>
+       <div> Catholic Social Services </div>
+       <div> Chapel Hill </div>
+       <div> Clague Elementary</div>
+       <div> County Farm Park A</div>
+       <div> County Farm Park B</div>
+       <div> County Farm - Discovery Garden </div>
+       <div> Ellsworth </div>
+       <div> Food Gatherers </div>
+       <div> Greenview </div>
+       <div> Hillside Terrance </div>
+       <div> Hunt Park</div>
+       <div> Lakewood Elementary </div>
+       <div> Leslie Science and Nature Center - Discovery Garden </div>
+       <div> Matthaei Botanical Gardens </div>
+       <div> Mitchell Garden </div>
+       <div> Northside Park </div>
+       <div> Platt </div>
+       <div> Scio </div>
+       <div> West Park </div>
+       <div> Wines Elementary  </div>
+       <div> Zion </div> -->
+
+           <!-- <div class = "west-park"> West Park </div>
     <div class = "west-park-description"> 
         Project Grow's West Park garden was created when the park 
         was fully refurbished in 2011.  The West Park Garden consists of 18 half-sized plots and 
@@ -78,43 +132,4 @@
    </div>
    <div class = "clean-up-pos">
        <div class = "description-header" id = "light-color">Fall Clean Up: <span class = "descriptions" id = "light-color">Gardeners will clear their plots no later than day's end on the third Saturday in October. Organic material may be chopped up and spread evenly across your plot, to be plowed under in the fall. Take home all non-organic material, such as fences, stakes, plastic, or paper, as well as any diseased plants.  The goal is to have a site that is clear of any evidence of gardening, except for the tilled area.  Failure to clean up your plot according to the guidelines set forth in the Member Handbook may result in expulsion from the garden.</span></div>
-   </div>
-   <div class = "rectangle"></div>
-   <div class = "rectangle-words">
-       <!-- TODO: add a href tags later for links -->
-       <div id = "airport"> Airport </div> 
-       <div id = "discovery-center"> Ann Arbor Center For Independent Living - Discovery Garden</div>
-       <div> Buhr Park </div>
-       <div> Catholic Social Services </div>
-       <div> Chapel Hill </div>
-       <div> Clague Elementary</div>
-       <div> County Farm Park A</div>
-       <div> County Farm Park B</div>
-       <div> County Farm - Discovery Garden </div>
-       <div> Ellsworth </div>
-       <div> Food Gatherers </div>
-       <div> Greenview </div>
-       <div> Hillside Terrance </div>
-       <div> Hunt Park</div>
-       <div> Lakewood Elementary </div>
-       <div> Leslie Science and Nature Center - Discovery Garden </div>
-       <div> Matthaei Botanical Gardens </div>
-       <div> Mitchell Garden </div>
-       <div> Northside Park </div>
-       <div> Platt </div>
-       <div> Scio </div>
-       <div> West Park </div>
-       <div> Wines Elementary  </div>
-       <div> Zion </div>
-   </div>
-   <div id = "garden-picture">
-    <img src="Rectangle 10.png" >
-   </div>
-   <div id = "brown-rectangle"> </div>
-   <div id ="garden-sites"> Garden Sites </div>
-   <div id = "green-button"> </div>
-   <div id = "apply"> Apply For A Plot </div>
-</body>
-</html>
-
-<?php get_footer(); ?>
+   </div> -->
