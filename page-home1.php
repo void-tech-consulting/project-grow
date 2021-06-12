@@ -37,7 +37,7 @@ get_header();
 
     </div>
     <div class="event-img-container">
-        <img src="<?php echo wp_get_attachment_url(get_theme_mod('home1-upevents-image')) ?>" alt="event image not fount" class="event-img">
+        <img src="<?php echo get_template_directory_uri();?>/eventimg.png" alt="event image not fount" class="event-img">
     </div>
 </div> <!-- end events section -->
 
@@ -71,7 +71,7 @@ get_header();
 </div> <!-- end get-started section -->
 
 <div class="news">
-    <img src="<?php echo wp_get_attachment_url(get_theme_mod('home1-news-image')) ?>" alt="news img not found" class="news-img">
+    <img src="<?php echo get_template_directory_uri();?>/newsimg.jpg" alt="news img not found" class="news-img">
     <div class="news-text">
         <div class="latest-news">
             Latest News

@@ -12,6 +12,8 @@
   $growing_tips_seed_saving_starting = 'growing_tips_seed_saving_starting';
   $our_people_section = 'our_people_section';
   $our_people_members = 'our_people_members';
+  $classes_events_section = 'classes_events_section';
+  $classes_events_setting = 'classes_events_setting';
   $master_composter_section = 'master_composter_section';
   $master_composter_hg = 'master_composter_handouts_guidelines';
   $master_composter_rps = 'master_composter_reports_presentations_specialprojects';
