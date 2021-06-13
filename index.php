@@ -6,9 +6,9 @@ get_header();
 
 <div class="banner">
     <div class="banner-text">
-        <div class="banner-head">
+        <h1 class="banner-head">
             Welcome to Project Grow
-        </div>
+        </h1>
         Project Grow Community Gardens provides the space, education, and inspiration to make organic gardening accessible to all.
         <br><br>
         Rent a plot at one of our wonderful community garden sites, meet a diverse group of gardeners, and reap the rewards of your hard work with fresh, healthy, and beautiful plants!
@@ -45,42 +45,8 @@ get_header();
     </div>
 </div> <!-- end events section -->
 
-<div class="get-started">
-    <div class="get-started-header">
-        How to Get Started
-    </div>
 
-    <div class="get-started-steps">
-        <div class="process-step">
-            <img src="<?php echo get_template_directory_uri();?>/images/home/plant.jpg" alt="step image not found" class="step-img">
-            <div class="step-text">
-                Choose the type of plot you're interested in
-            </div>
-            <a href="" class="step-link">Check Rental Info</a>
-        </div>
-
-        <div class="process-step-divider"></div>
-
-        <div class="process-step">
-            <img src="<?php echo get_template_directory_uri();?>/images/home/location.jpg" alt="step image not found">
-            <div class="step-text">
-                Check out which site will be home to your garden
-            </div>
-            <a href="" class="step-link">View Garden Sites</a>
-        </div>
-
-        <div class="process-step-divider"></div>
-
-        <div class="process-step">
-            <img src="<?php echo get_template_directory_uri();?>/images/home/apply.jpg" alt="step image not found" class="step-img">
-            <div class="step-text">
-                Apply for the plot!
-            </div>
-            <a href="" class="step-link">Apply</a>
-
-        </div>
-    </div>
-</div> <!-- end get-started section -->
+<?php get_template_part('partials/content', 'get-started-section'); ?>
 
 <div class="news">
     <?php if (get_theme_mod('home1-news-image')) {?> 
@@ -89,13 +55,15 @@ get_header();
         <img src="<?php echo get_template_directory_uri();?>/images/home/news-img.jpg" alt="news img not found" class="news-img">
     <?php }?>
     <div class="news-text">
-        <div class="latest-news">
+        <h3 class="latest-news">
             Latest News
-        </div>
-        <div class="news-head">
+        </h3>
+        <h2 class="news-head">
             Tomato Tasting
-        </div>
-        You will be amazed by the wide range of flavors, textures, colors, sizes and shapes. We guarantee that you will find that special tomato you will want to grow next year! Most of the tomatoes offered at the tasting are also offered at our plant sale, but we usually also have a few new varieties we are trying out for next year . . .
+        </h2>
+        <p class=news-body>
+            You will be amazed by the wide range of flavors, textures, colors, sizes and shapes. We guarantee that you will find that special tomato you will want to grow next year! Most of the tomatoes offered at the tasting are also offered at our plant sale, but we usually also have a few new varieties we are trying out for next year . . .
+        </p>
         <div class="interested">
             Interested in More News From Us?<br>
             Sign Up For Our Newsletter!
