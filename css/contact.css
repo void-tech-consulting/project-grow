@@ -51,7 +51,7 @@ body {
     padding-right: 3rem;
 }
 
-label {
+.contact-content label {
     font-style: normal;
     font-weight: 500;
     font-size: 18px;
@@ -111,7 +111,7 @@ input[type=text], textarea {
 
     height: 25rem; /*Just for scale, looks like 25rem is a good size*/
     background-size: cover; /*Take up the whole space*/
-    background-image: url("../images/contact-header-img.jpg");
+    background-image: url("../images/header-images/contact-header-img.jpg");
     background-position: center;
     background-repeat: no-repeat;
 }
@@ -124,16 +124,4 @@ input[type=text], textarea {
     position: absolute;
     padding: 4rem 10rem;
     background-color: rgba(93,68,0,.9);    
-}
-
-.plant-catalog-btn {
-    align-self: center;
-    margin: 1rem;
-    padding: 1rem 3rem;
-    border-radius: 40px;
-    border: 0 solid rgba(64,128,77,1); /*remove shadow*/
-    background-color: rgba(64,128,77,1); /*Format allows easy change of opacity*/
-    width: fit-content;
-    text-align: center;
-    color: white;
 }

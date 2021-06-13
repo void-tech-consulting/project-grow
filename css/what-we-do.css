@@ -1,0 +1,270 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+/*Obviously body will affect other people's css files, will need to revisit*/
+
+
+body {
+    font-family: 'Roboto', sans-serif;
+    color: #3F2E00;
+    font-size: 1.8rem;
+    width: unset;
+
+}
+/*wwd - What We Do*/
+#wwd-header-title{
+    color: white;
+    font-size: 3rem;
+    text-align: center;
+}
+.wwd-title {
+    font-size: 4.5rem;
+    font-weight: 900;
+}
+
+.wwd-header-img {
+    /*Flex box to allow moving the brown center box*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 25rem; /*Just for scale, looks like 25rem is a good size*/
+    background-size: cover; /*Take up the whole space*/
+    background-image: url("../images/what-we-do/what-we-do-banner.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: aqua; /*Should never show if image is well sized*/
+    
+}
+.wwd-center-header-box {
+    /*Flex box to allow moving the button*/
+    display: flex;
+    flex-direction: column;
+
+    position: absolute;
+    padding: 4rem 10rem;
+    background-color: rgba(93,68,0,.9);    
+}
+
+.wwd-newsletter-btn {
+    align-self: center;
+    margin: 1rem;
+    padding: 1rem 3rem;
+    border-radius: 40px;
+    border: 0 solid rgba(64,128,77,1); /*remove shadow*/
+    background-color: rgba(64,128,77,1); /*Format allows easy change of opacity*/
+    width: fit-content;
+    text-align: center;
+    color: white;
+}
+.wwd-indent {
+    padding-left: 10rem;
+    padding-right: 10rem;
+}
+.wwd-new-section {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+.wwd-description {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    border-top: 1px solid #CEBFA1;
+    border-bottom: 1px solid #CEBFA1;
+    background-color: #F8F5EC;
+}
+.wwd-pg-space {
+    padding: .75rem 0;
+}
+#wwd-super-title {
+    font-size: 4rem;
+    font-weight: 900;
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+}
+.wwd-flex {
+    display: flex;
+}
+
+.wwd-right-align {
+    text-align: end;
+}
+
+#wwd-img-1971 {
+    margin: auto;
+    max-width: 40%;
+    align-self: center;
+    padding-bottom: 10rem;
+}
+#wwd-img-1972 {
+    max-width: 40%;
+    padding-bottom: 10rem;
+    margin: auto;
+}
+#wwd-img-mid1970s {
+    margin: auto;
+    max-width: 40%;
+    padding-bottom: 10rem;
+}
+#wwd-img-1980 {
+    margin: auto;
+    max-width: 40%;
+    padding-bottom: 10rem;
+}
+#wwd-img-2010s {
+    padding-bottom: 10rem;
+    max-width: 40%;
+    margin: auto;
+}
+#wwd-img-present {
+    margin: auto;
+    max-width: 40%;
+    padding-bottom: 10rem;
+}
+
+
+
+/* Taken from https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_timeline */
+
+
+* {
+    box-sizing: border-box;
+}
+/* The actual timeline (the vertical ruler) */
+.wwd-timeline {
+    position: relative;
+    margin: 0 auto;
+  }
+  
+  /* The actual timeline (the vertical ruler) */
+  .wwd-timeline::after {
+    content: '';
+    position: absolute;
+    width: 10px;
+    background-color: #40804D;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -3px;
+  }
+  
+  /* Container around content */
+  .wwd-container {
+    position: relative;
+    width: 50%;
+  }
+  
+  /* The circles on the timeline */
+  .wwd-left::after {
+    content: '';
+    position: absolute;
+    width: 34px;
+    height: 34px;
+    right: -19px;
+    background-color: #40804D;
+    border: 4px solid #40804D;
+    top: -1px;
+    border-radius: 50%;
+    z-index: 1;
+  }
+/* Change the circle for containers on the right side */
+.wwd-right::before {
+    content: '';
+    position: absolute;
+    width: 34px;
+    height: 34px;
+    left: -15px;
+    background-color: #40804D;
+    border: 4px solid #40804D;
+    top: -1px;
+    border-radius: 50%;
+    z-index: 1;
+    }
+
+  /* Place the container to the left */
+  .wwd-left {
+    padding: 0 8rem 10rem 0;
+  }
+  
+  /* Place the container to the right */
+  .wwd-right {
+    padding: 0 0 10rem 8rem;
+  }
+  
+  /* The actual content */
+  .wwd-content {
+    position: relative;
+  }
+  
+  /* Media queries - Responsive timeline on screens less than 600px wide */
+  @media screen and (max-width: 1000px) {
+    
+    .wwd-title {
+        text-align: left;
+    }
+    /* change columns to rows */
+    .wwd-flex {
+        flex-direction: column;
+    }
+    .wwd-reverse {
+        flex-direction: column-reverse;
+    }
+    .wwd-indent {
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+    .wwd-timeline {
+        padding-left: 7rem;
+    }
+    /* Place the timelime to the left */
+    .wwd-timeline::after {
+    left: 31px;
+    }
+    
+    /* Full-width containers */
+    .wwd-container {
+    width: 100%;
+    padding-right: 3rem;
+    }
+
+  
+    /* Make sure all circles are at the same spot */
+    .wwd-left::after, .wwd-right::before {
+    left: -54px;
+    }
+    
+    /* Make all right containers behave like the left ones */
+    .wwd-right {
+        padding: unset;
+    }
+    #wwd-img-1971 {
+        margin: none;
+        max-width: unset;
+        padding-bottom: 10rem;
+    }
+    #wwd-img-1972 {
+        max-width: unset;
+        padding-bottom: 10rem;
+        padding-top: 10rem;
+        margin: auto;
+    }
+    #wwd-img-mid1970s {
+        margin: auto;
+        max-width: unset;
+        padding-bottom: 10rem;
+    }
+    #wwd-img-1980 {
+        margin: auto;
+        max-width: unset;
+        padding-bottom: 10rem;
+        padding-top: 10rem;
+    }
+    #wwd-img-2010s {
+        padding-bottom: 10rem;
+        max-width: unset;
+        margin: auto;
+    }
+    #wwd-img-present {
+        margin: auto;
+        max-width: unset;
+        padding-bottom: 10rem;
+        padding-top: 10rem;
+    }
+  }

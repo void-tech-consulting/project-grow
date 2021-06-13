@@ -101,6 +101,45 @@ function onepress_sanitize_repeatable_data_field($input, $setting)
 
 	return $data;
 }
+if ( ! function_exists( 'get_media_url' ) ) {
+	function get_media_url( $media = array(), $size = 'full' ) {
+		$media = wp_parse_args(
+			$media,
+			array(
+				'url' => '',
+				'id' => '',
+			)
+		);
+		$url = '';
+		if ( $media['id'] != '' ) {
+			if ( strpos( get_post_mime_type( $media['id'] ), 'image' ) !== false ) {
+				$image = wp_get_attachment_image_src( $media['id'], $size );
+				if ( $image ) {
+					$url = $image[0];
+				}
+			} else {
+				$url = wp_get_attachment_url( $media['id'] );
+			}
+		}
+		if ( $url == '' && $media['url'] != '' ) {
+			$id = attachment_url_to_postid( $media['url'] );
+			if ( $id ) {
+				if ( strpos( get_post_mime_type( $id ), 'image' ) !== false ) {
+					$image = wp_get_attachment_image_src( $id, $size );
+					if ( $image ) {
+						$url = $image[0];
+					}
+				} else {
+					$url = wp_get_attachment_url( $id );
+				}
+			} else {
+				$url = $media['url'];
+			}
+		}
+		return $url;
+	}
+}
+
 
 if (!function_exists('template_data')) {
 	/**
@@ -137,10 +176,48 @@ if ( ! function_exists( 'get_example_data' ) ) {
 	 */
 	function get_example_data($section) {
 		return template_data($section, array(
-			'title' => '',
+      'title' => '',
 			'question' => '',
             'answer' => '',
             'link' => ''
+    ));
+  }
+}
+      
+if ( ! function_exists( 'get_class_event_data' ) ) {
+	/**
+	 * Get Class and Events Data
+	 *
+	 * @since 1.1.4
+	 * @return array
+	 */
+	function get_class_event_data($section) {
+		return template_data($section, array(
+			'Headline' => '',
+        	'Location' => '',
+			'Event_Type' => '',
+		    'Event_Date' => '',
+           	'Paragraph' => '',
+           	'Cost'  => '',
+           	'Time' => '',
+           	'Link'  => ''
+		));
+	}
+}
+
+if(!function_exists('get_gs_data')) {
+	/**
+	 * Get Garden Sites Data
+	 *
+	 * @since 1.1.4
+	 * @return array
+	 */
+	function get_gs_data($section) {
+		return template_data($section, array(
+			'Site_Number' => '',
+        	'Site_Name' => '',
+			'Plot_Capacity' => '',
+		    'Location' => ''
 		));
 	}
 }

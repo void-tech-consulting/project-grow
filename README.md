@@ -1,5 +1,6 @@
-# Wordpress Boilerplate
+# Project Grow
 
+The Project Grow theme
 ## Important Files must follow exact name
 
 1. **functions.php** Where all customization takes place. As well as adding scripts / styles
@@ -15,4 +16,3 @@
 ### Must-read documentation
 
 1. https://codex.wordpress.org/Conditional_Tags
-2. 

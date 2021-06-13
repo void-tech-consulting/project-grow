@@ -46,8 +46,8 @@
   
 }
 
-.header-background {
-  background-image: url(../growing-tips-top-background.png);
+.growing-tips-header-background {
+  background-image: url(../images/header-images/growing-tips-header-img.png);
   height: 26rem;
   padding-top: 3rem;
   margin-bottom: 3rem;
