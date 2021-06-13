@@ -2,7 +2,7 @@
 .navbar{
     width: 100%;
     box-sizing: border-box;  
-    height: 8.1rem; 
+    height: 8rem; 
     position: fixed;
     text-align: center;
     z-index: 3;
@@ -30,11 +30,12 @@
     background-image: url('../images/logo.png');
 }
 .nav-links{
-    width: 150rem;
+    width: 100%;
     display: flex;  
     justify-content: space-around;
     height: 8rem; 
     align-items: flex-end;
+    font-size: 1.7rem;
 }
 .nav-links > li {
     display: inline-block;
@@ -44,7 +45,6 @@
 
 .nav-links li a{
     padding: 2rem;
-    font-size: 1.6rem;
     display: inline-block;
     text-decoration: none;
     color: inherit; 
@@ -55,6 +55,9 @@
 .page_item_has_children {
     position: relative;
     display: flex;
+}
+.nav-links .page_item_has_children > a::after {
+    content: ' ▾';
 }
 .nav-links li ul {
     display: none;
@@ -70,12 +73,43 @@ i {
 }
 
 /* Change color of dropdown links on hover */
-.children a:hover, .current_page_item, .current_page_parent {background-color: #5D4400;}
+.children a:hover, .current_page_item, .current_page_parent {
+    background-color: #5D4400;
+}
 
 /* Show the dropdown menu on hover */
-.page_item_has_children:hover .children {display: block;}
+.page_item_has_children:hover .children {
+    display: block;
+}
 
 /* Remove link from main dropdown item */
 .page_item_has_children > a:first-child {
     pointer-events: none;
+}
+
+@media (max-width: 1095px) {
+    .nav-links {
+        font-size: 1.4rem;
+    }
+}
+@media (max-width: 961px) {
+    .nav-links {
+        font-size: 1.3rem;
+    }
+}
+@media (max-width: 913px) {
+    .content {
+        padding-top: 7.5rem;
+    }
+    .navbar {
+        height: 7.5rem;
+    }
+    .nav-links {
+        height: 7.5rem;
+        font-size: 1.2rem;
+    }
+    .nav-logo {
+        width: 5rem;
+        height: 6rem;
+    }
 }

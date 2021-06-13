@@ -219,10 +219,16 @@ body {
   .green-block {
     position: absolute;
     width: 2.565rem;
-    height: 117.979rem;
+    /* height: 117.979rem; */
+    height: 160rem;
     margin-bottom: 7rem;
     background: #94CEA7;
-    transform: matrix(0.01, -1, 1, 0.01, 0, 0);
+    transform: matrix(0.00, -1, 1, 0.00, 0, 0);
+  }
+
+  .important-dates-text {
+    display: flex;
+    flex-direction: column;
   }
    
   .important-dates-date {
@@ -231,18 +237,39 @@ body {
     font-size: 2.1rem;
     line-height: 2.5rem;
     text-align: center;
-    padding-top: 5.452rem;
+    margin-top: 5.452rem;
   }
   
   .important-dates-description {
     font-weight: 40;
     text-align: center;
-    padding-top: 1.8rem;
+    margin-top: 1.8rem;
+
   }
   
   .important-dates-icons {
     width: 8rem;
     height: 6.9rem;
+  }
+  
+  .important-dates-icons-1 {
+    margin-top: 6.4rem;
+  }
+
+  .important-dates-icons-2 {
+    margin-top: 5.5rem;
+  }
+
+  .important-dates-icons-3 {
+    margin-top: 5.6rem;
+  }
+
+  .important-dates-icons-4 {
+    margin-top: 2.9rem;
+  }
+
+  .important-dates-icons-5 {
+    margin-top: 2.0rem;
   }
   
   .plot-types-container, .open-closing-container {
@@ -260,7 +287,7 @@ body {
     background: #F8F5EC;
     border: 0.1rem dashed #CEBFA1;
     box-sizing: border-box;
-    height: 27.2rem;
+    min-height: 27.2rem;
     width: 28rem;
   }
   
@@ -274,7 +301,10 @@ body {
   
     color: #53401A;
     height: 4.327rem;
-    padding: 3.045rem;
+    padding-right: 3.045rem;
+    padding-left: 3.045rem;
+    margin-top: 2.5rem;
+    margin-bottom: 1.2rem;
   }
   
   
@@ -282,6 +312,7 @@ body {
   .plot-type-info {
     padding-left: 1.4rem;
     padding-right: 1.4rem;
+    margin-bottom: 1rem;
   }
   
   .open-closing-container {
@@ -306,3 +337,107 @@ body {
     font-size: 1.8rem;
     line-height: 2.4rem;
   }
+
+
+@media only screen and (max-width: 1350px) {
+  .green-block {
+    height: 117.979rem;
+  }
+
+  .open-closing-container {
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+  }
+  .open-closing-types-item {
+    margin-bottom: 2.1rem;
+    width: 58rem;
+    min-height: 21.7rem;
+  }
+
+  .plot-types-container {
+    flex-wrap: wrap;
+    margin: -1rem
+  }
+  .plot-types-item {
+    flex: 0 0 45%;
+    margin: 10px;
+    
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .important-dates-section {
+    min-height: 78rem;
+  }
+  .green-block {
+    /* width: 2.565rem;
+    /* height: 117.979rem; */
+    /* height: 160rem;
+    margin-bottom: 7rem; */ 
+    margin-bottom: auto;
+    margin-top: auto;
+    margin-left: 2rem;
+    left: 16.4rem;
+    background: #94CEA7;
+    transform: matrix(1, 0, 0, 1, 0, 0);
+    height: 70rem;
+  }
+
+  .timeline-container {
+    flex-direction: column;
+  }
+
+  .important-dates-icons-1, .important-dates-icons-2, .important-dates-icons-3, .important-dates-icons-4, .important-dates-icons-5 {
+    margin-top: 0;
+  }
+
+  .timeline-item {
+    flex-direction: row;
+    justify-content: flex-start;
+    align-content: space-between;
+    width: 100%;
+  }
+
+  .important-dates-date, .important-dates-description {
+    text-align: left;
+  }
+
+  .important-dates-icons-1 .important-dates-text {
+    margin-left: 8.5rem;
+  }
+
+  .important-dates-icons-2 .important-dates-text {
+    margin-left: 8.1rem;
+  }
+
+  .important-dates-icons-3 .important-dates-text {
+    margin-left: 8.5rem;
+  }
+
+  .important-dates-icons-4 .important-dates-text {
+    margin-left: 8.9rem;
+  }
+
+  .important-dates-icons-5 .important-dates-text {
+    margin-left: 8.5rem;
+  }
+  
+
+  .important-dates-icons-4 img {
+    margin-left: -3rem;
+    margin-right: -1.5rem;
+  }
+
+  .important-dates-icons-5 img {
+    margin-left: -2rem;
+    margin-right: -1.5rem;
+  }
+
+}
+
+@media only screen and (max-width: 620px) {
+  .open-closing-types-item {
+    width: 100%;
+  }
+}

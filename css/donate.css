@@ -1,0 +1,64 @@
+import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap');
+body {
+    font-family: 'Roboto', sans-serif;
+    color: #3F2E00;
+    font-size: 1.8rem;
+    font-weight: 400;
+}
+.donate-header-img {
+    /*Flex box to allow moving the brown center box*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 25rem; /*Just for scale, looks like 25rem is a good size*/
+    background-size: cover; /*Take up the whole space*/
+    background-image: url("../images/contact-header-img.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.donate-center-header-box {
+    /*Flex box to allow moving the button*/
+    display: flex;
+    flex-direction: column;
+
+    position: absolute;
+    padding: 6rem 16rem;
+    background-color: rgba(93,68,0,.9);    
+}
+
+#donate-form-heading {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    font-weight: 900;
+}
+
+.donate-content {
+    margin-left: 10rem;
+    margin-right: 10rem;
+}
+.donate-col-40 {
+    flex: 40%;
+    padding-left: 6rem;
+    padding-top: 2.5rem;
+}
+.donate-col-40 p {
+    padding-bottom: 1rem;
+}
+.donate-items-list ul {
+    margin-top: 0.5rem;
+}
+.donate-check-headline {
+    padding-bottom: 1.5rem;
+}
+#network-for-good:link, #network-for-good:visited, #network-for-good:hover {
+    color: #53401A;
+}
+.donate-thank-section {
+    width: 60%;
+    padding-top: 4rem;
+    padding-bottom: 1.5rem;
+}
+.donate-landowners {
+    columns: 3;
+}

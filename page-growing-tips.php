@@ -14,7 +14,7 @@ get_header();
     </a>
   </div>
 </div>
-<span class="header-text">Growing Tips</span>
+<div class="growing-tips-header-text">Growing Tips</div>
 
 
 <div class="main-description">
@@ -29,7 +29,7 @@ get_header();
   </div>
 </div>
 
-<span class="header-text">Edibles</span>
+<div class="growing-tips-header-text">Edibles</div>
 <div class="item-container">
   <!--
     <a href="<?php echo get_theme_mod('box-link') ?>" class="no-style-link">
@@ -68,7 +68,7 @@ get_header();
 
 </div>
 
-<span class="header-text"> Ornamentals</span>
+<div class="growing-tips-header-text"> Ornamentals</div>
 <div class="item-container">
 
   <?php
@@ -102,7 +102,7 @@ get_header();
 <?php } ?>
 </div>
 
-<span class="header-text">Organic Gardening</span>
+<div class="growing-tips-header-text">Organic Gardening</div>
 <div class="item-container">
   <?php
   require 'inc/section_vars.php';
@@ -133,7 +133,7 @@ get_header();
 <?php } ?>
 </div>
 
-<span class="header-text">Seed Saving and Starting</span>
+<div class="growing-tips-header-text">Seed Saving and Starting</div>
 <div class="item-container">
   <?php
   require 'inc/section_vars.php';

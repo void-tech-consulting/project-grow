@@ -53,20 +53,6 @@
   margin-bottom: 3rem;
 }
 
-.header-box {
-  width: 48rem;
-  height: 20rem;
-  margin-right: auto;
-  margin-left: auto;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-
-  background: rgba(93, 68, 0, 0.9);
-}
-
 .our-people-button-header-text {
   font-family: Roboto;
   font-style: normal;
@@ -104,14 +90,14 @@
   text-decoration: none;
 }
 
-.header-text {
+.growing-tips-header-text {
   font-family: Roboto;
   font-style: normal;
   font-weight: 900;
   font-size: 2.8rem;
   line-height: 3.3rem;
   color: #3f2e00;
-  padding-left: 13rem;
+  padding-left: 8%;
 }
 
 .main-description {
@@ -131,4 +117,31 @@
 
   color: #53401a;
   margin-bottom: 5.5rem;
+}
+
+/* 2 cols */
+@media only screen and (max-width: 1250px) {
+  .item-container>* {
+    flex: 0 0 47%;
+    justify-content: center;
+  }
+
+  
+  .growing-tips-header-text {
+    font-size: 2.4rem;
+    line-height: 2.8rem;
+  }
+}
+
+
+/* 1 col */
+@media only screen and (max-width: 800px) {
+  .item-container>* {
+    flex: 0 0 100%;
+    justify-content: center;
+  }
+
+  .growing-tips-header-box {
+    width: 60%;
+  }
 }
