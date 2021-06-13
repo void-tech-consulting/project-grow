@@ -4,17 +4,26 @@ body {
     color: #3F2E00;
     font-size: 1.8rem;
 }
-/*Plant Sale Information*/
-#header-title{
-    color: white;
-    font-size: 3rem;
-}
-.title {
+
+
+/*Plant Sale Information --> psi*/
+.psi-title {
     font-size: 2.8rem;
     font-weight: 900;
 }
-
-.header-img {
+.psi-main-page {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+.psi-indent {
+    padding-left: 10rem;
+    padding-right: 10rem;
+}
+#psi-header-title{
+    color: white;
+    font-size: 3rem;
+}
+#psi-header-img {
     /*Flex box to allow moving the brown center box*/
     display: flex;
     justify-content: center;
@@ -22,20 +31,20 @@ body {
 
     height: 25rem; /*Just for scale, looks like 25rem is a good size*/
     background-size: cover; /*Take up the whole space*/
-    background-image: url("../plant-sale-info-header.jpg");
+    background-image: url("../images/header-images/plant-sale-info-header-img.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-color: aqua; /*Should never show if image is well sized*/
     
 }
-.center-header-box {
+.psi-center-header-box {
     /*Flex box to allow moving the button*/
     display: flex;
     flex-direction: column;
 
     position: absolute;
     padding: 4rem 10rem;
-    background-color: rgba(93,68,0,.9);    
+    background-color: rgba(93,68,0,.9);
 }
 
 .plant-catalog-btn {
@@ -49,22 +58,14 @@ body {
     text-align: center;
     color: white;
 }
-.indent {
-    padding-left: 10rem;
-    padding-right: 10rem;
-}
-.main-page {
-    padding-top: 2rem;
-    padding-bottom: 2rem;
-}
-.description {
+.psi-description {
     padding-top: 1rem;
     padding-bottom: 1rem;
     border-top: 1px solid #CEBFA1;
     border-bottom: 1px solid #CEBFA1;
     background-color: #F8F5EC;
 }
-.sale-container {
+.psi-sale-container {
     margin: 5rem 10rem 5rem 10rem;
     padding-bottom: 3rem;
     padding-top: 2rem;
@@ -84,16 +85,19 @@ body {
     display: flex;
     justify-content: space-between;
 }
-.dates {
+.psi-sale-date{
+    text-align: center;
+}
+.psi-dates {
     display: flex;
     justify-content: space-around;
-    border-right: 2px solid #3F2E00;
+    border-right: 2px solid #5D4400;
     width: 33%;
 }
-.sizes {
-    border-left: 2px solid #3F2E00;
+.psi-sizes {
+    border-left: 2px solid #5D4400;
 }
-.prices {
+.psi-prices {
     text-align: center;
 }
 .sale-date {
@@ -101,7 +105,7 @@ body {
     flex-direction: column;
     align-items: center;
 }
-.section-spacer {
+.psi-section-spacer {
     padding-top: 2.5rem;
     padding-bottom: 2.5rem;
 }
@@ -111,18 +115,20 @@ body {
 .list-spacing {
     padding-bottom: .6rem;
 }
-.new-items-left {
-    padding-right: 5rem;
-}
-.flex-container {
+
+.psi-flex-container {
     display: flex;
+    flex-wrap: wrap;
 }
-.discont-items-right {
-    max-width: 32rem;
-    padding-left: 3rem;
+.psi-whole-category {
+    width: 50%;
+    padding: 0 2.5rem;
 }
-.tomatoes-section {
+.psi-category {
     padding-top: 2rem;
+}
+.psi-tomatoes-section {
+    padding-top: 5rem;
 }
 /*This just gives some space after the end of the content*/
 .disclaimer-body {

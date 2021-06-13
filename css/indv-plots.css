@@ -1,0 +1,39 @@
+.indv-plots {
+    justify-content: space-between;
+    width: 90%;
+    margin-top: 3rem;
+    align-items: flex-start;
+}
+
+.indv-plots a {
+    color: #3f2e00;
+    font-weight: 400;
+    text-decoration: none;
+    font-size: 2.1rem;
+}
+
+.indv-plots-header {
+    /*Flex box to allow moving the brown center box*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 25rem; /*Just for scale, looks like 20rem is a good size*/
+    background-size: cover; /*Take up the whole space*/
+    /* TODO: replace this image */
+    background-image: url("../images/header-images/garden-sites-header-img.png");
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.indv-plots-nav {
+    border: 1px solid #CEBFA1;
+    background-color: #F8F5EC;
+    padding: 2rem;
+    margin: 2rem;
+    margin-top: 0;
+}
+
+.indv-plots-nav h2 {
+    margin-bottom: 1rem;
+}

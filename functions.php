@@ -1,5 +1,5 @@
 <?php
-  require get_template_directory() . '/inc/example-post-type.php';
+  require get_template_directory() . '/inc/register-plot-type.php';
   require get_template_directory() . '/inc/enqueue-scripts.php';
   require get_template_directory() . '/inc/register-settings.php';
   require get_template_directory() . '/inc/customizer.php';
@@ -68,7 +68,6 @@ function ourpeople_customize($wp_customize)
     'settings' => 'person-title'
   )));
 }
-
 add_action('customize_register', 'ourpeople_customize');
 
 
@@ -99,4 +98,62 @@ function donate_form_customize($wp_customize) {
     )));
 }
 add_action('customize_register', 'donate_form_customize');
+?>
+function apply_for_plot_customize($wp_customize)
+{
+  $wp_customize->add_section('apply_for_plot_section', array(
+    'title' => 'Apply For Plot'
+  ));
+
+  $wp_customize->add_setting('full-plot-fee');
+  $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'full-plot-control', array(
+    'label' => 'Full Plot Fee',
+    'section' => 'apply_for_plot_section',
+    'settings' => 'full-plot-fee'
+  )));
+
+  $wp_customize->add_setting('half-plot-fee');
+  $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'half-plot-control', array(
+    'label' => 'Half Plot Fee',
+    'section' => 'apply_for_plot_section',
+    'settings' => 'half-plot-fee'
+  )));
+}
+add_action('customize_register', 'apply_for_plot_customize');
+
+function growingtips_custom($wp_customize)
+{
+  $wp_customize->add_section('growingtips-content', array(
+    'title' => 'Growing Tips Content'
+  ));
+
+  $wp_customize->add_setting('box-text');
+  $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'box-text-control', array(
+    'label' => 'Tips text',
+    'section' => 'growingtips-content',
+    'settings' => 'box-text'
+  )));
+
+  $wp_customize->add_setting('box-link');
+  $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'box-link-control', array(
+    'label' => 'Tips link',
+    'section' => 'growingtips-content',
+    'settings' => 'box-link'
+  )));
+}
+
+add_action('customize_register', 'growingtips_custom');
+
+function apply_for_plot_form_customize($wp_customize) {
+  $wp_customize->add_section('apply_for_plot_form', array(
+      'title' => 'Apply for Plot Form'
+  ));
+  $wp_customize->add_setting('apply_for_plot_form-shortcode');
+  $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'shortcode-control', array(
+      'label' => 'Apply for Plot Shortcode',
+      'section' => 'apply_for_plot_form',
+      'settings' => 'apply_for_plot_form-shortcode'
+  )));
+}
+add_action('customize_register', 'apply_for_plot_form_customize');
 ?>

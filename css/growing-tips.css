@@ -1,0 +1,147 @@
+
+
+.item-container {
+  width: 86%;
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  
+  padding-bottom: 4rem;
+  
+}
+.item-container>* {
+  flex: 0 0 31%;
+  margin: 1%;
+}
+
+
+.item-box {
+  font-family: Roboto;
+  height: 7.1rem;
+  width: 100%;
+
+  background: #e8e0cf;
+  border: 1px dashed #cebfa1;
+  box-sizing: border-box;
+  border-radius: 10px;
+
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 2.1rem;
+  line-height: 2.461rem;
+  color: #3f2e00;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2.4rem;
+  
+  /*
+  margin-right: 2.4rem;
+  margin-left: 2.4rem;
+  */
+  
+}
+
+.growing-tips-header-background {
+  background-image: url(../images/header-images/growing-tips-header-img.png);
+  height: 26rem;
+  padding-top: 3rem;
+  margin-bottom: 3rem;
+}
+
+.our-people-button-header-text {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 3rem;
+  line-height: 3.5rem;
+  color: #ffffff;
+}
+
+.connect-button {
+  margin-top: 1rem;
+  width: 21.2rem;
+  height: 5.5rem;
+  left: 61.4rem;
+  top: 21.5rem;
+
+  background: #40804d;
+  border-radius: 3rem;
+
+  /*text*/
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 1.8rem;
+  line-height: 2.1rem;
+
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+}
+
+.no-style-link {
+  text-decoration: none;
+}
+
+.growing-tips-header-text {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 2.8rem;
+  line-height: 3.3rem;
+  color: #3f2e00;
+  padding-left: 8%;
+}
+
+.main-description {
+  background: #f8f5ec;
+  border: 0.1rem dashed #cebfa1;
+  box-sizing: border-box;
+
+  margin-top: 2.3rem;
+  /**margin-bottom: 1.7rem;**/
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 1.8rem;
+  line-height: 2.4rem;
+
+  /* or 133% */
+
+  color: #53401a;
+  margin-bottom: 5.5rem;
+}
+
+/* 2 cols */
+@media only screen and (max-width: 1250px) {
+  .item-container>* {
+    flex: 0 0 47%;
+    justify-content: center;
+  }
+
+  
+  .growing-tips-header-text {
+    font-size: 2.4rem;
+    line-height: 2.8rem;
+  }
+}
+
+
+/* 1 col */
+@media only screen and (max-width: 800px) {
+  .item-container>* {
+    flex: 0 0 100%;
+    justify-content: center;
+  }
+
+  .growing-tips-header-box {
+    width: 60%;
+  }
+}

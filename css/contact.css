@@ -53,6 +53,27 @@ body {
     padding-top: 9rem;
 }
 
+.contact-form {
+    background: #F8F5EC;
+    mix-blend-mode: normal;
+    border: 1px solid #53401A;
+    width: 100%;
+    padding-left: 3rem;
+    padding-right: 3rem;
+}
+
+.contact-content label {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 21px;
+    display: block;
+    align-items: center;
+    padding-top: 3rem;
+    padding-bottom: 1rem;
+    color: #53401A;
+}
+
 #first-name {
     margin-right: 2rem;
 }
@@ -75,7 +96,7 @@ body {
 
     height: 25rem; /*Just for scale, looks like 25rem is a good size*/
     background-size: cover; /*Take up the whole space*/
-    background-image: url("../images/contact-header-img.jpg");
+    background-image: url("../images/header-images/contact-header-img.jpg");
     background-position: center;
     background-repeat: no-repeat;
 }
@@ -112,8 +133,8 @@ body {
         padding-bottom: 2.5rem;
     }
 }
-@media (max-width: 783px) {
+/* @media (max-width: 783px) {
     #forminator-field-name-2 {
         padding-left: 
     }
-}
+} */

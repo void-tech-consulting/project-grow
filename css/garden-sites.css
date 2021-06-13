@@ -1,0 +1,222 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+body {
+    font-family: 'Roboto', sans-serif;
+    color: #3F2E00;
+    font-size: 1.8rem;
+    width: unset;
+}
+/* gs for Garden Sites to make elements unique */
+#gs-header-img {
+    /*Flex box to allow moving the brown center box*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 25rem; /*Just for scale, looks like 20rem is a good size*/
+    background-size: cover; /*Take up the whole space*/
+    background-image: url("../images/header-images/garden-sites-header-img.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: aqua; /*Should never show if image is well sized*/
+    
+}
+
+#gs-sort-box {
+    width: 22rem;
+    margin-left: 3rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#gs-sort-box label {
+    font-weight: 500;
+    color: #53401A;
+}
+#gs-sort-box option {
+    font-size: 1.4rem;
+    width: 75%;
+}
+
+#gs-sort-select {
+    height: 3.5rem;
+    width: 14rem;
+    padding: 0 .5rem 0 .5rem;
+    color: #ffffff;
+    border: none;
+    font-weight: 500;
+    background-color: #40804d;
+    outline: none;
+    border-radius: 20px;
+}
+
+#gs-center-header-box {
+    /*Flex box to allow moving the button*/
+    display: flex;
+    flex-direction: column;
+
+    position: absolute;
+    padding: 4rem 10rem;
+    background-color: rgba(93,68,0,.9);    
+}
+#gs-header-title {
+    color: white;
+    font-size: 3rem;
+    text-align: center;
+}
+.gs-apply-plot{
+    align-self: center;
+    margin: 1rem;
+    padding: 1rem 3rem;
+    border-radius: 40px;
+    border: 0 solid rgba(64,128,77,1); /*remove shadow*/
+    background-color: rgba(64,128,77,1); /*Format allows easy change of opacity*/
+    width: fit-content;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+}
+.gs-display-none {
+    display: none;
+}
+.gs-wrap {
+    background-color: #CEBFA1;
+}
+.gs-flex-grow {
+    flex-grow: 1;
+}
+.gs-wrap-sort {
+    width: 100%;
+    align-items: center;
+    justify-content: space-around;
+    display: flex;
+    background-color: white;
+    height: 9rem;
+}
+.gs-plot-size-wrap {
+    height: 9rem;
+    font-size: 1.6rem;
+    background-color: #f8f5ec;
+    border-left: 1px solid #CEBFA1;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.gs-plot-size-box {
+    text-align: center;
+    color: #3F2E00;
+}
+.gs-bold {
+    font-weight: 600;
+}
+.gs-table {
+    width: 100%;
+    border-spacing:0;
+    border-collapse: collapse;
+}
+.gs-table th {
+    background-color: #CEBFA1;
+    font-weight: 900;
+    font-size: 2.1rem;
+    height: 4rem;
+}
+#gs-extra {
+    width: 25%;
+}
+.gs-right-wrap {
+    width: 34%;
+}
+.gs-site {
+    background-color: #F8F5EC;
+    border: 2px solid #CEBFA1;
+    padding: 1rem .5rem 1rem 2rem;
+    text-align: center;
+    height: 10rem;
+}
+#gs-map {
+    width: 100%;
+    height: 480px; /* Consider adding JS to make height proportional to width, on screen change */
+}
+.gs-align-center{
+    align-content: center;
+}
+.gs-site-number{
+    color: #40804D;
+}
+.gs-circle{
+    border: 2px solid #40804D;
+    border-radius: 50%;
+    margin: auto;
+    width: 33px;
+    text-align: center;
+}
+.gs-site-name{
+    color: #40804D;
+    font-size: 2.1rem;
+}
+.gs-param{
+    padding-bottom: .5rem;
+    text-align: left;
+}
+.gs-sort-params {
+    padding-left: 2rem;
+}
+.gs-sort-params img{
+    max-width: unset;
+}
+.gs-param-txt{
+    padding-left: .5rem;
+}
+.gs-flex{
+    display: flex;
+}
+.gs-flex img {
+    height: auto;
+    margin: 0 auto;
+}
+.garden-sites-column-names{
+    display: flex;
+    justify-content: space-around;
+}
+.g-sites-box{
+    display: flex;
+    justify-content: space-around;
+}
+#garden-sites-box-title{
+    display: flex;
+    justify-content: space-around;
+    margin-left: 2.6rem;
+}
+#garden-sites-plotcap{
+    display: inline-block;
+    margin-left: 7rem;
+    
+}
+#one-img{
+    display: flex;
+    margin-left: 4rem;
+}
+
+.gs-table thead tr {
+    height: 4.3rem;
+}
+
+#gs-search-bar {
+    background-color: #CEBFA1;
+    height: 4.3rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+#gs-search-input {
+    width: 50%;
+    border-radius: 30px;
+    font-size: 1.4rem;
+    background-color: white;
+    background-image: url('https://cdn2.iconfinder.com/data/icons/ios-7-icons/50/search-24.png');
+    background-position: 1rem .5rem;
+    background-repeat: no-repeat;
+    padding: .6rem 2rem .4rem 4rem;
+    outline: none;
+}
