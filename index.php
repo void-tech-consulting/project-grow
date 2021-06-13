@@ -40,7 +40,7 @@ get_header();
         <?php if (get_theme_mod('home1-upevents-image')) {?> 
             <img src="<?php echo wp_get_attachment_url(get_theme_mod('home1-upevents-image' )) ?>" alt="Event Image"  class="event-img">
         <?php } else { ?>
-            <img src="<?php echo get_template_directory_uri();?>/event-img.png" alt="Event Image" class="event-img">
+            <img src="<?php echo get_template_directory_uri();?>/images/home/event-img.png" alt="Event Image" class="event-img">
         <?php }?>
     </div>
 </div> <!-- end events section -->
@@ -86,7 +86,7 @@ get_header();
     <?php if (get_theme_mod('home1-news-image')) {?> 
         <img src="<?php echo wp_get_attachment_url(get_theme_mod('home1-news-image' )) ?>" alt="news img not found" class="news-img">
     <?php } else { ?>
-        <img src="<?php echo get_template_directory_uri();?>/newsimg.jpg" alt="news img not found" class="news-img">
+        <img src="<?php echo get_template_directory_uri();?>/images/home/news-img.jpg" alt="news img not found" class="news-img">
     <?php }?>
     <div class="news-text">
         <div class="latest-news">
