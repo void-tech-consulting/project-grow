@@ -53,20 +53,6 @@
   margin-bottom: 3rem;
 }
 
-.growing-tips-header-box {
-  width: 48rem;
-  height: 20rem;
-  margin-right: auto;
-  margin-left: auto;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-
-  background: rgba(93, 68, 0, 0.9);
-}
-
 .our-people-button-header-text {
   font-family: Roboto;
   font-style: normal;
