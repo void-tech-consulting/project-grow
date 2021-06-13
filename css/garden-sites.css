@@ -148,7 +148,10 @@ body {
     border-radius: 50%;
     margin: auto;
     width: 33px;
-    text-align: center;
+    height: 33px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .gs-site-name{
     color: #40804D;
@@ -170,10 +173,6 @@ body {
 .gs-flex{
     display: flex;
 }
-.gs-flex img {
-    height: auto;
-    margin: 0 auto;
-}
 .garden-sites-column-names{
     display: flex;
     justify-content: space-around;
@@ -191,6 +190,11 @@ body {
     display: inline-block;
     margin-left: 7rem;
     
+}
+.garden-sites-icon {
+    height: auto;
+    margin: 0 auto;
+    width: 2.5rem;
 }
 #one-img{
     display: flex;

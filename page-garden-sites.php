@@ -31,19 +31,19 @@
             </div>
             <div class="gs-extra-info-box">
                 <div>
-                    <img src=<?php echo get_template_directory_uri();?>/images/garden-sites/soil-type.png alt="soil type icon">
+                    <img class=garden-sites-icon src=<?php echo get_template_directory_uri();?>/images/garden-sites/soil-type-icon.png alt="soil type icon">
                 </div>
                 <div>Soil Type</div>
             </div>
             <div class="gs-extra-info-box">
                 <div>
-                    <img src=<?php echo get_template_directory_uri();?>/images/garden-sites/accessibility.png alt="soil type icon">
+                    <img class=garden-sites-icon src=<?php echo get_template_directory_uri();?>/images/garden-sites/accessibility-icon.png alt="soil type icon">
                 </div>
                 <div>Accessibility</div>
             </div>
             <div class="gs-extra-info-box">
                 <div>
-                    <img src=<?php echo get_template_directory_uri();?>/images/garden-sites/special-conditions.png alt="soil type icon">
+                    <img class=garden-sites-icon src=<?php echo get_template_directory_uri();?>/images/garden-sites/special-conditions-icon.png alt="soil type icon">
                 </div>
                 <div>Special Conditions</div>
             </div>
@@ -86,7 +86,7 @@
                                 ?>
                             <div class="gs-param gs-flex gs-soil-type">
                                 <div>
-                                    <img src=<?php echo get_template_directory_uri();?>/images/garden-sites/soil-type.png alt="soil type icon">
+                                    <img class=garden-sites-icon src=<?php echo get_template_directory_uri();?>/images/garden-sites/soil-type-icon.png alt="soil type icon">
                                 </div>
                                 <div class="gs-param-txt">
                                     <?php echo $f['Soil_Conditions'];?>
@@ -97,7 +97,7 @@
                                 ?>
                             <div class="gs-param gs-flex gs-accessibility">
                                 <div>
-                                    <img src=<?php echo get_template_directory_uri();?>/images/garden-sites/accessibility.png alt="accessibility icon">
+                                    <img class=garden-sites-icon src=<?php echo get_template_directory_uri();?>/images/garden-sites/accessibility-icon.png alt="accessibility icon">
                                 </div>
                                 <div class="gs-param-txt">
                                     <?php echo $f['Accessibility'];?>
@@ -108,7 +108,7 @@
                                 ?>
                             <div class="gs-param gs-flex gs-special-conditions">
                                 <div>
-                                    <img src=<?php echo get_template_directory_uri();?>/images/garden-sites/special-conditions.png alt="extra info icon">
+                                    <img class=garden-sites-icon src=<?php echo get_template_directory_uri();?>/images/garden-sites/special-conditions-icon.png alt="extra info icon">
                                 </div>
                                 <div class="gs-param-txt">
                                     <?php echo $f['Special_Conditions'];?>
