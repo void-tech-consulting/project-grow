@@ -19,7 +19,7 @@ body {
 
     height: 25rem; /*Just for scale, looks like 25rem is a good size*/
     background-size: cover; /*Take up the whole space*/
-    background-image: url("../images/plot-guidelines/plot-guidelines-header.png");
+    background-image: url("../images/header-images/plot-guidelines-header-img.png");
     background-position: center;
     background-repeat: no-repeat;
     background-color: aqua; /*Should never show if image is well sized*/
@@ -47,10 +47,17 @@ body {
     color: white;
 }
 
+.title {
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+}
+
 #project-grow-guidelines {
     border-top: 1px solid #CEBFA1;
     border-bottom: 1px solid #CEBFA1;
     background-color: #F8F5EC;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
 }
 #guidelines-little-spacer {
     padding: .75rem 0;
@@ -121,7 +128,7 @@ body {
 .guidelines-expansion {
     border: 2px solid #40804D;
     background-color: #F8F5EC;
-    margin: 0 10rem;
+    margin: 0 5rem;
     padding: 2rem;
     width: 100%;
 }

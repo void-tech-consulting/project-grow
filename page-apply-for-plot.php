@@ -4,7 +4,7 @@ get_header();
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
 
-<div class="header-background">
+<div class="apply-plot-header-background">
   <div class="header-box">
     <span class="our-people-button-header-text">Apply For a Plot</span>
     </a>

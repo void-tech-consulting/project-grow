@@ -5,7 +5,7 @@ get_header();
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
 
 <div class="growing-tips-header-background">
-  <div class="growing-tips-header-box">
+  <div class="header-box">
     <span class="our-people-button-header-text">Growing Tips</span>
     <a href="https://www.google.com" class="no-style-link">
       <div class="connect-button">

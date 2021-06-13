@@ -31,7 +31,7 @@ body {
 
     height: 25rem; /*Just for scale, looks like 25rem is a good size*/
     background-size: cover; /*Take up the whole space*/
-    background-image: url("../images/header-images/plant-sale-info-header.jpg");
+    background-image: url("../images/header-images/plant-sale-info-header-img.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-color: aqua; /*Should never show if image is well sized*/

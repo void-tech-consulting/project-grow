@@ -125,15 +125,3 @@ input[type=text], textarea {
     padding: 4rem 10rem;
     background-color: rgba(93,68,0,.9);    
 }
-
-.plant-catalog-btn {
-    align-self: center;
-    margin: 1rem;
-    padding: 1rem 3rem;
-    border-radius: 40px;
-    border: 0 solid rgba(64,128,77,1); /*remove shadow*/
-    background-color: rgba(64,128,77,1); /*Format allows easy change of opacity*/
-    width: fit-content;
-    text-align: center;
-    color: white;
-}
