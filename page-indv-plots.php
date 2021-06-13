@@ -1,9 +1,15 @@
+<?php 
+  get_header(); 
+  
+?>
+
+<h1>Add your message here</h1>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <link rel="stylesheet" href="grow.css">
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=0,width=device-width" name="viewport">
     <title> individual-garden-sites </title>
 </head>
 <body>
@@ -64,5 +70,51 @@
    <div class = "rocks-pos"> 
        <div class = "description-header" id = "light-color"> Rocks: <span class = "descriptions" id = "light-color">Gardeners should place rocks on the designated on-site rock pile.  This is especially important at this site because rocks left anywhere in the plot will be tilled back into it in the fall.</span></div>
    </div>
+   <div class = "abandoned-pos">
+       <div class = "description-header" id = "light-color">Abandoned Plots: <span class = "descriptions" id = "light-color">Plots that have not been seriously worked by June 1st or are overgrown with weeds taller than 18” at any point in the season, will be considered abandoned and will be reassigned or solarized. Contact your site coordinator or the Project Grow office if you are having problems getting started or if you need to abandon your plot.</span></div>
+   </div>
+   <div class = "communication-pos"> 
+        <div class = "description-header" id = "light-color">Communication: <span class = "descriptions" id = "light-color">Expect a few e-mails asking you to help out with volunteer tasks. If you have not already notified us of your email address, let us know right away! Finally, e-newsletters will also contain important information about upcoming projects and events. </span></div>
+   </div>
+   <div class = "clean-up-pos">
+       <div class = "description-header" id = "light-color">Fall Clean Up: <span class = "descriptions" id = "light-color">Gardeners will clear their plots no later than day's end on the third Saturday in October. Organic material may be chopped up and spread evenly across your plot, to be plowed under in the fall. Take home all non-organic material, such as fences, stakes, plastic, or paper, as well as any diseased plants.  The goal is to have a site that is clear of any evidence of gardening, except for the tilled area.  Failure to clean up your plot according to the guidelines set forth in the Member Handbook may result in expulsion from the garden.</span></div>
+   </div>
+   <div class = "rectangle"></div>
+   <div class = "rectangle-words">
+       <!-- TODO: add a href tags later for links -->
+       <div id = "airport"> Airport </div> 
+       <div id = "discovery-center"> Ann Arbor Center For Independent Living - Discovery Garden</div>
+       <div> Buhr Park </div>
+       <div> Catholic Social Services </div>
+       <div> Chapel Hill </div>
+       <div> Clague Elementary</div>
+       <div> County Farm Park A</div>
+       <div> County Farm Park B</div>
+       <div> County Farm - Discovery Garden </div>
+       <div> Ellsworth </div>
+       <div> Food Gatherers </div>
+       <div> Greenview </div>
+       <div> Hillside Terrance </div>
+       <div> Hunt Park</div>
+       <div> Lakewood Elementary </div>
+       <div> Leslie Science and Nature Center - Discovery Garden </div>
+       <div> Matthaei Botanical Gardens </div>
+       <div> Mitchell Garden </div>
+       <div> Northside Park </div>
+       <div> Platt </div>
+       <div> Scio </div>
+       <div> West Park </div>
+       <div> Wines Elementary  </div>
+       <div> Zion </div>
+   </div>
+   <div id = "garden-picture">
+    <img src="Rectangle 10.png" >
+   </div>
+   <div id = "brown-rectangle"> </div>
+   <div id ="garden-sites"> Garden Sites </div>
+   <div id = "green-button"> </div>
+   <div id = "apply"> Apply For A Plot </div>
 </body>
 </html>
+
+<?php get_footer(); ?>

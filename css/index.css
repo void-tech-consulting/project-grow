@@ -60,7 +60,7 @@
   color: #40804d;
 }
 
-.event-title {
+.home-event-title {
   font-size: 3.6rem;
   color: #53401a;
   font-weight: bold;
@@ -100,14 +100,21 @@
 /*how to get started*/
 .get-started {
   background-color: #f8f5ec;
-  display: flex;
+  /* display: flex;
   justify-content: space-around;
-  align-items: center;
+  align-items: center; */
   font-family: Roboto;
   font-size: 1.8rem;
   color: #53401a;
   padding-left: 7rem;
   padding-right: 7rem;
+}
+
+.get-started-steps {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+  padding-bottom: 3rem;
 }
 
 .process-step {
@@ -117,6 +124,12 @@
   width: 15%;
   font-weight: bold;
   text-align: center;
+}
+
+.process-step-divider {
+  background-color: #cebfa1;
+  width: 2px;
+  height: 25rem;
 }
 
 .step-text {
@@ -139,6 +152,7 @@
   color: #3f2e00;
   padding-top: 2rem;
   padding-bottom: 2rem;
+  text-align: center;
 }
 
 .step-img {
@@ -216,3 +230,124 @@ input[type="submit"] {
   box-shadow: none;
   border: none;
 }
+
+@media only screen and (max-width: 400px) {
+  .banner {
+    height: 13.55rem;
+  }
+
+  .banner-text {
+    font-size: 0.7rem;
+    width: 90%;
+    padding-left: 1rem;
+  }
+  .banner-head {
+    font-size: 1.4rem;
+    padding-bottom: 0.5rem;
+  }
+  .apply-plot {
+    margin-top: 0.5rem;
+    width: 9rem;
+  }
+
+  .events {
+    flex-direction: column;
+    align-items: center;
+  }
+  .event-text {
+    font-size: 0.9rem;
+    width: 90%;
+  }
+  .upcoming {
+    font-size: 1.8rem;
+  }
+  .home-event-title {
+    font-size: 2.4rem;
+  }
+  .join {
+    font-size: 1.4rem;
+    width: 8rem;
+    padding: 0.3rem 1.5rem;
+  }
+  .event-img-container {
+    width: 90%;
+    padding-top: 2.5rem;
+  }
+  .event-img {
+    padding-left: 0rem;
+  }
+
+  .get-started {
+    font-size: 1rem;
+    padding-left: 0rem;
+    padding-right: 0rem;
+  }
+  .get-started-header {
+    font-size: 1.5rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+  .get-started-steps {
+    flex-direction: column;
+    align-items: center;
+  }
+  .process-step {
+    width: 90%;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    align-items: center;
+    text-align: none;
+  }
+  .process-step-divider {
+    display: none;
+  }
+  .step-text {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    width: 33%;
+    text-align: center;
+  }
+  .step-link {
+    font-size: 1.5rem;
+    width: 15rem;
+  }
+  .step-img {
+    padding-top: 0rem;
+  }
+
+  .news {
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    font-size: 1.5rem;
+  }
+  .news-img {
+    padding-left: 0rem;
+    max-width: 90%;
+    padding-bottom: 2rem;
+  }
+  .news-text {
+    padding-left: 0rem;
+    padding-right: 0rem;
+    width: 90%;
+  }
+  .news-head {
+    font-size: 2rem;
+  }
+  .input-fields {
+    flex-direction: column;
+    padding-top: 1rem;
+  }
+  input[type="text"] {
+    width: 70%;
+    margin-bottom: 1rem;
+  }
+  input[type="submit"] {
+    margin-top: 1rem;
+    font-size: 1.5rem;
+  }
+}
+
+/*
+apply for plot
+*/

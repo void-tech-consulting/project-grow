@@ -51,7 +51,7 @@ body {
     padding-right: 3rem;
 }
 
-label {
+.contact-content label {
     font-style: normal;
     font-weight: 500;
     font-size: 18px;
