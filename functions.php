@@ -98,7 +98,7 @@ function donate_form_customize($wp_customize) {
     )));
 }
 add_action('customize_register', 'donate_form_customize');
-?>
+
 function apply_for_plot_customize($wp_customize)
 {
   $wp_customize->add_section('apply_for_plot_section', array(
