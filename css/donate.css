@@ -40,16 +40,25 @@ body {
 .donate-col-40 {
     flex: 40%;
     padding-left: 6rem;
-    padding-top: 3rem;
+    padding-top: 2.5rem;
 }
 .donate-col-40 p {
     padding-bottom: 1rem;
 }
+.donate-items-list ul {
+    margin-top: 0.5rem;
+}
 .donate-check-headline {
     padding-bottom: 1.5rem;
+}
+#network-for-good:link, #network-for-good:visited, #network-for-good:hover {
+    color: #53401A;
 }
 .donate-thank-section {
     width: 60%;
     padding-top: 4rem;
     padding-bottom: 1.5rem;
+}
+.donate-landowners {
+    columns: 3;
 }
