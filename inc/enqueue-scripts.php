@@ -23,6 +23,24 @@ function add_scripts()
         'nonce'    => $title_nonce,
       )
     );
+  } else if (is_page('contact')) {
+    wp_enqueue_script(
+        "ajax-script",
+        get_theme_file_uri("/js/contact.js"),
+        array('jquery'),
+        '1.0.0',
+        true
+      );
+      $title_nonce = wp_create_nonce('title_example');
+      // pass data to ajax through the array
+      wp_localize_script(
+        'ajax-script',
+        'my_ajax_obj',
+        array(
+          'ajax_url' => admin_url('admin-ajax.php'),
+          'nonce'    => $title_nonce,
+        )
+      );
   }
   // Added for guidelines JS
   else if (is_page( 'plot-guidelines' )) {
@@ -61,14 +79,15 @@ function my_ajax_handler__json()
 }
 add_action('wp_ajax_nopriv_my_tag_count', 'my_ajax_handler__json');
 
-function add_styles()
-{
-  wp_enqueue_style("style", get_stylesheet_uri());
-  wp_enqueue_style("home", get_theme_file_uri('/css/home.css'));
-  wp_enqueue_style("contact", get_theme_file_uri('/css/contact.css'));
-  wp_enqueue_style("header", get_theme_file_uri('/css/header.css'));
-  wp_enqueue_style("footer", get_theme_file_uri('/css/footer.css'));
-  wp_enqueue_style("index", get_theme_file_uri('/css/index.css'));
+function add_styles() {
+  wp_enqueue_style( "style", get_stylesheet_uri());
+  wp_enqueue_style( "home", get_theme_file_uri('/css/home.css'));
+  wp_enqueue_style( "contact", get_theme_file_uri('/css/contact.css'));
+  wp_enqueue_style( "donate", get_theme_file_uri('/css/donate.css'));
+  wp_enqueue_style( "header", get_theme_file_uri('/css/header.css'));
+  wp_enqueue_style( "footer", get_theme_file_uri('/css/footer.css'));
+  wp_enqueue_style( "example", get_theme_file_uri('/css/example.css'));
+  wp_enqueue_style("home1", get_theme_file_uri('/css/home1.css'));
   wp_enqueue_style("ourpeople", get_theme_file_uri('/css/ourpeople.css'));
   wp_enqueue_style( "plant-sale-info", get_theme_file_uri('/css/plant-sale-info.css'));
   wp_enqueue_style( "classes-events", get_theme_file_uri('/css/classes-events.css'));

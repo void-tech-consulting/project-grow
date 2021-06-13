@@ -516,6 +516,18 @@ function classes_events_customize($wp_customize) {
             )
         )
     );
+  }
+  add_action('customize_register', 'classes_events_customize');
+  // function donate_repeatable_customizer($wp_customize) {
+  //   require 'section_vars.php';  
+  //   require_once 'controller.php';
+    
+  //   $wp_customize->add_section($donate_section, array(
+  //     'title' => 'Donate Page',
+  //   ));
+    
+  //   $wp_customize->add_setting(
+  //     $donate_season_repeater,
   
     // // Start img
     // $wp_customize->add_setting('classes-events-img');
@@ -611,8 +623,9 @@ function classes_events_customize($wp_customize) {
     //   'settings' => 'classes-events-join-link',
     //   'type' => 'dropdown-pages'
     // )));
-}
-add_action('customize_register', 'classes_events_customize');
+// }
+// add_action( 'customize_register', 'donate_repeatable_customizer' );
+
 
 function garden_sites_repeater($wp_customize) {
   require 'section_vars.php';
@@ -627,6 +640,87 @@ function garden_sites_repeater($wp_customize) {
           'sanitize_callback' => 'onepress_sanitize_repeatable_data_field',
           'transport' => 'refresh',
       ) );
+  
+    $wp_customize->add_control(
+        new Onepress_Customize_Repeatable_Control(
+            $wp_customize,
+            $donate_season_repeater,
+            array(
+                'label' 		=> esc_html__('Upcoming Season Wishlist'),
+                'description'   => '',
+                'section'       => $donate_section,
+                'live_title_id' => 'item',
+                'title_format'  => esc_html__('[live_title]'), // [live_title]
+                'max_item'      => 30, // Maximum item can add
+                'limited_msg' 	=> wp_kses_post( __( 'Max items added' ) ),
+                'fields'    => array(
+                    'item'  => array(
+                        'title' => esc_html__('Item'),
+                        'type'  =>'text',
+                    ),
+                ),
+            )
+        )
+    );
+
+    $wp_customize->add_setting(
+        $donate_longterm_repeater,
+        array(
+            'sanitize_callback' => 'onepress_sanitize_repeatable_data_field',
+            'transport' => 'refresh',
+        ) );
+    
+      $wp_customize->add_control(
+          new Onepress_Customize_Repeatable_Control(
+              $wp_customize,
+              $donate_longterm_repeater,
+              array(
+                  'label' 		=> esc_html__('Long Term Wishlist'),
+                  'description'   => '',
+                  'section'       => $donate_section,
+                  'live_title_id' => 'item',
+                  'title_format'  => esc_html__('[live_title]'), // [live_title]
+                  'max_item'      => 30, // Maximum item can add
+                  'limited_msg' 	=> wp_kses_post( __( 'Max items added' ) ),
+                  'fields'    => array(
+                      'item'  => array(
+                          'title' => esc_html__('Item'),
+                          'type'  =>'text',
+                      ),
+                  ),
+              )
+          )
+      );
+
+    $wp_customize->add_setting(
+        $donate_landowners_repeater,
+        array(
+            'sanitize_callback' => 'onepress_sanitize_repeatable_data_field',
+            'transport' => 'refresh',
+        ) );
+    
+      $wp_customize->add_control(
+          new Onepress_Customize_Repeatable_Control(
+              $wp_customize,
+              $donate_landowners_repeater,
+              array(
+                  'label' 		=> esc_html__('List of Landowners'),
+                  'description'   => '',
+                  'section'       => $donate_section,
+                  'live_title_id' => 'item',
+                  'title_format'  => esc_html__('[live_title]'), // [live_title]
+                  'max_item'      => 30, // Maximum item can add
+                  'limited_msg' 	=> wp_kses_post( __( 'Max items added' ) ),
+                  'fields'    => array(
+                      'item'  => array(
+                          'title' => esc_html__('Landowner'),
+                          'type'  =>'text',
+                      ),
+                  ),
+              )
+          )
+      );
+
 
   $wp_customize->add_control(
       new Onepress_Customize_Repeatable_Control(
