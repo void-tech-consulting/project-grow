@@ -6,7 +6,7 @@ get_header();
 
 <div class="master-composter-header-background">
   <div class="master-composter-header-box">
-    <span class="master-composter-our-people-button-header-text">Master Composter Program</span>
+    <div class="master-composter-our-people-button-header-text">Master Composter Program</div>
     <a href="https://www.google.com" class="master-composter-no-style-link">
       <div class="master-composter-connect-button">
         Apply Now
@@ -28,18 +28,7 @@ get_header();
   </div>
 </div>
 
-<span class="master-composter-header-text">Handouts and Guidelines</span>
-<!--
-  <div class="master-composter-large-box">
-    <div class="master-composter-large-box-sidebar"></div>
-    <div class="master-composter-large-box-textbox">
-      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facere, magnam pariatur! Commodi, laborum sint minima sed nulla accusamus autem nam libero, dolor iure reprehenderit modi? Vel minima enim excepturi sequi?
-    </div>
-  </div>
--->
-
-
-
+<div class="master-composter-header-text">Handouts and Guidelines</div>
 
 <div class="master-composter-item-container">
   <?php
@@ -67,7 +56,7 @@ get_header();
   ?>
 </div>
 
-<span class="master-composter-header-text"> CEC Reports, Presentations and Special Projects</span>
+<div class="master-composter-header-text"> CEC Reports, Presentations and Special Projects</div>
 <div class="master-composter-item-container">
   <?php
   require 'inc/section_vars.php';
@@ -95,18 +84,9 @@ get_header();
   ?>
 </div>
 
-<span class="master-composter-header-text">Community Partners and Advisors</span>
+<div class="master-composter-header-text">Community Partners and Advisors</div>
 <div class="master-composter-item-container">
-  <!--
-    <div class="master-composter-small-box">
-      <div class="master-composter-small-box-description">
-        testingggg
-      </div>
-      <div class="master-composter-small-box-link" >
-        <div><a class="master-composter-no-style-link" style="color:white" href="https:google.com">Learn More</a></div>
-      </div>
-    </div>
-    -->
+
   <?php
   require 'inc/section_vars.php';
   $data = get_mastcomp_data($master_composter_pa);
@@ -128,20 +108,8 @@ get_header();
   ?>
 </div>
 
-<span class="master-composter-header-text">Contacts</span>
+<div class="master-composter-header-text">Contacts</div>
 <div class="master-composter-item-container">
-  <!--
-    <div class="master-composter-contact-box">
-      <span class="master-composter-contact-box-name"><span> JOOOOOOOOOo</span></span>
-      <div class="master-composter-contact-box-description">
-        <span class="master-composter-contact-box-title"><span>dude</span></span>
-        <span class="master-composter-contact-box-email"><span>dude@gmail.com</span></span>
-      </div>
-      <div class="master-composter-contact-box-link" >
-        <div><a class="master-composter-no-style-link" style="color:white" href="mailto:aaa@umich.edu">Email</a></div>
-      </div>
-    </div>
-  -->
 
   <?php
   require 'inc/section_vars.php';
