@@ -20,4 +20,5 @@
   $master_composter_pa = 'master_composter_partners_advisors';
   $master_composter_contacts = 'master_composter_contacts';
   $apply_for_plot_form = 'apply_for_plot_form';
+  $apply_for_plot_section = 'apply_for_plot_section';
 ?>

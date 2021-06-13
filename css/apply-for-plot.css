@@ -43,29 +43,32 @@
   justify-content: space-between;
 }
 
-.apply-form {
-  width: 71%;
+/* .apply-form {
+  width: 100%;
 }
-
+*/
 .apply-info {
-  width: 27%;
+  padding-top: 5rem;
 }
 
 .apply-info-row {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   padding-bottom: 2rem;
-  height:auto;
+  height: auto;
+  flex-wrap: wrap;
+  margin: auto;
 }
 
 .apply-info-col {
-  width: 48%;
+  width: 19%;
   border: 1px solid #cebfa1;
   background-color: #f8f5ec;
   display: flex;
   flex-direction: column;
   align-items: center;
-  height:auto;
+  height: auto;
+  margin-top: 2rem;
 }
 
 .apply-col-head {
@@ -77,17 +80,18 @@
 
 .apply-col-body {
   width: 90%;
+  text-align: center;
 }
 
-.apply-info-row-1 {
+/* .apply-info-row-1 {
   min-height: 15rem;
-  height:auto;
-}
+  height: auto;
+} */
 
-.apply-info-row-2 {
+/* .apply-info-row-2 {
   min-height: 50rem;
-  height:auto;
-}
+  height: auto;
+} */
 
 .apply-info-single {
   border: 1px solid #cebfa1;
@@ -130,39 +134,78 @@
   line-height: 35px;
 }
 
-/* .forminator-ui.forminator-custom-form-115.forminator-design--default .forminator-select2 + .select2-container--default .select2-selection--single, .et-db #et-boc .et_pb_module .forminator-ui.forminator-custom-form-115.forminator-design--default .forminator-select2 + .select2-container--default .select2-selection--single {
-  background-color: #E8E0CF !important;
-} */
-
+/* dropdown border */
 .apply-for-plot-inputs
   .forminator-field
   .select2
   .selection
-  .select2-selection
-  .select2-selection__rendered,
-.select2-dropdown .select2-results ul li,
-.select2-dropdown .forminator-dropdown--default {
+  .select2-selection--single {
+  border-color: #e8e0cf !important;
+}
+
+/* Checkbox box */
+.apply-agreement-checkbox .forminator-field .forminator-checkbox {
+  height: 6.4rem;
+  padding-top: 0rem;
+  padding-bottom: 0rem;
   background: #e8e0cf;
-  background-color: #e8e0cf;
-}
-.apply-for-plot-inputs
-  .forminator-field
-  .select2
-  .selection
-  .select2-selection {
-  background-color: #e8e0cf !important;
+  color: #40804d;
+  display: flex;
+  align-items: center;
+  padding-left: 3rem;
 }
 
-.select2-container
-  .select2-dropdown
-  .select2-results
-  .select2-results__options
-  .select2-results__option {
-  background-color: #e8e0cf !important;
-  color: #3f2e00 !important;
+/* Checkbox agree text */
+.apply-agreement-checkbox .forminator-field .forminator-checkbox span {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 21px;
+  line-height: 25px;
+  color: #40804d;
 }
 
-.select2-container .select2-dropdown {
-  background-color: #e8e0cf !important;
-  color: #3f2e00 !important;
+/* Checkbox agreement  spacing */
+.apply-agreement-checkbox .forminator-field .forminator-label {
+  padding: 0;
+}
+
+/* Radio button spacing */
+.apply-radio-buttons label.forminator-radio {
+  padding-top: 0rem;
+}
+
+@media only screen and (max-width: 1600px) {
+  .apply-plot-email {
+    font-size: 1.5rem;
+  }
+}
+
+@media only screen and (max-width: 1300px) {
+  .apply-plot-email {
+    font-size: 1.3rem;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .apply-info-col {
+    width: 24%;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .apply-info-col {
+    width: 31%;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .apply-info-col {
+    width: 45%;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .apply-info-col {
+    width: 90%;
+  }
 }

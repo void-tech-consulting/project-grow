@@ -14,7 +14,7 @@ get_header();
         </a>
     </div>
 </div>
-<span class="header-text">Who Makes Project Grow, Grow?</span>
+<div class="people-header-text">Who Makes Project Grow, Grow?</div>
 
 <div class="person-repeater">
     <?php
