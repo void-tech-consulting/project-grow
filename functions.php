@@ -96,29 +96,39 @@ function donate_customize($wp_customize) {
       'section' => 'donate',
       'settings' => 'donate-form-shortcode'
   )));
-  create_sub_head_setting($wp_customize, $donate_sub_head_title, 'donate', 'Donate Text');
+  create_sub_head_text($wp_customize, $donate_sub_head_title, 'donate', 'Donate Text');
   create_sub_head_img($wp_customize, $donate_sub_head_img, 'donate', 'Donate Image');
 }
 add_action('customize_register', 'donate_customize');
 
 function apply_for_plot_customize($wp_customize)
 {
-  $wp_customize->add_section('apply_for_plot_section', array(
+  $wp_customize->add_section($apply_for_plot_section, array(
     'title' => 'Apply For Plot'
   ));
+
+  create_sub_head_text($wp_customize, $apply_for_plot_title, $apply_for_plot_section, "Header Text");
+  create_sub_head_img($wp_customize, $apply_for_plot_img, $apply_for_plot_section, "Header Image");
 
   $wp_customize->add_setting('full-plot-fee');
   $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'full-plot-control', array(
     'label' => 'Full Plot Fee',
-    'section' => 'apply_for_plot_section',
+    'section' => $apply_for_plot_section,
     'settings' => 'full-plot-fee'
   )));
 
   $wp_customize->add_setting('half-plot-fee');
   $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'half-plot-control', array(
     'label' => 'Half Plot Fee',
-    'section' => 'apply_for_plot_section',
+    'section' => $apply_for_plot_section,
     'settings' => 'half-plot-fee'
+  )));
+
+  $wp_customize->add_setting('apply_for_plot_form-shortcode');
+  $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'apply-shortcode-control', array(
+      'label' => 'Apply for Plot Shortcode',
+      'section' => $apply_for_plot_section,
+      'settings' => 'apply_for_plot_form-shortcode'
   )));
 }
 add_action('customize_register', 'apply_for_plot_customize');
@@ -145,17 +155,4 @@ function growingtips_custom($wp_customize)
 }
 
 add_action('customize_register', 'growingtips_custom');
-
-function apply_for_plot_form_customize($wp_customize) {
-  $wp_customize->add_section('apply_for_plot_form', array(
-      'title' => 'Apply for Plot Form'
-  ));
-  $wp_customize->add_setting('apply_for_plot_form-shortcode');
-  $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'apply-shortcode-control', array(
-      'label' => 'Apply for Plot Shortcode',
-      'section' => 'apply_for_plot_form',
-      'settings' => 'apply_for_plot_form-shortcode'
-  )));
-}
-add_action('customize_register', 'apply_for_plot_form_customize');
 ?>

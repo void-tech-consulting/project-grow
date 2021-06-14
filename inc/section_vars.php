@@ -19,8 +19,6 @@
   $growing_tips_seed_saving_starting = 'growing_tips_seed_saving_starting';
   $our_people_section = 'our_people_section';
   $our_people_members = 'our_people_members';
-  $classes_events_section = 'classes_events_section';
-  $classes_events_setting = 'classes_events_setting';
   $master_composter_section = 'master_composter_section';
   $master_composter_hg = 'master_composter_handouts_guidelines';
   $master_composter_rps = 'master_composter_reports_presentations_specialprojects';
@@ -28,8 +26,16 @@
   $master_composter_contacts = 'master_composter_contacts';
   $apply_for_plot_form = 'apply_for_plot_form';
   $apply_for_plot_section = 'apply_for_plot_section';
+  $apply_for_plot_title = 'apply_for_plot_title';
+  $apply_for_plot_img = 'apply_for_plot_img';
   $gs_sub_head_slug = 'gs_sub_head_slug';
   $gs_sub_head_img = 'gs_sub_head_img';
   $gs_sub_head_text = 'gs_sub_head_text';
   $gs_sub_head_title = 'gs_sub_head_title';
+  $classes_events_section = 'classes_events_section';
+  $classes_events_setting = 'classes_events_setting';
+  $classes_events_img = 'class_events_img';
+  $classes_events_title = 'class_events_title';
+  $plant_sale_img = 'plant_sale_img';
+  $plant_sale_title = 'plant_sale_title';
 ?>

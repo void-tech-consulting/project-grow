@@ -3,6 +3,7 @@
 ?>
 
 <?php 
+    require 'inc/section_vars.php';
     $header_args = array(
         "img_src" => get_theme_mod($donate_sub_head_img, "/images/header-images/garden-sites-header-img.png"),
         "page_title" => get_theme_mod($donate_sub_head_title, "Donate")

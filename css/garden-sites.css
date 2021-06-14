@@ -15,7 +15,7 @@ body {
 }
 .sub-head-img {
     flex-grow: 1;
-    max-height: 100%;
+    height: 100%;
 }
 .sub-head-center-box {
     /*Flex box to allow moving the button*/

@@ -1,5 +1,8 @@
 <!-- If you have a navbar or html on the top of every page put it here -->
-<?php wp_head(); ?>
+<?php 
+    wp_head();
+    require 'inc/section_vars.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

@@ -1,12 +1,13 @@
 <?php
   get_header();
+  require 'inc/section_vars.php';
+  $header_args = array(
+    "img_src" => get_theme_mod($classes_events_img, "/images/header-images/classes-events-header-img.png"),
+    "page_title" => get_theme_mod($classes_events_title, "Classes & Events")
+    );
+    get_template_part('partials/content', 'page-sub-header', $header_args); 
 ?>
 
-<div class="header-img">
-    <div class="center-header-box">
-        <h1 id="header-title">Classes & Events</h1>
-    </div>
-</div>
 <div class="indent main-page title"><b>Classes & Events</b></div>
 
 

@@ -4,6 +4,7 @@
 
 
 <?php 
+    require 'inc/section_vars.php';
     $header_args = array(
         "page_slug" => get_theme_mod($gs_sub_head_slug, "apply-for-plot"),
         "button_text" => get_theme_mod($gs_sub_head_text, "Apply For A Plot"),

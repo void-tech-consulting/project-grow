@@ -473,6 +473,9 @@ function classes_events_customize($wp_customize) {
       'title' => 'Classes & Events'
     ));
 
+    create_sub_head_text($wp_customize, $classes_events_title, $classes_events_section, 'Header Text');
+    create_sub_head_img($wp_customize, $classes_events_img, $classes_events_section, 'Header Image');
+
     $wp_customize->add_setting(
         $classes_events_setting,
         array(
@@ -815,6 +818,8 @@ function repeat_plant_sale($wp_customize) {
   $wp_customize->add_section('plant-sale-section', array(
     'title' => 'Annual Plant Sale',
   ));
+  create_sub_head_img($wp_customize, $plant_sale_img, 'plant-sale-section', 'Header Image');
+  create_sub_head_text($wp_customize, $plant_sale_title, 'plant-sale-section', 'Header Text');
 
   // Customize header at top -not in repeater
   $wp_customize->add_setting('plant-sale-banner', array(

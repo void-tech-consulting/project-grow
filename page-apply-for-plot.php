@@ -1,15 +1,16 @@
 <?php
-get_header();
+    get_header();
+    require 'inc/section_vars.php';
+    $header_args = array(
+        "img_src" => get_theme_mod($apply_for_plot_img, ""),
+        "page_title" => get_theme_mod($apply_for_plot_title, "Apply For a Plot")
+        );
+    get_template_part('partials/content', 'page-sub-header', $header_args);
 ?>
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
 
-<div class="apply-plot-header-background">
-  <div class="header-box">
-    <span class="our-people-button-header-text">Apply For a Plot</span>
-    </a>
-  </div>
-</div>
+
 <div class="apply-body">
     <div class="apply-header">
         Gardener Application Form

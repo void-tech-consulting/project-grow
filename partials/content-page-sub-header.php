@@ -1,5 +1,7 @@
 <div class="sub-head-wrap">
-    <img class="sub-head-img" src="<?php echo get_template_directory_uri() . $args['img_src'] ?>">
+    <?php if ($args['img_src']) { ?>
+        <img class="sub-head-img" src="<?php echo get_template_directory_uri() . $args['img_src'] ?>">
+    <?php }?>
     <div class="sub-head-center-box">
         <h1 class="sub-head-title"><?php echo $args['page_title'] ?></h1>
         <?php
