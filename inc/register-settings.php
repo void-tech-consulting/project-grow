@@ -1,4 +1,22 @@
 <?php
+
+function create_sub_head_text($wp_customize, $text_setting, $text_section, $text_label) {
+
+  $wp_customize->add_setting($text_setting);
+  $wp_customize->add_control(new WP_Customize_Control($wp_customize, $text_setting . '-control', array(
+    'label' => $text_label,
+    'section' => $text_section,
+    'settings' => $text_setting,
+  )));
+}
+function create_sub_head_img($wp_customize, $img_setting, $img_section, $img_label) {
+  $wp_customize->add_setting($img_setting);
+    $wp_customize->add_control(new WP_Customize_Cropped_Image_Control($wp_customize, $img_setting . '-control', array(
+      'label' => $img_label,
+      'section' => $img_section,
+      'settings' => $img_setting,
+  )));
+}
 // Example of how to use a repeatable box
 register_nav_menu("primary", "Top Navbar");
 function home_customizer($wp_customize)
@@ -634,6 +652,10 @@ function garden_sites_repeater($wp_customize) {
   $wp_customize->add_section('garden-sites-section', array(
       'title' => 'Garden Sites Repeater',
   ));
+  create_sub_head_img($wp_customize, $gs_sub_head_img, 'garden-sites-section', 'Header Img');
+  create_sub_head_text($wp_customize, $gs_sub_head_slug, 'garden-sites-section', 'Header Page (The Part After /)');
+  create_sub_head_text($wp_customize, $gs_sub_head_text, 'garden-sites-section', 'Header Button Text');
+  create_sub_head_text($wp_customize, $gs_sub_head_title, 'garden-sites-section', 'Header Title Text');
 
   $wp_customize->add_setting('garden-sites-repeater',
       array(
@@ -691,6 +713,7 @@ function garden_sites_repeater($wp_customize) {
               )
           )
       );
+    
 
     $wp_customize->add_setting(
         $donate_landowners_repeater,

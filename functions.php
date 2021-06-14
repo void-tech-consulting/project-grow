@@ -77,7 +77,7 @@ function contact_form_customize($wp_customize) {
     ));
 
     $wp_customize->add_setting('contact-form-shortcode');
-    $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'shortcode-control', array(
+    $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'contact-shortcode-control', array(
         'label' => 'Contact Form Shortcode',
         'section' => 'contact-form',
         'settings' => 'contact-form-shortcode'
@@ -85,19 +85,21 @@ function contact_form_customize($wp_customize) {
 }
 add_action('customize_register', 'contact_form_customize');
 
-function donate_form_customize($wp_customize) {
-    $wp_customize->add_section('donate-form', array(
-        'title' => 'Donate Form'
-    ));
+function donate_customize($wp_customize) {
+  $wp_customize->add_section('donate', array(
+      'title' => 'Donate'
+  ));
 
-    $wp_customize->add_setting('donate-form-shortcode');
-    $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'shortcode-control', array(
-        'label' => 'Donate Form Shortcode',
-        'section' => 'donate-form',
-        'settings' => 'donate-form-shortcode'
-    )));
+  $wp_customize->add_setting('donate-form-shortcode');
+  $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'donate-shortcode-control', array(
+      'label' => 'Donate Form Shortcode',
+      'section' => 'donate',
+      'settings' => 'donate-form-shortcode'
+  )));
+  create_sub_head_setting($wp_customize, $donate_sub_head_title, 'donate', 'Donate Text');
+  create_sub_head_img($wp_customize, $donate_sub_head_img, 'donate', 'Donate Image');
 }
-add_action('customize_register', 'donate_form_customize');
+add_action('customize_register', 'donate_customize');
 
 function apply_for_plot_customize($wp_customize)
 {
@@ -149,7 +151,7 @@ function apply_for_plot_form_customize($wp_customize) {
       'title' => 'Apply for Plot Form'
   ));
   $wp_customize->add_setting('apply_for_plot_form-shortcode');
-  $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'shortcode-control', array(
+  $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'apply-shortcode-control', array(
       'label' => 'Apply for Plot Shortcode',
       'section' => 'apply_for_plot_form',
       'settings' => 'apply_for_plot_form-shortcode'

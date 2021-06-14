@@ -7,6 +7,8 @@
   $example_repeater = 'example_repeater';
   $contact_form_section = 'contact_form';
   $donate_section = 'donate_section';
+  $donate_sub_head_title = 'donate_sub_head_title';
+  $donate_sub_head_img = 'donate_sub_head_img';
   $donate_season_repeater = 'donate_season_repeater';
   $donate_longterm_repeater = 'donate_longterm_repeater';
   $donate_landowners_repeater = 'donate_landowners_repeater';
@@ -26,4 +28,8 @@
   $master_composter_contacts = 'master_composter_contacts';
   $apply_for_plot_form = 'apply_for_plot_form';
   $apply_for_plot_section = 'apply_for_plot_section';
+  $gs_sub_head_slug = 'gs_sub_head_slug';
+  $gs_sub_head_img = 'gs_sub_head_img';
+  $gs_sub_head_text = 'gs_sub_head_text';
+  $gs_sub_head_title = 'gs_sub_head_title';
 ?>

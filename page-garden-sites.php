@@ -2,19 +2,17 @@
   get_header(); 
 ?>
 
-<div id="gs-header-img">
-    <div id="gs-center-header-box">
-        <h1 id="gs-header-title">Garden Sites</h1>
-        <!--Make button actually link to other page eventually-->
-        <?php
-            $slug = "apply-for-plot";
-            $page_object = get_page_by_path( $slug );
-            $page_id = $page_object->ID;
-            $permalink = get_permalink( $page_id );
-        ?>
-        <a class="gs-apply-plot" href="<?php echo $permalink ?>"><b>Apply For A Plot</b></a>
-    </div>
-</div>
+
+<?php 
+    $header_args = array(
+        "page_slug" => get_theme_mod($gs_sub_head_slug, "apply-for-plot"),
+        "button_text" => get_theme_mod($gs_sub_head_text, "Apply For A Plot"),
+        "img_src" => get_theme_mod($gs_sub_head_img, "/images/header-images/garden-sites-header-img.png"),
+        "page_title" => get_theme_mod($gs_sub_head_title, "Garden Sites")
+    );
+    get_template_part('partials/content', 'page-sub-header', $header_args); 
+?>
+
 
 <div class="gs-flex gs-wrap">
     <div class="gs-flex-grow">
@@ -31,19 +29,19 @@
             </div>
             <div class="gs-extra-info-box">
                 <div>
-                    <img class=garden-sites-icon src=<?php echo get_template_directory_uri();?>/images/garden-sites/soil-type-icon.png alt="soil type icon">
+                    <img class="garden-sites-icon" src="<?php echo get_template_directory_uri();?>/images/garden-sites/soil-type-icon.png" alt="soil type icon">
                 </div>
                 <div>Soil Type</div>
             </div>
             <div class="gs-extra-info-box">
                 <div>
-                    <img class=garden-sites-icon src=<?php echo get_template_directory_uri();?>/images/garden-sites/accessibility-icon.png alt="soil type icon">
+                    <img class="garden-sites-icon" src="<?php echo get_template_directory_uri();?>/images/garden-sites/accessibility-icon.png" alt="soil type icon">
                 </div>
                 <div>Accessibility</div>
             </div>
             <div class="gs-extra-info-box">
                 <div>
-                    <img class=garden-sites-icon src=<?php echo get_template_directory_uri();?>/images/garden-sites/special-conditions-icon.png alt="soil type icon">
+                    <img class="garden-sites-icon" src="<?php echo get_template_directory_uri();?>/images/garden-sites/special-conditions-icon.png" alt="soil type icon">
                 </div>
                 <div>Special Conditions</div>
             </div>
@@ -86,7 +84,7 @@
                                 ?>
                             <div class="gs-param gs-flex gs-soil-type">
                                 <div>
-                                    <img class=garden-sites-icon src=<?php echo get_template_directory_uri();?>/images/garden-sites/soil-type-icon.png alt="soil type icon">
+                                    <img class="garden-sites-icon" src="<?php echo get_template_directory_uri();?>/images/garden-sites/soil-type-icon.png" alt="soil type icon">
                                 </div>
                                 <div class="gs-param-txt">
                                     <?php echo $f['Soil_Conditions'];?>
@@ -97,7 +95,7 @@
                                 ?>
                             <div class="gs-param gs-flex gs-accessibility">
                                 <div>
-                                    <img class=garden-sites-icon src=<?php echo get_template_directory_uri();?>/images/garden-sites/accessibility-icon.png alt="accessibility icon">
+                                    <img class="garden-sites-icon" src="<?php echo get_template_directory_uri();?>/images/garden-sites/accessibility-icon.png" alt="accessibility icon">
                                 </div>
                                 <div class="gs-param-txt">
                                     <?php echo $f['Accessibility'];?>
@@ -108,7 +106,7 @@
                                 ?>
                             <div class="gs-param gs-flex gs-special-conditions">
                                 <div>
-                                    <img class=garden-sites-icon src=<?php echo get_template_directory_uri();?>/images/garden-sites/special-conditions-icon.png alt="extra info icon">
+                                    <img class="garden-sites-icon" src="<?php echo get_template_directory_uri();?>/images/garden-sites/special-conditions-icon.png" alt="extra info icon">
                                 </div>
                                 <div class="gs-param-txt">
                                     <?php echo $f['Special_Conditions'];?>
