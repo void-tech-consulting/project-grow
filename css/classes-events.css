@@ -28,13 +28,13 @@ body {
 .event-container {
     display: flex;
     margin: 0 5rem 0 5rem;
-    padding-right: 7rem;
+    padding: 0 7rem;
     border: 2px solid #CEBFA1;
     background-color: #F8F5EC;
     margin-bottom: 5rem;
 }
-#event-img {
-    padding: 3rem 4rem 3rem 7rem;
+.event-image-container {
+    padding: 3rem 4rem 3rem 0;
     max-width: none;
 }
 
@@ -67,12 +67,11 @@ body {
 .event-cost-join {
     display: flex;
     justify-content: space-between;
-    padding-bottom: 3rem;
+    align-items: center;
+    padding: 3rem;
 }
-
 .event-cost {
-    display: flex;
-    margin-top: 1rem;
+  font-size: 2rem;
 }
 
 .register-event {

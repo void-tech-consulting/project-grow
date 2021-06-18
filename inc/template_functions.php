@@ -230,6 +230,7 @@ if(!function_exists('get_gs_data')) {
 		return template_data($section, array(
 			'Site_Number' => '',
         	'Site_Name' => '',
+			'Plot_Slug' => '', 
 			'Plot_Capacity' => '',
 		    'Location' => ''
 		));

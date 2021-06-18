@@ -539,114 +539,6 @@ function classes_events_customize($wp_customize) {
     );
   }
   add_action('customize_register', 'classes_events_customize');
-  // function donate_repeatable_customizer($wp_customize) {
-  //   require 'section_vars.php';  
-  //   require_once 'controller.php';
-    
-  //   $wp_customize->add_section($donate_section, array(
-  //     'title' => 'Donate Page',
-  //   ));
-    
-  //   $wp_customize->add_setting(
-  //     $donate_season_repeater,
-  
-    // // Start img
-    // $wp_customize->add_setting('classes-events-img');
-    // $wp_customize->add_control( new WP_Customize_Cropped_Image_control(
-    //   $wp_customize, 'classes-events-img-control', array(
-    //   'label' => 'Image',
-    //   'section' => 'classes-events-section',
-    //   'settings' => 'classes-events-img',
-    //   'width' => 250,
-    //   'height' => 250
-    // )));
-
-    // //Start Headline
-    // $wp_customize->add_setting('classes-events-headline', array(
-    //   'default' => 'Headline'
-    // ));
-    // $wp_customize->add_control( new WP_Customize_Control($wp_customize, 'classes-events-callout-headline', array(
-    //   'label' => 'Headline', 
-    //   'section' => 'classes-events-section', 
-    //   'settings' => 'classes-events-headline'
-    // )));
-
-    // // Start body paragraph
-    // $wp_customize->add_setting('classes-events-paragraph', 
-    //   array('default'=> 'Paragraph'
-    // ));
-    // $wp_customize->add_control( new WP_Customize_Control($wp_customize, 'classes-events-callout-paragraph', array(
-    //   'label' => 'Event Details', 
-    //   'section' => 'classes-events-section', 
-    //   'settings' => 'classes-events-paragraph',
-    //   'type' => 'textarea'
-    // )));
-
-    // // Start Location
-    // $wp_customize->add_setting('classes-events-location', 
-    //   array('default'=> 'Location'
-    // ));
-    // $wp_customize->add_control( new WP_Customize_Control($wp_customize, 'classes-events-callout-location', array(
-    //   'label' => 'Location', 
-    //   'section' => 'classes-events-section', 
-    //   'settings' => 'classes-events-location',
-    //   'type' => 'textarea'
-    // )));
-    // // Start Event Type
-    // $wp_customize->add_setting('classes-events-event-type', 
-    //   array('default'=> 'Class or Event?'
-    // ));
-    // $wp_customize->add_control( new WP_Customize_Control($wp_customize, 'classes-events-callout-event-type', array(
-    //   'label' => 'Event type', 
-    //   'section' => 'classes-events-section', 
-    //   'settings' => 'classes-events-event-type',
-    //   'type' => 'textarea'
-    // )));
-
-    // // Start Cost
-    // $wp_customize->add_setting('classes-events-cost', 
-    //   array('default'=> '5.00'
-    // ));
-    // $wp_customize->add_control( new WP_Customize_Control($wp_customize, 'classes-events-callout-cost', array(
-    //   'label' => 'Cost', 
-    //   'section' => 'classes-events-section', 
-    //   'settings' => 'classes-events-cost',
-    //   'type' => 'textarea'
-    // )));
-
-    // // Start Time
-    // $wp_customize->add_setting('classes-events-time', 
-    //   array('default'=> '00:00AM - 00:00PM'
-    // ));
-    // $wp_customize->add_control( new WP_Customize_Control($wp_customize, 'classes-events-callout-time', array(
-    //   'label' => 'Time', 
-    //   'section' => 'classes-events-section', 
-    //   'settings' => 'classes-events-time',
-    //   'type' => 'textarea'
-    // )));
-
-    // // Start Date
-    // $wp_customize->add_setting('classes-events-date', 
-    //   array('default'=> 'Jan 01, 2021'
-    // ));
-    // $wp_customize->add_control( new WP_Customize_Control($wp_customize, 'classes-events-callout-date', array(
-    //   'label' => 'Date', 
-    //   'section' => 'classes-events-section', 
-    //   'settings' => 'classes-events-date',
-    //   'type' => 'textarea'
-    // )));
-
-    // // Start Join Link
-    // $wp_customize->add_setting('classes-events-join-link');
-    // $wp_customize->add_control( new WP_Customize_Control($wp_customize, 'classes-events-callout-join-link', array(
-    //   'label' => 'Link', 
-    //   'section' => 'classes-events-section', 
-    //   'settings' => 'classes-events-join-link',
-    //   'type' => 'dropdown-pages'
-    // )));
-// }
-// add_action( 'customize_register', 'donate_repeatable_customizer' );
-
 
 function garden_sites_repeater($wp_customize) {
   require 'section_vars.php';
@@ -665,88 +557,6 @@ function garden_sites_repeater($wp_customize) {
           'sanitize_callback' => 'onepress_sanitize_repeatable_data_field',
           'transport' => 'refresh',
       ) );
-  
-    $wp_customize->add_control(
-        new Onepress_Customize_Repeatable_Control(
-            $wp_customize,
-            $donate_season_repeater,
-            array(
-                'label' 		=> esc_html__('Upcoming Season Wishlist'),
-                'description'   => '',
-                'section'       => $donate_section,
-                'live_title_id' => 'item',
-                'title_format'  => esc_html__('[live_title]'), // [live_title]
-                'max_item'      => 30, // Maximum item can add
-                'limited_msg' 	=> wp_kses_post( __( 'Max items added' ) ),
-                'fields'    => array(
-                    'item'  => array(
-                        'title' => esc_html__('Item'),
-                        'type'  =>'text',
-                    ),
-                ),
-            )
-        )
-    );
-
-    $wp_customize->add_setting(
-        $donate_longterm_repeater,
-        array(
-            'sanitize_callback' => 'onepress_sanitize_repeatable_data_field',
-            'transport' => 'refresh',
-        ) );
-    
-      $wp_customize->add_control(
-          new Onepress_Customize_Repeatable_Control(
-              $wp_customize,
-              $donate_longterm_repeater,
-              array(
-                  'label' 		=> esc_html__('Long Term Wishlist'),
-                  'description'   => '',
-                  'section'       => $donate_section,
-                  'live_title_id' => 'item',
-                  'title_format'  => esc_html__('[live_title]'), // [live_title]
-                  'max_item'      => 30, // Maximum item can add
-                  'limited_msg' 	=> wp_kses_post( __( 'Max items added' ) ),
-                  'fields'    => array(
-                      'item'  => array(
-                          'title' => esc_html__('Item'),
-                          'type'  =>'text',
-                      ),
-                  ),
-              )
-          )
-      );
-    
-
-    $wp_customize->add_setting(
-        $donate_landowners_repeater,
-        array(
-            'sanitize_callback' => 'onepress_sanitize_repeatable_data_field',
-            'transport' => 'refresh',
-        ) );
-    
-      $wp_customize->add_control(
-          new Onepress_Customize_Repeatable_Control(
-              $wp_customize,
-              $donate_landowners_repeater,
-              array(
-                  'label' 		=> esc_html__('List of Landowners'),
-                  'description'   => '',
-                  'section'       => $donate_section,
-                  'live_title_id' => 'item',
-                  'title_format'  => esc_html__('[live_title]'), // [live_title]
-                  'max_item'      => 30, // Maximum item can add
-                  'limited_msg' 	=> wp_kses_post( __( 'Max items added' ) ),
-                  'fields'    => array(
-                      'item'  => array(
-                          'title' => esc_html__('Landowner'),
-                          'type'  =>'text',
-                      ),
-                  ),
-              )
-          )
-      );
-
 
   $wp_customize->add_control(
       new Onepress_Customize_Repeatable_Control(
@@ -754,7 +564,7 @@ function garden_sites_repeater($wp_customize) {
           'garden-sites-repeater',
           array(
               'label' 		=> esc_html__('Garden Sites Repeater'),
-              'description'   => '',
+              'description'   => 'IMPORTANT: Plot Slug should just be the last part of the url if the plot is at: www.grow.com/plot/my-plot insert just my-plot into the field',
               'section'       => 'garden-sites-section',
               'live_title_id' => 'Site_Name',
               'title_format'  => esc_html__('[live_title]'), // [live_title]
@@ -768,6 +578,10 @@ function garden_sites_repeater($wp_customize) {
                   'Site_Name'  => array(
                       'title' => esc_html__('Site Name'),
                       'type'  =>'text',
+                  ),
+                  'Plot_Slug'  => array(
+                    'title' => esc_html__('Plot Slug'),
+                    'type'  =>'text',
                   ),
                   'Plot_Capacity'  => array(
                       'title' => esc_html__('Plot Capacity'),

@@ -2,6 +2,7 @@
   require get_template_directory() . '/inc/register-plot-type.php';
   require get_template_directory() . '/inc/enqueue-scripts.php';
   require get_template_directory() . '/inc/register-settings.php';
+  require get_template_directory() . '/inc/section_vars.php';
   require get_template_directory() . '/inc/customizer.php';
   require get_template_directory() . '/inc/template_functions.php';
 ?>
@@ -86,9 +87,12 @@ function contact_form_customize($wp_customize) {
 add_action('customize_register', 'contact_form_customize');
 
 function donate_customize($wp_customize) {
+  require get_template_directory() . '/inc/section_vars.php';
   $wp_customize->add_section('donate', array(
       'title' => 'Donate'
   ));
+  create_sub_head_text($wp_customize, $donate_sub_head_title, 'donate', 'Donate Text');
+  create_sub_head_img($wp_customize, $donate_sub_head_img, 'donate', 'Donate Image');
 
   $wp_customize->add_setting('donate-form-shortcode');
   $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'donate-shortcode-control', array(
@@ -96,8 +100,7 @@ function donate_customize($wp_customize) {
       'section' => 'donate',
       'settings' => 'donate-form-shortcode'
   )));
-  create_sub_head_text($wp_customize, $donate_sub_head_title, 'donate', 'Donate Text');
-  create_sub_head_img($wp_customize, $donate_sub_head_img, 'donate', 'Donate Image');
+
 }
 add_action('customize_register', 'donate_customize');
 

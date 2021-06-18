@@ -50,10 +50,10 @@
         <table class="gs-table" >
             <thead>
                 <tr class="gs-align-center">
-                    <th></th>
                     <th id="gs-site-names">Site Names</th>
                     <th id="gs-plot-cap">Plot Capacity</th>
                     <th id="gs-location">Location</th>
+                    <th>Learn More</th>
                     <th id="gs-extra"></th>
                 </tr>
             </thead>
@@ -64,21 +64,24 @@
             $data = get_gs_data('garden-sites-repeater');
             if (!empty($data)) {
                 foreach ($data as $k => $f) {
+                    $plot_url = get_permalink(get_page_by_path($f['Plot_Slug'], OBJECT, 'plot')->ID);
                     ?>
                     <tr class="gs-site">
-                        <td class="gs-site-number">
-                            <div class="gs-circle">
-                                <?php echo $f['Site_Number'];?>
-                            </div>
-                        </td>
                         <td class="gs-site-name">
+                            <a href="<?php echo $plot_url?>"> 
                             <?php echo $f['Site_Name'];?>
+                            </a>
                         </td>
                         <td class="gs-plot-cap">
                             <?php echo $f['Plot_Capacity'];?>
                         </td>
                         <td class="gs-location">
                             <?php echo $f['Location'];?>
+                        </td>
+                        <td class="gs-site-number">
+                            <a href="<?php echo $plot_url?>">
+                                More Info
+                            </a>
                         </td>
                         <td class="gs-sort-params">
                             <?php if ($f['Soil_Checkbox']) {

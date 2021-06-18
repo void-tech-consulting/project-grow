@@ -25,18 +25,14 @@
                 <?php
                 foreach ( $data as $k => $f ) {  
                     $media = '';
-            
-                    if ($f['Image']) {
+                    if ($f['Image'] && $f['Image']['url']) {       
                         // get_media_url function is in template_functions.php
-                        $media = '<img class="event-image" src="' . esc_url(get_media_url($f['Image'])) . '">';
+                        $media = '<div class="event-image-container"><img class="event-image" src="' . esc_url(get_media_url($f['Image'])) . '"></div>';
                     }
                     ?>
                 <!--Start code for event page-->
         <div class="event-container">
-            <div id="event-img">
-                <?php echo $media?>
-            
-            </div>
+            <?php echo $media?>
             <div class="right-side-content">
                 <div class="event-details">
                     <div class="event-what-where">
