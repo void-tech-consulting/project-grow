@@ -5,24 +5,6 @@ function add_scripts()
   // Example if you want a js file to run only on a specific page
   if (is_front_page()) {
     // enqueue a front page specific css or js file
-  } else if (is_page('example')) {
-    wp_enqueue_script(
-      "ajax-script",
-      get_theme_file_uri("/js/example.js"),
-      array('jquery'),
-      '1.0.0',
-      true
-    );
-    $title_nonce = wp_create_nonce('title_example');
-    // pass data to ajax through the array
-    wp_localize_script(
-      'ajax-script',
-      'my_ajax_obj',
-      array(
-        'ajax_url' => admin_url('admin-ajax.php'),
-        'nonce'    => $title_nonce,
-      )
-    );
   } else if (is_page('contact')) {
     wp_enqueue_script(
         "ajax-script",
@@ -59,6 +41,13 @@ function add_scripts()
       true
     );
   }
+  wp_enqueue_script(
+    "ajax-script",
+    get_theme_file_uri("/js/navbar.js"),
+    array('jquery'),
+    '1.0.0',
+    true
+  );
 }
 add_action('wp_enqueue_scripts', 'add_scripts');
 
@@ -100,3 +89,22 @@ function add_styles()
   wp_enqueue_style( "plot-guidelines", get_theme_file_uri('/css/plot-guidelines.css'));
 }
 add_action('wp_enqueue_scripts', 'add_styles');
+
+
+/*
+*
+* Walker for the main menu 
+*
+*/
+add_filter( 'walker_nav_menu_start_el', 'add_arrow',10,4);
+function add_arrow( $output, $item, $depth, $args ){
+
+//Only add class to 'top level' items on the 'primary' menu.
+if('primary' == $args->theme_location && $depth === 0 ){
+    if (in_array("menu-item-has-children", $item->classes)) {
+        $new_output = '<div class="sub-wrap">' . $output . '<i class="nav-icon fas fa-chevron-down down-icon" aria-hidden="true"></i></div>';
+        return $new_output;
+    }
+}
+    return $output;
+}
