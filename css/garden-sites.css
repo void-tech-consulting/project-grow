@@ -74,6 +74,7 @@ body {
     background-color: #40804d;
     outline: none;
     border-radius: 20px;
+    border-right: 1rem solid #40804d;
 }
 
 .gs-display-none {
@@ -193,7 +194,7 @@ body {
 }
 .garden-sites-icon {
     height: auto;
-    margin: 0 auto;
+    margin: 1rem; 
     width: 2.5rem;
 }
 #one-img{

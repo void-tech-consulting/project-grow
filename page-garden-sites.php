@@ -28,19 +28,19 @@
                     <option value="special-conditions">Special Conditions</option>
                 </select>
             </div>
-            <div class="gs-extra-info-box">
+            <div class="flex gs-extra-info-box">
                 <div>
                     <img class="garden-sites-icon" src="<?php echo get_template_directory_uri();?>/images/garden-sites/soil-type-icon.png" alt="soil type icon">
                 </div>
                 <div>Soil Type</div>
             </div>
-            <div class="gs-extra-info-box">
+            <div class="flex gs-extra-info-box">
                 <div>
                     <img class="garden-sites-icon" src="<?php echo get_template_directory_uri();?>/images/garden-sites/accessibility-icon.png" alt="soil type icon">
                 </div>
                 <div>Accessibility</div>
             </div>
-            <div class="gs-extra-info-box">
+            <div class="flex gs-extra-info-box">
                 <div>
                     <img class="garden-sites-icon" src="<?php echo get_template_directory_uri();?>/images/garden-sites/special-conditions-icon.png" alt="soil type icon">
                 </div>
