@@ -16,7 +16,7 @@
   margin: 3rem;
   font-family: Roboto;
   height: 31rem;
-  width: 21rem;
+  width: 30rem;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -111,6 +111,27 @@
   margin: auto;
 }
 
+.person-box:hover > .people-hover-state-bio {
+  display: block;
+}
+
+.person-box:hover > .person-img {
+  display: none;
+}
+
+
+.people-hover-state-bio {
+  width: 30rem;
+  border: 1px dashed #cebfa1;
+  background: #f8f5ec;
+  border-radius: 20px;
+  padding: 2rem; 
+  height: 31rem;
+  font-size: 1.5rem;
+  display: none;
+  position: absolute
+}
+
 @media only screen and (max-width: 1200px) {
   .person-repeater {
     width: 90%;
@@ -139,3 +160,5 @@
     width: 90%;
   }
 }
+
+
