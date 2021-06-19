@@ -17,43 +17,6 @@ function create_sub_head_img($wp_customize, $img_setting, $img_section, $img_lab
       'settings' => $img_setting,
   )));
 }
-// Example of how to use a repeatable box
-register_nav_menu("primary", "Top Navbar");
-function home_customizer($wp_customize)
-{
-  require 'section_vars.php';
-  $wp_customize->add_section($home_section, array(
-    'title' => 'Videos and News',
-  ));
-
-  $wp_customize->add_setting($home_top_vid, array(
-    'default' => 'https://www.youtube.com/embed/A0Wyx-OOX4A',
-    'sanitize_callback' => 'sanitize_text_field',
-  ));
-
-  $wp_customize->add_control($home_top_vid, array(
-    'label' => 'Top Video Embed',
-    'section' => $home_section,
-  ));
-
-  $wp_customize->add_setting($home_top_img);
-  $wp_customize->add_control(new WP_Customize_Image_Control(
-    $wp_customize,
-    $home_top_img,
-    array(
-      'label' => 'Top Image',
-      'section' => $home_section
-    )
-  ));
-  // Top Desc
-  $wp_customize->add_setting($home_top_desc);
-  $wp_customize->add_control($home_top_desc, array(
-    'label' => 'Top Description',
-    'section' => $home_section,
-    'type' => 'textarea'
-  ));
-}
-add_action('customize_register', 'home_customizer');
 
 // Example of how to use a repeatable box
 function growing_tips_customizer($wp_customize)
@@ -64,6 +27,15 @@ function growing_tips_customizer($wp_customize)
   $wp_customize->add_section($growing_tips_section, array(
     'title' => 'Growing Tips',
   ));
+
+  $wp_customize->add_setting($growing_tips_link);
+  $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'box-link-control', array(
+    'label' => 'Garden Tips Link',
+    'section' => $growing_tips_section,
+    'settings' => '$garden_tips_link'
+  )));
+
+
 
   $wp_customize->add_setting(
     $growing_tips_edibles,
@@ -253,57 +225,6 @@ function our_people_customizer($wp_customize)
   );
 }
 add_action('customize_register', 'our_people_customizer');
-
-
-// Example of how to use a repeatable box
-function example_repeatable_customizer($wp_customize)
-{
-  require 'section_vars.php';
-  require_once 'controller.php';
-
-  $wp_customize->add_section($example_section, array(
-    'title' => 'Example Home Repeaters',
-  ));
-
-  $wp_customize->add_setting(
-    $example_repeater,
-    array(
-      'sanitize_callback' => 'onepress_sanitize_repeatable_data_field',
-      'transport' => 'refresh',
-    )
-  );
-
-  $wp_customize->add_control(
-    new Onepress_Customize_Repeatable_Control(
-      $wp_customize,
-      $example_repeater,
-      array(
-        'label'     => esc_html__('Example Q & A Repeater'),
-        'description'   => '',
-        'section'       => $example_section,
-        'live_title_id' => 'question',
-        'title_format'  => esc_html__('[live_title]'), // [live_title]
-        'max_item'      => 10, // Maximum item can add
-        'limited_msg'   => wp_kses_post(__('Max items added')),
-        'fields'    => array(
-          'question'  => array(
-            'title' => esc_html__('Question'),
-            'type'  => 'text',
-          ),
-          'answer'  => array(
-            'title' => esc_html__('Answer'),
-            'type'  => 'editor',
-          ),
-          'link'  => array(
-            'title' => esc_html__('Link'),
-            'type'  => 'url',
-          ),
-        ),
-      )
-    )
-  );
-}
-add_action('customize_register', 'example_repeatable_customizer');
 
 function master_composter_customizer($wp_customize)
 {
@@ -762,4 +683,133 @@ function repeat_plant_sale($wp_customize) {
   );
 }
 add_action('customize_register', 'repeat_plant_sale');
+
+//adding images for home1
+function home1_image_placement($wp_customize)
+{
+  $wp_customize->add_section('home1-images', array(
+    'title' => 'Home Page Images'
+  ));
+
+  //upcoming events image
+  $wp_customize->add_setting('home1-upevents-image');
+  $wp_customize->add_control(new WP_Customize_Cropped_Image_Control($wp_customize, 'home1-upevents-control', array(
+    'label' => 'Upcoming Events Image',
+    'section' => 'home1-images',
+    'settings' => 'home1-upevents-image',
+    'width' => 610,
+    'height' => 407
+  )));
+
+  //latest news image
+  $wp_customize->add_setting('home1-news-image');
+  $wp_customize->add_control(new WP_Customize_Cropped_Image_Control($wp_customize, 'home1-newsimg-control', array(
+    'label' => 'Latest News Image',
+    'section' => 'home1-images',
+    'settings' => 'home1-news-image',
+    'width' => 431,
+    'height' => 613
+  )));
+}
+
+add_action('customize_register', 'home1_image_placement');
+
+
+//customizability for Our People page
+function ourpeople_customize($wp_customize)
+{
+  $wp_customize->add_section('ourpeople-content', array(
+    'title' => 'Our People Content'
+  ));
+
+  $wp_customize->add_setting('person-image');
+  $wp_customize->add_control(new WP_Customize_Cropped_Image_Control($wp_customize, 'staffimg-control', array(
+    'label' => 'Staff Image',
+    'section' => 'ourpeople-content',
+    'settings' => 'person-image',
+    'width' => 210,
+    'height' => 234
+  )));
+
+  $wp_customize->add_setting('person-name');
+  $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'staffname-control', array(
+    'label' => 'Staff Name',
+    'section' => 'ourpeople-content',
+    'settings' => 'person-name'
+  )));
+
+  $wp_customize->add_setting('person-title');
+  $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'stafftitle-control', array(
+    'label' => 'Staff Title',
+    'section' => 'ourpeople-content',
+    'settings' => 'person-title'
+  )));
+}
+add_action('customize_register', 'ourpeople_customize');
+
+
+function contact_form_customize($wp_customize) {
+    $wp_customize->add_section('contact-form', array(
+        'title' => 'Contact Form'
+    ));
+
+    $wp_customize->add_setting('contact-form-shortcode');
+    $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'contact-shortcode-control', array(
+        'label' => 'Contact Form Shortcode',
+        'section' => 'contact-form',
+        'settings' => 'contact-form-shortcode'
+    )));
+}
+add_action('customize_register', 'contact_form_customize');
+
+function donate_customize($wp_customize) {
+  require get_template_directory() . '/inc/section_vars.php';
+  $wp_customize->add_section('donate', array(
+      'title' => 'Donate'
+  ));
+  create_sub_head_text($wp_customize, $donate_sub_head_title, 'donate', 'Donate Text');
+  create_sub_head_img($wp_customize, $donate_sub_head_img, 'donate', 'Donate Image');
+
+  $wp_customize->add_setting('donate-form-shortcode');
+  $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'donate-shortcode-control', array(
+      'label' => 'Donate Form Shortcode',
+      'section' => 'donate',
+      'settings' => 'donate-form-shortcode'
+  )));
+
+}
+add_action('customize_register', 'donate_customize');
+
+function apply_for_plot_customize($wp_customize)
+{
+  $wp_customize->add_section($apply_for_plot_section, array(
+    'title' => 'Apply For Plot'
+  ));
+
+  create_sub_head_text($wp_customize, $apply_for_plot_title, $apply_for_plot_section, "Header Text");
+  create_sub_head_img($wp_customize, $apply_for_plot_img, $apply_for_plot_section, "Header Image");
+
+  $wp_customize->add_setting('full-plot-fee');
+  $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'full-plot-control', array(
+    'label' => 'Full Plot Fee',
+    'section' => $apply_for_plot_section,
+    'settings' => 'full-plot-fee'
+  )));
+
+  $wp_customize->add_setting('half-plot-fee');
+  $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'half-plot-control', array(
+    'label' => 'Half Plot Fee',
+    'section' => $apply_for_plot_section,
+    'settings' => 'half-plot-fee'
+  )));
+
+  $wp_customize->add_setting('apply_for_plot_form-shortcode');
+  $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'apply-shortcode-control', array(
+      'label' => 'Apply for Plot Shortcode',
+      'section' => $apply_for_plot_section,
+      'settings' => 'apply_for_plot_form-shortcode'
+  )));
+}
+add_action('customize_register', 'apply_for_plot_customize');
 ?>
+
