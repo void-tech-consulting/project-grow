@@ -70,4 +70,22 @@ html {
 .link{
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
 }
+/* Common CSS */
+.main-desc-inside {
+  width:82%;
+  padding-top:3rem;
+  padding-bottom:3rem;
+  margin:auto;
+}
 
+.bold-brown-text {
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 23px;
+  color: #53401A;
+}
+
+.no-style-link {
+  text-decoration: none;
+  color: unset;
+}

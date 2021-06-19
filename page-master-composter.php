@@ -7,7 +7,7 @@ get_header();
 <div class="master-composter-header-background">
   <div class="master-composter-header-box">
     <div class="master-composter-our-people-button-header-text">Master Composter Program</div>
-    <a href="https://www.google.com" class="master-composter-no-style-link">
+    <a href="https://www.google.com" class="no-style-link">
       <div class="master-composter-connect-button">
         Apply Now
       </div>
@@ -40,7 +40,7 @@ get_header();
     <div class="master-composter-large-box">
       <div class="master-composter-large-box-sidebar"></div>
       <div class="master-composter-large-box-textbox">
-        <a href="<?php echo $f['hgpage_link'] ?>" class="master-composter-no-style-link">
+        <a href="<?php echo $f['hgpage_link'] ?>" class="no-style-link">
           <div class="hgpage_title">
             <?php echo $f['hgpage_title'] ?>
           </div>
@@ -67,7 +67,7 @@ get_header();
       <div class="master-composter-large-box">
         <div class="master-composter-large-box-sidebar"></div>
         <div class="master-composter-large-box-textbox">
-          <a href="<?php echo $f['rpspage_link'] ?>" class="master-composter-no-style-link">
+          <a href="<?php echo $f['rpspage_link'] ?>" class="no-style-link">
             <div class="rpspage_title">
               <?php echo $f['rpspage_title'] ?>
             </div>
@@ -99,7 +99,7 @@ get_header();
           <?php echo $f['pa_name'] ?>
         </div>
         <div class="master-composter-small-box-link" >
-          <div><a class="master-composter-no-style-link" style="color:white" href="<?php echo $f['pa_link'] ?>">Learn More</a></div>
+          <div><a class="no-style-link" style="color:white" href="<?php echo $f['pa_link'] ?>">Learn More</a></div>
         </div>
       </div>
   <?php
@@ -124,7 +124,7 @@ get_header();
         <span class="master-composter-contact-box-email"><span><?php echo $f['contact_email'] ?></span></span>
       </div>
       <div class="master-composter-contact-box-link" >
-        <div><a class="master-composter-no-style-link" style="color:white" href="mailto:<?php echo $f['contact_email'] ?>">Email <?php echo strtok($f['contact_name'],' ') ?></a></div>
+        <div><a class="no-style-link" style="color:white" href="mailto:<?php echo $f['contact_email'] ?>">Email <?php echo strtok($f['contact_name'],' ') ?></a></div>
       </div>
     </div>
       <!--
