@@ -34,12 +34,14 @@ get_header();
             <div class="person-box-container">
                 <div class="person-box">
                     <?php echo $media ?>
+                    <div class="people-hover-state-bio flex">
+                        <!-- TODO: make this editable -->
+                        <p>Joe has been gardening since his early teenage years. After buying a condo he had to rent garden plots, originally in Livonia Michigan located at Greenmead.   At that time he decided to specialize in heirloom tomatoes. The desire to grow organically drew him to Project Grow. He gardens at Food Gatherers. While he still grows mostly heirloom varieties, he always includes hybrids plants to as they are better for donation to Food Gatherers.</p>
+                    </div>
                     <div class="person-name"><?php echo $f['member_name']  ?></div>
                     <div class="person-title"><?php echo $f['member_title'] ?></div>
                 </div>
             </div>
-
-
         <?php
         }
         ?>
