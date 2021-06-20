@@ -258,6 +258,10 @@ function our_people_customizer($wp_customize)
             'title' => esc_html__('Member Title'),
             'type'  => 'text',
           ),
+          'member_desc'  => array(
+            'title' => esc_html__('Member Description'),
+            'type'  => 'textarea',
+          ),
         ),
       )
     )

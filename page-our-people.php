@@ -25,19 +25,23 @@ get_header();
     ?>
         <?php
         foreach ($data as $k => $f) {
+            // get_media_url function is in template_functions.php
             $media = '';
-            if ($f['member_image']) {
-                // get_media_url function is in template_functions.php
-                $media = '<img class="person-img" src="' . esc_url(get_media_url($f['member_image'])) . '">';
+            $media_hide_on_hover = $f['member_desc'] ? "hide-person-img" : "";
+            if ($f['member_image'] && $f['member_image']['url']) {
+                $media = '<img class="person-img ' . $media_hide_on_hover . '" src="' . esc_url(get_media_url($f['member_image'])) . '">';
+            } else {
+                $media = '<img class="person-img-default ' . $media_hide_on_hover . '" src="' . get_template_directory_uri() . '/images/our-people/person.png' . '">';
             }
         ?>
             <div class="person-box-container">
-                <div class="person-box">
-                    <?php echo $media ?>
+                <?php echo $media ?>
+                <?php if ($f['member_desc']) {?>
                     <div class="people-hover-state-bio flex">
-                        <!-- TODO: make this editable -->
-                        <p>Joe has been gardening since his early teenage years. After buying a condo he had to rent garden plots, originally in Livonia Michigan located at Greenmead.   At that time he decided to specialize in heirloom tomatoes. The desire to grow organically drew him to Project Grow. He gardens at Food Gatherers. While he still grows mostly heirloom varieties, he always includes hybrids plants to as they are better for donation to Food Gatherers.</p>
+                        <p><?php echo $f['member_desc'] ?></p>
                     </div>
+                <?php } ?>
+                <div class="people-non-hover-state">
                     <div class="person-name"><?php echo $f['member_name']  ?></div>
                     <div class="person-title"><?php echo $f['member_title'] ?></div>
                 </div>
