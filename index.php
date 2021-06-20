@@ -48,41 +48,19 @@ get_header();
 
 <?php get_template_part('partials/content', 'get-started-section', array('checked' => get_theme_mod('home-season-checkbox'))); ?>
 
-<div class="news">
-    <?php if (get_theme_mod('home-news-image')) {?> 
-        <img src="<?php echo wp_get_attachment_url(get_theme_mod('home-news-image' )) ?>" alt="news img not found" class="news-img">
-    <?php } else { ?>
-        <img src="<?php echo get_template_directory_uri();?>/images/home/news-img.jpg" alt="news img not found" class="news-img">
-    <?php }?>
-    <!-- <div class="news-text">
-        <h3 class="latest-news">
-            Latest News
-        </h3>
-        <h2 class="news-head">
-            Tomato Tasting
-        </h2>
-        <p class=news-body>
-            You will be amazed by the wide range of flavors, textures, colors, sizes and shapes. We guarantee that you will find that special tomato you will want to grow next year! Most of the tomatoes offered at the tasting are also offered at our plant sale, but we usually also have a few new varieties we are trying out for next year . . .
-        </p>
-        <div class="interested">
-            Interested in More News From Us?<br>
-            Sign Up For Our Newsletter!
+<?php if(get_theme_mod('home-form-shortcode')) { ?>
+    <div class="news">
+        <?php if (get_theme_mod('home-news-image')) {?> 
+            <img src="<?php echo wp_get_attachment_url(get_theme_mod('home-news-image' )) ?>" alt="news img not found" class="news-img">
+        <?php } else { ?>
+            <img src="<?php echo get_template_directory_uri();?>/images/home/news-img.jpg" alt="news img not found" class="news-img">
+        <?php }?>
+        
+        <div class="home-form-right">
+            <?php echo do_shortcode(get_theme_mod('home-form-shortcode')) ?>
         </div>
-
-        <form action="">
-            <div class="input-fields">
-                <input type="text" id="fname" name="fname" placeholder="First Name">
-                <input type="text" id="email" name="email" placeholder="Email Address">
-            </div>
-            <input type="submit" id="signup" name="signup" value="Sign Up">
-        </form>
-    </div> -->
-    <div class="home-form-right">
-        <?php echo do_shortcode('[forminator_form id="142"]') ?>
     </div>
-
-
-</div>
+<?php } ?>
 
 
 

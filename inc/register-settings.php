@@ -53,6 +53,13 @@ function home_customizer($wp_customize)
     'label' => __( 'In Season?' ),
     'description' => 'Change the homepage based on the season.'
   ) );
+
+  $wp_customize->add_setting('home-form-shortcode');
+  $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'home-shortcode-control', array(
+      'label' => 'Home Form Shortcode',
+      'section' => 'home-section',
+      'settings' => 'home-form-shortcode'
+  )));
 }
 
 add_action('customize_register', 'home_customizer');
