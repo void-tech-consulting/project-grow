@@ -18,6 +18,45 @@ function create_sub_head_img($wp_customize, $img_setting, $img_section, $img_lab
   )));
 }
 
+function home_customizer($wp_customize)
+{
+  $wp_customize->add_section('home-section', array(
+    'title' => 'Home Page'
+  ));
+
+  //upcoming events image
+  $wp_customize->add_setting('home-upevents-image');
+  $wp_customize->add_control(new WP_Customize_Cropped_Image_Control($wp_customize, 'home-upevents-control', array(
+    'label' => 'Upcoming Events Image',
+    'section' => 'home-section',
+    'settings' => 'home-upevents-image',
+    'width' => 610,
+    'height' => 407
+  )));
+
+  //latest news image
+  $wp_customize->add_setting('home-news-image');
+  $wp_customize->add_control(new WP_Customize_Cropped_Image_Control($wp_customize, 'home-newsimg-control', array(
+    'label' => 'Latest News Image',
+    'section' => 'home-section',
+    'settings' => 'home-news-image',
+    'width' => 431,
+    'height' => 613
+  )));
+
+  //season checkbox
+  $wp_customize->add_setting('home-season-checkbox');
+  $wp_customize->add_control( 'home-season-checkbox-control', array(
+    'type' => 'checkbox',
+    'section' => 'home-section',
+    'settings' => 'home-season-checkbox',
+    'label' => __( 'In Season?' ),
+    'description' => 'Change the homepage based on the season.'
+  ) );
+}
+
+add_action('customize_register', 'home_customizer');
+
 // Example of how to use a repeatable box
 function growing_tips_customizer($wp_customize)
 {
@@ -683,70 +722,6 @@ function repeat_plant_sale($wp_customize) {
   );
 }
 add_action('customize_register', 'repeat_plant_sale');
-
-//adding images for home1
-function home1_image_placement($wp_customize)
-{
-  $wp_customize->add_section('home1-images', array(
-    'title' => 'Home Page Images'
-  ));
-
-  //upcoming events image
-  $wp_customize->add_setting('home1-upevents-image');
-  $wp_customize->add_control(new WP_Customize_Cropped_Image_Control($wp_customize, 'home1-upevents-control', array(
-    'label' => 'Upcoming Events Image',
-    'section' => 'home1-images',
-    'settings' => 'home1-upevents-image',
-    'width' => 610,
-    'height' => 407
-  )));
-
-  //latest news image
-  $wp_customize->add_setting('home1-news-image');
-  $wp_customize->add_control(new WP_Customize_Cropped_Image_Control($wp_customize, 'home1-newsimg-control', array(
-    'label' => 'Latest News Image',
-    'section' => 'home1-images',
-    'settings' => 'home1-news-image',
-    'width' => 431,
-    'height' => 613
-  )));
-}
-
-add_action('customize_register', 'home1_image_placement');
-
-
-//customizability for Our People page
-function ourpeople_customize($wp_customize)
-{
-  $wp_customize->add_section('ourpeople-content', array(
-    'title' => 'Our People Content'
-  ));
-
-  $wp_customize->add_setting('person-image');
-  $wp_customize->add_control(new WP_Customize_Cropped_Image_Control($wp_customize, 'staffimg-control', array(
-    'label' => 'Staff Image',
-    'section' => 'ourpeople-content',
-    'settings' => 'person-image',
-    'width' => 210,
-    'height' => 234
-  )));
-
-  $wp_customize->add_setting('person-name');
-  $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'staffname-control', array(
-    'label' => 'Staff Name',
-    'section' => 'ourpeople-content',
-    'settings' => 'person-name'
-  )));
-
-  $wp_customize->add_setting('person-title');
-  $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'stafftitle-control', array(
-    'label' => 'Staff Title',
-    'section' => 'ourpeople-content',
-    'settings' => 'person-title'
-  )));
-}
-add_action('customize_register', 'ourpeople_customize');
-
 
 function contact_form_customize($wp_customize) {
     $wp_customize->add_section('contact-form', array(

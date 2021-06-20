@@ -37,8 +37,8 @@ get_header();
 
     </div>
     <div class="event-img-container">
-        <?php if (get_theme_mod('home1-upevents-image')) {?> 
-            <img src="<?php echo wp_get_attachment_url(get_theme_mod('home1-upevents-image' )) ?>" alt="Event Image"  class="event-img">
+        <?php if (get_theme_mod('home-upevents-image')) {?> 
+            <img src="<?php echo wp_get_attachment_url(get_theme_mod('home-upevents-image' )) ?>" alt="Event Image"  class="event-img">
         <?php } else { ?>
             <img src="<?php echo get_template_directory_uri();?>/images/home/event-img.png" alt="Event Image" class="event-img">
         <?php }?>
@@ -46,15 +46,15 @@ get_header();
 </div> <!-- end events section -->
 
 
-<?php get_template_part('partials/content', 'get-started-section'); ?>
+<?php get_template_part('partials/content', 'get-started-section', array('checked' => get_theme_mod('home-season-checkbox'))); ?>
 
 <div class="news">
-    <?php if (get_theme_mod('home1-news-image')) {?> 
-        <img src="<?php echo wp_get_attachment_url(get_theme_mod('home1-news-image' )) ?>" alt="news img not found" class="news-img">
+    <?php if (get_theme_mod('home-news-image')) {?> 
+        <img src="<?php echo wp_get_attachment_url(get_theme_mod('home-news-image' )) ?>" alt="news img not found" class="news-img">
     <?php } else { ?>
         <img src="<?php echo get_template_directory_uri();?>/images/home/news-img.jpg" alt="news img not found" class="news-img">
     <?php }?>
-    <div class="news-text">
+    <!-- <div class="news-text">
         <h3 class="latest-news">
             Latest News
         </h3>
@@ -76,7 +76,11 @@ get_header();
             </div>
             <input type="submit" id="signup" name="signup" value="Sign Up">
         </form>
+    </div> -->
+    <div class="home-form-right">
+        <?php echo do_shortcode('[forminator_form id="142"]') ?>
     </div>
+
 
 </div>
 
