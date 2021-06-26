@@ -1,5 +1,31 @@
 <?php
 
+
+function register_primary_menu() {
+  register_nav_menu( 'primary', 'Primary Menu' );
+}
+add_action( 'after_setup_theme', 'register_primary_menu' );
+
+/*
+*
+* Walker for the main menu 
+*
+*/
+function add_arrow( $output, $item, $depth, $args ){
+  //Only add class to 'top level' items on the 'primary' menu.
+  if('primary' == $args->theme_location && $depth === 0 ){
+      if (in_array("menu-item-has-children", $item->classes)) {
+          $new_output = '<div class="sub-wrap">' . 
+                          $output . 
+                        '<i class="nav-icon fas fa-chevron-down down-icon" aria-hidden="true"></i></div>';
+          return $new_output;
+      }
+  }
+  return $output;
+}
+add_filter( 'walker_nav_menu_start_el', 'add_arrow',10,4);
+
+
 function create_sub_head_text($wp_customize, $text_setting, $text_section, $text_label) {
 
   $wp_customize->add_setting($text_setting);

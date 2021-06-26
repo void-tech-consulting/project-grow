@@ -89,22 +89,3 @@ function add_styles()
   wp_enqueue_style( "plot-guidelines", get_theme_file_uri('/css/plot-guidelines.css'));
 }
 add_action('wp_enqueue_scripts', 'add_styles');
-
-
-/*
-*
-* Walker for the main menu 
-*
-*/
-add_filter( 'walker_nav_menu_start_el', 'add_arrow',10,4);
-function add_arrow( $output, $item, $depth, $args ){
-
-//Only add class to 'top level' items on the 'primary' menu.
-if('primary' == $args->theme_location && $depth === 0 ){
-    if (in_array("menu-item-has-children", $item->classes)) {
-        $new_output = '<div class="sub-wrap">' . $output . '<i class="nav-icon fas fa-chevron-down down-icon" aria-hidden="true"></i></div>';
-        return $new_output;
-    }
-}
-    return $output;
-}

@@ -15,7 +15,7 @@
 <div class="wwd-indent wwd-new-section wwd-title"><b>Our Roots</b></div>
 <div class="wwd-indent wwd-description">
     <div class="wwd-pg-space">
-        Since 1972, Project Grow has been facilitating commtunity gardens throughout 
+        Since 1972, Project Grow has been facilitating community gardens throughout 
         Ann Arbor, making it the longest standing community garden organization in the 
         nation. The idea of community gardens, however, dates back even farther.
     </div>
@@ -120,7 +120,7 @@
             <div class="wwd-content">
                 <h2 class="wwd-right-align wwd-title">2010s</h2>
                 <p> The garden at County Farm Park is still there nearly 50 years later and the garden at Zion Lutheran Church 
-                    was re-created in 2016 after being removed for several years to accomodate a church expansion. 
+                    was re-created in 2016 after being removed for several years to accommodate a church expansion. 
                 </p>
             </div>
         </div>
