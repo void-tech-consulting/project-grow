@@ -1,19 +1,17 @@
 <?php
-get_header();
+    get_header();
+    require 'inc/section_vars.php';
+    $header_args = array(
+        "img_src" => get_theme_mod($our_people_sub_head_img, "/images/header-images/our-people-header-img.png"),
+        "page_title" => get_theme_mod($our_people_sub_head_title, "Our People"),
+        "button_text" => get_theme_mod($our_people_sub_head_button_text, "Connect with Us"), 
+        "page_slug" => get_theme_mod($our_people_sub_head_slug, "contact")
+        );
+    get_template_part('partials/content', 'page-sub-header', $header_args);
 ?>
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
 
-<div class="header-background">
-    <div class="header-box">
-        <span class="our-people-button-header-text">Our People</span>
-        <a href="https://www.google.com" class="connect-button-link">
-            <div class="connect-button">
-                Connect with Us
-            </div>
-        </a>
-    </div>
-</div>
 <div class="people-header-text">Who Makes Project Grow, Grow?</div>
 
 <div class="person-repeater">

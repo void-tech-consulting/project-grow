@@ -264,6 +264,12 @@ function our_people_customizer($wp_customize)
     'title' => 'Our People',
   ));
 
+  create_sub_head_img($wp_customize, $our_people_sub_head_img, 'our_people_section', 'Header Img');
+  create_sub_head_text($wp_customize, $our_people_sub_head_slug, 'our_people_section', 'Header Page (The Part After /)');
+  create_sub_head_text($wp_customize, $our_people_sub_head_button_text, 'our_people_section', 'Header Button Text');
+  create_sub_head_text($wp_customize, $our_people_sub_head_title, 'our_people_section', 'Header Title Text');
+
+
   $wp_customize->add_setting(
     $our_people_members,
     array(
