@@ -6,9 +6,17 @@
         <h1 class="sub-head-title"><?php echo $args['page_title'] ?></h1>
         <?php
             if ($args['page_slug']) {
-                $page_object = get_page_by_path( $args['page_slug'] );
-                $page_id = $page_object->ID;
-                $permalink = get_permalink( $page_id );
+                if ($args['page_slug'] == 'home') {
+                    $permalink = get_home_url();
+                }
+                else {
+                    $page_object = get_page_by_path( $args['page_slug'] );
+                    $page_id = $page_object->ID;
+                    $permalink = get_permalink( $page_id );
+                }
+            if ($args['link_section']) {
+                $permalink = $permalink . '/#' . $args['link_section'];
+            }
         ?>
                 <a class="sub-head-link" href="<?php echo $permalink ?>"><b><?php echo $args['button_text'] ?></b></a>
         <?php } ?>
