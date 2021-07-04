@@ -806,6 +806,7 @@ add_action('customize_register', 'donate_customize');
 
 function apply_for_plot_customize($wp_customize)
 {
+  require get_template_directory() . '/inc/section_vars.php';
   $wp_customize->add_section($apply_for_plot_section, array(
     'title' => 'Apply For Plot'
   ));
@@ -835,5 +836,22 @@ function apply_for_plot_customize($wp_customize)
   )));
 }
 add_action('customize_register', 'apply_for_plot_customize');
+
+function wwd_customize($wp_customize) {
+  require get_template_directory() . '/inc/section_vars.php';
+  $wp_customize->add_section($wwd_section, array(
+    'title' => 'What We Do'
+  ));
+
+  create_sub_head_img($wp_customize, $wwd_sub_head_img, $wwd_section, 'Header Img');
+  create_sub_head_text($wp_customize, $wwd_sub_head_title, $wwd_section, 'Header Title Text');
+  create_sub_head_text($wp_customize, $wwd_sub_head_slug, $wwd_section, 'Header Page (The Part After /)');
+  create_sub_head_text($wp_customize, $wwd_sub_head_button_text, $wwd_section, 'Header Button Text');
+  create_sub_head_text($wp_customize, $wwd_sub_head_section, $wwd_section, 'Section to link');
+}
+add_action('customize_register', 'wwd_customize');
+
 ?>
+
+
 

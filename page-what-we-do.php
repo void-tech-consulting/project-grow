@@ -1,17 +1,19 @@
-<?php 
-  get_header(); 
+<?php
+    get_header();
+    require 'inc/section_vars.php';
+    $header_args = array(
+        "img_src" => get_theme_mod($wwd_sub_head_img, "/images/header-images/growing-tips-header-img.png"),
+        "page_title" => get_theme_mod($wwd_sub_head_title, "What We Do"),
+        "button_text" => get_theme_mod($wwd_sub_head_button_text, "Sign Up for Our Newsletter"), 
+        "page_slug" => get_theme_mod($wwd_sub_head_slug, 'home'),
+        "link_section" => get_theme_mod($wwd_sub_head_section, "news")
+        );
+    get_template_part('partials/content', 'page-sub-header', $header_args);
 ?>
 <head>
 <meta name="viewport" wwd-content="width=device-width, initial-scale=1.0">
 </head>
 <!--wwd is What We Do, just to keep classes unique to this file-->
-<div class="wwd-header-img">
-    <div class="wwd-center-header-box">
-        <h1 id="wwd-header-title">What We Do</h1>
-        <!--Make button actually link to other page eventually-->
-        <button class="wwd-newsletter-btn"><b>Sign Up for Our Newsletter</b></button>
-    </div>
-</div>
 <div class="wwd-indent wwd-new-section wwd-title"><b>Our Roots</b></div>
 <div class="wwd-indent wwd-description">
     <div class="wwd-pg-space">

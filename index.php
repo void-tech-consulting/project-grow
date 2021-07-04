@@ -49,7 +49,7 @@ get_header();
 <?php get_template_part('partials/content', 'get-started-section', array('checked' => get_theme_mod('home-season-checkbox'))); ?>
 
 <?php if(get_theme_mod('home-form-shortcode')) { ?>
-    <div class="news">
+    <div class="news" id="news">
         <?php if (get_theme_mod('home-news-image')) {?> 
             <img src="<?php echo wp_get_attachment_url(get_theme_mod('home-news-image' )) ?>" alt="news img not found" class="news-img">
         <?php } else { ?>

@@ -46,4 +46,10 @@
   $classes_events_title = 'class_events_title';
   $plant_sale_img = 'plant_sale_img';
   $plant_sale_title = 'plant_sale_title';
+  $wwd_section = 'wwd_section';
+  $wwd_sub_head_button_text = 'wwd_sub_head_button_text';
+  $wwd_sub_head_img = 'wwd_sub_head_img';
+  $wwd_sub_head_slug = 'wwd_sub_head_slug';
+  $wwd_sub_head_title = 'wwd_sub_head_title';
+  $wwd_sub_head_section = 'wwd_sub_head_section';
 ?>
