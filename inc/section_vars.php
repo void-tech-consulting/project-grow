@@ -52,4 +52,9 @@
   $wwd_sub_head_slug = 'wwd_sub_head_slug';
   $wwd_sub_head_title = 'wwd_sub_head_title';
   $wwd_sub_head_section = 'wwd_sub_head_section';
+  $rental_info_section = 'rental_info_section';
+  $rental_info_sub_head_img = 'rental_info_sub_head_img';
+  $rental_info_sub_head_button_text = 'rental_info_sub_head_button_text';
+  $rental_info_sub_head_slug = 'rental_info_sub_head_slug';
+  $rental_info_sub_head_title = 'rental_info_sub_head_title';
 ?>

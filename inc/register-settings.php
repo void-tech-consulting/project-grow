@@ -851,6 +851,19 @@ function wwd_customize($wp_customize) {
 }
 add_action('customize_register', 'wwd_customize');
 
+function rental_info_customize($wp_customize) {
+  require get_template_directory() . '/inc/section_vars.php';
+  $wp_customize->add_section($rental_info_section, array(
+    'title' => 'Rental Information'
+  ));
+  create_sub_head_img($wp_customize, $rental_info_sub_head_img, $rental_info_section, 'Header Img');
+  create_sub_head_text($wp_customize, $rental_info_sub_head_title, $rental_info_section, 'Header Title Text');
+  create_sub_head_text($wp_customize, $rental_info_sub_head_slug, $rental_info_section, 'Header Page (The Part After /)');
+  create_sub_head_text($wp_customize, $rental_info_sub_head_button_text, $rental_info_section, 'Header Button Text');
+  create_sub_head_text($wp_customize, $rental_info_sub_head_section, $rental_info_section, 'Section to link');
+}
+add_action('customize_register', 'rental_info_customize');
+
 ?>
 
 
