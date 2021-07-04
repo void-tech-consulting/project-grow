@@ -12,6 +12,10 @@
   $donate_season_repeater = 'donate_season_repeater';
   $donate_longterm_repeater = 'donate_longterm_repeater';
   $donate_landowners_repeater = 'donate_landowners_repeater';
+  $growing_tips_sub_head_button_text = 'growing_tips_sub_head_button_text';
+  $growing_tips_sub_head_img = 'growing_tips_sub_head_img';
+  $growing_tips_sub_head_slug = 'growing_tips_sub_head_slug';
+  $growing_tips_sub_head_title = 'growing_tips_sub_head_title';
   $growing_tips_section = 'growing_tips_section';
   $growing_tips_edibles = 'growing_tips_edibles';
   $growing_tips_ornamentals = 'growing_tips_ornamentals';

@@ -1,18 +1,17 @@
 <?php
-get_header();
+    get_header();
+    require 'inc/section_vars.php';
+    $header_args = array(
+        "img_src" => get_theme_mod($growing_tips_sub_head_img, "/images/header-images/growing-tips-header-img.png"),
+        "page_title" => get_theme_mod($growing_tips_sub_head_title, "Growing Tips"),
+        "button_text" => get_theme_mod($growing_tips_sub_head_button_text, "Connect with Us"), 
+        "page_slug" => get_theme_mod($growing_tips_sub_head_slug, "contact")
+        );
+    get_template_part('partials/content', 'page-sub-header', $header_args);
 ?>
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
 
-<div class="growing-tips-header-background">
-  <div class="header-box">
-    <span class="our-people-button-header-text">Growing Tips</span>
-      <div class="connect-button">
-        Connect with Us
-      </div>
-  </div>
-</div>
-<div class="growing-tips-header-text">Growing Tips</div>
 
 
 <div class="main-description">

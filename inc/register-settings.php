@@ -100,6 +100,12 @@ function growing_tips_customizer($wp_customize)
     'title' => 'Growing Tips',
   ));
 
+  create_sub_head_img($wp_customize, $growing_tips_sub_head_img, 'growing_tips_section', 'Header Img');
+  create_sub_head_text($wp_customize, $growing_tips_sub_head_slug, 'growing_tips_section', 'Header Page (The Part After /)');
+  create_sub_head_text($wp_customize, $growing_tips_sub_head_button_text, 'growing_tips_section', 'Header Button Text');
+  create_sub_head_text($wp_customize, $growing_tips_sub_head_title, 'growing_tips_section', 'Header Title Text');
+
+
   $wp_customize->add_setting($growing_tips_link);
   $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'box-link-control', array(
     'label' => 'Garden Tips Link',
