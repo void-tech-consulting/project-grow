@@ -864,6 +864,18 @@ function rental_info_customize($wp_customize) {
 }
 add_action('customize_register', 'rental_info_customize');
 
+function pg_customize($wp_customize) {
+  require get_template_directory() . '/inc/section_vars.php';
+  $wp_customize->add_section($pg_section, array(
+    'title' => 'Plot Guidelines'
+  ));
+  create_sub_head_img($wp_customize, $pg_sub_head_img, $pg_section, 'Header Img');
+  create_sub_head_text($wp_customize, $pg_sub_head_title, $pg_section, 'Header Title Text');
+  create_sub_head_text($wp_customize, $pg_sub_head_slug, $pg_section, 'Header Page (The Part After /)');
+  create_sub_head_text($wp_customize, $pg_sub_head_button_text, $pg_section, 'Header Button Text');
+}
+add_action('customize_register', 'pg_customize');
+
 ?>
 
 

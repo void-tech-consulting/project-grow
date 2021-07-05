@@ -57,4 +57,9 @@
   $rental_info_sub_head_button_text = 'rental_info_sub_head_button_text';
   $rental_info_sub_head_slug = 'rental_info_sub_head_slug';
   $rental_info_sub_head_title = 'rental_info_sub_head_title';
+  $pg_sub_head_button_text = 'pg_sub_head_button_text';
+  $pg_sub_head_img = 'pg_sub_head_img';
+  $pg_sub_head_slug = 'pg_sub_head_slug';
+  $pg_sub_head_title = 'pg_sub_head_title';
+  $pg_section = 'pg_section';
 ?>
