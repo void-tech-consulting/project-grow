@@ -1,19 +1,17 @@
 <?php
-get_header();
+    get_header();
+    require 'inc/section_vars.php';
+    $header_args = array(
+        "img_src" => get_theme_mod($master_composter_sub_head_img, "/images/header-images/master-composter-header-img.png"),
+        "page_title" => get_theme_mod($master_composter_sub_head_title, "Master Composter Program"),
+        "button_text" => get_theme_mod($master_composter_sub_head_button_text, "Apply Now"), 
+        "page_slug" => get_theme_mod($master_composter_sub_head_slug, 'home'),
+        );
+    get_template_part('partials/content', 'page-sub-header', $header_args);
 ?>
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
 
-<div class="master-composter-header-background">
-  <div class="master-composter-header-box">
-    <div class="master-composter-our-people-button-header-text">Master Composter Program</div>
-    <a href="https://www.google.com" class="no-style-link">
-      <div class="master-composter-connect-button">
-        Apply Now
-      </div>
-    </a>
-  </div>
-</div>
 <span class="master-composter-header-text">About the CEC</span>
 
 

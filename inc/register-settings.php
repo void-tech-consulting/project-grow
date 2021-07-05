@@ -323,6 +323,11 @@ function master_composter_customizer($wp_customize)
     'title' => 'Master Composter Program',
   ));
 
+  create_sub_head_img($wp_customize, $master_composter_sub_head_img, $master_composter_section, 'Header Img');
+  create_sub_head_text($wp_customize, $master_composter_sub_head_slug, $master_composter_section, 'Header Page (The Part After /)');
+  create_sub_head_text($wp_customize, $master_composter_sub_head_button_text, $master_composter_section, 'Header Button Text');
+  create_sub_head_text($wp_customize, $master_composter_sub_head_title, $master_composter_section, 'Header Title Text');
+
   $wp_customize->add_setting(
     $master_composter_hg,
     array(

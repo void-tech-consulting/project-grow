@@ -32,6 +32,10 @@
   $master_composter_rps = 'master_composter_reports_presentations_specialprojects';
   $master_composter_pa = 'master_composter_partners_advisors';
   $master_composter_contacts = 'master_composter_contacts';
+  $master_composter_sub_head_button_text = 'master_composter_sub_head_button_text';
+  $master_composter_sub_head_img = 'master_composter_sub_head_img';
+  $master_composter_sub_head_slug = 'master_composter_sub_head_slug';
+  $master_composter_sub_head_title = 'master_composter_sub_head_title';
   $apply_for_plot_form = 'apply_for_plot_form';
   $apply_for_plot_section = 'apply_for_plot_section';
   $apply_for_plot_title = 'apply_for_plot_title';
