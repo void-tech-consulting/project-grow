@@ -1,19 +1,17 @@
 <?php
-get_header();
+    get_header();
+    require 'inc/section_vars.php';
+    $header_args = array(
+        "img_src" => get_theme_mod($master_composter_sub_head_img, "/images/header-images/master-composter-header-img.png"),
+        "page_title" => get_theme_mod($master_composter_sub_head_title, "Master Composter Program"),
+        "button_text" => get_theme_mod($master_composter_sub_head_button_text, "Apply Now"), 
+        "page_slug" => get_theme_mod($master_composter_sub_head_slug, 'home'),
+        );
+    get_template_part('partials/content', 'page-sub-header', $header_args);
 ?>
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
 
-<div class="master-composter-header-background">
-  <div class="master-composter-header-box">
-    <span class="master-composter-our-people-button-header-text">Master Composter Program</span>
-    <a href="https://www.google.com" class="master-composter-no-style-link">
-      <div class="master-composter-connect-button">
-        Apply Now
-      </div>
-    </a>
-  </div>
-</div>
 <span class="master-composter-header-text">About the CEC</span>
 
 
@@ -28,18 +26,7 @@ get_header();
   </div>
 </div>
 
-<span class="master-composter-header-text">Handouts and Guidelines</span>
-<!--
-  <div class="master-composter-large-box">
-    <div class="master-composter-large-box-sidebar"></div>
-    <div class="master-composter-large-box-textbox">
-      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facere, magnam pariatur! Commodi, laborum sint minima sed nulla accusamus autem nam libero, dolor iure reprehenderit modi? Vel minima enim excepturi sequi?
-    </div>
-  </div>
--->
-
-
-
+<div class="master-composter-header-text">Handouts and Guidelines</div>
 
 <div class="master-composter-item-container">
   <?php
@@ -51,7 +38,7 @@ get_header();
     <div class="master-composter-large-box">
       <div class="master-composter-large-box-sidebar"></div>
       <div class="master-composter-large-box-textbox">
-        <a href="<?php echo $f['hgpage_link'] ?>" class="master-composter-no-style-link">
+        <a href="<?php echo $f['hgpage_link'] ?>" class="no-style-link">
           <div class="hgpage_title">
             <?php echo $f['hgpage_title'] ?>
           </div>
@@ -67,7 +54,7 @@ get_header();
   ?>
 </div>
 
-<span class="master-composter-header-text"> CEC Reports, Presentations and Special Projects</span>
+<div class="master-composter-header-text"> CEC Reports, Presentations and Special Projects</div>
 <div class="master-composter-item-container">
   <?php
   require 'inc/section_vars.php';
@@ -78,7 +65,7 @@ get_header();
       <div class="master-composter-large-box">
         <div class="master-composter-large-box-sidebar"></div>
         <div class="master-composter-large-box-textbox">
-          <a href="<?php echo $f['rpspage_link'] ?>" class="master-composter-no-style-link">
+          <a href="<?php echo $f['rpspage_link'] ?>" class="no-style-link">
             <div class="rpspage_title">
               <?php echo $f['rpspage_title'] ?>
             </div>
@@ -95,18 +82,9 @@ get_header();
   ?>
 </div>
 
-<span class="master-composter-header-text">Community Partners and Advisors</span>
+<div class="master-composter-header-text">Community Partners and Advisors</div>
 <div class="master-composter-item-container">
-  <!--
-    <div class="master-composter-small-box">
-      <div class="master-composter-small-box-description">
-        testingggg
-      </div>
-      <div class="master-composter-small-box-link" >
-        <div><a class="master-composter-no-style-link" style="color:white" href="https:google.com">Learn More</a></div>
-      </div>
-    </div>
-    -->
+
   <?php
   require 'inc/section_vars.php';
   $data = get_mastcomp_data($master_composter_pa);
@@ -119,7 +97,7 @@ get_header();
           <?php echo $f['pa_name'] ?>
         </div>
         <div class="master-composter-small-box-link" >
-          <div><a class="master-composter-no-style-link" style="color:white" href="<?php echo $f['pa_link'] ?>">Learn More</a></div>
+          <div><a class="no-style-link" style="color:white" href="<?php echo $f['pa_link'] ?>">Learn More</a></div>
         </div>
       </div>
   <?php
@@ -128,20 +106,8 @@ get_header();
   ?>
 </div>
 
-<span class="master-composter-header-text">Contacts</span>
+<div class="master-composter-header-text">Contacts</div>
 <div class="master-composter-item-container">
-  <!--
-    <div class="master-composter-contact-box">
-      <span class="master-composter-contact-box-name"><span> JOOOOOOOOOo</span></span>
-      <div class="master-composter-contact-box-description">
-        <span class="master-composter-contact-box-title"><span>dude</span></span>
-        <span class="master-composter-contact-box-email"><span>dude@gmail.com</span></span>
-      </div>
-      <div class="master-composter-contact-box-link" >
-        <div><a class="master-composter-no-style-link" style="color:white" href="mailto:aaa@umich.edu">Email</a></div>
-      </div>
-    </div>
-  -->
 
   <?php
   require 'inc/section_vars.php';
@@ -156,7 +122,7 @@ get_header();
         <span class="master-composter-contact-box-email"><span><?php echo $f['contact_email'] ?></span></span>
       </div>
       <div class="master-composter-contact-box-link" >
-        <div><a class="master-composter-no-style-link" style="color:white" href="mailto:<?php echo $f['contact_email'] ?>">Email <?php echo strtok($f['contact_name'],' ') ?></a></div>
+        <div><a class="no-style-link" style="color:white" href="mailto:<?php echo $f['contact_email'] ?>">Email <?php echo strtok($f['contact_name'],' ') ?></a></div>
       </div>
     </div>
       <!--

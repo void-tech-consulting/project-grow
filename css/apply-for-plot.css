@@ -43,29 +43,32 @@
   justify-content: space-between;
 }
 
-.apply-form {
-  width: 71%;
+/* .apply-form {
+  width: 100%;
 }
-
+*/
 .apply-info {
-  width: 27%;
+  padding-top: 5rem;
 }
 
 .apply-info-row {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   padding-bottom: 2rem;
-  height:auto;
+  height: auto;
+  flex-wrap: wrap;
+  margin: auto;
 }
 
 .apply-info-col {
-  width: 48%;
+  width: 19%;
   border: 1px solid #cebfa1;
   background-color: #f8f5ec;
   display: flex;
   flex-direction: column;
   align-items: center;
-  height:auto;
+  height: auto;
+  margin-top: 2rem;
 }
 
 .apply-col-head {
@@ -77,17 +80,18 @@
 
 .apply-col-body {
   width: 90%;
+  text-align: center;
 }
 
-.apply-info-row-1 {
+/* .apply-info-row-1 {
   min-height: 15rem;
-  height:auto;
-}
+  height: auto;
+} */
 
-.apply-info-row-2 {
+/* .apply-info-row-2 {
   min-height: 50rem;
-  height:auto;
-}
+  height: auto;
+} */
 
 .apply-info-single {
   border: 1px solid #cebfa1;
@@ -103,66 +107,26 @@
   font-weight: 500;
 }
 
-.apply-form {
-  margin-bottom: 9rem;
+@media only screen and (max-width: 1200px) {
+  .apply-info-col {
+    width: 24%;
+  }
 }
 
-.apply-view-button .forminator-field p {
-  margin-left: 6.3rem;
-  margin-top: 2.7rem;
-  background: #40804d;
-  border-radius: 22.6914px;
-  width: 17.3rem;
-  height: 4.538rem;
-  color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+@media only screen and (max-width: 900px) {
+  .apply-info-col {
+    width: 31%;
+  }
 }
 
-.apply-view-button .forminator-field p a {
-  text-decoration: none;
-  color: #ffffff;
-  font-family: Roboto;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 14px;
-  line-height: 35px;
+@media only screen and (max-width: 700px) {
+  .apply-info-col {
+    width: 45%;
+  }
 }
 
-/* .forminator-ui.forminator-custom-form-115.forminator-design--default .forminator-select2 + .select2-container--default .select2-selection--single, .et-db #et-boc .et_pb_module .forminator-ui.forminator-custom-form-115.forminator-design--default .forminator-select2 + .select2-container--default .select2-selection--single {
-  background-color: #E8E0CF !important;
-} */
-
-.apply-for-plot-inputs
-  .forminator-field
-  .select2
-  .selection
-  .select2-selection
-  .select2-selection__rendered,
-.select2-dropdown .select2-results ul li,
-.select2-dropdown .forminator-dropdown--default {
-  background: #e8e0cf;
-  background-color: #e8e0cf;
-}
-.apply-for-plot-inputs
-  .forminator-field
-  .select2
-  .selection
-  .select2-selection {
-  background-color: #e8e0cf !important;
-}
-
-.select2-container
-  .select2-dropdown
-  .select2-results
-  .select2-results__options
-  .select2-results__option {
-  background-color: #e8e0cf !important;
-  color: #3f2e00 !important;
-}
-
-.select2-container .select2-dropdown {
-  background-color: #e8e0cf !important;
-  color: #3f2e00 !important;
+@media only screen and (max-width: 500px) {
+  .apply-info-col {
+    width: 90%;
+  }
 }

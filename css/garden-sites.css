@@ -5,21 +5,47 @@ body {
     font-size: 1.8rem;
     width: unset;
 }
-/* gs for Garden Sites to make elements unique */
-#gs-header-img {
+/* sub head */
+.sub-head-wrap {
     /*Flex box to allow moving the brown center box*/
     display: flex;
     justify-content: center;
     align-items: center;
-
     height: 25rem; /*Just for scale, looks like 20rem is a good size*/
-    background-size: cover; /*Take up the whole space*/
-    background-image: url("../images/header-images/garden-sites-header-img.png");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-color: aqua; /*Should never show if image is well sized*/
-    
 }
+.sub-head-img {
+    flex-grow: 1;
+    height: 100%;
+}
+.sub-head-center-box {
+    /*Flex box to allow moving the button*/
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    padding: 4rem 10rem;
+    background-color: rgba(93,68,0,.9);    
+}
+.sub-head-title {
+    color: white;
+    font-size: 3rem;
+    text-align: center;
+}
+.sub-head-link {
+    align-self: center;
+    margin: 1rem;
+    padding: 1rem 3rem;
+    border-radius: 40px;
+    border: 0 solid rgba(64,128,77,1); /*remove shadow*/
+    background-color: rgba(64,128,77,1); /*Format allows easy change of opacity*/
+    width: fit-content;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+}
+
+/* gs for Garden Sites to make elements unique */
+
+
 
 #gs-sort-box {
     width: 22rem;
@@ -48,34 +74,9 @@ body {
     background-color: #40804d;
     outline: none;
     border-radius: 20px;
+    border-right: 1rem solid #40804d;
 }
 
-#gs-center-header-box {
-    /*Flex box to allow moving the button*/
-    display: flex;
-    flex-direction: column;
-
-    position: absolute;
-    padding: 4rem 10rem;
-    background-color: rgba(93,68,0,.9);    
-}
-#gs-header-title {
-    color: white;
-    font-size: 3rem;
-    text-align: center;
-}
-.gs-apply-plot{
-    align-self: center;
-    margin: 1rem;
-    padding: 1rem 3rem;
-    border-radius: 40px;
-    border: 0 solid rgba(64,128,77,1); /*remove shadow*/
-    background-color: rgba(64,128,77,1); /*Format allows easy change of opacity*/
-    width: fit-content;
-    text-align: center;
-    text-decoration: none;
-    color: white;
-}
 .gs-display-none {
     display: none;
 }
@@ -148,7 +149,10 @@ body {
     border-radius: 50%;
     margin: auto;
     width: 33px;
-    text-align: center;
+    height: 33px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .gs-site-name{
     color: #40804D;
@@ -170,10 +174,6 @@ body {
 .gs-flex{
     display: flex;
 }
-.gs-flex img {
-    height: auto;
-    margin: 0 auto;
-}
 .garden-sites-column-names{
     display: flex;
     justify-content: space-around;
@@ -191,6 +191,11 @@ body {
     display: inline-block;
     margin-left: 7rem;
     
+}
+.garden-sites-icon {
+    height: auto;
+    margin: 1rem; 
+    width: 2.5rem;
 }
 #one-img{
     display: flex;

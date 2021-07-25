@@ -17,38 +17,24 @@ body {
     padding-left: 5rem;
     padding-right: 5rem;
 }
-.header-img {
-    /*Flex box to allow moving the brown center box*/
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    height: 25rem; /*Just for scale, looks like 20rem is a good size*/
-    background-size: cover; /*Take up the whole space*/
-    background-image: url("../images/header-images/classes-events-header-img.png");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-color: aqua; /*Should never show if image is well sized*/
-    
-}
 
 .center-header-box {
     position: absolute;
     padding: 8rem 13rem;
-    background-color: rgba(93,68,0,.9);    
+    background-color: rgba(93,68,0,.9);
 }
 
 /*Start CSS for event*/
 .event-container {
     display: flex;
     margin: 0 5rem 0 5rem;
-    padding-right: 7rem;
+    padding: 0 7rem;
     border: 2px solid #CEBFA1;
     background-color: #F8F5EC;
     margin-bottom: 5rem;
 }
-#event-img {
-    padding: 3rem 4rem 3rem 7rem;
+.event-image-container {
+    padding: 3rem 4rem 3rem 0;
     max-width: none;
 }
 
@@ -81,12 +67,11 @@ body {
 .event-cost-join {
     display: flex;
     justify-content: space-between;
-    padding-bottom: 3rem;
+    align-items: center;
+    padding: 3rem;
 }
-
 .event-cost {
-    display: flex;
-    margin-top: 1rem;
+  font-size: 2rem;
 }
 
 .register-event {
@@ -94,8 +79,9 @@ body {
     border-radius: 40px;
     border: 0 solid rgba(64,128,77,1); /*remove shadow*/
     background-color: rgba(64,128,77,1); /*Format allows easy change of opacity*/
-    width: fit-content;
-
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
 }
 #join-event-btn {
     text-align: center;
@@ -105,4 +91,61 @@ body {
 }
 .give-space {
     height: 30rem;
+}
+/*html {*/
+/*  font-size: 62.5%;*/
+/*}*/
+@media only screen and (max-width: 1300px) {
+  html {
+    font-size: 50%;
+    
+  }
+  .event-img{
+      max-width: 100%;
+      max-height: 100%;
+  }
+}
+@media only screen and (max-width: 1200px) {
+  html {
+    font-size: 50%;
+    
+  }
+  .event-image{
+    max-width: 200px;
+    max-height: 240px;
+  }
+}
+@media only screen and (max-width: 1000px) {
+  html {
+    font-size: 50%;
+    
+  }
+  .event-image{
+    max-width: 170px;
+    max-height: 240px;
+  
+  }
+}
+@media only screen and (max-width: 800px) {
+  html {
+    font-size: 50%;
+    
+  }
+  .event-image{
+    max-width: 170px;
+    max-height: 240px;
+  
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  html {
+    font-size: 50%;
+    
+  }
+  .event-image{
+    max-width: 70px;
+    max-height: 240px;
+  
+  }
 }

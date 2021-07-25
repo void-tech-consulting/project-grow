@@ -1,5 +1,13 @@
-<?php 
-  get_header(); 
+<?php
+    get_header();
+    require 'inc/section_vars.php';
+    $header_args = array(
+        "img_src" => get_theme_mod($pg_sub_head_img, "/images/header-images/plot-guidelines-header-img.png"),
+        "page_title" => get_theme_mod($pg_sub_head_title, "Plot Guidelines"),
+        "button_text" => get_theme_mod($pg_sub_head_button_text, "New? Get Started"), 
+        "page_slug" => get_theme_mod($pg_sub_head_slug, 'garden-sites'),
+        );
+    get_template_part('partials/content', 'page-sub-header', $header_args);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -10,14 +18,7 @@
   <title>Plot Guidelines</title>
 </head>
 <body>
-  <div id="guidelines-header-img">
-      <div class="guidelines-center-header-box">
-          <h1 id="guidelines-header-title">Plot Guidelines</h1>
-          <!--Make button actually link to other page eventually-->
-          <button class="plant-guidelines-btn"><b>New? Get Started</b></button>
-      </div>
-  </div>
-  <div class="guidelines-indent main-page title"><b>Plot Usage/Guidelines</b></div> 
+  <div class="indent main-page title"><b>Plot Usage/Guidelines</b></div>   
 
   <div class="guidelines-indent" id="project-grow-guidelines">
     <p>

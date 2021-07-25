@@ -1,3 +1,19 @@
+/*
+Theme Name: Project Grow
+Author: VOID Tech Consulting
+Author URI: https://wordpress.org/
+Description: This theme is setup to be easy flexible and customizable according to your preferences.
+Version: 1.2
+Requires at least: 5.0
+Tested up to: 5.7
+Requires PHP: 7.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: voidtech
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+*/
+
 /* START Reset */
 /* Box sizing rules */
 *,
@@ -45,6 +61,8 @@ ol[class] {
 /* A elements that don't have a class get default styles */
 a:not([class]) {
   text-decoration-skip-ink: auto;
+  text-decoration: none;
+  color: unset;
 }
 /* Make images easier to work with */
 img {
@@ -63,6 +81,27 @@ html {
   font-size: 62.5%;
 }
 /* END Reset */
-/* 
-  Put styles here 
-*/
+
+/* LINKS */
+.link{
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+}
+/* Common CSS */
+.main-desc-inside {
+  width:82%;
+  padding-top:3rem;
+  padding-bottom:3rem;
+  margin:auto;
+}
+
+.bold-brown-text {
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 23px;
+  color: #53401A;
+}
+
+.no-style-link {
+  text-decoration: none;
+  color: unset;
+}

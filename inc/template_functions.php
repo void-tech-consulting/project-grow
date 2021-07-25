@@ -167,6 +167,20 @@ if (!function_exists('template_data')) {
 	}
 }
 
+if ( ! function_exists( 'get_donate_data' ) ) {
+	/**
+	 * Get Donate Data
+	 *
+	 * @since 1.1.4
+	 * @return array
+	 */
+	function get_donate_data($section) {
+		return template_data($section, array(
+			'item' => ''
+		));
+	}
+}
+
 if ( ! function_exists( 'get_example_data' ) ) {
 	/**
 	 * Get Example Data
@@ -216,6 +230,7 @@ if(!function_exists('get_gs_data')) {
 		return template_data($section, array(
 			'Site_Number' => '',
         	'Site_Name' => '',
+			'Plot_Slug' => '', 
 			'Plot_Capacity' => '',
 		    'Location' => ''
 		));

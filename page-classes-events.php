@@ -1,12 +1,13 @@
 <?php
   get_header();
+  require 'inc/section_vars.php';
+  $header_args = array(
+    "img_src" => get_theme_mod($classes_events_img, "/images/header-images/classes-events-header-img.png"),
+    "page_title" => get_theme_mod($classes_events_title, "Classes & Events")
+    );
+    get_template_part('partials/content', 'page-sub-header', $header_args); 
 ?>
 
-<div class="header-img">
-    <div class="center-header-box">
-        <h1 id="header-title">Classes & Events</h1>
-    </div>
-</div>
 <div class="indent main-page title"><b>Classes & Events</b></div>
 
 
@@ -17,25 +18,21 @@
             require 'inc/section_vars.php';   
 
             // get_example_data is in /inc/template_functions.php
-            $data  = get_class_event_data($example_repeater);
+            $data  = get_class_event_data($classes_events_setting);
             if(!empty( $data ) ) { 
                 ?>
                 <section class="example">
                 <?php
                 foreach ( $data as $k => $f ) {  
                     $media = '';
-            
-                    if ($f['Image']) {
+                    if ($f['Image'] && $f['Image']['url']) {       
                         // get_media_url function is in template_functions.php
-                        $media = '<img class="event-image" src="' . esc_url(get_media_url($f['Image'])) . '">';
+                        $media = '<div class="event-image-container"><img class="event-image" src="' . esc_url(get_media_url($f['Image'])) . '"></div>';
                     }
                     ?>
                 <!--Start code for event page-->
         <div class="event-container">
-            <div id="event-img">
-                <?php echo $media?>
-            
-            </div>
+            <?php echo $media?>
             <div class="right-side-content">
                 <div class="event-details">
                     <div class="event-what-where">

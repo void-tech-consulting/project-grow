@@ -9,40 +9,13 @@
 </div>
 
 <div class="contact-content">
-    <h2 id="contact-form-heading">Contact Form</h2>
-    <div class="row">
+    <div class="content-row">
         <div class="col-60">
-            <form class="contact-form" method="post">
-                <div class="row">
-                    <div class="col-50">
-                        <label for="first-name">First Name</label>
-                        <input id="first-name" name="first-name" type="text" required>
-                    </div>
-
-                    <div class="col-45">
-                        <label for="last-name">Last Name</label>
-                        <input id="last-name" name="last-name" type="text" required>
-                    </div> 
-                </div>
-
-                <div class="col-100">
-                    <label for="from">From</label>
-                    <input id="from" name="from" type="text" required>
-
-                    <label for="to">To</label>
-                    <input id="to" name="to" type="text" value="info@projectgrowgardens.org" readonly>
-
-                    <label for="subject">Subject</label>
-                    <input id="subject" name="subject" type="text" required>
-
-                    <label for="message">Message</label>
-                    <textarea id="message" name="message" rows="6" required></textarea>
-
-                    <div class="button-right">
-                        <button id="contact-submit-btn" type="submit">Submit</button>
-                    </div>
-                </div>
-            </form>
+            <h2 id="contact-form-heading">Contact Form</h2>
+            <?php 
+            $shortcode = get_theme_mod('contact-form-shortcode');
+            echo do_shortcode($shortcode);
+            ?>
         </div>
         <div class="col-40">
             <p class="contact-title">Mailing Address</p>
@@ -56,6 +29,5 @@
         </div>
     </div>
 </div>
-
 
 <?php get_footer(); ?>

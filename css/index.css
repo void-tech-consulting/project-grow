@@ -60,16 +60,14 @@
   color: #40804d;
 }
 
-.event-title {
+.home-event-title {
   font-size: 3.6rem;
   color: #53401a;
   font-weight: bold;
 }
 
-.event-links {
-  display: flex;
-  justify-content: left;
-  align-items: center;
+.home-form-right {
+  margin: 0 2rem;
 }
 
 .join {
@@ -100,14 +98,21 @@
 /*how to get started*/
 .get-started {
   background-color: #f8f5ec;
-  display: flex;
+  /* display: flex;
   justify-content: space-around;
-  align-items: center;
+  align-items: center; */
   font-family: Roboto;
   font-size: 1.8rem;
   color: #53401a;
   padding-left: 7rem;
   padding-right: 7rem;
+}
+
+.get-started-steps {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+  padding-bottom: 3rem;
 }
 
 .process-step {
@@ -117,6 +122,25 @@
   width: 15%;
   font-weight: bold;
   text-align: center;
+}
+
+.process-step-divider {
+  background-color: #cebfa1;
+  width: 2px;
+  height: 25rem;
+}
+
+.step-img {
+  width: 15rem;
+  margin: 0 auto; 
+  max-height: 15rem;
+}
+
+.step-img-wrapper {
+  width: 15rem;
+  margin: 0 auto; 
+  height: 15rem;
+  align-items: baseline;
 }
 
 .step-text {
@@ -131,6 +155,7 @@
   font-size: 2.1rem;
   font-weight: bold;
   text-decoration: none;
+  padding: 0.5rem; 
 }
 
 .get-started-header {
@@ -139,10 +164,7 @@
   color: #3f2e00;
   padding-top: 2rem;
   padding-bottom: 2rem;
-}
-
-.step-img {
-  padding-top: 7rem;
+  text-align: center;
 }
 
 /*news*/
@@ -169,50 +191,94 @@
   height: auto;
 }
 
-.news-text {
-  padding-left: 4rem;
-  padding-right: 3rem;
+
+@media only screen and (max-width: 400px) {
+  .banner {
+    height: 13.55rem;
+  }
+
+  .banner-text {
+    font-size: 0.7rem;
+    width: 90%;
+    padding-left: 1rem;
+  }
+  .banner-head {
+    font-size: 1.4rem;
+    padding-bottom: 0.5rem;
+  }
+  .apply-plot {
+    margin-top: 0.5rem;
+    width: 9rem;
+  }
+
+  .events {
+    flex-direction: column;
+    align-items: center;
+  }
+  .event-text {
+    font-size: 0.9rem;
+    width: 90%;
+  }
+  .upcoming {
+    font-size: 1.8rem;
+  }
+  .home-event-title {
+    font-size: 2.4rem;
+  }
+  .join {
+    font-size: 1.4rem;
+    width: 8rem;
+    padding: 0.3rem 1.5rem;
+  }
+  .event-img-container {
+    width: 90%;
+    padding-top: 2.5rem;
+  }
+  .event-img {
+    padding-left: 0rem;
+  }
+
+  .get-started {
+    font-size: 1rem;
+    padding-left: 0rem;
+    padding-right: 0rem;
+  }
+  .get-started-header {
+    font-size: 1.5rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+  .get-started-steps {
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2rem;
+  }
+  .process-step {
+    width: 90%;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    align-items: center;
+    text-align: none;
+  }
+  .process-step-divider {
+    display: none;
+  }
+  .step-text {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    width: 33%;
+    text-align: center;
+  }
+  .step-link {
+    font-size: 1.5rem;
+    width: 15rem;
+  }
+  .step-img {
+    padding-top: 0rem;
+  }
+
 }
 
-.latest-news {
-  font-weight: 900;
-  color: #3f2e00;
-  padding-bottom: 1rem;
-}
-
-.news-head {
-  font-weight: bold;
-  font-size: 3.6rem;
-  color: #53401a;
-}
-
-.interested {
-  font-weight: 900;
-  color: #3f2e00;
-}
-
-.input-fields {
-  display: flex;
-  justify-content: space-between;
-  padding-top: 2rem;
-}
-
-input[type="text"] {
-  border: 1px solid #cebfa1;
-  background: #f8f5ec;
-  width: 45%;
-}
-
-input[type="submit"] {
-  background: #40804d;
-  border-radius: 30px;
-  color: #ffffff;
-  font-size: 2.1rem;
-  font-weight: bold;
-  text-decoration: none;
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
-  margin-top: 2rem;
-  box-shadow: none;
-  border: none;
-}
+/*
+apply for plot
+*/
