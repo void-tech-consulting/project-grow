@@ -18,7 +18,7 @@
   <title>Plot Guidelines</title>
 </head>
 <body>
-  <div class="indent main-page title"><b>Plot Usage/Guidelines</b></div>   
+  <div class="guidelines-indent main-page title"><b>Plot Usage/Guidelines</b></div>   
 
   <div class="guidelines-indent" id="project-grow-guidelines">
     <p>

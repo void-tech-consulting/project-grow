@@ -12,6 +12,9 @@
     <?php echo get_theme_mod('plant-sale-banner')?>
 </div>
 <div class="psi-sale-container">
+    <!--This line is the stacked date placement that appears under 800px-->
+    <div id="stacked-date" class="sale-table-format"><b>Sale Date</b></div>
+
     <div class="sale-headers sale-flex-format">
         <div class="sale-table-format"><b>Sale Date</b></div>
         <div><b>Price</b></div>
@@ -21,7 +24,7 @@
         <?php $data = get_plant_sale_data('plant-sale-date-repeater');
         if(!empty($data)) {
             ?>
-            <div class="psi-dates">
+            <div class="sale-table-format psi-dates">
             <?php
                 foreach($data as $k => $f) {
                     ?>
@@ -40,11 +43,15 @@
         <?php
         }
         ?>
+        <!--This is the stacked price placement under 800px-->
+        <div class="sale-table-format" id="stacked-price"><b>Price</b></div>
         <div class="psi-prices">
-            <br/>
             <div><b><?php echo get_theme_mod('plant-sale-cost')?></b></div>
         </div>
-        <div class="sale-table-format psi-sizes"><br/><b><?php echo get_theme_mod('plant-sale-size')?></b></div>
+
+        <!--This is the stacked size placement under 800px-->
+        <div class="sale-table-format" id="stacked-size"><b>Size</b></div>
+        <div class="sale-table-format psi-sizes"><b><?php echo get_theme_mod('plant-sale-size')?></b></div>
     </div>
 </div>
 <div class="psi-indent organic-container">

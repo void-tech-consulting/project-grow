@@ -81,8 +81,12 @@ body {
     justify-content: space-around;
     border-right: 2px solid #5D4400;
 }
+.psi-prices{
+    padding-top: 8rem;
+}
 .psi-sizes {
     border-left: 2px solid #5D4400;
+    padding-top: 8rem;
 }
 .sale-date {
     display: flex;
@@ -118,25 +122,47 @@ body {
 .disclaimer-body {
     padding-bottom: 16rem;
 }
-
+#stacked-date{
+    display: none;
+}
+#stacked-price{
+    display: none;
+}
+#stacked-size{
+    display: none;
+}
+/*Hide the open table, display the stacked version*/
 @media screen and (max-width: 800px) {
-    .sale-flex-format {
-        flex-direction: column;
+    .sale-headers{
+        display: none;
     }
-    .sale-table-format {
+    .sale-table-format{
         width: unset;
     }
-    .psi-table-title {
-        padding-top: 5rem;
+    .sale-flex-format{
+        flex-direction: column;
     }
-    .psi-dates {
+    .psi-dates{
         border: none;
+        padding-bottom: 2rem;
     }
-    .psi-sizes {
+    .psi-prices{
+        text-align: center;
+        padding-bottom: 2rem;
+        padding-top: unset;
+    }
+    .psi-sizes{
         border: none;
+        padding-top: unset;
     }
-    .psi-sale-container {
-        padding-bottom: 5rem;
+    #stacked-date{
+        display: block;
+    }
+    #stacked-price{
+        display: block;
+    }
+    #stacked-size{
+        display: block;
     }
 }
 @media screen and (max-width: 600px) {
