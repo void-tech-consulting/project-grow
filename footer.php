@@ -15,7 +15,7 @@
                 About Us
                 <ul class="footer-sub-links">
                     <?php
-                        $slug = "contact-us";
+                        $slug = "contact";
                         $page_object = get_page_by_path( $slug );
                         $page_id = $page_object->ID;
                         $permalink = get_permalink( $page_id );
@@ -55,7 +55,7 @@
                     ?>
                     <li><a href="<?php echo $permalink ?>">Plot Guidelines</a></li>
                     <?php
-                        $slug = "rental-information";
+                        $slug = "rental-info";
                         $page_object = get_page_by_path( $slug );
                         $page_id = $page_object->ID;
                         $permalink = get_permalink( $page_id );

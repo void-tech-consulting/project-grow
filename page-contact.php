@@ -58,7 +58,7 @@
             <p class="contact-details">(734) 996-3169</p>
             <br>
             <p class="contact-title">Want to Volunteer?</p>
-            <p class="contact-details">Email: info@projectgrowgardens.org</p>
+            <p class="contact-details">Email: <a href="mailto:info@projectgrowgardens.org">info@projectgrowgardens.org</a></p>
         </div>
     </div>
 </div>
