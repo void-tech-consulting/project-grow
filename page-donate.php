@@ -2,11 +2,14 @@
   get_header(); 
 ?>
 
-<div class="donate-header-img">
-    <div class="donate-center-header-box">
-        <h1 id="header-title">Donate</h1>
-    </div>
-</div>
+<?php 
+    require 'inc/section_vars.php';
+    $header_args = array(
+        "img_src" => get_theme_mod($donate_sub_head_img, "/images/header-images/garden-sites-header-img.png"),
+        "page_title" => get_theme_mod($donate_sub_head_title, "Donate")
+    );
+    get_template_part('partials/content', 'page-sub-header', $header_args); 
+?>
 
 <div class="donate-content">
     <h2 id="donate-form-heading">Make a Donation</h2>

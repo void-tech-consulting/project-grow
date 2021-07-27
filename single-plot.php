@@ -1,12 +1,16 @@
 <?php 
   get_header(); 
 ?>
-<section class="indv-plots-header">
-    <div id="gs-center-header-box">
-        <h1 id="gs-header-title">Garden Sites</h1>
-        <button class="gs-apply-plot" href="https://google.com">Apply For A Plot</button>
-    </div>
-</section>
+<?php 
+    require 'inc/section_vars.php';
+    $header_args = array(
+        "page_slug" => get_theme_mod($gs_sub_head_slug, "apply-for-plot"),
+        "button_text" => get_theme_mod($gs_sub_head_text, "Apply For A Plot"),
+        "img_src" => get_theme_mod($gs_sub_head_img, "/images/header-images/garden-sites-header-img.png"),
+        "page_title" => get_theme_mod($gs_sub_head_title, "Garden Sites")
+    );
+    get_template_part('partials/content', 'page-sub-header', $header_args); 
+?>
     <main class="flex indv-plots">
         <section>
 

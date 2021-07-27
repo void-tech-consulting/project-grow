@@ -66,10 +66,8 @@
   font-weight: bold;
 }
 
-.event-links {
-  display: flex;
-  justify-content: left;
-  align-items: center;
+.home-form-right {
+  margin: 0 2rem;
 }
 
 .join {
@@ -132,6 +130,19 @@
   height: 25rem;
 }
 
+.step-img {
+  width: 15rem;
+  margin: 0 auto; 
+  max-height: 15rem;
+}
+
+.step-img-wrapper {
+  width: 15rem;
+  margin: 0 auto; 
+  height: 15rem;
+  align-items: baseline;
+}
+
 .step-text {
   padding-top: 2rem;
   padding-bottom: 2rem;
@@ -144,6 +155,7 @@
   font-size: 2.1rem;
   font-weight: bold;
   text-decoration: none;
+  padding: 0.5rem; 
 }
 
 .get-started-header {
@@ -153,10 +165,6 @@
   padding-top: 2rem;
   padding-bottom: 2rem;
   text-align: center;
-}
-
-.step-img {
-  padding-top: 7rem;
 }
 
 /*news*/
@@ -183,53 +191,6 @@
   height: auto;
 }
 
-.news-text {
-  padding-left: 4rem;
-  padding-right: 3rem;
-}
-
-.latest-news {
-  font-weight: 900;
-  color: #3f2e00;
-  padding-bottom: 1rem;
-}
-
-.news-head {
-  font-weight: bold;
-  font-size: 3.6rem;
-  color: #53401a;
-}
-
-.interested {
-  font-weight: 900;
-  color: #3f2e00;
-}
-
-.input-fields {
-  display: flex;
-  justify-content: space-between;
-  padding-top: 2rem;
-}
-
-input[type="text"] {
-  border: 1px solid #cebfa1;
-  background: #f8f5ec;
-  width: 45%;
-}
-
-input[type="submit"] {
-  background: #40804d;
-  border-radius: 30px;
-  color: #ffffff;
-  font-size: 2.1rem;
-  font-weight: bold;
-  text-decoration: none;
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
-  margin-top: 2rem;
-  box-shadow: none;
-  border: none;
-}
 
 @media only screen and (max-width: 400px) {
   .banner {
@@ -290,6 +251,7 @@ input[type="submit"] {
   .get-started-steps {
     flex-direction: column;
     align-items: center;
+    margin-top: 2rem;
   }
   .process-step {
     width: 90%;
@@ -315,37 +277,6 @@ input[type="submit"] {
     padding-top: 0rem;
   }
 
-  .news {
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
-    font-size: 1.5rem;
-  }
-  .news-img {
-    padding-left: 0rem;
-    max-width: 90%;
-    padding-bottom: 2rem;
-  }
-  .news-text {
-    padding-left: 0rem;
-    padding-right: 0rem;
-    width: 90%;
-  }
-  .news-head {
-    font-size: 2rem;
-  }
-  .input-fields {
-    flex-direction: column;
-    padding-top: 1rem;
-  }
-  input[type="text"] {
-    width: 70%;
-    margin-bottom: 1rem;
-  }
-  input[type="submit"] {
-    margin-top: 1rem;
-    font-size: 1.5rem;
-  }
 }
 
 /*

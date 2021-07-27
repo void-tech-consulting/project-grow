@@ -1,40 +1,93 @@
 <?php
-// Example of how to use a repeatable box
-register_nav_menu("primary", "Top Navbar");
+
+
+function register_primary_menu() {
+  register_nav_menu( 'primary', 'Primary Menu' );
+}
+add_action( 'after_setup_theme', 'register_primary_menu' );
+
+/*
+*
+* Walker for the main menu 
+*
+*/
+function add_arrow( $output, $item, $depth, $args ){
+  //Only add class to 'top level' items on the 'primary' menu.
+  if('primary' == $args->theme_location && $depth === 0 ){
+      if (in_array("menu-item-has-children", $item->classes)) {
+          $new_output = '<div class="sub-wrap">' . 
+                          $output . 
+                        '<i class="nav-icon fas fa-chevron-down down-icon" aria-hidden="true"></i></div>';
+          return $new_output;
+      }
+  }
+  return $output;
+}
+add_filter( 'walker_nav_menu_start_el', 'add_arrow',10,4);
+
+
+function create_sub_head_text($wp_customize, $text_setting, $text_section, $text_label) {
+
+  $wp_customize->add_setting($text_setting);
+  $wp_customize->add_control(new WP_Customize_Control($wp_customize, $text_setting . '-control', array(
+    'label' => $text_label,
+    'section' => $text_section,
+    'settings' => $text_setting,
+  )));
+}
+function create_sub_head_img($wp_customize, $img_setting, $img_section, $img_label) {
+  $wp_customize->add_setting($img_setting);
+    $wp_customize->add_control(new WP_Customize_Cropped_Image_Control($wp_customize, $img_setting . '-control', array(
+      'label' => $img_label,
+      'section' => $img_section,
+      'settings' => $img_setting,
+  )));
+}
+
 function home_customizer($wp_customize)
 {
-  require 'section_vars.php';
-  $wp_customize->add_section($home_section, array(
-    'title' => 'Videos and News',
+  $wp_customize->add_section('home-section', array(
+    'title' => 'Home Page'
   ));
 
-  $wp_customize->add_setting($home_top_vid, array(
-    'default' => 'https://www.youtube.com/embed/A0Wyx-OOX4A',
-    'sanitize_callback' => 'sanitize_text_field',
-  ));
+  //upcoming events image
+  $wp_customize->add_setting('home-upevents-image');
+  $wp_customize->add_control(new WP_Customize_Cropped_Image_Control($wp_customize, 'home-upevents-control', array(
+    'label' => 'Upcoming Events Image',
+    'section' => 'home-section',
+    'settings' => 'home-upevents-image',
+    'width' => 610,
+    'height' => 407
+  )));
 
-  $wp_customize->add_control($home_top_vid, array(
-    'label' => 'Top Video Embed',
-    'section' => $home_section,
-  ));
+  //latest news image
+  $wp_customize->add_setting('home-news-image');
+  $wp_customize->add_control(new WP_Customize_Cropped_Image_Control($wp_customize, 'home-newsimg-control', array(
+    'label' => 'Latest News Image',
+    'section' => 'home-section',
+    'settings' => 'home-news-image',
+    'width' => 431,
+    'height' => 613
+  )));
 
-  $wp_customize->add_setting($home_top_img);
-  $wp_customize->add_control(new WP_Customize_Image_Control(
-    $wp_customize,
-    $home_top_img,
-    array(
-      'label' => 'Top Image',
-      'section' => $home_section
-    )
-  ));
-  // Top Desc
-  $wp_customize->add_setting($home_top_desc);
-  $wp_customize->add_control($home_top_desc, array(
-    'label' => 'Top Description',
-    'section' => $home_section,
-    'type' => 'textarea'
-  ));
+  //season checkbox
+  $wp_customize->add_setting('home-season-checkbox');
+  $wp_customize->add_control( 'home-season-checkbox-control', array(
+    'type' => 'checkbox',
+    'section' => 'home-section',
+    'settings' => 'home-season-checkbox',
+    'label' => __( 'In Season?' ),
+    'description' => 'Change the homepage based on the season.'
+  ) );
+
+  $wp_customize->add_setting('home-form-shortcode');
+  $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'home-shortcode-control', array(
+      'label' => 'Home Form Shortcode',
+      'section' => 'home-section',
+      'settings' => 'home-form-shortcode'
+  )));
 }
+
 add_action('customize_register', 'home_customizer');
 
 // Example of how to use a repeatable box
@@ -46,6 +99,21 @@ function growing_tips_customizer($wp_customize)
   $wp_customize->add_section($growing_tips_section, array(
     'title' => 'Growing Tips',
   ));
+
+  create_sub_head_img($wp_customize, $growing_tips_sub_head_img, 'growing_tips_section', 'Header Img');
+  create_sub_head_text($wp_customize, $growing_tips_sub_head_slug, 'growing_tips_section', 'Header Page (The Part After /)');
+  create_sub_head_text($wp_customize, $growing_tips_sub_head_button_text, 'growing_tips_section', 'Header Button Text');
+  create_sub_head_text($wp_customize, $growing_tips_sub_head_title, 'growing_tips_section', 'Header Title Text');
+
+
+  $wp_customize->add_setting($growing_tips_link);
+  $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'box-link-control', array(
+    'label' => 'Garden Tips Link',
+    'section' => $growing_tips_section,
+    'settings' => '$garden_tips_link'
+  )));
+
+
 
   $wp_customize->add_setting(
     $growing_tips_edibles,
@@ -196,6 +264,12 @@ function our_people_customizer($wp_customize)
     'title' => 'Our People',
   ));
 
+  create_sub_head_img($wp_customize, $our_people_sub_head_img, 'our_people_section', 'Header Img');
+  create_sub_head_text($wp_customize, $our_people_sub_head_slug, 'our_people_section', 'Header Page (The Part After /)');
+  create_sub_head_text($wp_customize, $our_people_sub_head_button_text, 'our_people_section', 'Header Button Text');
+  create_sub_head_text($wp_customize, $our_people_sub_head_title, 'our_people_section', 'Header Title Text');
+
+
   $wp_customize->add_setting(
     $our_people_members,
     array(
@@ -229,63 +303,16 @@ function our_people_customizer($wp_customize)
             'title' => esc_html__('Member Title'),
             'type'  => 'text',
           ),
+          'member_desc'  => array(
+            'title' => esc_html__('Member Description'),
+            'type'  => 'textarea',
+          ),
         ),
       )
     )
   );
 }
 add_action('customize_register', 'our_people_customizer');
-
-
-// Example of how to use a repeatable box
-function example_repeatable_customizer($wp_customize)
-{
-  require 'section_vars.php';
-  require_once 'controller.php';
-
-  $wp_customize->add_section($example_section, array(
-    'title' => 'Example Home Repeaters',
-  ));
-
-  $wp_customize->add_setting(
-    $example_repeater,
-    array(
-      'sanitize_callback' => 'onepress_sanitize_repeatable_data_field',
-      'transport' => 'refresh',
-    )
-  );
-
-  $wp_customize->add_control(
-    new Onepress_Customize_Repeatable_Control(
-      $wp_customize,
-      $example_repeater,
-      array(
-        'label'     => esc_html__('Example Q & A Repeater'),
-        'description'   => '',
-        'section'       => $example_section,
-        'live_title_id' => 'question',
-        'title_format'  => esc_html__('[live_title]'), // [live_title]
-        'max_item'      => 10, // Maximum item can add
-        'limited_msg'   => wp_kses_post(__('Max items added')),
-        'fields'    => array(
-          'question'  => array(
-            'title' => esc_html__('Question'),
-            'type'  => 'text',
-          ),
-          'answer'  => array(
-            'title' => esc_html__('Answer'),
-            'type'  => 'editor',
-          ),
-          'link'  => array(
-            'title' => esc_html__('Link'),
-            'type'  => 'url',
-          ),
-        ),
-      )
-    )
-  );
-}
-add_action('customize_register', 'example_repeatable_customizer');
 
 function master_composter_customizer($wp_customize)
 {
@@ -295,6 +322,11 @@ function master_composter_customizer($wp_customize)
   $wp_customize->add_section($master_composter_section, array(
     'title' => 'Master Composter Program',
   ));
+
+  create_sub_head_img($wp_customize, $master_composter_sub_head_img, $master_composter_section, 'Header Img');
+  create_sub_head_text($wp_customize, $master_composter_sub_head_slug, $master_composter_section, 'Header Page (The Part After /)');
+  create_sub_head_text($wp_customize, $master_composter_sub_head_button_text, $master_composter_section, 'Header Button Text');
+  create_sub_head_text($wp_customize, $master_composter_sub_head_title, $master_composter_section, 'Header Title Text');
 
   $wp_customize->add_setting(
     $master_composter_hg,
@@ -455,6 +487,9 @@ function classes_events_customize($wp_customize) {
       'title' => 'Classes & Events'
     ));
 
+    create_sub_head_text($wp_customize, $classes_events_title, $classes_events_section, 'Header Text');
+    create_sub_head_img($wp_customize, $classes_events_img, $classes_events_section, 'Header Image');
+
     $wp_customize->add_setting(
         $classes_events_setting,
         array(
@@ -518,114 +553,6 @@ function classes_events_customize($wp_customize) {
     );
   }
   add_action('customize_register', 'classes_events_customize');
-  // function donate_repeatable_customizer($wp_customize) {
-  //   require 'section_vars.php';  
-  //   require_once 'controller.php';
-    
-  //   $wp_customize->add_section($donate_section, array(
-  //     'title' => 'Donate Page',
-  //   ));
-    
-  //   $wp_customize->add_setting(
-  //     $donate_season_repeater,
-  
-    // // Start img
-    // $wp_customize->add_setting('classes-events-img');
-    // $wp_customize->add_control( new WP_Customize_Cropped_Image_control(
-    //   $wp_customize, 'classes-events-img-control', array(
-    //   'label' => 'Image',
-    //   'section' => 'classes-events-section',
-    //   'settings' => 'classes-events-img',
-    //   'width' => 250,
-    //   'height' => 250
-    // )));
-
-    // //Start Headline
-    // $wp_customize->add_setting('classes-events-headline', array(
-    //   'default' => 'Headline'
-    // ));
-    // $wp_customize->add_control( new WP_Customize_Control($wp_customize, 'classes-events-callout-headline', array(
-    //   'label' => 'Headline', 
-    //   'section' => 'classes-events-section', 
-    //   'settings' => 'classes-events-headline'
-    // )));
-
-    // // Start body paragraph
-    // $wp_customize->add_setting('classes-events-paragraph', 
-    //   array('default'=> 'Paragraph'
-    // ));
-    // $wp_customize->add_control( new WP_Customize_Control($wp_customize, 'classes-events-callout-paragraph', array(
-    //   'label' => 'Event Details', 
-    //   'section' => 'classes-events-section', 
-    //   'settings' => 'classes-events-paragraph',
-    //   'type' => 'textarea'
-    // )));
-
-    // // Start Location
-    // $wp_customize->add_setting('classes-events-location', 
-    //   array('default'=> 'Location'
-    // ));
-    // $wp_customize->add_control( new WP_Customize_Control($wp_customize, 'classes-events-callout-location', array(
-    //   'label' => 'Location', 
-    //   'section' => 'classes-events-section', 
-    //   'settings' => 'classes-events-location',
-    //   'type' => 'textarea'
-    // )));
-    // // Start Event Type
-    // $wp_customize->add_setting('classes-events-event-type', 
-    //   array('default'=> 'Class or Event?'
-    // ));
-    // $wp_customize->add_control( new WP_Customize_Control($wp_customize, 'classes-events-callout-event-type', array(
-    //   'label' => 'Event type', 
-    //   'section' => 'classes-events-section', 
-    //   'settings' => 'classes-events-event-type',
-    //   'type' => 'textarea'
-    // )));
-
-    // // Start Cost
-    // $wp_customize->add_setting('classes-events-cost', 
-    //   array('default'=> '5.00'
-    // ));
-    // $wp_customize->add_control( new WP_Customize_Control($wp_customize, 'classes-events-callout-cost', array(
-    //   'label' => 'Cost', 
-    //   'section' => 'classes-events-section', 
-    //   'settings' => 'classes-events-cost',
-    //   'type' => 'textarea'
-    // )));
-
-    // // Start Time
-    // $wp_customize->add_setting('classes-events-time', 
-    //   array('default'=> '00:00AM - 00:00PM'
-    // ));
-    // $wp_customize->add_control( new WP_Customize_Control($wp_customize, 'classes-events-callout-time', array(
-    //   'label' => 'Time', 
-    //   'section' => 'classes-events-section', 
-    //   'settings' => 'classes-events-time',
-    //   'type' => 'textarea'
-    // )));
-
-    // // Start Date
-    // $wp_customize->add_setting('classes-events-date', 
-    //   array('default'=> 'Jan 01, 2021'
-    // ));
-    // $wp_customize->add_control( new WP_Customize_Control($wp_customize, 'classes-events-callout-date', array(
-    //   'label' => 'Date', 
-    //   'section' => 'classes-events-section', 
-    //   'settings' => 'classes-events-date',
-    //   'type' => 'textarea'
-    // )));
-
-    // // Start Join Link
-    // $wp_customize->add_setting('classes-events-join-link');
-    // $wp_customize->add_control( new WP_Customize_Control($wp_customize, 'classes-events-callout-join-link', array(
-    //   'label' => 'Link', 
-    //   'section' => 'classes-events-section', 
-    //   'settings' => 'classes-events-join-link',
-    //   'type' => 'dropdown-pages'
-    // )));
-// }
-// add_action( 'customize_register', 'donate_repeatable_customizer' );
-
 
 function garden_sites_repeater($wp_customize) {
   require 'section_vars.php';
@@ -634,93 +561,16 @@ function garden_sites_repeater($wp_customize) {
   $wp_customize->add_section('garden-sites-section', array(
       'title' => 'Garden Sites Repeater',
   ));
+  create_sub_head_img($wp_customize, $gs_sub_head_img, 'garden-sites-section', 'Header Img');
+  create_sub_head_text($wp_customize, $gs_sub_head_slug, 'garden-sites-section', 'Header Page (The Part After /)');
+  create_sub_head_text($wp_customize, $gs_sub_head_text, 'garden-sites-section', 'Header Button Text');
+  create_sub_head_text($wp_customize, $gs_sub_head_title, 'garden-sites-section', 'Header Title Text');
 
   $wp_customize->add_setting('garden-sites-repeater',
       array(
           'sanitize_callback' => 'onepress_sanitize_repeatable_data_field',
           'transport' => 'refresh',
       ) );
-  
-    $wp_customize->add_control(
-        new Onepress_Customize_Repeatable_Control(
-            $wp_customize,
-            $donate_season_repeater,
-            array(
-                'label' 		=> esc_html__('Upcoming Season Wishlist'),
-                'description'   => '',
-                'section'       => $donate_section,
-                'live_title_id' => 'item',
-                'title_format'  => esc_html__('[live_title]'), // [live_title]
-                'max_item'      => 30, // Maximum item can add
-                'limited_msg' 	=> wp_kses_post( __( 'Max items added' ) ),
-                'fields'    => array(
-                    'item'  => array(
-                        'title' => esc_html__('Item'),
-                        'type'  =>'text',
-                    ),
-                ),
-            )
-        )
-    );
-
-    $wp_customize->add_setting(
-        $donate_longterm_repeater,
-        array(
-            'sanitize_callback' => 'onepress_sanitize_repeatable_data_field',
-            'transport' => 'refresh',
-        ) );
-    
-      $wp_customize->add_control(
-          new Onepress_Customize_Repeatable_Control(
-              $wp_customize,
-              $donate_longterm_repeater,
-              array(
-                  'label' 		=> esc_html__('Long Term Wishlist'),
-                  'description'   => '',
-                  'section'       => $donate_section,
-                  'live_title_id' => 'item',
-                  'title_format'  => esc_html__('[live_title]'), // [live_title]
-                  'max_item'      => 30, // Maximum item can add
-                  'limited_msg' 	=> wp_kses_post( __( 'Max items added' ) ),
-                  'fields'    => array(
-                      'item'  => array(
-                          'title' => esc_html__('Item'),
-                          'type'  =>'text',
-                      ),
-                  ),
-              )
-          )
-      );
-
-    $wp_customize->add_setting(
-        $donate_landowners_repeater,
-        array(
-            'sanitize_callback' => 'onepress_sanitize_repeatable_data_field',
-            'transport' => 'refresh',
-        ) );
-    
-      $wp_customize->add_control(
-          new Onepress_Customize_Repeatable_Control(
-              $wp_customize,
-              $donate_landowners_repeater,
-              array(
-                  'label' 		=> esc_html__('List of Landowners'),
-                  'description'   => '',
-                  'section'       => $donate_section,
-                  'live_title_id' => 'item',
-                  'title_format'  => esc_html__('[live_title]'), // [live_title]
-                  'max_item'      => 30, // Maximum item can add
-                  'limited_msg' 	=> wp_kses_post( __( 'Max items added' ) ),
-                  'fields'    => array(
-                      'item'  => array(
-                          'title' => esc_html__('Landowner'),
-                          'type'  =>'text',
-                      ),
-                  ),
-              )
-          )
-      );
-
 
   $wp_customize->add_control(
       new Onepress_Customize_Repeatable_Control(
@@ -728,7 +578,7 @@ function garden_sites_repeater($wp_customize) {
           'garden-sites-repeater',
           array(
               'label' 		=> esc_html__('Garden Sites Repeater'),
-              'description'   => '',
+              'description'   => 'IMPORTANT: Plot Slug should just be the last part of the url if the plot is at: www.grow.com/plot/my-plot insert just my-plot into the field',
               'section'       => 'garden-sites-section',
               'live_title_id' => 'Site_Name',
               'title_format'  => esc_html__('[live_title]'), // [live_title]
@@ -742,6 +592,10 @@ function garden_sites_repeater($wp_customize) {
                   'Site_Name'  => array(
                       'title' => esc_html__('Site Name'),
                       'type'  =>'text',
+                  ),
+                  'Plot_Slug'  => array(
+                    'title' => esc_html__('Plot Slug'),
+                    'type'  =>'text',
                   ),
                   'Plot_Capacity'  => array(
                       'title' => esc_html__('Plot Capacity'),
@@ -792,6 +646,8 @@ function repeat_plant_sale($wp_customize) {
   $wp_customize->add_section('plant-sale-section', array(
     'title' => 'Annual Plant Sale',
   ));
+  create_sub_head_img($wp_customize, $plant_sale_img, 'plant-sale-section', 'Header Image');
+  create_sub_head_text($wp_customize, $plant_sale_title, 'plant-sale-section', 'Header Text');
 
   // Customize header at top -not in repeater
   $wp_customize->add_setting('plant-sale-banner', array(
@@ -920,4 +776,112 @@ function repeat_plant_sale($wp_customize) {
   );
 }
 add_action('customize_register', 'repeat_plant_sale');
+
+function contact_form_customize($wp_customize) {
+    $wp_customize->add_section('contact-form', array(
+        'title' => 'Contact Form'
+    ));
+
+    $wp_customize->add_setting('contact-form-shortcode');
+    $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'contact-shortcode-control', array(
+        'label' => 'Contact Form Shortcode',
+        'section' => 'contact-form',
+        'settings' => 'contact-form-shortcode'
+    )));
+}
+add_action('customize_register', 'contact_form_customize');
+
+function donate_customize($wp_customize) {
+  require get_template_directory() . '/inc/section_vars.php';
+  $wp_customize->add_section('donate', array(
+      'title' => 'Donate'
+  ));
+  create_sub_head_text($wp_customize, $donate_sub_head_title, 'donate', 'Donate Text');
+  create_sub_head_img($wp_customize, $donate_sub_head_img, 'donate', 'Donate Image');
+
+  $wp_customize->add_setting('donate-form-shortcode');
+  $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'donate-shortcode-control', array(
+      'label' => 'Donate Form Shortcode',
+      'section' => 'donate',
+      'settings' => 'donate-form-shortcode'
+  )));
+
+}
+add_action('customize_register', 'donate_customize');
+
+function apply_for_plot_customize($wp_customize)
+{
+  require get_template_directory() . '/inc/section_vars.php';
+  $wp_customize->add_section($apply_for_plot_section, array(
+    'title' => 'Apply For Plot'
+  ));
+
+  create_sub_head_text($wp_customize, $apply_for_plot_title, $apply_for_plot_section, "Header Text");
+  create_sub_head_img($wp_customize, $apply_for_plot_img, $apply_for_plot_section, "Header Image");
+
+  $wp_customize->add_setting('full-plot-fee');
+  $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'full-plot-control', array(
+    'label' => 'Full Plot Fee',
+    'section' => $apply_for_plot_section,
+    'settings' => 'full-plot-fee'
+  )));
+
+  $wp_customize->add_setting('half-plot-fee');
+  $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'half-plot-control', array(
+    'label' => 'Half Plot Fee',
+    'section' => $apply_for_plot_section,
+    'settings' => 'half-plot-fee'
+  )));
+
+  $wp_customize->add_setting('apply_for_plot_form-shortcode');
+  $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'apply-shortcode-control', array(
+      'label' => 'Apply for Plot Shortcode',
+      'section' => $apply_for_plot_section,
+      'settings' => 'apply_for_plot_form-shortcode'
+  )));
+}
+add_action('customize_register', 'apply_for_plot_customize');
+
+function wwd_customize($wp_customize) {
+  require get_template_directory() . '/inc/section_vars.php';
+  $wp_customize->add_section($wwd_section, array(
+    'title' => 'What We Do'
+  ));
+
+  create_sub_head_img($wp_customize, $wwd_sub_head_img, $wwd_section, 'Header Img');
+  create_sub_head_text($wp_customize, $wwd_sub_head_title, $wwd_section, 'Header Title Text');
+  create_sub_head_text($wp_customize, $wwd_sub_head_slug, $wwd_section, 'Header Page (The Part After /)');
+  create_sub_head_text($wp_customize, $wwd_sub_head_button_text, $wwd_section, 'Header Button Text');
+  create_sub_head_text($wp_customize, $wwd_sub_head_section, $wwd_section, 'Section to link');
+}
+add_action('customize_register', 'wwd_customize');
+
+function rental_info_customize($wp_customize) {
+  require get_template_directory() . '/inc/section_vars.php';
+  $wp_customize->add_section($rental_info_section, array(
+    'title' => 'Rental Information'
+  ));
+  create_sub_head_img($wp_customize, $rental_info_sub_head_img, $rental_info_section, 'Header Img');
+  create_sub_head_text($wp_customize, $rental_info_sub_head_title, $rental_info_section, 'Header Title Text');
+  create_sub_head_text($wp_customize, $rental_info_sub_head_slug, $rental_info_section, 'Header Page (The Part After /)');
+  create_sub_head_text($wp_customize, $rental_info_sub_head_button_text, $rental_info_section, 'Header Button Text');
+  create_sub_head_text($wp_customize, $rental_info_sub_head_section, $rental_info_section, 'Section to link');
+}
+add_action('customize_register', 'rental_info_customize');
+
+function pg_customize($wp_customize) {
+  require get_template_directory() . '/inc/section_vars.php';
+  $wp_customize->add_section($pg_section, array(
+    'title' => 'Plot Guidelines'
+  ));
+  create_sub_head_img($wp_customize, $pg_sub_head_img, $pg_section, 'Header Img');
+  create_sub_head_text($wp_customize, $pg_sub_head_title, $pg_section, 'Header Title Text');
+  create_sub_head_text($wp_customize, $pg_sub_head_slug, $pg_section, 'Header Page (The Part After /)');
+  create_sub_head_text($wp_customize, $pg_sub_head_button_text, $pg_section, 'Header Button Text');
+}
+add_action('customize_register', 'pg_customize');
+
 ?>
+
+
+

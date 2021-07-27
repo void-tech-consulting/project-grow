@@ -1,170 +1,57 @@
 <?php
-get_header();
+    get_header();
+    require 'inc/section_vars.php';
+    $header_args = array(
+        "img_src" => get_theme_mod($growing_tips_sub_head_img, "/images/header-images/growing-tips-header-img.png"),
+        "page_title" => get_theme_mod($growing_tips_sub_head_title, "Growing Tips"),
+        "button_text" => get_theme_mod($growing_tips_sub_head_button_text, "Connect with Us"), 
+        "page_slug" => get_theme_mod($growing_tips_sub_head_slug, "contact")
+        );
+    get_template_part('partials/content', 'page-sub-header', $header_args);
 ?>
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
 
-<div class="growing-tips-header-background">
-  <div class="header-box">
-    <span class="our-people-button-header-text">Growing Tips</span>
-    <a href="https://www.google.com" class="no-style-link">
-      <div class="connect-button">
-        Connect with Us
-      </div>
-    </a>
-  </div>
-</div>
-<div class="growing-tips-header-text">Growing Tips</div>
 
 
 <div class="main-description">
-  <div style="width:82%;padding-top:3rem;padding-bottom:3rem;margin:auto;">
+  <div class="main-desc-inside">
     These articles are written by Project Grow gardeners like yourself. Many have appeared in older copies of our newsletter or been written and donated to Project Grow.
     <br><br>
     If you have suggestions or would like to contribute, please contact us at <span style="font-style: italic;">info@projectgrowgardens.org</span>
     <br><br>
     We look forward to hearing from you!
     <br><br>
-    <a class="no-style-link" href="https://www.google.com"><span style="font-weight: bold;font-size: 20px;line-height: 23px;color: #53401A;">Click to learn more tips!</span></a>
+    <span class="bold-brown-text">Click the boxes below to learn more tips!</span>
   </div>
 </div>
-
-<div class="growing-tips-header-text">Edibles</div>
-<div class="item-container">
-  <!--
-    <a href="<?php echo get_theme_mod('box-link') ?>" class="no-style-link">
-        <div class="item-box"><?php echo get_theme_mod('box-text') ?></div>
-    </a>
-    -->
-
   <?php
   require 'inc/section_vars.php';
-  // get_example_data is in /inc/template_functions.php
-  $data  = get_growing_tips_data($growing_tips_edibles);
-  if (!empty($data)) {
-  ?>
-    <?php
-    foreach ($data as $k => $f) {
-      // Make sure to use a semicolon; when using php on multiple lines
-      $topicId = 'topic' . $k;
-      $answerContent = "<div id=\"" . $topicId . "\" class=\"answer-text\">";
-    ?>
+  $edible_args = array(
+    "title" => "Edibles",
+    "data" => get_growing_tips_data($growing_tips_edibles)
+  );
+  get_template_part('partials/content', 'growing-tips-boxes', $edible_args);
+
+  $ornamental_args = array(
+    "title" => "Ornamentals",
+    "data" => get_growing_tips_data($growing_tips_ornamentals)
+  );
+  get_template_part('partials/content', 'growing-tips-boxes', $ornamental_args);
+
+  $organic_args = array(
+    "title" => "Organic Gardening",
+    "data" => get_growing_tips_data($growing_tips_organic_gardening)
+  );
+  get_template_part('partials/content', 'growing-tips-boxes', $organic_args);
 
 
-      <div class="item-box">
-        <?php echo $answerContent ?>
-        <a class="no-style-link" href="<?php echo $f['link']; ?>">
-          <div class="questionbox" <?php echo "data-topic-id=\"" . $k . "\"" ?>>
-            <span class="question-text"><?php echo $f['topic'] ?> </span>
-          </div>
-        </a>
-      </div>
-</div>
-<?php
-    }
+  // get_growing_tips_data is in /inc/template_functions.php
+  $seed_args = array(
+    "title" => "Seed Saving and Starting",
+    "data" => get_growing_tips_data($growing_tips_seed_saving_starting)
+  );
+  get_template_part('partials/content', 'growing-tips-boxes', $seed_args);
 ?>
-<?php } ?>
-
-
-</div>
-
-<div class="growing-tips-header-text"> Ornamentals</div>
-<div class="item-container">
-
-  <?php
-  require 'inc/section_vars.php';
-  // get_example_data is in /inc/template_functions.php
-  $data  = get_growing_tips_data($growing_tips_ornamentals);
-  if (!empty($data)) {
-  ?>
-    <?php
-    foreach ($data as $k => $f) {
-      // Make sure to use a semicolon; when using php on multiple lines
-      $topicId = 'topic' . $k;
-      $answerContent = "<div id=\"" . $topicId . "\" class=\"answer-text\">";
-    ?>
-
-      <div class="item-box">
-        <?php echo $answerContent ?>
-        <a class="no-style-link" href="<?php echo $f['link']; ?>">
-
-          <div class="questionbox" <?php echo "data-topic-id=\"" . $k . "\"" ?>>
-            <span class="question-text"><?php echo $f['topic'] ?> </span>
-          </div>
-
-        </a>
-
-      </div>
-</div>
-<?php
-    }
-?>
-<?php } ?>
-</div>
-
-<div class="growing-tips-header-text">Organic Gardening</div>
-<div class="item-container">
-  <?php
-  require 'inc/section_vars.php';
-  // get_example_data is in /inc/template_functions.php
-  $data  = get_growing_tips_data($growing_tips_organic_gardening);
-  if (!empty($data)) {
-  ?>
-    <?php
-    foreach ($data as $k => $f) {
-      // Make sure to use a semicolon; when using php on multiple lines
-      $topicId = 'topic' . $k;
-      $answerContent = "<div id=\"" . $topicId . "\" class=\"answer-text\">";
-    ?>
-      <div class="item-box">
-        <?php echo $answerContent ?>
-        <a class="no-style-link" href="<?php echo $f['link']; ?>">
-
-          <div class="questionbox" <?php echo "data-topic-id=\"" . $k . "\"" ?>>
-            <span class="question-text"><?php echo $f['topic'] ?> </span>
-          </div>
-
-        </a>
-      </div>
-</div>
-<?php
-    }
-?>
-<?php } ?>
-</div>
-
-<div class="growing-tips-header-text">Seed Saving and Starting</div>
-<div class="item-container">
-  <?php
-  require 'inc/section_vars.php';
-  // get_example_data is in /inc/template_functions.php
-  $data  = get_growing_tips_data($growing_tips_seed_saving_starting);
-  if (!empty($data)) {
-  ?>
-    <?php
-    foreach ($data as $k => $f) {
-      // Make sure to use a semicolon; when using php on multiple lines
-      $topicId = 'topic' . $k;
-      $answerContent = "<div id=\"" . $topicId . "\" class=\"answer-text\">";
-    ?>
-      <div class="item-box">
-        <?php echo $answerContent ?>
-        <a class="no-style-link" href="<?php echo $f['link']; ?>">
-
-          <div class="questionbox" <?php echo "data-topic-id=\"" . $k . "\"" ?>>
-            <span class="question-text"><?php echo $f['topic'] ?> </span>
-          </div>
-
-        </a>
-      </div>
-</div>
-<?php
-    }
-?>
-<?php } ?>
-</div>
-
-
-
 
 <?php get_footer(); ?>

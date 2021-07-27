@@ -1,6 +1,6 @@
 .person-repeater {
   width: 80%;
-  margin: auto;
+  margin: 3rem auto;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -9,14 +9,9 @@
 
 .person-box-container {
   width: 21%;
+  position: relative;
   box-sizing: border-box;
-}
-
-.person-box {
-  margin: 3rem;
-  font-family: Roboto;
   height: 31rem;
-  width: 21rem;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -28,8 +23,16 @@
 
 .person-img {
   width: 100%;
-  height: 23.4rem;
-  padding-bottom: 3rem;
+  height: 20.4rem;
+  cursor: pointer;
+}
+
+.person-img-default {
+  width: 100%;
+  height: 20.4rem;
+  border-bottom: 1px solid rgba(206, 191, 161, 0.5);
+  padding: 0 2rem;
+  cursor: pointer;
 }
 
 .person-name {
@@ -111,6 +114,28 @@
   margin: auto;
 }
 
+.hide-person-img:hover ~ .people-hover-state-bio {
+  display: block;
+}
+.people-hover-state-bio:hover {
+  display: block;
+}
+.people-non-hover-state {
+  padding-top: 3rem;
+}
+
+.people-hover-state-bio {
+  width: 100%;
+  position: absolute;
+  border: 1px dashed #cebfa1;
+  background: #f8f5ec;
+  padding: 2rem; 
+  height: 31rem;
+  font-size: 1.5rem;
+  display: none;
+  cursor: pointer;
+}
+
 @media only screen and (max-width: 1200px) {
   .person-repeater {
     width: 90%;
@@ -139,3 +164,5 @@
     width: 90%;
   }
 }
+
+
