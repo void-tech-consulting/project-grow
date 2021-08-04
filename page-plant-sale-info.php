@@ -150,7 +150,8 @@
     ?>
     </div>
     <div class="psi-indent psi-tomatoes-section">
-            Tomatoes come in a wide range of colors. The most common colors are red-orange and pinkish-red. 
+            <?php echo get_theme_mod('plant-sale-bottom-description'); ?>
+            <!-- Tomatoes come in a wide range of colors. The most common colors are red-orange and pinkish-red. 
             There are also yellow, orange, green and purplish black tomatoes. If you are looking for classic 
             tomato flavor, choose red-orange or pinkish-red tomatoes. Yellow, orange and green tomatoes tend 
             to have a fruitier and sweeter flavor profile. Bi-color tomatoes have skin and flesh that is a mixture 
@@ -160,7 +161,7 @@
 
             <br/>Tomatoes are usually separated into groups based on their type (beefsteak, cherry, paste, oxheart, saladette 
             and patio). If you are not familiar with these types, the following profiles include descriptions and some 
-            recommendations.
+            recommendations. -->
         </div>
 </div>
 <div class="psi-indent disclaimer-container">

@@ -774,6 +774,15 @@ function repeat_plant_sale($wp_customize) {
           )
       )
   );
+
+  // Description of items towards bottom of page - not repeatable
+  $wp_customize->add_setting('plant-sale-bottom-description');
+  $wp_customize->add_control( new WP_Customize_Control($wp_customize, 'plant-sale-callout-size', array(
+    'label' => 'Description of Items',
+    'section' => 'plant-sale-section',
+    'settings' => 'plant-sale-bottom-description',
+    'type' => 'textarea'
+  )));
 }
 add_action('customize_register', 'repeat_plant_sale');
 

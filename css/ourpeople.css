@@ -111,7 +111,9 @@
   line-height: 3.3rem;
   color: #3f2e00;
   width: 80%;
-  margin: auto;
+  text-align: left;
+  margin-top: 3rem;
+  margin-left: 17.5rem;
 }
 
 .hide-person-img:hover ~ .people-hover-state-bio {
